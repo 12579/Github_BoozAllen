@@ -76,8 +76,11 @@ app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q,
     };
 }]);
 
+app.controller("LoginController", ["$scope", "$location", "$window", "$rootScope", "authenticationSvc", function ($scope, $location, $window, $rootScope, authenticationSvc) {
 
-app.controller("LoginController", ["$scope", "$location", "$window", "authenticationSvc", function ($scope, $location, $window, authenticationSvc) {
+    $("#mainDiv").addClass('mainWrapper');
+    $(".animatedImages").show();
+
     $scope.userInfo = null;
 
     $scope.login = function () {
@@ -112,15 +115,17 @@ app.controller("LoginController", ["$scope", "$location", "$window", "authentica
             authenticationSvc.login(userName, password)
                 .then(
                 function (result) {
-                    if (result.ErrorMessage != '') {
+                    if (result.ErrorMessage != '')
+                    {
                         $scope.ErrorMessage = "Invalid credentials old";
                         $(".userEnter").hide();
                         $(".passwordEnter").hide();
                         $(".LoginError").hide();
                         $(".user").show();
+                        $rootScope.userInfo = result;
+                        $scope.userInfo = $rootScope.userInfo;
                     }
                     else {
-                        $(".animatedImages").hide();
                         $("#mainDiv").removeClass();
                         $scope.userInfo = result;
                         $location.path("/dashboard");
@@ -148,8 +153,12 @@ app.controller("HomeController", ["$scope", "$location", "authenticationSvc", "a
     };
 }]);
 
-app.controller("DashboardCtrl", function ($scope, $http) {
+app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
     //, suppressMenu: 'true'
+
+    var userInfo = $rootScope.userInfo;
+    $scope.userInfo = userInfo;
+
     var casecolumnDefs = [
         { headerName: "ID", field: "id", width: 70, sort: 'asc' },
         { headerName: "Entity Name", field: "entityName", width: 150, suppressMenu: 'true' },

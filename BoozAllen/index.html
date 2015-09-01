@@ -14,40 +14,36 @@
 </head>
 
 <body>
-    <div class="mainWrapper" id="mainDiv">
-        <header>
-            <div class="logo"><img src="assets/img/logo.png" class="responsive-img" alt=""></div>
-        </header>
-        <div class="row">
-            <div>
-                <div class="container" style="margin-top: 20px;">
-                    <div data-ng-view="" id="ng-view" class="slide-animation"></div>
-                </div>
-            </div>
-
-            <div class="animatedImages">
-                <div class="animImage animImage1"><img src="assets/img/image1.png" class="responsive-img" alt=""></div>
-                <div class="animImage animImage2"><img src="assets/img/image2.png" class="responsive-img" alt=""></div>
-                <div class="animImage animImage3"><img src="assets/img/image3.png" class="responsive-img" alt=""></div>
+    <!--class="mainWrapper"-->
+<div id="mainDiv">
+    <header>
+        <div class="logo"><img src="assets/img/logo.png" class="responsive-img" alt="">
+        </div>
+    </header>
+    <div class="row">
+        <div>
+            <div class="container" style="margin-top: 20px;">
+                <div data-ng-view="" id="ng-view" class="slide-animation"></div>
             </div>
         </div>
-        <footer>
-            <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
-        </footer>
     </div>
+    <footer>
+        <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
+    </footer>
+</div>
 
 <!--Import jQuery before materialize.js-->
-    
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/libs/angularjs/angular.js"></script>
-    <script src="assets/libs/angularjs/angular-resource.js"></script>
-    <script src="assets/libs/angularjs/angular-route.js"></script>
 
-    <script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
-    <script src="app/app.module.js"></script>
-    <script src="app/app.routes.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/materialize.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/libs/angularjs/angular.js"></script>
+<script src="assets/libs/angularjs/angular-resource.js"></script>
+<script src="assets/libs/angularjs/angular-route.js"></script>
+
+<script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
 
 </body>
 
