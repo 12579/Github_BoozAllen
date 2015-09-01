@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC5046AC-E162-498F-B124-DCB609E73576}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BoozAllen</RootNamespace>
+    <AssemblyName>BoozAllen</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.module.js" />
+    <Content Include="app\app.routes.js" />
+    <Content Include="app\components\barChart\barChartController.js" />
+    <Content Include="app\components\barChart\barChartView.html" />
+    <Content Include="app\components\charts\chartController.js" />
+    <Content Include="app\components\charts\chartView.html" />
+    <Content Include="app\components\dashboard\dashboardController.js" />
+    <Content Include="app\components\dashboard\dashboardService.js" />
+    <Content Include="app\components\dashboard\dashboardViewNew.html" />
+    <Content Include="app\components\dashboard\dashboardView.html" />
+    <Content Include="app\components\home\homeController.js" />
+    <Content Include="app\components\home\homeService.js" />
+    <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\managerDashboard\managerDashboardController.js" />
+    <Content Include="app\components\managerDashboard\managerDashboardService.js" />
+    <Content Include="app\components\managerDashboard\managerDashboardView.html" />
+    <Content Include="app\components\pieChart\pieChartController.js" />
+    <Content Include="app\components\pieChart\pieChartView.html" />
+    <Content Include="app\login\LoginController.js" />
+    <Content Include="app\login\LoginService.js" />
+    <Content Include="app\login\LoginView_Old.html" />
+    <Content Include="app\login\LoginView.html" />
+    <Content Include="app\shared\footer\footerView.html" />
+    <Content Include="app\shared\header\headerView.html" />
+    <Content Include="assets\css\angular-chart.css" />
+    <Content Include="assets\css\angular.grid.css" />
+    <Content Include="assets\css\materialize.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\nv.d3.css" />
+    <Content Include="assets\css\theme-fresh.css" />
+    <Content Include="assets\img\back.jpg" />
+    <Content Include="assets\img\icon1.png" />
+    <Content Include="assets\img\icon2.png" />
+    <Content Include="assets\img\icon3.png" />
+    <Content Include="assets\img\icon4.png" />
+    <Content Include="assets\img\image1.png" />
+    <Content Include="assets\img\image2.png" />
+    <Content Include="assets\img\image3.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\materialize.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\angularjs-nvd3-directives.js" />
+    <Content Include="assets\js\d3.js" />
+    <Content Include="assets\js\nv.d3.js" />
+    <Content Include="assets\libs\angularjs\angular-chart.js" />
+    <Content Include="assets\libs\angularjs\angular-grid.js" />
+    <Content Include="assets\libs\angularjs\angular-resource.js" />
+    <Content Include="assets\libs\angularjs\angular-route.js" />
+    <Content Include="assets\libs\angularjs\angular.js" />
+    <Content Include="assets\libs\Chart.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="index.html" />
+    <Content Include="Index_old.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\shared\menu\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\angular-chart.css.map" />
+    <Content Include="sampleJson\casesJson.json" />
+    <Content Include="sampleJson\alertsJson.json" />
+    <Content Include="sampleJson\analystsCases.json" />
+    <Content Include="sampleJson\LoginDataJson.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sampleJson\gridJson.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63394</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60956/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

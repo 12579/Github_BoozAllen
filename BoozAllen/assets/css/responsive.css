@@ -1,0 +1,61 @@
+@media (max-width: 1500px) {
+    .animatedImages {
+        width: 50vw;
+    }
+    .logo {
+        width: 250px;
+    }
+    .mainWrapper > .row {
+        height: calc(100vh - 83px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainWrapper {
+        background-size: cover;
+    }
+    .animatedImages {
+        width: 57vw;
+    }
+    .col.l6.loginForm {
+        width: 40vw;
+    }
+    .mainWrapper {
+        padding-left: 40px;
+    }
+    .animImage.animImage2 {
+    bottom: 60px;
+    width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .col.l6.loginForm{
+        width: 96%;
+        display: block;
+        float: none;
+        margin: 0 auto;
+        top: 0;
+        position: relative;
+    }
+    .mainWrapper {
+    overflow-y: auto;
+    height: auto;
+    padding: 0 20px;
+}
+
+footer {
+    position: relative;
+    top: 30px;
+    text-align: center;
+}
+
+.animatedImages {
+    width: 100%;
+    position: relative;
+    top: 34vh;
+    bottom: auto;
+    float: none;
+    height: 100vw;
+}
+}

@@ -1,0 +1,20 @@
+﻿[
+  {
+    "analystName": "Jack White",
+    "openCases": 24,
+    "action": "View Cases / Assign Cases / Unassign Cases",   
+    "id": 1
+  },
+   {
+    "analystName": "Jill Black",
+    "openCases": 2,
+    "action": "View Cases / Assign Cases / Unassign Cases",   
+    "id": 2
+  },
+   {
+    "analystName": "Mike Haul",
+    "openCases": 123,
+    "action": "View Cases / Assign Cases / Unassign Cases",   
+    "id": 3
+  }]
+

@@ -1,0 +1,203 @@
+﻿[
+  {
+    "entityName": "Michael Phelps",
+    "accountNumber": 24432423,
+    "alertOpenDate": "31/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "31/08/2015",
+    "alertStatus": "New",
+    "id": 1234,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 30
+  },
+  {
+    "entityName": "Michael Phelps",
+    "accountNumber": 34233419,
+    "alertOpenDate": "29/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "29/08/2015",
+    "alertStatus": "Data Collection",
+    "id": 1342,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 30
+
+  },
+  {
+    "entityName": "Michael Phelps ",
+    "accountNumber": 2343437,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "Machine Analytics",
+    "id": 1237,
+    "alertType": "03- Foreign Beneficiary",
+      "entityRiskScore": 90
+  },
+  {
+    "entityName": "Natalie Coughlin and Co.",
+    "accountNumber": 3433425,
+    "alertOpenDate": "24/08/2015",
+    "accountType": "Private Trust",
+    "alertDueDate": "24/08/2015",
+    "alertStatus": "Awaiting Assignment",
+    "id": 1233,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore": 10
+  },
+  {
+    "entityName": "Aleksey Nemov and Co.",
+    "accountNumber": 2343344,
+    "alertOpenDate": "01/10/2015",
+    "accountType": "Private Trust",
+    "alertDueDate": "01/10/2015",
+    "alertStatus": "Human Analysis",
+    "id": 1267,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore":98
+  },
+  {
+    "entityName": "Alicia Coutts",
+    "accountNumber": 2342344,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "Quality Assurance",
+    "id": 1239,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore": 60
+  },
+  {
+    "entityName": "Missy Franklin",
+    "accountNumber": 16777,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "Closed",
+    "id": 1211,
+    "alertType": "03- Foreign Beneficiary",
+    "entityRiskScore": 70
+  },
+  {
+    "entityName": "Ryan Lochte",
+    "accountNumber": 2786567,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "New",
+    "id": 1232,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 80
+  },
+  {
+    "entityName": "Allison Schmitt",
+    "accountNumber": 2756862,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "Closed",
+    "id": 1231,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 50
+  },
+  {
+    "entityName": "Natalie Coughlin",
+    "accountNumber": 55466,
+    "alertOpenDate": "29/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "29/08/2015",
+    "alertStatus": "Data Collection",
+    "id": 1233,
+    "alertType": "03- Foreign Beneficiary",
+    "entityRiskScore": 20
+  },
+  {
+    "entityName": "Ian Thorpe",
+    "accountNumber": 56656,
+    "alertOpenDate": "01/10/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "01/10/2015",
+    "alertStatus": "Machine Analytics",
+    "id": 1230,
+    "alertType": "06- Historical Baseline",
+      "entityRiskScore": 34
+  },
+  {
+    "entityName": "Dara Torres",
+    "accountNumber": 6665,
+    "alertOpenDate": "01/10/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "01/10/2015",
+    "alertStatus": "Awaiting Assignment",
+    "id": 1333,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore": 30
+  },
+  {
+    "entityName": "Cindy Klassen",
+    "accountNumber": 77876756,
+    "alertOpenDate": "26/02/2015",
+    "accountType": "Business Checking",
+    "alertDueDate": "26/02/2015",
+    "alertStatus": "Data Collection",
+    "id": 2234,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore": 67
+  },
+  {
+    "entityName": "Nastia Liukin",
+    "accountNumber": 5657888,
+    "alertOpenDate": "24/08/2015",
+    "accountType": "Business Checking",
+    "alertDueDate": "24/08/2015",
+    "alertStatus": "Human Analysis",
+    "id": 1156,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 33
+
+  },
+  {
+    "entityName": "Marit BjÃ¸rgen and Co.",
+    "accountNumber": 11323,
+    "alertOpenDate": "28/02/2015",
+    "accountType": "Private Trust",
+    "alertDueDate": "28/02/2015",
+    "alertStatus": "Quality Assurance",
+    "id": 1654,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 89
+  },
+  {
+    "entityName": "Sun Yang",
+    "accountNumber": 1342344,
+    "alertOpenDate": "12/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "12/08/2015",
+    "alertStatus": "Awaiting Assignment",
+    "id": 1978,
+    "alertType": "06- Historical Baseline",
+    "entityRiskScore": 100
+  },
+  {
+    "entityName": "Kirsty Coventry",
+    "accountNumber": 224234,
+    "alertOpenDate": "24/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "24/08/2015",
+    "alertStatus": "Machine Analytics",
+    "id": 1250,
+    "alertType": "03- Foreign Beneficiary",
+    "entityRiskScore": 11
+  },
+  {
+    "entityName": "Libby Lenton-Trickett",
+    "accountNumber": 23,
+    "alertOpenDate": "24/08/2015",
+    "accountType": "Private Checking",
+    "alertDueDate": "24/08/2015",
+    "alertStatus": "Human Analysis",
+    "id": 1445,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 76
+  }
+]
+

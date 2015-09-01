@@ -1,0 +1,32 @@
+﻿<div class="col l6 loginForm">
+    <form name="loginForm" class="form-horizontal">
+        <p class="error user">The username and password you entered don't match.</p>
+        <p class="error email">The email you entered is invalid.</p>
+        <p class="error userEnter">Enter User Name.</p>
+        <p class="error passwordEnter">Enter Password.</p>
+        <p class="error LoginError">Error.</p>
+        
+        <div class="formGroup step1 userInput">
+            <label for="username"><img src="../../assets/img/icon1.png" class="responsive-img" alt=""></label>
+            <input type="text" id="username" ng-model="username" placeholder="Username" />
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="formGroup step1 userPass">
+            <label for="password"><img src="../../assets/img/icon2.png" class="responsive-img" alt=""></label>
+            <input type="password" id="password" placeholder="Password" ng-model="password" />
+            <i class="fa fa-lock"></i>
+        </div>
+        <div class="forgotText">
+            <p>To reset your password, enter your registered email address. Password will be sent to you email address within 24 hours.</p>
+            <div class="formGroup">
+                <label for="email"><img src="../../assets/img/icon4.png" class="responsive-img" alt=""></label>
+                <input type="text" id="email" placeholder="Email Address">
+            </div>
+        </div>
+        <a href="" id="forgotPassword">Forgot Password?</a>
+        <button id="loginSubmit" class="btn waves-effect waves-light waves-circle" type="submit" name="action" ng-click="login()" data-ng-disabled="loginForm.$invalid">
+            <img src="../../assets/img/icon3.png" class="responsive-img" alt="">
+            <i class="fa fa-key"></i>
+        </button>
+    </form>
+</div>
