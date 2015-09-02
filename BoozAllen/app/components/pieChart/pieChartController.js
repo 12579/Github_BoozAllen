@@ -1,25 +1,9 @@
 ﻿var app = angular.module("nvd3TestApp", ['nvd3ChartDirectives']).controller('ExampleCtrl',
-    function ExampleCtrl($scope) {
-        $scope.exampleData = [
-            {
-                key: "< 5 Days",
-                y: 5
-            },
-            {
-                key: "6-10 Days",
-                y: 2
-            },
-            {
-                key: "11-20 Days",
-                y: 9
-            },
-            {
-                key: "20 Days +",
-                y: 7
-            }
-        ];
+    function ExampleCtrl($scope,$http) {
+        $http.get("../../../sampleJson/pieChart.json").then(function (res) {
+            $scope.exampleData = res.data;
 
-       
+        });
         $scope.xFunction = function () {
             return function (d) {
                 return d.key;

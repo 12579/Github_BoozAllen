@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="myApp">
 
 <head>
-   <title>Risk Canvas</title>
+    <meta charset="utf-8">
+    <title>Risk Canvas</title>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
-    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />
-    <link href="assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet" />
+    
 </head>
 
 <body>
@@ -20,16 +20,11 @@
         <div class="logo"><img src="assets/img/logo.png" class="responsive-img" alt="">
         </div>
     </header>
-    <div class="row">
-        <div>
-            <div class="container" style="margin-top: 20px;">
-                <div data-ng-view="" id="ng-view" class="slide-animation"></div>
-            </div>
-        </div>
-    </div>
-    <footer>
+    <div data-ng-view="" id="ng-view" ></div>
+    
+    <!--<footer>
         <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
-    </footer>
+    </footer>-->
 </div>
 
 <!--Import jQuery before materialize.js-->
@@ -40,11 +35,12 @@
 <script src="assets/libs/angularjs/angular.js"></script>
 <script src="assets/libs/angularjs/angular-resource.js"></script>
 <script src="assets/libs/angularjs/angular-route.js"></script>
-
+    <script src="assets/js/angularjs-nvd3-directives.js"></script>
 <script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
 <script src="app/app.module.js"></script>
 <script src="app/app.routes.js"></script>
-
+    <link href="assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />
+    <link href="assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet" />
 </body>
 
 </html>

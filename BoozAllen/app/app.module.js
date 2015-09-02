@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('myApp', ['ngRoute', 'angularGrid']);//, 'toaster'//'ngRoute' ,'ngAnimate', 'ngCookies'
+var app = angular.module('myApp', ['ngRoute', 'angularGrid', 'nvd3ChartDirectives']);//, 'toaster'//'ngRoute' ,'ngAnimate', 'ngCookies'
 
 app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q, $window) {
     var userInfo;
@@ -231,13 +231,125 @@ app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
             $scope.gridOptions1.api.onNewRows();
         });
 
-    $scope.chartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        series: ['Foo', 'Baz', 'Bar'],
-        data: [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90],
-            [42, 17, 28, 73, 50, 12, 68]
-        ]
-    };
+
+$scope.kpiData = [
+        {
+            key: "quality kpi chart",
+            values: [
+                ["Decision Quality", 5],
+                ["Analytic Quality", 10],
+                ["Research Quality", 15],
+                ["Technical Quality", 25]
+            ]
+        }
+];
+
+    $scope.exampleData = [
+            {
+                key: "Stacked bar chart",
+                values: [
+                    ["New", 5],
+                    ["Data Collection", 10],
+                    ["Machine Analytics", 15],
+                    ["Awaiting Assignment", 25],
+                    ["Human Analysis", 45],
+                    ["Quality Assurance", 35],
+                    ["Closed", 55]
+
+                ]
+            }
+    ];
+
+    $scope.$on('tooltipShow.directive', function (event) {
+        console.log('scope.tooltipShow', event);
+    });
+
+    $scope.$on('tooltipHide.directive', function (event) {
+        console.log('scope.tooltipHide', event);
+    });
+    $scope.toolTipContentFunction = function () {
+        return function (key, x, y, e, graph) {
+            return '<b>' + x + '</b>';
+        }
+    }
+
+
+    $scope.exampleData1 = [
+            {
+                key: "< 5 Days",
+                y: 5
+            },
+            {
+                key: "6-10 Days",
+                y: 2
+            },
+            {
+                key: "11-20 Days",
+                y: 9
+            },
+            {
+                key: "20 Days +",
+                y: 7
+            }
+    ];
+
+
+    $scope.xFunction = function () {
+        return function (d) {
+            return d.key;
+        };
+    }
+    $scope.yFunction = function () {
+        return function (d) {
+            return d.y;
+        };
+    }
+
+    $scope.descriptionFunction = function () {
+        return function (d) {
+            return d.key;
+        }
+    }
+
+    $scope.toolTipContentFunction1 = function () {
+        return function (key, x, y, e, graph) {
+            return '<b>' + key + '</b>';
+        }
+    }
+    var colorArray = ['#CC0000', '#FF8666', '#FF3333', '#FF6666', '#FFE6E6'];
+    $scope.colorFunction = function () {
+        return function (d, i) {
+            return colorArray[i];
+        };
+    }
+
+    
+
+});
+
+app.directive('extendedPieChart', function () {
+    "use strict";
+    return {
+        restrict: 'E',
+        require: '^nvd3PieChart',
+        link: function ($scope, $element, $attributes, nvd3PieChart) {
+            $scope.d3Call = function (data, chart) {
+                //                       return d3.select('#' + $scope.id + ' svg')
+                //                               .datum(data)
+                //                               .transition()
+                //                               .duration(500)
+                //                               .call(chart);
+                var svg = d3.select('#' + $scope.id + ' svg')
+                    .datum(data);
+                var path = svg.selectAll('path');
+                path.data(data)
+                .transition()
+                .ease("linear")
+                .duration(500)
+                return svg.transition()
+                    .duration(500)
+                    .call(chart);
+            }
+        }
+    }
 });

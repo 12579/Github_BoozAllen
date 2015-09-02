@@ -1,0 +1,15 @@
+﻿[
+  {
+    "key": "Stacked bar chart",
+    "values": [
+      [ "New", 5 ],
+      [ "Data Collection", 10 ],
+      [ "Machine Analytics", 15 ],
+      [ "Awaiting Assignment", 25 ],
+      [ "Human Analysis", 45 ],
+      [ "Quality Assurance", 35 ],
+      [ "Closed", 55 ]
+
+    ]
+  }
+]

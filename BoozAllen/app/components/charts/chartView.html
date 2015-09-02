@@ -1,58 +1,68 @@
 ﻿<!DOCTYPE html>
-<html ng-app="example">
+<html>
 <head>
-    <title>angular-charts demo!</title>
-    <style type="text/css">
-        body {
-            font-family: "helvetica";
-            color: #333;
-        }
+    <title>Bar Chart</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <script src="../../../assets/libs/angularjs/angular.js"></script>
+    <script src="../../../assets/js/d3.js"></script>
+    <script src="../../../assets/js/nv.d3.js"></script>
+    <script src="../../../assets/js/angularjs-nvd3-directives.js"></script>
+    <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
-        [ac-chart] {
-            float: left;
-            width: 48%;
-            height: 400px;
-            margin: 0 1%;
-        }
-    </style>
+ 
+    <script src="chartController.js"></script>
 </head>
-<body ng-controller="MainController">
+<body ng-app='nvd3TestApp'>
+<div ng-controller="ExampleCtrl1">
+    <table>
+        <tr>
+            <td style="height: 350px; width: 400px;">
+                <nvd3-discrete-bar-chart data="exampleData"
+                                         id="exampleId"
+                                         tooltipcontent="toolTipContentFunction()"
+                                         Width="400"
+                                         height="350"
+                                         showlabels="true"
+                                         showValues="true"
+                                         showYAxis="true"
+                                         tooltips="true">
+                    <svg></svg>
+                </nvd3-discrete-bar-chart>
+            </td>
+        </tr>
+    </table>
 
-    <select ng-model="chartType">
-        <option value="pie">pie</option>
-        <option value="bar">bar</option>
-        <option value="line">line</option>
-        <option value="point">point</option>
-        <option value="area">area</option>
-    </select>
-
-    <span ng-show="chartType==='pie'">
-        <label for="innerRadius">Radius:</label>
-        <input ng-model="config1.innerRadius" type="number" id="innerRadius" />
-    </span>
-
-    <br />
-
-    <div id="chart1" ac-chart="chartType" ac-data="data1" ac-config="config1"></div>
-
-    <div id="chart2" ac-chart="chartType" ac-data="data2" ac-config="config2"></div>
-
-    <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/d3/d3.min.js"></script>
-    <script src="../dist/angular-charts.js"></script>
-    <script src="main.controller.js"></script>
-
-    <!-- styling which overrides defaults must be loaded after "angular-charts.js" -->
-    <style>
-        .ac-tooltip {
-            color: black;
-            border: 2px solid rgba(200,200,0,0.8);
-            background-color: rgba(200,200,0,0.5);
-        }
-
-        #chart1 .ac-legend-box {
-            border-radius: 10px;
-        }
-    </style>
+        <table>
+            <tr>
+                <td style="height: 350px;width:400px;">
+                    <nvd3-pie-chart data="exampleData1"
+                                    id="exampleId1"
+                                    x="xFunction()"
+                                    y="yFunction()"
+                                    Width="400"
+                                    height="350"
+                                    showlabels="true"
+                                    showValues="true"
+                                    labeltype="value"
+                                    pieLabelsOutside="false"
+                                    tooltips="true"
+                                    tooltipcontent="toolTipContentFunction1()">
+                        <svg></svg>
+                    </nvd3-pie-chart>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

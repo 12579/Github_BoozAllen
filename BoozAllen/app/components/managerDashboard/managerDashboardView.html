@@ -1,5 +1,6 @@
 ﻿<html>
 <head>
+    <meta charset="utf-8">
     <title></title>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>-->
     <script src="../../../assets/libs/angularjs/angular.js"></script>
@@ -7,71 +8,116 @@
 
     <!-- you don't need ignore=notused in your code, this is just here to trick the cache -->
     <script src="../../../assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
-    <script src="../../../assets/libs/Chart.js"></script>
-    <script src="../../../assets/libs/angularjs/angular-chart.js"></script>
+   
 
-    <link href="../../../assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />
-    <link href="../../../assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet" />
-    <link href="../../../assets/css/angular-chart.css" rel="stylesheet" />
+    <link href="../../../assets/css/angular.grid.css?ignore=notused5" rel="stylesheet"/>
+    <link href="../../../assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet"/>
+
+    <script src="../../../assets/js/d3.js"></script>
+    <script src="../../../assets/js/nv.d3.js"></script>
+    <script src="../../../assets/js/angularjs-nvd3-directives.js"></script>
+    <link href="../../../assets/css/nv.d3.css" rel="stylesheet"/>
+
     <script src="managerDashboardController.js"></script>
-
 </head>
 <body ng-app="managerDashboard" ng-controller="managerDashboardController">
 
-
+    <b>MANAGER DASHBORD</b>
 <table style="border: none; width: 95%">
+    
     <tr>
-        <td style="border: solid; width: 100%" colspan="5">
-            <div style="background-color: black; color: white; height: 150px; text-align: center; padding-top: 70px">
-                <!--<canvas id="Canvas1" class="chart chart-bar" chart-data="data" chart-labels="labels"></canvas>-->
-                <h2>Production Output past 30 days Bar chart</h2>
-            </div>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="width: 100%" colspan="5">
-            <br/>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="border: solid; width: 34%">
-            <div style="background-color: black; color: white; height: 150px; width: 100%; text-align: center; padding-top: 70px">
-                <!--<canvas id="Canvas2" class="chart chart-bar" chart-data="data" chart-labels="labels"></canvas>-->
-                <h2>Reviews by Status</h2>
-            </div>
+        <td style="width: 32%"></td>
+        <td style="width: 1%"></td>
+        <td style="width: 34%; height: 250px" align="center">
+            <h4>Production Output past 30 days Bar chart</h4>
+            <nvd3-discrete-bar-chart data="productionData"
+                                     id="productionDataId"
+                                     tooltipcontent="toolTipContentFunction()"
+                                     Width="300"
+                                     height="250"
+                                     showlabels="true"
+                                     showValues="true"
+                                     showYAxis="true"
+                                     tooltips="true">
+                <svg></svg>
+            </nvd3-discrete-bar-chart>
         </td>
         <td style="width: 1%"></td>
-        <td style="border: solid; width: 34%">
-            <div style="background-color: black; color: white; height: 150px; text-align: center; padding-top: 70px">
-                <!--<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels"></canvas>-->
-                <h2>Aging Pie Chart</h2>
-            </div>
+        <td style="width: 32%"></td>
+    </tr>
+
+   <tr>
+        <td style="border: solid; width: 32%" align="center">
+           <h4>Reviews by Status</h4>
+            <nvd3-discrete-bar-chart data="statusData"
+                                     id="statusData"
+                                     tooltipcontent="toolTipContentFunction()"
+                                     Width="300"
+                                     height="250"
+                                     showlabels="true"
+                                     showValues="true"
+                                     showYAxis="true"
+                                     tooltips="true">
+                <svg></svg>
+            </nvd3-discrete-bar-chart>
         </td>
         <td style="width: 1%"></td>
-        <td style="border: solid; width: 30%">
-            <div style="background-color: black; color: white; height: 150px; text-align: center; padding-top: 70px">
-                <!--<canvas id="Canvas3" class="chart chart-bar" chart-data="data" chart-labels="labels"></canvas>-->
-                <h2>Quality Score by Quality KPI</h2>
-            </div>
+        <td style="border: solid; width: 34%" align="center">
+            <h4>Aging Pie Chart</h4>
+            <nvd3-pie-chart data="ageingData"
+                            id="ageingData"
+                            x="xFunction()"
+                            y="yFunction()"
+                            Width="300"
+                            height="250"
+                            showlabels="true"
+                            showValues="true"
+                            labeltype="value"
+                            pieLabelsOutside="false"
+                            tooltips="true"
+                            tooltipcontent="toolTipContentFunction1()">
+
+                <svg></svg>
+            </nvd3-pie-chart>
+        </td>
+        <td style="width: 1%"></td>
+        <td style="border: solid; width: 32%" align="center">
+            <h4>Quality Score by Quality KPI</h4>
+            <nvd3-discrete-bar-chart data="kpiData"
+                                     id="kpiData"
+                                     tooltipcontent="toolTipContentFunction()"
+                                     Width="300"
+                                     height="250"
+                                     showlabels="true"
+                                     showValues="true"
+                                     showYAxis="true"
+                                     tooltips="true">
+                <svg></svg>
+            </nvd3-discrete-bar-chart>
         </td>
     </tr>
-    <tr>
-        <td style="width: 100%" colspan="5">
-            <br/>
-        </td>
-    </tr>
-    <tr>
-        <td style="border: solid; width: 34%">
-            <div style="background-color: black; color: white; height: 150px; width: 100%; text-align: center; padding-top: 70px">
-                <!--<canvas id="Canvas4" class="chart chart-pie" chart-data="data" chart-labels="labels"></canvas>-->
-                <h2>Assigned Cases per Person Pie Chart</h2>
-            </div>
+   <tr>
+        <td style="border: solid; width: 32%" align="center">
+            <h4>Assigned Cases per Person Pie Chart</h4>
+            <nvd3-pie-chart data="assignedData"
+                            id="assignedData"
+                            x="xFunction()"
+                            y="yFunction()"
+                            Width="300"
+                            height="250"
+                            showlabels="true"
+                            showValues="true"
+                            labeltype="value"
+                            pieLabelsOutside="false"
+                            tooltips="true"
+                            tooltipcontent="toolTipContentFunction1()">
+
+                <svg></svg>
+            </nvd3-pie-chart>
         </td>
         <td style="width: 1%"></td>
         <td style="border: solid; width: 65%" colspan="3" valign="top">
-            <div ag-grid="gridOptions" class="ag-fresh" style="height: 150px;"></div>
+            <div ag-grid="gridOptions" class="ag-fresh" style="height: 320px;"></div>
         </td>
     </tr>
 </table>

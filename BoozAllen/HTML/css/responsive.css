@@ -1,0 +1,14 @@
+@media (max-width: 767px) {
+    body{ font-size: 14px;}
+}
+@media (max-width: 500px) {
+    .loginPage header { margin-top:5vh;  margin-bottom:5vh; }
+    .loginBox { padding: 5vh 5vh 3vh 5vh;}
+    .loginPage footer { font-size: 0.9em;}
+}
+@media (max-height: 600px) {
+    .loginPage header { margin-top:5vh;  margin-bottom:5vh; }
+    .loginBox { padding: 5vh 5vh 3vh 5vh;}
+    .loginPage footer { font-size: 0.9em;}
+    .loginPage { min-height: 460px;}
+}

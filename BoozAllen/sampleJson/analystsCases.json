@@ -7,14 +7,20 @@
   },
    {
     "analystName": "Jill Black",
-    "openCases": 2,
+    "openCases": 200,
     "action": "View Cases / Assign Cases / Unassign Cases",   
     "id": 2
   },
    {
     "analystName": "Mike Haul",
-    "openCases": 123,
+    "openCases": 100,
     "action": "View Cases / Assign Cases / Unassign Cases",   
     "id": 3
+  },
+   {
+    "analystName": "Margi White",
+    "openCases": 123,
+    "action": "View Cases / Assign Cases / Unassign Cases",   
+    "id": 4
   }]
 

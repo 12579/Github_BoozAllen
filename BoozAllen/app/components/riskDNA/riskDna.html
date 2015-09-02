@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../../../assets/libs/angularjs/angular.js"></script>
+    <script src="riskDna.js"></script>
+</head>
+<body ng-app="dnaApp">
+    <div ng-controller="dnaCtrl">
+        <input type="text" name="riskDnaScore" ng-model="dnaData.riskDNA.riskDnaScore" />
+        <div ng-repeat="dna in dnaData.riskDNA.sequences">
+            <div ng-repeat="gene in dna.genes">
+                <div ng-style="{'border-left': '2px solid green','height': '50px'}">&nbsp;{{gene.geneScore}}</div>
+                <div ng-style="{'border-left' : '2px solid yellow','height': '50px'}">&nbsp;</div>
+                <div ng-style="{'border-left': '2px solid red','height': '50px'}">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

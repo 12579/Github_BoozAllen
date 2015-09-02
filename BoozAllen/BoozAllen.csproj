@@ -76,8 +76,12 @@
     <Content Include="app\components\managerDashboard\managerDashboardController.js" />
     <Content Include="app\components\managerDashboard\managerDashboardService.js" />
     <Content Include="app\components\managerDashboard\managerDashboardView.html" />
+    <Content Include="app\components\Menu\menuItems.html" />
+    <Content Include="app\components\Menu\menuItemsController.js" />
     <Content Include="app\components\pieChart\pieChartController.js" />
     <Content Include="app\components\pieChart\pieChartView.html" />
+    <Content Include="app\components\riskDNA\riskDna.html" />
+    <Content Include="app\components\riskDNA\riskDna.js" />
     <Content Include="app\login\LoginController.js" />
     <Content Include="app\login\LoginService.js" />
     <Content Include="app\login\LoginView_Old.html" />
@@ -123,7 +127,6 @@
   <ItemGroup>
     <Folder Include="app\shared\menu\" />
     <Folder Include="App_Data\" />
-    <Folder Include="assets\img\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +135,10 @@
     <Content Include="sampleJson\alertsJson.json" />
     <Content Include="sampleJson\analystsCases.json" />
     <Content Include="sampleJson\LoginDataJson.json" />
+    <Content Include="sampleJson\menuJson.json" />
+    <Content Include="sampleJson\pieChart.json" />
+    <Content Include="sampleJson\barChart.json" />
+    <Content Include="sampleJson\Risk.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

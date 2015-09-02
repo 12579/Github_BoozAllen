@@ -1,20 +1,9 @@
 ﻿var app = angular.module("nvd3TestApp", ['nvd3ChartDirectives']).controller('ExampleCtrl1',
-    function ExampleCtrl1($scope) {
-        $scope.exampleData = [
-            {
-                key: "Stacked bar chart",
-                values: [
-                    ["New", 5],
-                    ["Data Collection", 10],
-                    ["Machine Analytics", 15],
-                    ["Awaiting Assignment", 25],
-                    ["Human Analysis", 45],
-                    ["Quality Assurance", 35],
-                    ["Closed", 55]
-                    
-                ]
-            }
-        ];
+    function ExampleCtrl1($scope,$http) {
+        $http.get("../../../sampleJson/barChart.json").then(function (res) {
+            $scope.exampleData = res.data;
+           
+        });
 
         $scope.$on('tooltipShow.directive', function (event) {
             console.log('scope.tooltipShow', event);
