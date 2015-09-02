@@ -1,6 +1,6 @@
 ﻿(function ()
 {
-    var myApp = angular.module('myApp', ['oci.treeview', 'ngRoute']);
+    var myApp = angular.module('myApp', ['ngRoute']);
 
     myApp.config(['$routeProvider',
 function ($routeProvider) {
@@ -59,11 +59,7 @@ function ($routeProvider) {
         });
     });
 
-})();
-
-!function () {
-    var a = angular.module("oci.treeview", []);
-    a.controller("oci.treeview.ctrl", ["$scope",
+    myApp.controller("oci.treeview.ctrl", ["$scope",
         function (a) {
             function b(c) {
                 "collapsed" !== a.defaultNodeState && (a.defaultNodeState = "expanded"),
@@ -72,7 +68,7 @@ function ($routeProvider) {
 
             b(a.tree),
                 a.context = a.context || {},
-                a.selectNode = function(b) {
+                a.selectNode = function (b) {
                     function c() {
                         "expanded" === b.state ? b.state = "collapsed" : "collapsed" === b.state && (b.state = "expanded");
 
@@ -85,7 +81,8 @@ function ($routeProvider) {
 
                 }, "false" !== a.selectTranscluded && (a.clickOnTranscluded = !0);
         }]),
-    a.directive("oci.treeview", ["$compile", function (a) {
+
+    myApp.directive("oci.treeview", ["$compile", function (a) {
         return {
             restrict: "E", transclude: !0, scope: { tree: "=", context: "=?", onSelectNode: "=?", defaultNodeState: "@", selectTranscluded: "@" }, controller: "oci.treeview.ctrl",
             template: '<div class="tree"> <span ng-click="clickOnTranscluded && selectNode(tree)" ng-transclude ></span>   '
@@ -97,4 +94,6 @@ function ($routeProvider) {
             compile: function (b, c, d) { var e, f = b.contents().remove(); return function (b, c) { e || (e = a(f, d)), e(b, function (a) { c.append(a) }) } }
         }
     }])
-}();
+
+})();
+

@@ -1,14 +1,21 @@
 ﻿<meta charset="utf-8">
 <script src="../../../assets/js/d3.js"></script>
 <script src="../../../assets/js/nv.d3.js"></script>
-
+<script src="../../../assets/libs/angularjs/angular.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
 <div class="row">
-    <div style="margin-top: 20px"><b>FIU ANALYST- DASHBOARD</b></div>
-        <table>
+    <div style="margin-top: 20px"><b>FIU ANALYST- DASHBOARD</b>
+    </div>
+    <div>
+        <oci.treeview tree="treeData" on-select-node="getMoreData" defaultNodeState="expanded" select-transcluded="false">
+            <span ng-click="selectNode(tree)" ng-class="tree.class">{{tree.label}}</span>
+        </oci.treeview>
+    </div>
+    <div>
+        <table style="margin-top: -350px; float: right;width: 75%">
             <tr>
-                <td >
+                <td>
 
                     <nvd3-discrete-bar-chart data="exampleData"
                                              id="exampleId1"
@@ -24,7 +31,7 @@
 
                 </td>
 
-                <td >
+                <td>
 
                     <nvd3-pie-chart data="exampleData1"
                                     id="exampleId2"
@@ -43,7 +50,7 @@
                     </nvd3-pie-chart>
 
                 </td>
-                <td >
+                <td>
 
                     <nvd3-discrete-bar-chart data="kpiData"
                                              id="exampleId3"
@@ -60,13 +67,62 @@
                 </td>
             </tr>
         </table>
-   
-    <div><input placeholder="Case quickSearch" type="text" ng-model="gridOptions.quickFilterText"/>
     </div>
-    <div ag-grid="gridOptions" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px;"></div>
-    <div><input placeholder="Alert quickSearch" type="text" ng-model="gridOptions1.quickFilterText"/>
+    <div style="float: right; width:75%"><input placeholder="Case quickSearch" type="text" ng-model="gridOptions.quickFilterText"/>
+    </div>
+    <div ag-grid="gridOptions" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right; width:75%"></div>
+    <div style="float: right; width:75%"><input placeholder="Alert quickSearch" type="text" ng-model="gridOptions1.quickFilterText"/>
     </div>
 
-    <div ag-grid="gridOptions1" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px;"></div>
+    <div ag-grid="gridOptions1" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right;width:75%"></div>
 
 </div>
+<style type="text/css">
+    div.tree {
+        /* prevent user selection */
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+        display: inline;
+    }
+
+        div.tree ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border: none;
+            overflow: hidden;
+        }
+
+        div.tree li {
+            position: relative;
+            padding: 0 0 0 20px;
+            line-height: 20px;
+        }
+
+            div.tree li .expanded {
+                padding: 0px 11px;
+                background: url('../../../assets/img/expanded.jpg') no-repeat;
+            }
+
+            div.tree li .collapsed {
+                padding: 1px 10px;
+                background: url('../../../assets/img/contracted.png') no-repeat;
+            }
+
+            div.tree li .leaf {
+                padding: 0px 10px;
+                background: url("http://raw.github.com/objectcomputing/oci.treeview/master/dist/img/file.png") no-repeat;
+            }
+
+            div.tree li i, div.tree li span {
+                cursor: pointer;
+            }
+
+    .selectedNode {
+        color: red;
+    }
+</style>
