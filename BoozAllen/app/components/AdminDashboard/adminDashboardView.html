@@ -65,7 +65,7 @@
             <div class="container-fluid">
 
                 <div class="col-md-10">
-                    <h2>FIU ANALYST - DASHBOARD</h2>
+                    <h2>ADMIN - DASHBOARD</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio ipsum, porttitor eget commodo eget, ornare eget purus. Donec ultricies auctor odio, tristique faucibus justo semper ut.</p>
                 </div>
                 <div class="col-md-2">
@@ -74,10 +74,10 @@
 
                 <div class="col-md-4">
                     <div class="cards">
-                        <h2>Items by Status</h2>
+                        <h2>Reviews by Status</h2>
 
-                        <nvd3-discrete-bar-chart data="exampleData"
-                                                 id="exampleId1"
+                        <nvd3-discrete-bar-chart data="statusData"
+                                                 id="statusData"
                                                  tooltipcontent="toolTipContentFunction()"
                                                  Width="350"
                                                  height="300"
@@ -90,12 +90,13 @@
 
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="cards">
-                        <h2>Aging Pie Chart</h2>
+                        <h4>Aging Pie Chart</h4>
 
-                        <nvd3-pie-chart data="exampleData1"
-                                        id="exampleId2"
+                        <nvd3-pie-chart data="ageingData"
+                                        id="ageingData"
                                         x="xFunction()"
                                         y="yFunction()"
                                         Width="350"
@@ -116,7 +117,7 @@
                         <h2>Quality Score by Quality KPI</h2>
 
                         <nvd3-discrete-bar-chart data="kpiData"
-                                                 id="exampleId3"
+                                                 id="kpiData"
                                                  tooltipcontent="toolTipContentFunction()"
                                                  Width="350"
                                                  height="300"
@@ -128,28 +129,10 @@
                         </nvd3-discrete-bar-chart>
                     </div>
                 </div>
-                <div class="col-md-12">&nbsp;</div>
-                <div class="col-md-12">
-                    <tabs>
-                        <pane title="Open Cases ({{totalRows}})">
-                            <div style="float: right; width: 100%">
-                                <input placeholder="Case quickSearch" type="text" ng-model="gridOptions.quickFilterText" style="margin-top: 5px;"/>
-                            </div>
-                            <div ag-grid="gridOptions" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right; width:100%"></div>
-                        </pane>
-                        <pane title="Open Alerts ({{totalRowsCount}})">
-                            <div style="float: right; width:100%">
-                                <input placeholder="Alert quickSearch" type="text" ng-model="gridOptions1.quickFilterText" style="margin-top: 5px;"/>
-                            </div>
 
-                            <div ag-grid="gridOptions1" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right;width:100%"></div>
-                        </pane>
-                    </tabs>
-                </div>
+
             </div>
-
         </div>
-
     </section>
     <!--<footer>
         <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>

@@ -1,11 +1,32 @@
 ﻿[
   {
     "ID": "1",
-    "UserName": "Somendra",
-    "Password": "123",
+    "UserName": "Admin",
+    "Password": "admin",
     "age": 23,
     "country": "United States",
     "dob": "04/04/1990",
-    "Email": "somendra.tiwari@compunnel.in"
+    "Email": "Admin@compunnel.in",
+    "Role": "Admin"
+  },
+  {
+    "ID": "2",
+    "UserName": "analyst",
+    "Password": "analyst",
+    "age": 23,
+    "country": "United States",
+    "dob": "04/04/1990",
+    "Email": "Analyst@compunnel.in",
+    "Role": "Analyst"
+  },
+  {
+    "ID": "3",
+    "UserName": "Manager",
+    "Password": "manager",
+    "age": 23,
+    "country": "United States",
+    "dob": "04/04/1990",
+    "Email": "Manager@compunnel.in",
+    "Role": "Manager"
   }
 ]

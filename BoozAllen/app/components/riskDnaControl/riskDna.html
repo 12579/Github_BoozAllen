@@ -1,0 +1,21 @@
+﻿<div>
+    <div style="float: left; width: 150px; background-color:black;" ng-repeat="dna in dnaData.riskDNA.sequences">
+        <div style="float: left; background-color: white; height: 50px;">
+            &nbsp;
+        </div>
+        <div style="float: left;" ng-repeat="gene in dna.genes">
+            <div ng-style="{'border-left': '4px solid gray','height': '50px', 'float':'left'}" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>
+            <div ng-style="{'border-left' : '4px solid yellow','height': '50px', 'float':'left'}" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>
+            <div ng-style="{'border-left': '4px solid red','height': '50px', 'float':'left'}" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>
+        </div>
+
+    </div>
+    <div style="float: left; width: 150px; background-color: black;">
+        <div style="float: left; background-color: white; height: 50px;">
+            &nbsp;
+        </div>
+        <div ng-style="{'height': '50px', 'float':'center'}" ng-show="dnaData.riskDNA.riskDnaScore>=0 && dnaData.riskDNA.riskDnaScore<33.33"><span style="color: gray; font-size: 32px;margin-left: 60px; margin-bottom: 10px;">{{dnaData.riskDNA.riskDnaScore| number:0}}</span></div>
+        <div ng-style="{'height': '50px', 'float':'center'}" ng-show="dnaData.riskDNA.riskDnaScore>33.33 && dnaData.riskDNA.riskDnaScore<66.66"><span style="color: yellow; font-size: 32px;margin-left: 60px; margin-bottom: 10px;">{{dnaData.riskDNA.riskDnaScore| number:0}}</span></div>
+        <div ng-style="{'height': '50px', 'float':'center'}" ng-show="dnaData.riskDNA.riskDnaScore>66.66 && dnaData.riskDNA.riskDnaScore<=100"><span style="color: red; font-size: 32px; margin-left: 60px; margin-bottom: 10px;">{{dnaData.riskDNA.riskDnaScore| number:0}}</span></div>
+    </div>
+</div>

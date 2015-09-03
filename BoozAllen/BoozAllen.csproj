@@ -62,6 +62,9 @@
   <ItemGroup>
     <Content Include="app\app.module.js" />
     <Content Include="app\app.routes.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardController.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardService.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardView.html" />
     <Content Include="app\components\barChart\barChartController.js" />
     <Content Include="app\components\barChart\barChartView.html" />
     <Content Include="app\components\charts\chartController.js" />
@@ -80,8 +83,12 @@
     <Content Include="app\components\Menu\menuItemsController.js" />
     <Content Include="app\components\pieChart\pieChartController.js" />
     <Content Include="app\components\pieChart\pieChartView.html" />
+    <Content Include="app\components\riskDnaControl\riskDna.html" />
+    <Content Include="app\components\riskDnaControl\riskDnaControl.js" />
     <Content Include="app\components\riskDNA\riskDna.html" />
     <Content Include="app\components\riskDNA\riskDna.js" />
+    <Content Include="app\components\riskDNA\riskDNA1.html" />
+    <Content Include="app\components\riskDNA\riskDNA1.js" />
     <Content Include="app\login\LoginController.js" />
     <Content Include="app\login\LoginService.js" />
     <Content Include="app\login\LoginView_Old.html" />
@@ -103,7 +110,11 @@
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\img\back.jpg" />
+    <Content Include="assets\img\chart-1.png" />
+    <Content Include="assets\img\chart-2.png" />
+    <Content Include="assets\img\chart-3.png" />
     <Content Include="assets\img\contracted.png" />
+    <Content Include="assets\img\db-logo.png" />
     <Content Include="assets\img\expanded.jpg" />
     <Content Include="assets\img\icon1.png" />
     <Content Include="assets\img\icon2.png" />
@@ -114,6 +125,7 @@
     <Content Include="assets\img\image3.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\video-bg.jpg" />
+    <Content Include="assets\libs\angularjs\angular-ui-router.js" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery.min.js" />
@@ -195,6 +207,7 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\BoozAllen.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -87,6 +87,9 @@ body {
     font-size: 16px;
 }
 
+
+/* Login Page CSS (Start)*/
+
 .videoBg {
     width: 100vw;
     height: 100vh;
@@ -107,7 +110,7 @@ body {
     -ms-transform: translateX(-50%) translateY(-50%) rotate(180deg);
     -o-transform: translateX(-50%) translateY(-50%) rotate(180deg);
     transform: translateX(-50%) translateY(-50%) rotate(180deg);
-    background: url(/images/video-bg.jpg) no-repeat;
+    background: url(../images/video-bg.jpg) no-repeat;
     background-size: cover;
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -145,11 +148,11 @@ body {
     -ms-transform: translate3d(0, 25vh, 0);
     -o-transform: translate3d(0, 25vh, 0);
     transform: translate3d(0, 25vh, 0);
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -moz-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -ms-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -o-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
 }
 
 .start .loginPage header {
@@ -190,16 +193,11 @@ body {
     padding: 7vh 7vh 5vh 7vh;
     color: #fff;
     transform: scale3d(0, 0, 0);
-    -webkit-transition: -webkit-transform 0.35s ease-in-out;
-    -moz-transition: -moz-transform 0.35s ease-in-out;
-    -ms-transition: -ms-transform 0.35s ease-in-out;
-    -o-transition: -o-transform 0.35s ease-in-out;
-    transition: transform 0.35s ease-in-out;
-    -webkit-transition-delay: 0.3s;
-    -moz-transition-delay: 0.3s;
-    -ms-transition-delay: 0.3s;
-    -o-transition-delay: 0.3s;
-    transition-delay: 0.3s;
+    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -moz-transition: -moz-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -ms-transition: -ms-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -o-transition: -o-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    transition: transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
 }
 
 .start .loginBox {
@@ -246,11 +244,12 @@ body {
     background: #f9db22;
     color: #000;
     font-size: 1.125em;
-    line-height: 3.15em;
+    line-height: 2.7em;
     padding: 0;
     width: 100%;
     border-radius: 1.8125em;
     outline: none;
+    padding: 8px 0 0;
 }
 
 .loginBox .inputFields.forgotLink {
@@ -270,3 +269,206 @@ body {
     bottom: 0;
     position: absolute;
 }
+
+
+/* Login Page CSS (Ends)*/
+
+
+/* Dashboard Css */
+
+.dashboard {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.dashboard header {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.dashboard .toggleBox {
+    width: 120px;
+}
+
+.dashboard a.navToggle {
+    width: 100%;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f9db22;
+    color: #000;
+}
+
+.dashboard a.navToggle i {
+    font-size: 2em;
+    line-height: 2.58em;
+}
+
+.dashboard .logoBox {
+    line-height: 82px;
+    padding: 0 15px;
+}
+
+.dashboard .searchBox {
+    padding: 0 15px;
+    text-align: center;
+    flex: 1
+}
+
+.searchInput {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.4em;
+    width: 50%;
+    border-radius: 1.2em;
+    padding: 0 1.2em;
+    position: relative;
+}
+
+.searchInput input {
+    border: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    width: 100%;
+    background: none;
+}
+
+.searchInput i {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    line-height: 2.4em;
+}
+
+.dashboard .userBox {
+    padding: 0 15px;
+}
+
+.dashboard .userBox p {
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard .userBox p i {
+    font-style: normal;
+    font-size: 1.1875em;
+    line-height: 3.29em;
+    background-color: #e4e4e4;
+    color: #282828;
+    width: 3.29em;
+    height: 3.29em;
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+    border: 1px solid rgba(164, 164, 164, 0.46);
+    padding-top: 3px;
+    margin-left: 15px;
+}
+
+.mainBoard {
+    width: 100%;
+    min-height: calc(100vh - 82px);
+    display: -webkit-flex;
+    display: flex;
+}
+
+.boardNav {
+    width: 120px;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
+}
+
+.boardNav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 120px;
+    position: absolute;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    z-index: 9;
+}
+
+.boardNav > ul.open {
+    width: 350px;
+}
+
+.boardNav > ul > li {
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    list-style: none;
+    color: #7a808a;
+    border-bottom: 1px solid #181a1c;
+}
+
+.boardNav > ul > li > a {
+    color: #7a808a;
+    text-decoration: none;
+    display: block;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    transition: all 0.3s ease-in-out
+}
+
+.boardNav > ul > li > a.selectedNode,
+.boardNav > ul > li > a:hover {
+    color: #000;
+    background: #f9db22;
+}
+
+.boardNav > ul > li > a > i {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.boardNav > ul > li > a > i.fa-caret-down {
+    width: auto;
+    padding: 0 15px;
+}
+
+.boardNav > ul > li > a > span {
+    display: inline-block;
+    font-size: 1.1875em;
+}
+
+.boardArea {
+    float: left;
+    flex: 1;
+    background-color: #f9f9f9;
+    color: #4c5e70;
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+.boardArea h2 { font-size:1.125em}
+.boardArea p{ color: #a5adb6; font-size: 0.875em;}
+
+
+.boardArea .cards {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 15px;
+}
+.dashboard footer {
+    position:absolute;
+    width: 100%;
+    bottom:0;
+    padding: 0 0 0 150px;
+}
+/* Dashboard Css */

@@ -1,5 +1,16 @@
 ﻿[
   {
+    "entityName": "Karl Meyer",
+    "accountNumber": 24432423,
+    "caseOpenDate": "31/08/2015",
+    "accountType": "Private Checking",
+    "caseDueDate": "31/08/2015",
+    "caseStatus": "New",
+    "id": 1234,
+    "alertType": "02-Structuring",
+    "entityRiskScore": 76
+  },
+  {
     "entityName": "Michael Phelps",
     "accountNumber": 24432423,
     "caseOpenDate": "31/08/2015",
@@ -8,7 +19,7 @@
     "caseStatus": "New",
     "id": 1234,
     "alertType": "02-Structuring",
-    "entityRiskScore": 30
+    "entityRiskScore": 39
   },
   {
     "entityName": "Michael Phelps",
@@ -31,7 +42,7 @@
     "caseStatus": "Machine Analytics",
     "id": 1237,
     "alertType": "03- Foreign Beneficiary",
-      "entityRiskScore": 90
+    "entityRiskScore": 90
   },
   {
     "entityName": "Natalie Coughlin and Co.",
@@ -53,7 +64,7 @@
     "caseStatus": "Human Analysis",
     "id": 1267,
     "alertType": "06- Historical Baseline",
-    "entityRiskScore":98
+    "entityRiskScore": 98
   },
   {
     "entityName": "Alicia Coutts",
@@ -119,7 +130,7 @@
     "caseStatus": "Machine Analytics",
     "id": 1230,
     "alertType": "06- Historical Baseline",
-      "entityRiskScore": 34
+    "entityRiskScore": 34
   },
   {
     "entityName": "Dara Torres",

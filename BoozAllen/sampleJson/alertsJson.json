@@ -1,27 +1,4 @@
-﻿[
-  {
-    "entityName": "Michael Phelps",
-    "accountNumber": 24432423,
-    "alertOpenDate": "31/08/2015",
-    "accountType": "Private Checking",
-    "alertDueDate": "31/08/2015",
-    "alertStatus": "New",
-    "id": 1234,
-    "alertType": "02-Structuring",
-    "entityRiskScore": 30
-  },
-  {
-    "entityName": "Michael Phelps",
-    "accountNumber": 34233419,
-    "alertOpenDate": "29/08/2015",
-    "accountType": "Private Checking",
-    "alertDueDate": "29/08/2015",
-    "alertStatus": "Data Collection",
-    "id": 1342,
-    "alertType": "02-Structuring",
-    "entityRiskScore": 30
-
-  },
+﻿[  
   {
     "entityName": "Michael Phelps ",
     "accountNumber": 2343437,

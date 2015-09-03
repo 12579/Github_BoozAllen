@@ -1,8 +1,29 @@
-﻿
+﻿//'ui.router'
 var app = angular.module('myApp', ['ngRoute', 'angularGrid', 'nvd3ChartDirectives']);//, 'toaster'//'ngRoute' ,'ngAnimate', 'ngCookies'
 
 app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q, $window) {
     var userInfo;
+
+    var getUserData = function (obj, userName, password) {
+        var returResult = false;
+
+        jQuery.each(obj, function (key, info) {
+            if (info.UserName.toLowerCase() == userName.toLowerCase() && info.Password == password) {
+                userInfo =
+                {
+                    accessToken: 'token', //result.data.access_token, Not defined
+                    UserName: info.UserName,
+                    ID: info.ID,
+                    Email: info.Email,
+                    Role:info.Role,
+                    ErrorMessage: ""
+                };
+                returResult = true;
+            };
+        });
+        return returResult;
+    }
+
 
     function login(userName, password) {
         var deferred = $q.defer();
@@ -10,15 +31,9 @@ app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q,
         var res = $http.get("../../../sampleJson/LoginDataJson.json");
         res.then(
             function (result) {
-                if (result.data[0].UserName == userName && result.data[0].Password == password) {
-                    userInfo =
-                    {
-                        accessToken: 'token', //result.data.access_token, Not defined
-                        UserName: result.data[0].UserName,
-                        ID: result.data[0].ID,
-                        Email: result.data[0].Email,
-                        ErrorMessage: ""
-                    };
+                var resultStatus = getUserData(result.data, userName, password);
+
+                if (resultStatus) {
                     $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
                     deferred.resolve(userInfo);
                 }
@@ -29,6 +44,27 @@ app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q,
                     };
                     deferred.resolve(userInfo);
                 }
+
+
+                //if (result.data[0].UserName == userName && result.data[0].Password == password) {
+                //    userInfo =
+                //    {
+                //        accessToken: 'token', //result.data.access_token, Not defined
+                //        UserName: result.data[0].UserName,
+                //        ID: result.data[0].ID,
+                //        Email: result.data[0].Email,
+                //        ErrorMessage: ""
+                //    };
+                //    $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
+                //    deferred.resolve(userInfo);
+                //}
+                //else {
+                //    userInfo =
+                //    {
+                //        ErrorMessage: "Invalid Credential"
+                //    };
+                //    deferred.resolve(userInfo);
+                //}
             },
             function (error) {
                 deferred.reject(error);
@@ -36,8 +72,7 @@ app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q,
         return deferred.promise;
     }
 
-    function logout()
-    {
+    function logout() {
         var deferred = $q.defer();
         var serviceBase = 'http://localhost:50138/api/logout';
         $http({
@@ -77,9 +112,25 @@ app.factory("authenticationSvc", ["$http", "$q", "$window", function ($http, $q,
 }]);
 
 app.controller("LoginController", ["$scope", "$location", "$window", "$rootScope", "authenticationSvc", function ($scope, $location, $window, $rootScope, authenticationSvc) {
+    
+   
+    //$("#mainDiv").addClass('mainWrapper');
+    //$(".animatedImages").show();
 
-    $("#mainDiv").addClass('mainWrapper');
-    $(".animatedImages").show();
+    jQuery("#spnUsername").hide();
+    jQuery("#spnPassword").hide();
+    jQuery("#spnError").hide();
+
+
+    $scope.OnClickUserName = function () {
+        jQuery("#spnUsername").hide();
+    };
+
+    $scope.OnClickPassword = function () {
+        jQuery("#spnUsername").hide();
+    };
+
+    
 
     $scope.userInfo = null;
 
@@ -87,29 +138,34 @@ app.controller("LoginController", ["$scope", "$location", "$window", "$rootScope
         var userName = $scope.username;
         var password = $scope.password;
 
+        //spnUsername
+        //spnPassword
+        //spnError
+
+       jQuery("#spnUsername").hide();
+       jQuery("#spnPassword").hide();
+       jQuery("#spnError").hide();
+
         if (userName == undefined) {
-            $(".userEnter").show();
-            $(".passwordEnter").hide();
-            $(".user").hide();
-            $(".LoginError").hide();
+           jQuery("#spnUsername").show();
+           jQuery("#spnPassword").hide();
+           jQuery("#spnError").hide();
         }
-        else if (userName == '') {
-            $(".userEnter").show();
-            $(".passwordEnter").hide();
-            $(".user").hide();
-            $(".LoginError").hide();
+        else if (userName == '')
+        {
+           jQuery("#spnUsername").show();
+           jQuery("#spnPassword").hide();
+           jQuery("#spnError").hide();
         }
-        if (password == undefined) {
-            $(".passwordEnter").show();
-            $(".userEnter").hide();
-            $(".user").hide();
-            $(".LoginError").hide();
+        else if (password == undefined) {
+           jQuery("#spnPassword").show();
+           jQuery("#spnUsername").hide();
+           jQuery("#spnError").hide();
         }
         else if (password == '') {
-            $(".passwordEnter").show();
-            $(".userEnter").hide();
-            $(".user").hide();
-            $(".LoginError").hide();
+           jQuery("#spnPassword").show();
+           jQuery("#spnUsername").hide();
+           jQuery("#spnError").hide();
         }
         else {
             authenticationSvc.login(userName, password)
@@ -117,23 +173,26 @@ app.controller("LoginController", ["$scope", "$location", "$window", "$rootScope
                 function (result) {
                     if (result.ErrorMessage != '')
                     {
-                        $scope.ErrorMessage = "Invalid credentials old";
-                        $(".userEnter").hide();
-                        $(".passwordEnter").hide();
-                        $(".LoginError").hide();
-                        $(".user").show();
+                        $scope.ErrorMessage = "Invalid credentials";
+                       jQuery("#spnPassword").hide();
+                       jQuery("#spnUsername").hide();
+                       jQuery("#spnError").show();
                         $rootScope.userInfo = result;
                         $scope.userInfo = $rootScope.userInfo;
                     }
                     else {
-                        $("#mainDiv").removeClass();
+                       jQuery("#mainDiv").removeClass();
                         $scope.userInfo = result;
+                        if (result.Role == "Admin")
+                            $location.path("/adminDashboard");
+                        else if (result.Role == "Manager")
+                            $location.path("/managerDashboard");
+                        else
                         $location.path("/dashboard");
                     }
                 },
                 function (error) {
                     $(".LoginError").show();
-
                 });
         }
     };
@@ -152,7 +211,6 @@ app.controller("HomeController", ["$scope", "$location", "authenticationSvc", "a
             });
     };
 }]);
-
 app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
     //, suppressMenu: 'true'
 
@@ -163,7 +221,7 @@ app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
         { headerName: "ID", field: "id", width: 70, sort: 'asc' },
         { headerName: "Entity Name", field: "entityName", width: 150, suppressMenu: 'true' },
         {
-            headerName: "Entity Risk Score", field: "entityRiskScore", width: 70, filter: 'number',
+            headerName: "Entity Risk Score", field: "entityRiskScore", width: 100, filter: 'number',
             // cellClassRules: {
             //    'rag-green': 'x < 33.334',
             //    'rag-amber': 'x >= 33.334 && x < 66.667',
@@ -186,19 +244,19 @@ app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
         { headerName: "Case Status", field: "caseStatus", width: 150 },
         { headerName: "Case Open Date", field: "caseOpenDate", width: 100, suppressMenu: 'true' },
         { headerName: "Case Due Date", field: "caseDueDate", width: 100 },
-        { headerName: "Estimated Progress", field: "", width: 70, suppressMenu: 'true' }
+        { headerName: "Estimated Progress", field: "", width: 100, suppressMenu: 'true' }
     ];
 
     var alertcolumnDefs = [
         { headerName: "ID", field: "id", width: 70, sort: 'asc' },
         { headerName: "Entity Name", field: "entityName", width: 150, suppressMenu: 'true' },
-        { headerName: "Entity Risk Score", field: "entityRiskScore", width: 70, filter: 'number' },
+        { headerName: "Entity Risk Score", field: "entityRiskScore", width: 100, filter: 'number' },
         { headerName: "Account Type", field: "accountType", width: 150 },
         { headerName: "Account Number", field: "accountNumber", width: 150 },
         { headerName: "Alert Status", field: "alertStatus", width: 150 },
         { headerName: "Alert Open Date", field: "alertOpenDate", width: 100, suppressMenu: 'true' },
         { headerName: "Alert Due Date", field: "alertDueDate", width: 100 },
-        { headerName: "Alert Type", field: "alertType", width: 70 }
+        { headerName: "Alert Type", field: "alertType", width: 100 }
     ];
 
     $scope.gridOptions = {
@@ -215,34 +273,35 @@ app.controller("DashboardCtrl", function ($scope, $http, $rootScope) {
         enableSorting: true
     };
 
-
-
     //$scope.pieChart = "../pieChart/pieChartView.html";
+    $http.get("../../../sampleJson/alertsJson.json")
+        .then(function (res1) {
+            $scope.gridOptions1.rowData = res1.data;
+            $scope.gridOptions1.api.onNewRows();
+            $scope.totalRowsCount = res1.data.length;
+        });
 
     $http.get("../../../sampleJson/casesJson.json")
         .then(function (res) {
             $scope.gridOptions.rowData = res.data;
             $scope.gridOptions.api.onNewRows();
-        });
-
-    $http.get("../../../sampleJson/alertsJson.json")
-        .then(function (res) {
-            $scope.gridOptions1.rowData = res.data;
-            $scope.gridOptions1.api.onNewRows();
+            $scope.totalRows = res.data.length;
         });
 
 
-$scope.kpiData = [
-        {
-            key: "quality kpi chart",
-            values: [
-                ["Decision Quality", 5],
-                ["Analytic Quality", 10],
-                ["Research Quality", 15],
-                ["Technical Quality", 25]
-            ]
-        }
-];
+
+
+    $scope.kpiData = [
+            {
+                key: "quality kpi chart",
+                values: [
+                    ["Decision Quality", 5],
+                    ["Analytic Quality", 10],
+                    ["Research Quality", 15],
+                    ["Technical Quality", 25]
+                ]
+            }
+    ];
 
     $scope.exampleData = [
             {
@@ -267,9 +326,11 @@ $scope.kpiData = [
     $scope.$on('tooltipHide.directive', function (event) {
         console.log('scope.tooltipHide', event);
     });
+  
+
     $scope.toolTipContentFunction = function () {
         return function (key, x, y, e, graph) {
-            return '<b>' + x + '</b>';
+            return '<h5>' + x + '</h5>' 
         }
     }
 
@@ -342,8 +403,230 @@ $scope.kpiData = [
         node.class = 'selectedNode';
         context.selectedNode = node;
     });
-    
 
+
+});
+
+app.directive('extendedPieChart', function () {
+    "use strict";
+    return {
+        restrict: 'E',
+        require: '^nvd3PieChart',
+        link: function ($scope, $element, $attributes, nvd3PieChart) {
+            $scope.d3Call = function (data, chart) {
+                //                       return d3.select('#' + $scope.id + ' svg')
+                //                               .datum(data)
+                //                               .transition()
+                //                               .duration(500)
+                //                               .call(chart);
+                var svg = d3.select('#' + $scope.id + ' svg')
+                    .datum(data);
+                var path = svg.selectAll('path');
+                path.data(data)
+                .transition()
+                .ease("linear")
+                .duration(500)
+                return svg.transition()
+                    .duration(500)
+                    .call(chart);
+            }
+        }
+    }
+});
+app.directive('tabs', function() {
+        return {
+            restrict: 'E',
+            transclude: true,
+            scope: {},
+            controller: [
+                "$scope", function($scope) {
+                    var panes = $scope.panes = [];
+
+                    $scope.select = function(pane) {
+                        angular.forEach(panes, function(pane) {
+                            pane.selected = false;
+                        });
+                        pane.selected = true;
+                    }
+
+                    this.addPane = function(pane) {
+                        if (panes.length == 0) $scope.select(pane);
+                        panes.push(pane);
+                    }
+                }
+            ],
+            template:
+                '<div class="tabbable">' +
+                    '<ul class="nav nav-tabs">' +
+                    '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">' +
+                    '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +
+                    '</li>' +
+                    '</ul>' +
+                    '<div class="tab-content" ng-transclude></div>' +
+                    '</div>',
+            replace: true
+        };
+    }).
+    directive('pane', function() {
+        return {
+            require: '^tabs',
+            restrict: 'E',
+            transclude: true,
+            scope: { title: '@' },
+            link: function(scope, element, attrs, tabsCtrl) {
+                tabsCtrl.addPane(scope);
+            },
+            template:
+                '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
+                    '</div>',
+            replace: true
+        };
+    });
+
+app.controller("ManagerDashboardCtrl", function ($scope, $http, $rootScope) {
+    var columnDefs = [
+        {
+            headerName: "ID", field: "id", hide: true
+        },
+        {
+            headerName: "Analysts Name", field: "analystName", sort: "asc", width: 200,
+            cellRenderer: function (params) {
+                return '<a href=# title="Click to change KPI Data">' + params.value + '</a>';
+            }
+        },
+        { headerName: "Open Cases", field: "openCases", filter: 'number', width: 120 },
+        { headerName: "Action", field: "action", suppressMenu: 'true', suppressSorting: 'true', suppressSizeToFit: 'true', width: 400 }
+    ];
+
+    $scope.gridOptions = {
+        columnDefs: columnDefs,
+        rowData: null,
+        enableFilter: true,
+        enableSorting: true,
+        headerRowHeight: 50
+    };
+
+    //$scope.pieChart = "../pieChart/pieChartView.html";
+
+    $http.get("../../../sampleJson/analystsCases.json")
+        .then(function (res) {
+            $scope.gridOptions.rowData = res.data;
+            $scope.gridOptions.api.onNewRows();
+        });
+
+
+    $scope.productionData = [
+            {
+                key: "production chart",
+                values: [
+                    ["New", 45],
+                    ["In Progress", 30],
+                    ["Closed", 50]
+
+                ]
+            }
+    ];
+
+    $scope.statusData = [
+            {
+                key: "Status chart",
+                values: [
+                    ["New", 45],
+                    ["Data Collection", 10],
+                    ["Transaction Review", 15],
+                    ["Awaiting Assignment", 25],
+                    ["Human Analysis", 45],
+                    ["Due Diligence Review", 35],
+                    ["Quality Assurance", 30],
+                    ["Closed", 50]
+
+                ]
+            }
+    ];
+
+    $scope.kpiData = [
+        {
+            key: "quality kpi chart",
+            values: [
+                ["Decision Quality", 5],
+                ["Analytic Quality", 10],
+                ["Research Quality", 15],
+                ["Technical Quality", 25]
+            ]
+        }
+    ];
+
+    $scope.toolTipContentFunction = function () {
+        return function (key, x, y, e, graph) {
+            return '<b>' + x + '</b>';
+        }
+    }
+
+    $scope.ageingData = [
+            {
+                key: "Expiring Today",
+                y: 5
+            },
+            {
+                key: "Expiring This Week",
+                y: 12
+            },
+            {
+                key: "Expiring This Month",
+                y: 9
+            },
+            {
+                key: "Expiring in 3 Months",
+                y: 7
+            },
+            {
+                key: "Expiring in 6 Months",
+                y: 2
+            }
+    ];
+
+    $scope.assignedData = [
+            {
+                key: "Jack White",
+                y: 24
+            },
+            {
+                key: "Jill Black",
+                y: 200
+            },
+            {
+                key: "Mike Haul",
+                y: 100
+            },
+            {
+                key: "Margi White",
+                y: 123
+            }
+    ];
+
+
+    $scope.xFunction = function () {
+        return function (d) {
+            return d.key;
+        };
+    }
+    $scope.yFunction = function () {
+        return function (d) {
+            return d.y;
+        };
+    }
+
+    $scope.descriptionFunction = function () {
+        return function (d) {
+            return d.key;
+        }
+    }
+
+    $scope.toolTipContentFunction1 = function () {
+        return function (key, x, y, e, graph) {
+            return '<b>' + key + '</b>';
+        }
+    }
 });
 
 app.directive('extendedPieChart', function () {

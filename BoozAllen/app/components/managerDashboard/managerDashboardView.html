@@ -1,127 +1,190 @@
-﻿<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>-->
-    <script src="../../../assets/libs/angularjs/angular.js"></script>
-    <script src="../../../assets/libs/angularjs/angular-resource.js"></script>
+﻿<meta charset="utf-8">
+<script src="../../../assets/js/d3.js"></script>
+<script src="../../../assets/js/nv.d3.js"></script>
+<script src="../../../assets/libs/angularjs/angular.js"></script>
+<link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
+<div id="dashboard" class="dashboard">
+    <header>
 
-    <!-- you don't need ignore=notused in your code, this is just here to trick the cache -->
-    <script src="../../../assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
-   
+        <div class="toggleBox">
+            <a href="#0" class="navToggle"><i class="fa fa-2x fa-bars"></i></a>
+        </div>
+        <div class="logoBox">
 
-    <link href="../../../assets/css/angular.grid.css?ignore=notused5" rel="stylesheet"/>
-    <link href="../../../assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet"/>
-
-    <script src="../../../assets/js/d3.js"></script>
-    <script src="../../../assets/js/nv.d3.js"></script>
-    <script src="../../../assets/js/angularjs-nvd3-directives.js"></script>
-    <link href="../../../assets/css/nv.d3.css" rel="stylesheet"/>
-
-    <script src="managerDashboardController.js"></script>
-</head>
-<body ng-app="managerDashboard" ng-controller="managerDashboardController">
-
-    <b>MANAGER DASHBORD</b>
-<table style="border: none; width: 95%">
-    
-    <tr>
-        <td style="width: 32%"></td>
-        <td style="width: 1%"></td>
-        <td style="width: 34%; height: 250px" align="center">
-            <h4>Production Output past 30 days Bar chart</h4>
-            <nvd3-discrete-bar-chart data="productionData"
-                                     id="productionDataId"
-                                     tooltipcontent="toolTipContentFunction()"
-                                     Width="300"
-                                     height="250"
-                                     showlabels="true"
-                                     showValues="true"
-                                     showYAxis="true"
-                                     tooltips="true">
-                <svg></svg>
-            </nvd3-discrete-bar-chart>
-        </td>
-        <td style="width: 1%"></td>
-        <td style="width: 32%"></td>
-    </tr>
-
-   <tr>
-        <td style="border: solid; width: 32%" align="center">
-           <h4>Reviews by Status</h4>
-            <nvd3-discrete-bar-chart data="statusData"
-                                     id="statusData"
-                                     tooltipcontent="toolTipContentFunction()"
-                                     Width="300"
-                                     height="250"
-                                     showlabels="true"
-                                     showValues="true"
-                                     showYAxis="true"
-                                     tooltips="true">
-                <svg></svg>
-            </nvd3-discrete-bar-chart>
-        </td>
-        <td style="width: 1%"></td>
-        <td style="border: solid; width: 34%" align="center">
-            <h4>Aging Pie Chart</h4>
-            <nvd3-pie-chart data="ageingData"
-                            id="ageingData"
-                            x="xFunction()"
-                            y="yFunction()"
-                            Width="300"
-                            height="250"
-                            showlabels="true"
-                            showValues="true"
-                            labeltype="value"
-                            pieLabelsOutside="false"
-                            tooltips="true"
-                            tooltipcontent="toolTipContentFunction1()">
-
-                <svg></svg>
-            </nvd3-pie-chart>
-        </td>
-        <td style="width: 1%"></td>
-        <td style="border: solid; width: 32%" align="center">
-            <h4>Quality Score by Quality KPI</h4>
-            <nvd3-discrete-bar-chart data="kpiData"
-                                     id="kpiData"
-                                     tooltipcontent="toolTipContentFunction()"
-                                     Width="300"
-                                     height="250"
-                                     showlabels="true"
-                                     showValues="true"
-                                     showYAxis="true"
-                                     tooltips="true">
-                <svg></svg>
-            </nvd3-discrete-bar-chart>
-        </td>
-    </tr>
-   <tr>
-        <td style="border: solid; width: 32%" align="center">
-            <h4>Assigned Cases per Person Pie Chart</h4>
-            <nvd3-pie-chart data="assignedData"
-                            id="assignedData"
-                            x="xFunction()"
-                            y="yFunction()"
-                            Width="300"
-                            height="250"
-                            showlabels="true"
-                            showValues="true"
-                            labeltype="value"
-                            pieLabelsOutside="false"
-                            tooltips="true"
-                            tooltipcontent="toolTipContentFunction1()">
-
-                <svg></svg>
-            </nvd3-pie-chart>
-        </td>
-        <td style="width: 1%"></td>
-        <td style="border: solid; width: 65%" colspan="3" valign="top">
-            <div ag-grid="gridOptions" class="ag-fresh" style="height: 320px;"></div>
-        </td>
-    </tr>
-</table>
+            <img src="../../../assets/img/db-logo.png" alt="rC" />
+        </div>
+        <div class="searchBox">
+            <div class="searchInput">
+                <input type="text" placeholder="Search Cases, Name, Data etc" />
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="userBox">
+            <p><span>Eldar Burnashev</span><i>EB</i></p>
+        </div>
 
 
-</body>
-</html>
+
+    </header>
+    <section class="mainBoard">
+        <nav class="boardNav">
+            <ul>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-tachometer"></i><span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-bell"></i><span>Alerts</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-television"></i><span>Cases</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-tasks"></i><span>Tasks</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-file-text-o"></i><span>Reporting</span><i class="fa fa-caret-down"></i></a>
+                    <!--
+                                            <ul>
+                                                <li>
+                                                    <a href="#0">Quality KPIs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#0">Portfolio Analytics</a>
+                                                </li>
+                                            </ul>
+                    -->
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-2x fa-user"></i><span>Admin</span></a>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="boardArea">
+
+            <div class="container-fluid">
+
+                <div class="col-md-10">
+                    <h2>MANAGER - DASHBOARD</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio ipsum, porttitor eget commodo eget, ornare eget purus. Donec ultricies auctor odio, tristique faucibus justo semper ut.</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Timeline:</p>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-6">
+                        <div class="cards">
+                            <h2>Production Output past 30 days Bar chart</h2>
+
+                            <nvd3-discrete-bar-chart data="productionData"
+                                                     id="productionDataId"
+                                                     tooltipcontent="toolTipContentFunction()"
+                                                     Width="250"
+                                                     height="200"
+                                                     showlabels="true"
+                                                     showValues="true"
+                                                     showYAxis="true"
+                                                     tooltips="true">
+                                <svg></svg>
+                            </nvd3-discrete-bar-chart>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">&nbsp;</div>
+                </div>
+                <div class="col-md-12">&nbsp;</div>
+                <div class="col-md-4">
+                    <div class="cards">
+                        <h2>Reviews by Status</h2>
+
+                        <nvd3-discrete-bar-chart data="statusData"
+                                                 id="statusData"
+                                                 tooltipcontent="toolTipContentFunction()"
+                                                 Width="350"
+                                                 height="300"
+                                                 showlabels="true"
+                                                 showValues="true"
+                                                 showYAxis="true"
+                                                 tooltips="true">
+                            <svg></svg>
+                        </nvd3-discrete-bar-chart>
+
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="cards">
+                        <h4>Aging Pie Chart</h4>
+
+                        <nvd3-pie-chart data="ageingData"
+                                        id="ageingData"
+                                        x="xFunction()"
+                                        y="yFunction()"
+                                        Width="350"
+                                        height="300"
+                                        showlabels="true"
+                                        showValues="true"
+                                        labeltype="value"
+                                        pieLabelsOutside="false"
+                                        tooltips="true"
+                                        tooltipcontent="toolTipContentFunction1()">
+
+                            <svg></svg>
+                        </nvd3-pie-chart>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cards">
+                        <h2>Quality Score by Quality KPI</h2>
+
+                        <nvd3-discrete-bar-chart data="kpiData"
+                                                 id="kpiData"
+                                                 tooltipcontent="toolTipContentFunction()"
+                                                 Width="350"
+                                                 height="300"
+                                                 showlabels="true"
+                                                 showValues="true"
+                                                 showYAxis="true"
+                                                 tooltips="true">
+                            <svg></svg>
+                        </nvd3-discrete-bar-chart>
+                    </div>
+                </div>
+                <div class="col-md-12">&nbsp;</div>
+                <div class="col-md-4">
+                    <div class="cards">
+                        <h2>Assigned Cases per Person Pie Chart</h2>
+
+                        <nvd3-pie-chart data="assignedData"
+                                        id="assignedData"
+                                        x="xFunction()"
+                                        y="yFunction()"
+                                        Width="350"
+                                        height="300"
+                                        showlabels="true"
+                                        showValues="true"
+                                        labeltype="value"
+                                        pieLabelsOutside="false"
+                                        tooltips="true"
+                                        tooltipcontent="toolTipContentFunction1()">
+
+                            <svg></svg>
+                        </nvd3-pie-chart>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div ag-grid="gridOptions" class="ag-fresh" style="height: 350px;"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--<footer>
+        <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
+    </footer>-->
+
+
+
+</div>

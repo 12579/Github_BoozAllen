@@ -1,40 +1,55 @@
-﻿<div class="videoBg">
-    <video autoplay loop poster="assets/img/video-bg.jpg" src="assets/media/3275175.mp4" preload="none" id="videoBox">
+﻿<div id="loginPage">
+    <div class="videoBg">
+        <video autoplay loop poster="assets/img/video-bg.jpg" src="assets/media/3275175.mp4" preload="none" id="videoBox">
 
-        <source src="assets/media/3275175.mp4" type="video/mp4">
+            <source src="assets/media/3275175.mp4" type="video/mp4">
 
 
-    </video>
-</div>
-<div class="loginPage">
-    <header>
-        <div class="logo">
-            <img src="assets/img/logo.png" alt="">
-            <h1>riskCanvas</h1>
-            <h2>Efficiency and Uniformity in KYC/EDD</h2>
-        </div>
-    </header>
-    <form name="loginForm" class="form-horizontal">
-        <section class="container-fluid">
-            <div class="loginBox">
-                <div class="inputFields">
-                    <i class="fa fa-user"></i>
-                    <input type="text" class="form-control" placeholder="USERNAME" ng-model="username" required>
-                </div>
-                <div class="inputFields">
-                    <i class="fa fa-unlock-alt"></i>
-                    <input type="text" class="form-control" placeholder="PASSWORD" ng-model="password" required>
-                </div>
-                <div class="inputFields button">
-                    <button class="btn" type="submit" name="action" ng-click="login()" >Sign In</button>
-                </div>
-                <div class="inputFields forgotLink">
-                    <a href="#0">Forgot Password?</a>
-                </div>
+        </video>
+    </div>
+    <div class="loginPage">
+        <header>
+            <div class="logo">
+                <img src="../../assets/img/logo.png" />
+                <!--<img src="assets/img/logo.png" alt="">-->
+                <h1>riskCanvas</h1>
+                <h2>Efficiency and Uniformity in KYC/EDD</h2>
             </div>
-        </section>
-    </form>
-    <footer>
-        <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
-    </footer>
+        </header>
+        <form name="loginForm" class="form-horizontal">
+            <section class="container-fluid">
+                <div class="loginBox">
+                    <div class="inputFields">
+                        <i class="fa fa-user"></i>
+                        <input type="text" class="form-control" placeholder="USERNAME" ng-model="username" ng-change="OnClickUserName()">
+                    </div>
+                    <div class="">
+                        <span style="color: red" id="spnUsername">Enter User Name</span>
+                    </div>
+                    <div class="inputFields">
+                        <i class="fa fa-unlock-alt"></i>
+                        <input type="password" class="form-control" placeholder="PASSWORD" ng-model="password" ng-change="OnClickPassword()">
+                    </div>
+                    <div class="">
+                        <span style="color: red" id="spnPassword">Enter Password</span>
+                    </div>
+                    <div class="inputFields button">
+                        <button class="btn" type="submit" name="action" ng-click="login()">Sign In</button>
+                    </div>
+                    <div class="">
+                        <span style="color: red" id="spnError">Invalid credentials </span>
+                    </div>
+
+                    <div class="inputFields forgotLink">
+                        <a href="#0">Forgot Password?</a>
+                    </div>
+                </div>
+            </section>
+        </form>
+        <footer>
+            <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    
 </div>
