@@ -1,4 +1,6 @@
-﻿<div id="loginPage">
+﻿<meta charset="utf-8">
+<script src="../../assets/js/script.js"></script>
+<div id="loginPage">
     <div class="videoBg">
         <video autoplay loop poster="assets/img/video-bg.jpg" src="assets/media/3275175.mp4" preload="none" id="videoBox">
 
@@ -19,6 +21,9 @@
         <form name="loginForm" class="form-horizontal">
             <section class="container-fluid">
                 <div class="loginBox">
+                    <div class="loginError">
+                        <span class="error" id="spnError">Username or password you entered don't match.</span>
+                    </div>
                     <div class="inputFields">
                         <i class="fa fa-user"></i>
                         <input type="text" class="form-control" placeholder="USERNAME" ng-model="username" ng-change="OnClickUserName()">
@@ -36,9 +41,6 @@
                     <div class="inputFields button">
                         <button class="btn" type="submit" name="action" ng-click="login()">Sign In</button>
                     </div>
-                    <div class="">
-                        <span style="color: red" id="spnError">Invalid credentials </span>
-                    </div>
 
                     <div class="inputFields forgotLink">
                         <a href="#0">Forgot Password?</a>
@@ -51,5 +53,5 @@
         </footer>
     </div>
 
-    
+
 </div>

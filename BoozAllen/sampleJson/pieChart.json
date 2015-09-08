@@ -1,18 +1,38 @@
 ﻿[
-  {
-    "key": "< 5 Days",
-    "y": 5
-  },
-  {
-    "key": "6-10 Days",
-    "y": 2
-  },
-  {
-    "key": "11-20 Days",
-    "y": 9
-  },
-  {
-    "key": "20 Days +",
-    "y": 7
-  }
+   {
+      "key":"< 5 Days",
+      "y":{
+         "Alerts":2,
+         "Cases":3,
+         "Periodic Reviews":1,
+         "Onboarding Reviews":1
+      }
+   },
+   {
+      "key":"6-10 Days",
+      "y":{
+         "Alerts":1,
+         "Cases":1,
+         "Periodic Reviews":1,
+         "Onboarding Reviews":1
+      }
+   },
+   {
+      "key":"11-20 Days",
+      "y":{
+         "Alerts":1,
+         "Cases":2,
+         "Periodic Reviews":3,
+         "Onboarding Reviews":4
+      }
+   },
+   {
+      "key":"20 Days +",
+      "y":{
+         "Alerts":2,
+         "Cases":3,
+         "Periodic Reviews":4,
+         "Onboarding Reviews":1
+      }
+   }
 ]

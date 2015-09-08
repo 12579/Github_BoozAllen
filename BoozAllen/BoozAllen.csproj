@@ -69,13 +69,20 @@
     <Content Include="app\components\barChart\barChartView.html" />
     <Content Include="app\components\charts\chartController.js" />
     <Content Include="app\components\charts\chartView.html" />
+    <Content Include="app\components\ddDashboard\ddDashboardController.js" />
+    <Content Include="app\components\ddDashboard\ddDashboardService.js" />
+    <Content Include="app\components\ddDashboard\ddDashboardView.html" />
     <Content Include="app\components\dashboard\dashboardController.js" />
     <Content Include="app\components\dashboard\dashboardService.js" />
     <Content Include="app\components\dashboard\dashboardViewNew.html" />
-    <Content Include="app\components\dashboard\dashboardView.html" />
+    <Content Include="app\components\Details.html" />
+    <Content Include="app\components\home.html" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeService.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\vpDashboard\vpDashboardController.js" />
+    <Content Include="app\components\vpDashboard\vpDashboardService.js" />
+    <Content Include="app\components\vpDashboard\vpDashboardView.html" />
     <Content Include="app\components\managerDashboard\managerDashboardController.js" />
     <Content Include="app\components\managerDashboard\managerDashboardService.js" />
     <Content Include="app\components\managerDashboard\managerDashboardView.html" />
@@ -83,18 +90,24 @@
     <Content Include="app\components\Menu\menuItemsController.js" />
     <Content Include="app\components\pieChart\pieChartController.js" />
     <Content Include="app\components\pieChart\pieChartView.html" />
+    <Content Include="app\components\QuardentChart\Quardent.html" />
+    <Content Include="app\components\QuardentChart\Quardent.js" />
     <Content Include="app\components\riskDnaControl\riskDna.html" />
     <Content Include="app\components\riskDnaControl\riskDnaControl.js" />
     <Content Include="app\components\riskDNA\riskDna.html" />
     <Content Include="app\components\riskDNA\riskDna.js" />
     <Content Include="app\components\riskDNA\riskDNA1.html" />
     <Content Include="app\components\riskDNA\riskDNA1.js" />
+    <Content Include="app\components\SidebySideChart\SideChartController.js" />
+    <Content Include="app\components\SidebySideChart\SideChartView.html" />
     <Content Include="app\login\LoginController.js" />
     <Content Include="app\login\LoginService.js" />
-    <Content Include="app\login\LoginView_Old.html" />
     <Content Include="app\login\LoginView.html" />
     <Content Include="app\shared\footer\footerView.html" />
+    <Content Include="app\shared\header\headerController.js" />
     <Content Include="app\shared\header\headerView.html" />
+    <Content Include="app\shared\menu\menuController.js" />
+    <Content Include="app\shared\menu\menuView.html" />
     <Content Include="assets\css\angular-chart.css" />
     <Content Include="assets\css\angular.grid.css" />
     <Content Include="assets\css\bootstrap-theme.css" />
@@ -109,6 +122,7 @@
     <Content Include="assets\css\theme-fresh.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\arrow.png" />
     <Content Include="assets\img\back.jpg" />
     <Content Include="assets\img\chart-1.png" />
     <Content Include="assets\img\chart-2.png" />
@@ -124,6 +138,12 @@
     <Content Include="assets\img\image2.png" />
     <Content Include="assets\img\image3.png" />
     <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\riskDnaImg.png" />
+    <Content Include="assets\img\status1.png" />
+    <Content Include="assets\img\status2.png" />
+    <Content Include="assets\img\status3.png" />
+    <Content Include="assets\img\status4.png" />
+    <Content Include="assets\img\status5.png" />
     <Content Include="assets\img\video-bg.jpg" />
     <Content Include="assets\libs\angularjs\angular-ui-router.js" />
     <Content Include="assets\js\bootstrap.js" />
@@ -146,13 +166,13 @@
     <Content Include="index - Copy.html" />
     <Content Include="index.html" />
     <Content Include="Index_old.html" />
+    <Content Include="riskDna.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\shared\menu\" />
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -208,6 +228,11 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\BoozAllen.pubxml" />
+    <Content Include="sampleJson\SideChart.json" />
+    <Content Include="sampleJson\kpi.json" />
+    <Content Include="sampleJson\ReviewbyStatus.json" />
+    <Content Include="sampleJson\pieChartDd.json" />
+    <Content Include="sampleJson\pieChartFiu.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

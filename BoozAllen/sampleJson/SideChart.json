@@ -1,0 +1,38 @@
+﻿[
+  {
+    "key": "Cases",
+    "values": [
+      [ "New", 20 ],
+      [ "Data Collection", 30 ],
+      [ "Analysis", 30 ],
+      [ "Q/A", 20 ]
+    ]
+  },
+  {
+    "key": "Alerts",
+    "values": [
+      [ "New", 30 ],
+      [ "Data Collection", 40 ],
+      [ "Analysis", 20 ],
+      [ "Q/A", 50 ]
+    ]
+  },
+  {
+    "key": "Onboarding Reviews",
+    "values": [
+      [ "New", 40 ],
+      [ "Data Collection", 50 ],
+      [ "Analysis", 10 ],
+      [ "Q/A", 80 ]
+    ]
+  },
+  {
+    "key": "Periodic Reviews",
+    "values": [
+      [ "New", 50 ],
+      [ "Data Collection", 60 ],
+      [ "Analysis", 40 ],
+      [ "Q/A", 60 ]
+    ]
+  }
+]

@@ -2,159 +2,101 @@
 <script src="../../../assets/js/d3.js"></script>
 <script src="../../../assets/js/nv.d3.js"></script>
 <script src="../../../assets/libs/angularjs/angular.js"></script>
+<script src="../../../assets/js/script.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
+
 <div id="dashboard" class="dashboard">
-    <header>
 
-        <div class="toggleBox">
-            <a href="#0" class="navToggle"><i class="fa fa-2x fa-bars"></i></a>
-        </div>
-        <div class="logoBox">
-
-            <img src="../../../assets/img/db-logo.png" alt="rC" />
-        </div>
-        <div class="searchBox">
-            <div class="searchInput">
-                <input type="text" placeholder="Search Cases, Name, Data etc" />
-                <i class="fa fa-search"></i>
-            </div>
-        </div>
-        <div class="userBox">
-            <p><span>Eldar Burnashev</span><i>EB</i></p>
-        </div>
-
-
-
-    </header>
+    <div class="menuOverlay"></div>
+    <!-- Dashboard Main Body -->
     <section class="mainBoard">
-        <nav class="boardNav">
-            <ul>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-tachometer"></i><span>Dashboard</span></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-bell"></i><span>Alerts</span></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-television"></i><span>Cases</span></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-tasks"></i><span>Tasks</span></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-file-text-o"></i><span>Reporting</span><i class="fa fa-caret-down"></i></a>
-                    <!--
-                                            <ul>
-                                                <li>
-                                                    <a href="#0">Quality KPIs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#0">Portfolio Analytics</a>
-                                                </li>
-                                            </ul>
-                    -->
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-2x fa-user"></i><span>Admin</span></a>
-                </li>
 
-            </ul>
-        </nav>
         <div class="boardArea">
 
             <div class="container-fluid">
 
-                <div class="col-md-10">
-                    <h2>FIU ANALYST - DASHBOARD</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio ipsum, porttitor eget commodo eget, ornare eget purus. Donec ultricies auctor odio, tristique faucibus justo semper ut.</p>
-                </div>
-                <div class="col-md-2">
-                    <p>Timeline:</p>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="cards">
-                        <h2>Items by Status</h2>
-
-                        <nvd3-discrete-bar-chart data="exampleData"
-                                                 id="exampleId1"
-                                                 tooltipcontent="toolTipContentFunction()"
-                                                 Width="350"
-                                                 height="300"
-                                                 showlabels="true"
-                                                 showValues="true"
-                                                 showYAxis="true"
-                                                 tooltips="true">
-                            <svg></svg>
-                        </nvd3-discrete-bar-chart>
-
+                <!-- Dashboard Heading Text -->
+                <div class="row marginZero topHeading">
+                    <div class="col-md-12">
+                        <h2>FIU ANALYST - DASHBOARD</h2>
+                        <p>Provides a snapshot of your open cases alerts for review.</p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="cards">
-                        <h2>Aging Pie Chart</h2>
 
-                        <nvd3-pie-chart data="exampleData1"
-                                        id="exampleId2"
-                                        x="xFunction()"
-                                        y="yFunction()"
-                                        Width="350"
-                                        height="300"
-                                        showlabels="true"
-                                        showValues="true"
-                                        labeltype="value"
-                                        pieLabelsOutside="false"
-                                        tooltips="true"
-                                        tooltipcontent="toolTipContentFunction1()">
-
-                            <svg></svg>
-                        </nvd3-pie-chart>
-                    </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="cards">
-                        <h2>Quality Score by Quality KPI</h2>
+                <ul class="row marginZero Charts">
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Items by Status</h2>
 
-                        <nvd3-discrete-bar-chart data="kpiData"
-                                                 id="exampleId3"
-                                                 tooltipcontent="toolTipContentFunction()"
-                                                 Width="350"
-                                                 height="300"
-                                                 showlabels="true"
-                                                 showValues="true"
-                                                 showYAxis="true"
-                                                 tooltips="true">
-                            <svg></svg>
-                        </nvd3-discrete-bar-chart>
-                    </div>
-                </div>
-                <div class="col-md-12">&nbsp;</div>
-                <div class="col-md-12">
-                    <tabs>
-                        <pane title="Open Cases ({{totalRows}})">
-                            <div style="float: right; width: 100%">
-                                <input placeholder="Case quickSearch" type="text" ng-model="gridOptions.quickFilterText" style="margin-top: 5px;"/>
-                            </div>
-                            <div ag-grid="gridOptions" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right; width:100%"></div>
-                        </pane>
-                        <pane title="Open Alerts ({{totalRowsCount}})">
-                            <div style="float: right; width:100%">
-                                <input placeholder="Alert quickSearch" type="text" ng-model="gridOptions1.quickFilterText" style="margin-top: 5px;"/>
+                            <nvd3-multi-bar-chart data="exampleData" id="exampleId1" Width="550" height="200" color="colorFunction1()" showXAxis="true" showYAxis="true" margin="{left:0,top:0,bottom:0,right:0}" >
+                                <svg></svg>
+                            </nvd3-multi-bar-chart>
+
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Aging Pie Chart</h2>
+                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)" style="margin-top: -60px; float: right">
+                                <option value="" selected="selected">All</option>
+                                <option value="Alerts">Alerts</option>
+                                <option value="Cases">Cases</option>
+                            </select>
+                            <nvd3-pie-chart data="exampleData1" id="exampleId2" x="xFunction()" y="yFunction()" width="550" height="200" margin="{left:0,top:0,bottom:0,right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
+
+                                <svg></svg>
+                            </nvd3-pie-chart>
+
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Quality Score by Quality KPI</h2>
+
+                            <div class="qualityScore">
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.DecisionQuality}}%</span><br /><b>Decision Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.AnalyticQuality}}%</span><br /><b>Analytic Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.TechnicalQuality}}%</span><br /><b>Technical Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.ResearchQuality}}%</span><br /><b>Research Quality</b></div>
                             </div>
 
-                            <div ag-grid="gridOptions1" class="ag-fresh" style="height: 200px; margin-top: 4px; margin-bottom: 4px; float: right;width:100%"></div>
-                        </pane>
-                    </tabs>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div class="row marginZero">
+                    <div class="col-md-12">
+                        <div class="girdBox">
+                            <div class="gridSearch">
+                                <div class="searchInput active">
+                                    <input type="text" placeholder="Quick Search" ng-model="gridOptions.quickFilterText" />
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <div class="searchInput">
+                                    <input type="text" placeholder="Quick Search" ng-model="gridOptions1.quickFilterText" />
+                                    <i class="fa fa-search"></i>
+                                </div>
+
+
+                            </div>
+
+                            <tabs>
+                                <pane icon="fa fa-file-text-o" title="Open Cases ({{totalRows}})">
+                                    <div ag-grid="gridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                                </pane>
+                                <pane icon="fa fa-bell" title="Open Alerts ({{totalRowsCount}})">
+                                    <div ag-grid="gridOptions1" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                                </pane>
+                            </tabs>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
 
     </section>
-    <!--<footer>
-        <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
-    </footer>-->
-
-
 
 </div>
+

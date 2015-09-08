@@ -3,5 +3,6 @@
         $http.get("../../../sampleJson/Risk.json").then(function (res) {
             $scope.dnaData = res.data;
         });
+        
     }
 );

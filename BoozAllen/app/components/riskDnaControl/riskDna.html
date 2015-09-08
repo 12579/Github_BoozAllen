@@ -1,15 +1,28 @@
-﻿<div>
-    <div style="float: left; width: 150px; background-color:black;" ng-repeat="dna in dnaData.riskDNA.sequences">
+﻿<style>
+    .popover {
+        position: absolute;
+        z-index: 100;
+    }
+     .popover1 {
+        position: absolute;
+        z-index: 100;
+    }
+</style>
+<div>
+    <div style="float: left; width: 150px; background-color: black;" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">
         <div style="float: left; background-color: white; height: 50px;">
             &nbsp;
         </div>
         <div style="float: left;" ng-repeat="gene in dna.genes">
-            <div ng-style="{'border-left': '4px solid gray','height': '50px', 'float':'left'}" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>
-            <div ng-style="{'border-left' : '4px solid yellow','height': '50px', 'float':'left'}" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>
-            <div ng-style="{'border-left': '4px solid red','height': '50px', 'float':'left'}" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>
+            <div ng-style="{'border-left': '4px solid gray','height': '50px', 'float':'left'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>
+            <div ng-style="{'border-left' : '4px solid yellow','height': '50px', 'float':'left'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>
+            <div ng-style="{'border-left': '4px solid red','height': '50px', 'float':'left'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>
+            <div class="popover1" ng-show="popoverIsVisible1">geneName</div>
         </div>
-
+        <div class="popover" ng-show="popoverIsVisible">sequenceType</div>
     </div>
+    
+    
     <div style="float: left; width: 150px; background-color: black;">
         <div style="float: left; background-color: white; height: 50px;">
             &nbsp;

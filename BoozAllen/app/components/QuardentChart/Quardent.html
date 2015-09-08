@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bar Chart</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <script src="../../../assets/libs/angularjs/angular.js"></script>
+    <script src="Quardent.js"></script>
+    <!--<style type="text/css">
+        .tl {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 50%;
+            bottom: 50%;
+            border: solid #000;
+            border-width: 0 2px 2px 0;
+        }
+
+        .tr {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 50%;
+            border: solid #000;
+            border-width: 0 0 2px 0;
+        }
+
+        .bl {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 50%;
+            bottom: 0;
+            border: solid #000;
+            border-width: 0 2px 0 0;
+        }
+
+        .br {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+        }
+    </style>-->
+</head>
+<body ng-app='nvd3TestApp'>
+    <div  ng-controller="ExampleCtrl1">
+                    <div class="tl"><span style="color: #f9db22;font-size: 24px;font-style: normal;font-weight: 500;line-height: 26.4px">{{exampleData.kpiChart.chartData.DecisionQuality}}%</span><br/>Decision Quality</div>
+                    <div class="tr"><span style="color: #f9db22;font-size: 24px;font-style: normal;font-weight: 500;line-height: 26.4px">{{exampleData.kpiChart.chartData.AnalyticQuality}}%</span><br />Analytic Quality</div>
+                    <div class="bl"><span style="color: #f9db22;font-size: 24px;font-style: normal;font-weight: 500;line-height: 26.4px">{{exampleData.kpiChart.chartData.TechnicalQuality}}%</span><br />Technical Quality</div>
+                    <div class="br"><span style="color: #f9db22;font-size: 24px;font-style: normal;font-weight: 500;line-height: 26.4px">{{exampleData.kpiChart.chartData.ResearchQuality}}%</span><br />Research Quality</div>
+        
+    </div>
+</body>
+</html>

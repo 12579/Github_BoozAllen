@@ -5,40 +5,41 @@
     <meta charset="utf-8">
     <title>Risk Canvas</title>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css"/>
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 
 <body>
-    <!--class="mainWrapper"-->
-<div id="mainDiv">
-    <header>
-        <div class="logo"><img src="assets/img/logo.png" class="responsive-img" alt="">
-        </div>
-    </header>
-    <div data-ng-view="" id="ng-view" ></div>
-    
-    <!--<footer>
-        <p>Copyright 2015 Booz Allen Hamilton Inc. All Rights Reserved.</p>
-    </footer>-->
-</div>
 
-<!--Import jQuery before materialize.js-->
+    <div id="mainDiv">
+        <div data-ng-view="" id="ng-view"></div>
+    </div>
+    <!--<div ui-view="modal" autoscroll="false"></div>-->
+    <!--<div ui-view></div>-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <!--    <script src="assets/js/script.js"></script>-->
 
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/materialize.js"></script>
-<script src="assets/js/script.js"></script>
-<script src="assets/libs/angularjs/angular.js"></script>
-<script src="assets/libs/angularjs/angular-resource.js"></script>
-<script src="assets/libs/angularjs/angular-route.js"></script>
+
+    <script src="assets/libs/angularjs/angular.js"></script>
+    <script src="assets/libs/angularjs/angular-resource.js"></script>
+    <script src="assets/libs/angularjs/angular-route.js"></script>
+    <!--<script data-require="ui-router@*" data-semver="0.2.10" src="https://rawgit.com/angular-ui/ui-router/0.2.10/release/angular-ui-router.js"></script>-->
+    <!--<script src="assets/libs/angularjs/angular-ui-router.js"></script>-->
+
     <script src="assets/js/angularjs-nvd3-directives.js"></script>
-<script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
-<script src="app/app.module.js"></script>
-<script src="app/app.routes.js"></script>
+    <script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+
+
     <link href="assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />
     <link href="assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet" />
 </body>

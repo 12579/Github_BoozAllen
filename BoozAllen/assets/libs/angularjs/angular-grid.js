@@ -5483,6 +5483,7 @@ var awk;
                     eInnerText.className = 'ag-header-cell-text';
                     eInnerText.innerHTML = headerNameValue;
                     headerCellLabel.appendChild(eInnerText);
+                    headerCellLabel.insertBefore(eInnerText, headerCellLabel.firstChild);
                 }
                 this.eHeaderCell.appendChild(headerCellLabel);
                 this.eHeaderCell.style.width = _.formatWidth(this.column.actualWidth);

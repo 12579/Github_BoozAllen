@@ -1,0 +1,10 @@
+﻿{
+  "kpiChart": {
+        "chartData": {
+            "DecisionQuality": 98,
+            "AnalyticQuality": 84,
+            "TechnicalQuality": 94,
+            "ResearchQuality": 81
+        }
+    }
+}

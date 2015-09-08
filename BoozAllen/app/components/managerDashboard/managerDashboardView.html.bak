@@ -1,0 +1,129 @@
+﻿<meta charset="utf-8">
+<script src="../../../assets/js/d3.js"></script>
+<script src="../../../assets/js/nv.d3.js"></script>
+<script src="../../../assets/libs/angularjs/angular.js"></script>
+<script src="../../../assets/js/script.js"></script>
+<link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
+
+<div id="dashboard" class="dashboard">
+   
+    <section class="mainBoard">
+        <div class="boardArea">
+
+            <div class="container-fluid">
+                <div class="row marginZero">
+                    <div class="col-md-12">
+                        <h2>MANAGER - DASHBOARD</h2>
+                        <p>Provides a snapshot of your team’s assigned Items and productivity.</p>
+                    </div>
+                </div>
+                <ul class="row marginZero Charts">
+                    
+                    <li class="col-md-12" >
+                        <div class="cards">
+                            <h2>Production Output past 30 days Bar chart</h2>
+                            <nvd3-multi-bar-chart data="productionOutputData"
+                                                  id="productionOutputChartId"
+                                                  width="500"
+                                                  height="200"
+                                                  showxaxis="true"
+                                                  showyaxis="true"
+                                                  
+                                                  stacked="true"
+                                                  xaxistickformat="showDates_mm_dd()"
+                                                  color="colorFunction()"
+                                                  
+                                                  tooltips="true"
+                                                  clipEdge="false">
+                                <svg></svg>
+                            </nvd3-multi-bar-chart>
+                        </div>
+                    </li>
+                    
+                </ul>
+                <ul class="row marginZero Charts">
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Reviews by Status</h2>
+
+                            <nvd3-multi-bar-chart data="statusData"
+                                                  id="statusData"
+                                                  Width="550"
+                                                  height="200"
+                                                  color="colorFunction7()"
+                                                  showXAxis="true"
+                                                  showYAxis="true">
+                                <svg></svg>
+                            </nvd3-multi-bar-chart>
+
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Aging Pie Chart</h2>
+
+                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)" style="margin-top: -60px; float: right">
+                                <option value="" selected="selected">All</option>
+                                <option value="Alerts">Alerts</option>
+                                <option value="Cases">Cases</option>
+                                <option value="Periodic Reviews">Periodic Reviews</option>
+                                <option value="Onboarding Reviews">Onboarding Reviews</option>
+                            </select>
+                            <nvd3-pie-chart data="exampleData1" id="exampleId2" x="xFunction()" y="yFunction()" width="550" height="200" margin="{left:0,top:0,bottom:0,right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" legendPosition="right" showLegend="true" legendColor="colorFunction()" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
+
+                                <svg></svg>
+                            </nvd3-pie-chart>
+                        </div>
+                    </li>
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Quality Score by Quality KPI</h2>
+                            <div class="qualityScore">
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.DecisionQuality}}%</span><br /><b>Decision Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.AnalyticQuality}}%</span><br /><b>Analytic Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.TechnicalQuality}}%</span><br /><b>Technical Quality</b></div>
+                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.ResearchQuality}}%</span><br /><b>Research Quality</b></div>
+                            </div>
+                           
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="col-md-12">&nbsp;</div>
+                <ul class="row marginZero Charts">
+                    <li class="col-md-4">
+                        <div class="cards">
+                            <h2>Assigned Items per Person Pie Chart</h2>
+
+                            <nvd3-pie-chart data="assignedData"
+                                id="assignedData"
+                                x="xFunction()"
+                                y="yFunction()"
+                                width="250"
+                                height="200"
+                                margin="{left:0,top:0,bottom:0,right:0}"
+                                showlabels="true"
+                                showvalues="true"
+                                labeltype="value"
+                                pielabelsoutside="false"
+                                tooltips="true"
+                                tooltipcontent="toolTipContentFunction1()">
+
+                                <svg></svg>
+                            </nvd3-pie-chart>
+                        </div>
+                    </li>
+                    <li class="col-md-8">
+                        <div>Analyst List</div>
+
+                                <div ag-grid="gridOptions" class="ag-fresh" style="height: 320px;"></div>
+                           
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+   
+</div>
