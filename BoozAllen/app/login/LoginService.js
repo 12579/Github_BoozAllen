@@ -1,31 +1,10 @@
-﻿
-var LoginService = function ($http, $q, $window)
-{
-    return function (user, password)
-    {
-        var deferredObject = $q.defer();
+﻿(function () {
+    'use strict';
 
-        var userInfo =
-        {
-            "UserName": user,
-            "password": password,
-            "IsActive": true
-        }
+    angular
+        .module('riskCanvasApp')
+     .factory('LoginService', ["$scope", "$window", "authenticationSvc", function ($scope, $window, authenticationSvc) {
 
-        var req = {
-            method: 'GET',
-            url: 'http://localhost:3442/api/UserInfo',
-            data: { userName: user, pass: password }
-        }
-        var res = $http(req);
-        res.success(function(response) {
-            deferredObject.resolve(response);
-        });
-        res.error(function (response) {
-            deferredObject.reject(response);
-        });
-        return deferredObject.promise;
-    }
-}
-
-LoginService.$inject = ['$http', '$q'];
+     }
+     ]);
+})();

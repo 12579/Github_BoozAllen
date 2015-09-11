@@ -1,13 +1,9 @@
-﻿<!--<div class="logo"><img src="../../../assets/img/logo.png" class="responsive-img" alt=""/></div>-->
-
-
-<header>
-
+﻿<header>
     <div class="toggleBox">
         <span class="navToggle"><i class="fa fa-2x fa-bars"></i></span>
     </div>
     <div class="logoBox">
-        <img src="../../../assets/img/db-logo.png" alt="rC" />
+        <img src="../../../assets/img/db-logo.png" alt="rC" class="img-responsive" />
     </div>
     <div class="searchBox">
         <div class="searchInput">
@@ -17,12 +13,16 @@
     </div>
     <div class="userBox">
         <p>
-            <!--<span>Eldar Burnashev</span><i>EB</i>-->
-            <span>{{FullName}}</span><i>{{ShortName }}</i>
+            <a href="" ng-click="openHeadMenu()"><span>{{FullName}}</span><i>{{ShortName }}</i></a>
         </p>
+        <ul id="headMenu" class="ng-hide">
+            <li>
+                <a ng-click="OpenProfilePage()"><i class="fa fa-cog"></i><span>Profile Setting</span></a>
+            </li>
+            <li>
+                <a href="#login"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+            </li>
+        </ul>
     </div>
-
-
-
 </header>
 

@@ -19,50 +19,42 @@
                 <div class="row marginZero topHeading">
                     <div class="col-md-12">
                         <h2>FIU ANALYST - DASHBOARD</h2>
-                        <p>Provides a snapshot of your open cases alerts for review.</p>
+                        <p>Provides a snapshot of your open cases and alerts for review.</p>
                     </div>
-
                 </div>
-                <ul class="row marginZero Charts">
+                <ul class="row marginZero Charts displayFlex">
                     <li class="col-md-4">
                         <div class="cards">
                             <h2>Items by Status</h2>
-
-                            <nvd3-multi-bar-chart data="exampleData" id="exampleId1" Width="550" height="200" color="colorFunction1()" showXAxis="true" showYAxis="true" margin="{left:0,top:0,bottom:0,right:0}" >
+                            <nvd3-multi-bar-chart data="statusData" id="statusData" Width="550" height="200" color="colorFunctionMain()" showXAxis="true" showYAxis="true" x="xFunctionSideChart()" showLegend="true" legendColor="colorFunctionMain()">
                                 <svg></svg>
                             </nvd3-multi-bar-chart>
-
                         </div>
                     </li>
                     <li class="col-md-4">
                         <div class="cards">
                             <h2>Aging Pie Chart</h2>
-                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)" style="margin-top: -60px; float: right">
+                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)">
                                 <option value="" selected="selected">All</option>
                                 <option value="Alerts">Alerts</option>
                                 <option value="Cases">Cases</option>
                             </select>
-                            <nvd3-pie-chart data="exampleData1" id="exampleId2" x="xFunction()" y="yFunction()" width="550" height="200" margin="{left:0,top:0,bottom:0,right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
-
+                            <nvd3-pie-chart data="agingData" id="agingData" x="xFunction()" y="yFunction()" width="550" height="200" margin="{left:0,top:0,bottom:0,right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" color="colorFunction()" tooltipcontent="toolTipContentFunction()" donut="true" showLegend="true" legendColor="colorFunction()">
                                 <svg></svg>
                             </nvd3-pie-chart>
-
                         </div>
                     </li>
                     <li class="col-md-4">
                         <div class="cards">
                             <h2>Quality Score by Quality KPI</h2>
-
                             <div class="qualityScore">
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.DecisionQuality}}%</span><br /><b>Decision Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.AnalyticQuality}}%</span><br /><b>Analytic Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.TechnicalQuality}}%</span><br /><b>Technical Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpidashData.kpiChart.chartData.ResearchQuality}}%</span><br /><b>Research Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpidashData.chartData.DecisionQuality<=68?'qualityred': kpidashData.chartData.DecisionQuality>68 && kpidashData.chartData.DecisionQuality<=75?'qualitygrey':'qualityyellow'">{{kpidashData.chartData.DecisionQuality}}%</span><br /><b>Decision Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpidashData.chartData.AnalyticQuality<=68?'qualityred': kpidashData.chartData.AnalyticQuality>68 && kpidashData.chartData.AnalyticQuality<=75?'qualitygrey':'qualityyellow'">{{kpidashData.chartData.AnalyticQuality}}%</span><br /><b>Analytic Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpidashData.chartData.TechnicalQuality<=68?'qualityred': kpidashData.chartData.TechnicalQuality>68 && kpidashData.chartData.TechnicalQuality<=75?'qualitygrey':'qualityyellow'">{{kpidashData.chartData.TechnicalQuality}}%</span><br /><b>Technical Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpidashData.chartData.ResearchQuality<=68?'qualityred': kpidashData.chartData.ResearchQuality>68 && kpidashData.chartData.ResearchQuality<=75?'qualitygrey':'qualityyellow'">{{kpidashData.chartData.ResearchQuality}}%</span><br /><b>Research Quality</b></div>
                             </div>
-
                         </div>
                     </li>
-
                 </ul>
 
                 <div class="row marginZero">
@@ -70,33 +62,27 @@
                         <div class="girdBox">
                             <div class="gridSearch">
                                 <div class="searchInput active">
-                                    <input type="text" placeholder="Quick Search" ng-model="gridOptions.quickFilterText" />
+                                    <input type="text" placeholder="Quick Search" ng-model="casegridOptions.quickFilterText" />
                                     <i class="fa fa-search"></i>
                                 </div>
                                 <div class="searchInput">
-                                    <input type="text" placeholder="Quick Search" ng-model="gridOptions1.quickFilterText" />
+                                    <input type="text" placeholder="Quick Search" ng-model="alertgridOptions.quickFilterText" />
                                     <i class="fa fa-search"></i>
                                 </div>
-
-
                             </div>
-
                             <tabs>
-                                <pane icon="fa fa-file-text-o" title="Open Cases ({{totalRows}})">
-                                    <div ag-grid="gridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                                <pane icon="fa fa-suitcase" title="Open Cases" num="{{totalCaseRows}}">
+                                    <div ag-grid="casegridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
                                 </pane>
-                                <pane icon="fa fa-bell" title="Open Alerts ({{totalRowsCount}})">
-                                    <div ag-grid="gridOptions1" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                                <pane icon="fa fa-bell" title="Open Alerts" num="{{totalAlertRows}}">
+                                    <div ag-grid="alertgridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
                                 </pane>
                             </tabs>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </section>
-
 </div>
 

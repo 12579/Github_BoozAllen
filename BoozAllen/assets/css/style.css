@@ -78,15 +78,20 @@
     font-style: italic;
 }
 
+/*#####################
+Global CSS (Start)
+#######################*/
+
 * {
     outline: none;
 }
-
+a,a:hover,a:focus,a:active{
+    text-decoration: none;
+}
 body {
     font-family: 'FoundersGrotesk', sans-serif;
-    font-size: 16px;
+    font-size: 0.8333vw;
 }
-
 input,
 button,
 select,
@@ -94,7 +99,9 @@ textarea {
     font-family: 'Oxygen', sans-serif;
     font-size: 0.9em
 }
-
+.container-fluid{
+    width: calc(100vw - 30px);
+}
 .marginZero {
     margin: 0;
 }
@@ -103,8 +110,31 @@ textarea {
 }
 
 .marginZero.topHeading {
-    margin-bottom: 10px;
+    margin-bottom: .625em;
 }
+.ovalButton {
+    padding: .8em 1em .5em 1em;
+    border-radius: 2em;
+}
+
+.yellowButton {
+    background-color: #ffe122;
+    color: #080700;
+}
+
+.ovalButton:hover,.ovalButton:active,.ovalButton:focus {
+    text-decoration: none;
+    color: #080700;
+}
+
+.iconButton i {
+    margin-left: .5em;
+    vertical-align: top;
+}
+
+/*#####################
+Login Page CSS (Ends)
+#######################*/
 
 /*#####################
 Login Page CSS (Start)
@@ -168,11 +198,11 @@ Login Page CSS (Start)
     -ms-transform: translate3d(0, 25vh, 0);
     -o-transform: translate3d(0, 25vh, 0);
     transform: translate3d(0, 25vh, 0);
-    -webkit-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -moz-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -ms-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -o-transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    transition: all 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -webkit-transition: all 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -moz-transition: all 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -ms-transition: all 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -o-transition: all 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    transition: all 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
 }
 
 .start .loginPage header {
@@ -206,19 +236,24 @@ Login Page CSS (Start)
 
 .loginBox {
     width: 100%;
-    max-width: 535px;
+    max-width: 33.43em;
     position: relative;
     background: #000;
     border-radius: 5px;
+    min-height: 26.25em;
     margin: 0 auto;
-    padding: 7vh 7vh 5vh 7vh;
+    padding: 4.875em 4.25em 3.125em 4.25em;
     color: #fff;
     transform: scale3d(0, 0, 0);
-    -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -moz-transition: -moz-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -ms-transition: -ms-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    -o-transition: -o-transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
-    transition: transform 0.6s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -webkit-transform: scale3d(0, 0, 0);
+    -moz-transform: scale3d(0, 0, 0);
+    -ms-transform: scale3d(0, 0, 0);
+    -o-transform: scale3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -moz-transition: -moz-transform 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -ms-transition: -ms-transform 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    -o-transition: -o-transform 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
+    transition: transform 0.4s cubic-bezier(0.91, 0.01, 0.6, 0.99);
 }
 
 .start .loginBox {
@@ -232,7 +267,7 @@ Login Page CSS (Start)
 .loginBox .inputFields {
     width: 100%;
     border-bottom: 1px solid #fff;
-    margin-bottom: 1.875em;
+    margin-bottom: 2.2em;
 }
 .loginBox.hasError .inputFields{
     border-color: #e6002c;
@@ -261,6 +296,8 @@ Login Page CSS (Start)
 .loginBox .inputFields.button {
     border-bottom: none;
     text-align: center;
+    padding-top: 1em;
+    margin-bottom: 1.7em;
 }
 
 .loginBox button {
@@ -325,7 +362,7 @@ Login Page CSS (Start)
     margin: 0 auto;
     width: 80%;line-height: 15px;
     display: none;
-    /* position: absolute; */   
+    /* position: absolute; */
     border-radius: 4px;
 }
 
@@ -354,7 +391,7 @@ Dashboard Css (Starts)
 ###########################*/
 
 .dashboard {
-    min-height: 100vh;
+/*    min-height: 100vh;*/
     width: 100%;
 }
 
@@ -364,16 +401,32 @@ Dashboard Css (Starts)
 .dashboard header {
     width: 100%;
     background: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.16), 0 0px 8px 0 rgba(0, 0, 0, 0.12);
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     position: relative;
 }
+#headMenu {
+    position: absolute;
+    right: 1em;
+    width: 13vw;
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    box-shadow: 0px 0px 4px 0px #ddd;
+    padding: 0;
+    z-index: 11;
+    margin-top: 5px;
+    /* border-radius: 4px; */
+}
 
+#headMenu li {
+    list-style: none;
+    padding: 0;
+}
 .dashboard .toggleBox {
-    width: 82px;
+    width: 5.125em;
     background: #f7f7f7;
 }
 
@@ -394,27 +447,30 @@ Dashboard Css (Starts)
 }
 
 .dashboard .logoBox {
-    line-height: 82px;
-    padding: 0 4px 0 15px;
+    line-height: 5.125em;
+    padding: 0 4px 0 .9375em;
+    width: 4.68em;
     /* background: rgba(249, 220, 34, 1); */
-    /*     background: 
+    /*     background:
     -moz-linear-gradient(left, rgba(249, 220, 34, 1) 0%, rgba(249, 220, 34, 1) 51%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
-    background: 
+    background:
     -webkit-gradient(left top, right top, color-stop(0%, rgba(249, 220, 34, 1)), color-stop(51%, rgba(249, 220, 34, 1)), color-stop(51%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-    background: 
+    background:
     -webkit-linear-gradient(left, rgba(249, 220, 34, 1) 0%, rgba(249, 220, 34, 1) 51%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
-    background: 
+    background:
     -o-linear-gradient(left, rgba(249, 220, 34, 1) 0%, rgba(249, 220, 34, 1) 51%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
-    background: 
+    background:
     -ms-linear-gradient(left, rgba(249, 220, 34, 1) 0%, rgba(249, 220, 34, 1) 51%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
     background: linear-gradient(to right, rgba(249, 220, 34, 1) 0%, rgba(249, 220, 34, 1) 51%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f9dc22', endColorstr='#ffffff', GradientType=1); */
 }
 
 .dashboard .searchBox {
-    padding: 0 15px;
+    padding: 0 .9375em;
     text-align: center;
-    flex: 1
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
 }
 
 .searchInput {
@@ -436,6 +492,7 @@ Dashboard Css (Starts)
     vertical-align: top;
     width: 100%;
     background: none;
+    height: 2.657em;
 }
 
 .searchInput i {
@@ -446,14 +503,38 @@ Dashboard Css (Starts)
 }
 
 .dashboard .userBox {
-    padding: 0 15px;
+    padding: 0 .9375em;
 }
 
 .dashboard .userBox p {
     margin: 0;
     padding: 0;
 }
+.dashboard .userBox a:hover, .dashboard .userBox a:active, .dashboard .userBox a:focus {
+    text-decoration: none;
+    color: #8e8f9b;
+}
+#headMenu a {
+    padding: 20px 10px 20px 20px;
+    display: inline-block;
+    width: 100%;
+}
 
+#headMenu a:hover {
+    background-color: #FEDF22;
+    color: #8e8f9b;
+}
+#headMenu a span {
+    margin-left: 1.176em;
+    font-size: 1.06em;
+}
+
+#headMenu a i {
+    font-size: 1.5em;
+}
+.userBox a {
+    color: #8e8f9b;
+}
 .dashboard .userBox p i {
     font-style: normal;
     font-size: 1.1875em;
@@ -472,7 +553,7 @@ Dashboard Css (Starts)
     display: inline-block;
     width: 49%;
     text-align: center;
-    padding: 1.56vw 0 1.04vw 0;
+    padding: 1.3vw 0 1.04vw 0;
 }
 
 .qualityScore:after {
@@ -503,16 +584,17 @@ Dashboard Css (Starts)
 }
 .qualityScoreGraph b {
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: .812em;
     color: #9ea9af;
+    display: block;
 }
 
 /*Dashboard Navigation*/
 
 .menuOverlay {
     display: none;
-    position: absolute;
-    height: 100vh;
+    position: fixed;
+    height: 100%;
     width: 100%;
     top: 0;
 /*    background-color: rgba(0, 0, 0, 0.74);*/
@@ -535,8 +617,8 @@ Dashboard Css (Starts)
     -o-transition: -o-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     z-index: 11;
-    top: 82px;
-    height: calc(100vh - 82px);
+    top: 5.125em;
+    height: calc(100vh - 5.125em);
 }
 
 .boardNav.open {
@@ -551,19 +633,18 @@ Dashboard Css (Starts)
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 350px;
+    width: 21.875em;
     position: relative;
     height: 100%;
     background-color: #000;
     overflow: hidden;
 }
 
-.boardNav > ul.open {}
 .dashboard .toggleBox {
-    transition: background .2s ease-in-out; 
-    -webkit-transition: background .2s ease-in-out; 
-    -ms-transition: background .2s ease-in-out; 
-    -moz-transition: background .2s ease-in-out; 
+    transition: background .2s ease-in-out;
+    -webkit-transition: background .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out;
 }
 .dashboard .toggleBox.active {
     background: #fadd23;
@@ -571,7 +652,7 @@ Dashboard Css (Starts)
 .boardNav > ul > li {
     margin: 0;
     padding: 0;
-    width: 350px;
+    width: 21.875em;
     list-style: none;
     color: #7a808a;
     border-bottom: 1px solid #181a1c;
@@ -593,7 +674,7 @@ Dashboard Css (Starts)
 }
 
 .boardNav > ul > li > a > i {
-    width: 120px;
+    width: 3.75em;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -611,23 +692,25 @@ Dashboard Css (Starts)
 .boardNav .alertCount {
     background-color: #fb4130;
     border-radius: 50%;
-    height: 32px;
-    width: 32px;
+    height: 2em;
+    width: 2em;
     display: inline-block;
     color: #fff;
     text-align: center;
-    font-size: 16px;
-    margin-left: 15px;
-    line-height: 36px;
+    font-size: 1em;
+    margin-right: 10%;
+    line-height: 2.4em;
+    float: right;
 }
 
 /*Dashboard Main Body*/
 
 .mainBoard {
     width: 100%;
-    min-height: calc(100vh - 82px - 50px);
+/*    min-height: calc(100vh - 82px - 50px);*/
     display: -webkit-flex;
     display: flex;
+    display: -moz-flex;
 }
 
 
@@ -636,19 +719,23 @@ Dashboard Css (Starts)
 .boardArea {
     float: left;
     flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
     background-color: #f9f9f9;
     color: #4c5e70;
-    padding-top: 15px;
+    padding-top: 1em;
     padding-bottom: 0;
 }
 
 .boardArea h2 {
-    font-size: 1.125em
+    font-size: 1.125em;
+    margin-bottom: 0;
+    margin-top: 1.11em;
 }
 
 .boardArea p {
     color: #a5adb6;
-    font-size: 0.875em;
+    font-size: 1em;
 }
 
 
@@ -659,7 +746,7 @@ Dashboard Css (Starts)
     padding: 0 0 1.875em 0;
     list-style: none;
 }
-.Charts h2 { font-size: 1.375em;}
+.Charts h2 { font-size: 1.375em; font-weight: 400; display: inline-block; width: 50%;}
 
 .Charts .cards {
     box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.1);
@@ -668,13 +755,16 @@ Dashboard Css (Starts)
 }
 
 .cards select {
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: .37em 1.07em;
+    border-radius: 1.428em;
     position: relative;
-    top: 10px;
+    top: .714em;
     width: 40%;
+    float: right;
     -webkit-appearance: none;
-    background: url(../img/arrow.png) no-repeat right 15px center;
+    -moz-appearance: none;
+    background: url(../img/arrow.png) no-repeat right 1em center;
+    border: 1px solid #e2e2e2;
 }
 .ag-body .rag-caseStatus:before {
     content: "";
@@ -702,14 +792,14 @@ Dashboard Css (Starts)
     background-image: url(../img/status5.png);
 }
 .dataNo {
-    line-height: 15px;
+    line-height: .8823em;
     text-align: center;
 }
 
 .dataNo:after {
     content: "";
     display: block;
-    font-size: 15px;
+    font-size: .8823em;
 }
 .rag-red .dataNo {
     color: #FF503F;
@@ -729,25 +819,92 @@ Dashboard Css (Starts)
 .rag-green .dataNo {
     color: #5b5b5d;
 }
+.Charts.displayFlex {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+}
+
+.Charts.displayFlex > li {
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+}
+
+.Charts.displayFlex > li:last-child {
+    position: relative;
+}
+
+.Charts.displayFlex > li:last-child .cards {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 30px);
+}
+.assignedItemBlock h2{
+    float: left;
+    display: inline-block;
+    width: 50%;
+}
+#productionOutputChartId h6 {
+    position: absolute;
+    bottom: 1.56vw;
+    left: 5.2vw;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.Charts.displayFlex .assignedItemBlock{
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+}
+.Charts.displayFlex .analystList{
+    flex: 2;
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    margin: 0 15px;
+}
+.analystList > div {
+    height: calc(100% - 5.31em);
+    width: calc(100% - 30px);
+    position: absolute;
+}
+.analystList .gridSearch {
+    width: 30%;
+    padding: 1.35em .9375em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 5.25em;
+}
+
+.analystList .gridSearch .searchInput {
+    display: inline-block;
+}
+.analystList .cell-col-1 a,.analystList .cell-col-1 a:hover {
+    color: #0c72c1;
+}
 /*Dashboard Tabs*/
 
-.tabbable {
+.tabbable .num {
 /*
     border: 1px solid #e7e7e7;
     background-color: #fff;
 */
-}
+display: inline-block;background-color: #78808E;padding: .5em .46em .1em .5em;border-radius: 50%;color: #fff;margin-left: .476em;font-size: 0.8em;}
 .nav-tabs .tabbable li a:hover {
     color: #ffcc00;
 }
+.tabbable .active .num {
+    background-color: #FC0;
+}
 .tabbable li a {
-    min-height: 96px;
+    min-height: 4.57em;
     color: #78808e;
 }
 .tabbable li a i {
     display: block;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .girdBox .nav-tabs > li.active > a, .girdBox .nav-tabs > li.active > a:hover, .girdBox .nav-tabs > li.active > a:focus{
@@ -775,13 +932,13 @@ Dashboard Css (Starts)
     border-radius: 0;
     font-size: 1.3125em;
     line-height: 1em;
-    padding: 20px 35px 7px;
+    padding: .9em 1.9em .333em;
 }
 .nav-tabs > li:first-child {
-    
+
 }
-.nav-tabs > li:last-child {
-    
+.tabbable .nav-tabs > li:last-child:not(.active) {
+    border-right: 1px solid rgba(120, 128, 142, 0.19);
 }
 
 .nav-tabs > li.active > a,
@@ -798,11 +955,14 @@ Dashboard Css (Starts)
 .girdBox {
     border: 1px solid #e7e7e7;
     background-color: #fff;
+    position: relative;
 }
 
 .gridSearch {
-    width: 100%;
-    padding: 15px;
+    width: 20%;
+    padding: 2em .9375em;
+    position: absolute;
+    right: 0;
 }
 .gridSearch:before {
     display: table;
@@ -815,11 +975,9 @@ Dashboard Css (Starts)
 }
 
 .gridSearch .searchInput {
-    
-    width: 20%;
+    width: 100%;
     float: left;
     display: none;
-    
 }
 .searchInput.active{
     display: block;
@@ -827,26 +985,99 @@ Dashboard Css (Starts)
 .gridFilter {
         float: right;
 }
+.analystList{
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.analystList h2 {
+    border-bottom: 1px solid #ddd;
+    margin: 0 -15px;
+    padding: 1.5em 1.772em 1.09em 1.5em;
+    font-weight: 400;
+    display: block;
+    background-color: #F9F9F9;
+    width: calc(100% + 30px);
+}
+.riskData {
+    padding-top: 1.58em;
+}
 
+.riskData > div {
+    width: 5.882em;
+}
+.dataPopup, .dataPopdown {
+    /* background: rgba(0, 0, 0, 0.22); */
+    position: absolute;
+    height: 1.5em;
+    line-height: 1.5em;
+    color: #78808E;
+    z-index: 1000;
+    padding-top: .15em;
+    padding-left: 1em;
+    padding-right: 1em;
+/*    border: 1px solid rgba(120, 128, 142, 0.49);*/
+    border-radius: 4px;
+}
+
+.dataPopup {
+    margin-top: -1.6em;
+}
+.cell-col-1 b {
+    color: #515151;
+}
+.dataPopdown {
+    top: 3em;
+}
+.boardArea .ovalButton {
+    position: absolute;
+    right: 1em;
+    top: .5em;
+}
+.ag-fresh .ag-header-cell-menu-button,.ag-fresh .ag-header-cell-menu-button:hover {
+    height: 1em;
+    border: none;
+    cursor: pointer;
+}
 /*Dashboard Footer*/
 
 .dashboard footer {
     width: 100%;
     padding: 1.875em 0;
 }
-.dashboard footer p { margin: 0; padding: 0;}
+.dashboard footer p { margin: 0; padding: 0; color: #2d2d2d;}
+.clickButton {
+    background-color: #5b5b5d;
+    color: #fff;
+    padding: 4px 8px 0px 8px;
+    display: inline-block;
+    line-height: 28px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
 
+
+.qualityyellow {
+       color: #F9DB22;
+       font-size: 1.25vw;
+       font-style: normal;
+       font-weight: 500;
+       line-height: 26.4px;
+   }
+   .qualityred {
+       color: #FF503F;
+       font-size: 1.25vw;
+       font-style: normal;
+       font-weight: 500;
+       line-height: 26.4px;
+   }
+   .qualitygrey {
+       color: #5B5B5D;
+       font-size: 1.25vw;
+       font-style: normal;
+       font-weight: 500;
+       line-height: 26.4px;
+   }
 
 /*#########################
 Dashboard Css (Ends)
 ###########################*/
-
-
-/*#########################
-MEDIA QUERIES START
-###########################*/
-@media (max-width: 1800px){
-.Charts .cards{
-    min-height: 240px;
-}
-}

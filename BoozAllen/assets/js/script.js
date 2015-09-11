@@ -12,10 +12,14 @@ jQuery.noConflict();
 jQuery('document').ready(function () {
     jQuery('.navToggle').on("click", function () {
         jQuery('.boardNav').toggleClass('open');
+        jQuery('.toggleBox').addClass('active');
         jQuery('.menuOverlay').toggle();
     });
     jQuery('.menuOverlay').on('click', function () {
+        jQuery('.toggleBox').removeClass('active');
         jQuery('.boardNav').removeClass('open');
         jQuery('.menuOverlay').hide();
     });
 });
+
+

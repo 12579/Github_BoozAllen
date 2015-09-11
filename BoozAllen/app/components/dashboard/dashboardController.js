@@ -1,14 +1,22 @@
-﻿
-(function () {
+﻿(function () {
     'use strict';
 
-    angular
-        .module('myApp')
-    .controller('DashboardCtrl', ["$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", function ($state, $scope, $stateParams, $window, $http, authenticationSvc) {
+    angular.module('riskCanvasApp')
+    .controller('DashboardCtrl', ["$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "ShareData", function ($state, $scope, $stateParams, $window, $http, authenticationSvc, shareData) {
         var userInfo = authenticationSvc.getUserInfo();
         $scope.userInfo = userInfo;
+        $scope.shareData = shareData;
 
         var casecolumnDefs = [
+            {
+                headerName: "ID", field: "id", hide: true
+            },
+            {
+                headerName: "ID", field: "accountType", hide: true
+            },
+            {
+                headerName: "ID", field: "accountNumber", hide: true
+            },
             {
                 headerName: "", field: "entityName", width: 95, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
                 cellClass: 'rag-initial',
@@ -26,7 +34,7 @@
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700,
+                width: 700, filter: 'number',
                 cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
@@ -34,24 +42,35 @@
                     'rag-amber': function (params) { return params.data.entityRiskScore >= 33.334 && params.data.entityRiskScore < 66.667 },
                     'rag-red': function (params) { return params.data.entityRiskScore >= 66.667 }
                 }
-
-
             },
-                //New	Data Collection	Analysis	Q/A
             {
                 headerName: "Item Status", field: "caseStatus", width: 200, cellClass: 'rag-caseStatus',
                 cellClassRules: {
-                    'type-new': function (params) { return params.data.caseStatus == 'New' },
-                    'type-dc': function (params) { return params.data.caseStatus == 'Data Collection' },
-                    'type-an': function (params) { return params.data.caseStatus == 'Analysis' },
-                    'type-qa': function (params) { return params.data.caseStatus == 'Quality Assurance' },
-                    'type-aa': function (params) { return params.data.caseStatus == 'Awaiting Assignment' }
+                    'type-new': function (params) { return params.data.caseStatus === 'New' },
+                    'type-dc': function (params) { return params.data.caseStatus === 'Data Collection' },
+                    'type-an': function (params) { return params.data.caseStatus === 'Analysis' },
+                    'type-qa': function (params) { return params.data.caseStatus === 'Q/A' },
+                    'type-aa': function (params) { return params.data.caseStatus === 'Awaiting Assignment' }
                 }
             },
-            { headerName: "Item Open Date", field: "caseOpenDate", width: 150, suppressMenu: 'true', comparator: dateComparator },
-            { headerName: "Item Due Date", field: "caseDueDate", width: 170, comparator: dateComparator }
+            {
+                headerName: "Case Type", field: "caseType", width: 150
+            },
+            { headerName: "Open Date", field: "caseOpenDate", width: 150, filter: 'number', suppressMenu: 'true', comparator: dateComparator },
+            {
+                headerName: "Due Date", field: "caseDueDate", width: 170, filter: 'number', suppressMenu: 'true', comparator: dateComparator
+            }
         ];
         var alertcolumnDefs = [
+            {
+                headerName: "ID", field: "id", hide: true
+            },
+            {
+                headerName: "ID", field: "accountType", hide: true
+            },
+            {
+                headerName: "ID", field: "accountNumber", hide: true
+            },
             {
                 headerName: "", field: "entityName", width: 95, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
                 cellClass: 'rag-initial',
@@ -69,7 +88,7 @@
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700,
+                width: 700, filter: 'number',
                 cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
@@ -82,16 +101,16 @@
             {
                 headerName: "Item Status", field: "alertStatus", width: 200, cellClass: 'rag-caseStatus',
                 cellClassRules: {
-                    'type-new': function (params) { return params.data.alertStatus == 'New' },
-                    'type-dc': function (params) { return params.data.alertStatus == 'Data Collection' },
-                    'type-an': function (params) { return params.data.alertStatus == 'Analysis' },
-                    'type-qa': function (params) { return params.data.alertStatus == 'Quality Assurance' },
-                    'type-aa': function (params) { return params.data.alertStatus == 'Awaiting Assignment' }
+                    'type-new': function (params) { return params.data.alertStatus === 'New' },
+                    'type-dc': function (params) { return params.data.alertStatus === 'Data Collection' },
+                    'type-an': function (params) { return params.data.alertStatus === 'Analysis' },
+                    'type-qa': function (params) { return params.data.alertStatus === 'Q/A' },
+                    'type-aa': function (params) { return params.data.alertStatus === 'Awaiting Assignment' }
                 }
             },
-           { headerName: "Alert Type", field: "alertType" },
-            { headerName: "Item Open Date", field: "alertOpenDate", width: 150, suppressMenu: 'true', comparator: dateComparator },
-            { headerName: "Item Due Date", field: "alertDueDate", width: 170, comparator: dateComparator }
+            { headerName: "Alert Type", field: "alertType" },
+            { headerName: "Open Date", field: "alertOpenDate", width: 150, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
+            { headerName: "Due Date", field: "alertDueDate", width: 170, suppressMenu: 'true', comparator: dateComparator, filter: 'number' }
         ];
 
         function upperCaseNewValueHandler(params) {
@@ -104,162 +123,139 @@
             }
             return "<span>" + finalVal + "</span>";
         }
-        var smallColorArray = ['#f9db22', '#FFFFFF'];
-        $scope.smallColorFunction = function () {
-            return function (d, i) {
-                return smallColorArray[i];
-            };
-        }
 
         function riskDnaHandler(params) {
             params.$scope.dnaData = params.data;
             var data =
-                '<div style="padding-top: 27px;">'
-                    + '<div style="float: left; width: 100px;" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">'
-                    + '<div style="float: left; background-color: white; height: 25px;">&nbsp;</div>'
-                    + '<div class="popover" style="position: absolute;margin-top: -20px;z-index: 100;" ng-show="popoverIsVisible">{{dna.sequenceType}}</div>'
+                '<div class="riskData">'
+                    + '<div style="float: left;" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">'
+                    + '<div style="float: left; background-color: white; height: 1.47em;">&nbsp;</div>'
+                    + '<div class="dataPopup" style="position: absolute; z-index: 100;" ng-show="popoverIsVisible">{{dna.sequenceType}} : {{dna.sequenceScore|number:2}}</div>'
                     + '<div style="float: left;" ng-repeat="gene in dna.genes">'
-                    + '<div ng-style="{\'border-left\': \'2px solid gray\',\'height\': \'25px\', \'float\':\'left\'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>'
-                    + '<div ng-style="{\'border-left\' : \'2px solid yellow\',\'height\': \'25px\', \'float\':\'left\'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'
-                    + '<div ng-style="{\'border-left\': \'2px solid red\',\'height\': \'25px\', \'float\':\'left\'}" ng-mouseover="showPopover1()" ng-mouseleave="hidePopover1()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>'
-                    + '<div class="popover1" style="position: absolute;margin-top: 20px;z-index: 100;" ng-show="popoverIsVisible1">{{gene.geneName}}</div>'
+                    + '<div ng-style="{\'border-left\': \'2px solid gray\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>'
+                    + '<div ng-style="{\'border-left\' : \'2px solid yellow\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'
+                    + '<div ng-style="{\'border-left\': \'2px solid red\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>'
+                    + '<div class="dataPopdown" style="position: absolute;z-index: 100;" ng-show="popoverIsVisibleGene">{{gene.geneName}} : {{gene.geneScore}}</div>'
                     + '</div>'
                     + '</div>'
-                    + '<div style="float: left; width: 100px;" class="dataNo">'
+                    + '<div style="float: left;" class="dataNo">'
                     + '<div><span>{{data.entityRiskScore}}</span></div>'
                     + '</div>'
                     + '</div>';
             return data;
         }
 
-        $scope.gridOptions = {
+        $scope.casegridOptions = {
             columnDefs: casecolumnDefs,
             rowData: null,
-            headerHeight: 60,
-            rowHeight: 80,
+            headerHeight: 0.031 * angular.element(window).width(),
+            rowHeight: 0.0416 * angular.element(window).width(),
             enableFilter: true,
             enableSorting: true,
             angularCompileRows: true
         };
 
-        $scope.gridOptions1 = {
+        $scope.alertgridOptions = {
             columnDefs: alertcolumnDefs,
             rowData: null,
-            headerHeight: 60,
-            rowHeight: 80,
+            headerHeight: 0.031 * angular.element(window).width(),
+            rowHeight: 0.0416 * angular.element(window).width(),
             enableFilter: true,
             enableSorting: true,
             angularCompileRows: true
         };
 
-        //$scope.pieChart = "../pieChart/pieChartView.html";
-        $http.get("../../../sampleJson/alertsJson.json")
-            .then(function (res1) {
-                $scope.gridOptions1.rowData = res1.data;
-                $scope.gridOptions1.api.onNewRows();
-                $scope.totalRowsCount = res1.data.length;
-            });
+        function loadAgingPieChart(data) {
+            for (var i = 0; i < data.length; i++) {
+                var value = 0;
+                Object.keys(data[i].y).forEach(function (name) {
+                    value += data[i].y[name];
+                });
+                data[i].y = value;
+            }
+            $scope.agingData = data;
+            setTimeout(function () {
+                var elems = angular.element('#exampleId2 .nv-legend .nv-series');
+                if (!!!elems) {
+                    var len = elems.length;
+                    var val = angular.element(elems[len - 1]).attr('transform');
+                    var numb = val.match(/\d/g);
+                    numb = numb.join("");
+                    numb = numb.substring(0, 3);
+                    var xVal = parseInt(numb);
+                    var yVal = 30;
+                    for (var i = 0; i < len; i++) {
+                        var elem = angular.element(elems)[i];
+                        angular.element(elem).attr('transform', 'translate(' + xVal + ',' + yVal + ')');
+                        yVal = yVal + 30;
+                    }
+                }
+            }, 100);
+        };
 
-        $http.get("../../../sampleJson/casesJson.json")
+        $http.get("../../../sampleJson/dashboardJsonFiu.json")
             .then(function (res) {
-                $scope.gridOptions.rowData = res.data;
-                $scope.gridOptions.api.onNewRows();
-                $scope.totalRows = res.data.length;
+
+                $scope.alertgridOptions.rowData = res.data.alertData;
+                $scope.alertgridOptions.api.onNewRows();
+                $scope.totalAlertRows = res.data.alertData.length;
+                $scope.shareData.alerts = res.data.alertData.length;
+
+                $scope.casegridOptions.rowData = res.data.casesData;
+                $scope.casegridOptions.api.onNewRows();
+                $scope.totalCaseRows = res.data.casesData.length;
+                $scope.shareData.cases = res.data.casesData.length;
+
+                $scope.kpidashData = res.data.kpiChart;
+
+                $scope.statusData = res.data.statusChart;
+
+                $scope.agingPieChartData = angular.copy(res.data.pieChart);
+
+                loadAgingPieChart(res.data.pieChart);
+
+
+
             });
 
-
-        $http.get("../../../sampleJson/kpi.json").then(function (res) {
-
-            $scope.kpidashData = res.data;
-
-        });
-
-
-        $http.get("../../../sampleJson/SideChart.json").then(function (res) {
-            $scope.exampleData = res.data;
-
-        });
-        var colorArray1 = ['#f9db22', '#5b5b5d', '#909090', '#c5c5c5'];
-        $scope.colorFunction1 = function () {
+        var colorArrayMain = ['#000000', '#5b5b5d', '#909090', '#c5c5c5'];
+        $scope.colorFunctionMain = function () {
             return function (d, i) {
-                return colorArray1[i];
+                return colorArrayMain[i];
             };
         }
 
-        $scope.$on('tooltipShow.directive', function (event) {
-            console.log('scope.tooltipShow', event);
-        });
-
-        $scope.$on('tooltipHide.directive', function (event) {
-            console.log('scope.tooltipHide', event);
-        });
-
-
-        $scope.toolTipContentFunction = function () {
-            return function (key, x, y, e, graph) {
-                return '<h5>' + x + '</h5>'
-            }
+        $scope.xFunctionSideChart = function () {
+            return function (d) {
+                return d[0];
+            };
         }
+
 
         $scope.BindPieChart = function () {
             debugger;
             var selectedItem = $scope.data;
-            $http.get('../../../sampleJson/pieChartFiu.json').
-                success(function (data) {
-                    if (selectedItem == "")
-                        $http.get('../../../sampleJson/pieChartFiu.json').
-                            success(function (data) {
-                                for (var i = 0; i < data.length; i++) {
-                                    var value = 0;
-                                    Object.keys(data[i].y).forEach(function (name) {
-                                        value += data[i].y[name];
-                                    });
-                                    data[i].y = value;
-                                }
-                                $scope.exampleData1 = data;
-                            });
-                    else {
-                        var dataArray = data;
-                        for (var i = 0; i < data.length; i++) {
-                            var v = data[i].y[selectedItem];
-                            dataArray[i].y = v;
-                        }
-                        $scope.exampleData1 = dataArray; // data;
-                    }
-                });
+            var data = angular.copy($scope.agingPieChartData);
+            if (selectedItem == "") {
+                for (var i = 0; i < data.length; i++) {
+                    var value = 0;
+                    Object.keys(data[i].y).forEach(function (name) {
+                        value += data[i].y[name];
+                    });
+                    data[i].y = value;
+                }
+                $scope.agingData = data;
+            }
+            else {
+                var dataArray = data;
+                for (var i = 0; i < data.length; i++) {
+                    var v = data[i].y[selectedItem];
+                    dataArray[i].y = v;
+                }
+                $scope.agingData = dataArray; // data;
+            }
+
         };
-
-        $http.get('../../../sampleJson/pieChartFiu.json').
-       success(function (data) {
-           for (var i = 0; i < data.length; i++) {
-               var value = 0;
-               Object.keys(data[i].y).forEach(function (name) {
-                   value += data[i].y[name];
-               });
-               data[i].y = value;
-           }
-           $scope.exampleData1 = data;
-       }).error(function () {
-       });
-        //$scope.exampleData1 = [
-        //        {
-        //            key: "< 5 Days",
-        //            y: 5
-        //        },
-        //        {
-        //            key: "6-10 Days",
-        //            y: 2
-        //        },
-        //        {
-        //            key: "11-20 Days",
-        //            y: 9
-        //        },
-        //        {
-        //            key: "20 Days +",
-        //            y: 7
-        //        }
-        //];
-
 
 
         $scope.xFunction = function () {
@@ -279,7 +275,7 @@
             }
         }
 
-        $scope.toolTipContentFunction1 = function () {
+        $scope.toolTipContentFunction = function () {
             return function (key, x, y, e, graph) {
                 return '<b>' + key + '</b>';
             }
@@ -322,12 +318,6 @@
             return date1Number - date2Number;
         }
 
-        $http.get('../../../sampleJson/menuJson.json').
-           success(function (data) {
-               $scope.treeData = data[0];
-           }).error(function () {
-           });
-
         $scope.getMoreData = function (node) {
             if (node.state === 'leaf') {
                 $location.path(node.label);
@@ -353,12 +343,12 @@
             this.popoverIsVisible = false;
 
         };
-        $scope.showPopover1 = function () {
-            this.popoverIsVisible1 = true;
+        $scope.showPopoverGene = function () {
+            this.popoverIsVisibleGene = true;
 
         };
-        $scope.hidePopover1 = function () {
-            this.popoverIsVisible1 = false;
+        $scope.hidePopoverGene = function () {
+            this.popoverIsVisibleGene = false;
         };
     }
     ]);

@@ -37,7 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -65,41 +65,20 @@
     <Content Include="app\components\adminDashboard\adminDashboardController.js" />
     <Content Include="app\components\adminDashboard\adminDashboardService.js" />
     <Content Include="app\components\adminDashboard\adminDashboardView.html" />
-    <Content Include="app\components\barChart\barChartController.js" />
-    <Content Include="app\components\barChart\barChartView.html" />
-    <Content Include="app\components\charts\chartController.js" />
-    <Content Include="app\components\charts\chartView.html" />
     <Content Include="app\components\ddDashboard\ddDashboardController.js" />
     <Content Include="app\components\ddDashboard\ddDashboardService.js" />
     <Content Include="app\components\ddDashboard\ddDashboardView.html" />
     <Content Include="app\components\dashboard\dashboardController.js" />
     <Content Include="app\components\dashboard\dashboardService.js" />
     <Content Include="app\components\dashboard\dashboardViewNew.html" />
-    <Content Include="app\components\Details.html" />
     <Content Include="app\components\home.html" />
-    <Content Include="app\components\home\homeController.js" />
-    <Content Include="app\components\home\homeService.js" />
-    <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\profile.html" />
     <Content Include="app\components\vpDashboard\vpDashboardController.js" />
     <Content Include="app\components\vpDashboard\vpDashboardService.js" />
     <Content Include="app\components\vpDashboard\vpDashboardView.html" />
     <Content Include="app\components\managerDashboard\managerDashboardController.js" />
     <Content Include="app\components\managerDashboard\managerDashboardService.js" />
     <Content Include="app\components\managerDashboard\managerDashboardView.html" />
-    <Content Include="app\components\Menu\menuItems.html" />
-    <Content Include="app\components\Menu\menuItemsController.js" />
-    <Content Include="app\components\pieChart\pieChartController.js" />
-    <Content Include="app\components\pieChart\pieChartView.html" />
-    <Content Include="app\components\QuardentChart\Quardent.html" />
-    <Content Include="app\components\QuardentChart\Quardent.js" />
-    <Content Include="app\components\riskDnaControl\riskDna.html" />
-    <Content Include="app\components\riskDnaControl\riskDnaControl.js" />
-    <Content Include="app\components\riskDNA\riskDna.html" />
-    <Content Include="app\components\riskDNA\riskDna.js" />
-    <Content Include="app\components\riskDNA\riskDNA1.html" />
-    <Content Include="app\components\riskDNA\riskDNA1.js" />
-    <Content Include="app\components\SidebySideChart\SideChartController.js" />
-    <Content Include="app\components\SidebySideChart\SideChartView.html" />
     <Content Include="app\login\LoginController.js" />
     <Content Include="app\login\LoginService.js" />
     <Content Include="app\login\LoginView.html" />
@@ -160,13 +139,9 @@
     <Content Include="assets\libs\angularjs\angular-resource.js" />
     <Content Include="assets\libs\angularjs\angular-route.js" />
     <Content Include="assets\libs\angularjs\angular.js" />
-    <Content Include="assets\libs\Chart.js" />
     <Content Include="assets\media\3275175.mp4" />
     <Content Include="favicon.ico" />
-    <Content Include="index - Copy.html" />
     <Content Include="index.html" />
-    <Content Include="Index_old.html" />
-    <Content Include="riskDna.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -178,14 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\angular-chart.css.map" />
-    <Content Include="sampleJson\casesJson.json" />
-    <Content Include="sampleJson\alertsJson.json" />
     <Content Include="sampleJson\analystsCases.json" />
     <Content Include="sampleJson\LoginDataJson.json" />
-    <Content Include="sampleJson\menuJson.json" />
-    <Content Include="sampleJson\pieChart.json" />
-    <Content Include="sampleJson\barChart.json" />
-    <Content Include="sampleJson\Risk.json" />
     <Content Include="assets\css\bootstrap-theme.css.map" />
     <Content Include="assets\css\bootstrap.css.map" />
     <Content Include="assets\fonts\FoundersGrotesk-Bold.eot" />
@@ -227,21 +196,16 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\media\3275175.ogg" />
     <None Include="Properties\PublishProfiles\BoozAllen.pubxml" />
-    <Content Include="sampleJson\SideChart.json" />
-    <Content Include="sampleJson\kpi.json" />
-    <Content Include="sampleJson\ReviewbyStatus.json" />
-    <Content Include="sampleJson\pieChartDd.json" />
-    <Content Include="sampleJson\pieChartFiu.json" />
+    <Content Include="sampleJson\dashboardJsonFiu.json" />
+    <Content Include="sampleJson\dashboardJsonDd.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sampleJson\gridJson.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

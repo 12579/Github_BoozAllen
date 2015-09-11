@@ -203,8 +203,8 @@
 }
 .ag-filter-list-viewport {
   overflow-x: auto;
-  height: 200px;
   width: 200px;
+  padding-bottom: 1em;
 }
 .ag-filter-list-container {
   position: relative;
@@ -220,6 +220,7 @@
 .ag-filter-filter {
   width: 170px;
   margin: 4px;
+  border: none;
 }
 .ag-filter-select {
   width: 110px;

@@ -285,14 +285,14 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
      * 
      * <pre>
      * <!doctype html>
-     * <html ng-app="myApp">
+     * <html ng-app="riskCanvasApp">
      * <head>
      *   <script src="js/angular.js"></script>
      *   <!-- Include the ui-router script -->
      *   <script src="js/angular-ui-router.min.js"></script>
      *   <script>
      *     // ...and add 'ui.router' as a dependency
-     *     var myApp = angular.module('myApp', ['ui.router']);
+     *     var riskCanvasApp = angular.module('riskCanvasApp', ['ui.router']);
      *   </script>
      * </head>
      * <body>

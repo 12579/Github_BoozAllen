@@ -3,22 +3,22 @@
 <nav class="boardNav">
     <ul>
         <li>
-            <a href="#0" ng-click='selectMenu("Dashboard")'><i class="fa fa-2x fa-tachometer"></i><span>Dashboard</span></a>
+            <a ng-click='selectMenu("Dashboard")'><i class="fa fa-2x fa-tachometer"></i><span >Dashboard</span></a>
         </li>
         <li>
-            <a href="#0" ng-click='selectMenu("Alerts")'><i class="fa fa-2x fa-bell"></i><span>Alerts</span><span class="alertCount">13</span></a>
+            <a ng-click='selectMenu("Alerts")'><i class="fa fa-2x fa-bell"></i><span>Alerts</span><span class="alertCount">{{shareData.alerts}}</span></a>
         </li>
         <li>
-            <a href="#0" ng-click='selectMenu("Cases")'><i class="fa fa-2x fa-television"></i><span>Cases</span></a>
+            <a ng-click='selectMenu("Cases")'><i class="fa fa-2x fa-television"></i><span>Cases</span><span class="alertCount">{{shareData.cases}}</span></a>
         </li>
         <li>
-            <a href="#0" ng-click='selectMenu("Tasks")'><i class="fa fa-2x fa-tasks"></i><span>Tasks</span></a>
+            <a ng-click='selectMenu("Tasks")'><i class="fa fa-2x fa-tasks"></i><span>Tasks</span></a>
         </li>
         <li>
-            <a href="#0" ng-click='selectMenu("Reporting")'><i class="fa fa-2x fa-file-text-o"></i><span>Reporting</span></a>
+            <a ng-click='selectMenu("Reporting")'><i class="fa fa-2x fa-file-text-o"></i><span>Reporting</span></a>
         </li>
         <li>
-            <a href="#0" ng-click='selectMenu("Admin")'><i class="fa fa-2x fa-user"></i><span>Admin</span></a>
+            <a ng-click='selectMenu("Admin")'><i class="fa fa-2x fa-user"></i><span>Admin</span></a>
         </li>
 
     </ul>

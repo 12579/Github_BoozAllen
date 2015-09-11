@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="riskCanvasApp">
 <head>
     <meta charset="utf-8">
     <title>Risk Canvas</title>
@@ -13,13 +13,10 @@
 </head>
 
 <body>
-    <!--<div id="mainDiv">
-        <div data-ng-view="" id="ng-view"></div>
-    </div>-->
-    <!--<div ui-view="modal" autoscroll="false"></div>-->
     <div>
         <div ui-view></div>
     </div>
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
@@ -27,14 +24,11 @@
 
     <!-- Application Dependencies -->
     <script src="assets/libs/angularjs/angular.js"></script>
-
-    <!--<script data-require="ui-router@*" data-semver="0.2.10" src="https://rawgit.com/angular-ui/ui-router/0.2.10/release/angular-ui-router.js"></script>-->
     <script src="assets/libs/angularjs/angular-ui-router.js"></script>
     <script src="assets/js/angularjs-nvd3-directives.js"></script>
     <script src="assets/libs/angularjs/angular-grid.js?ignore=notused5"></script>
 
     <!-- Application Scripts -->
-
     <script src="app/app.routes.js"></script>
     <!--<script src="app/shared/header/headerController.js"></script>-->
     <script src="app/shared/menu/menuController.js"></script>
@@ -46,31 +40,10 @@
     <script src="app/components/dashboard/dashboardController.js"></script>
     <script src="app/components/managerDashboard/managerDashboardController.js"></script>
     <script src="app/components/ddDashboard/ddDashboardController.js"></script>
+
     <!-- Application Css -->
     <link href="assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />
     <link href="assets/css/theme-fresh.css?ignore=notused5" rel="stylesheet" />
 </body>
 
 </html>
-
-<!--<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
-<head>
-
-    <title></title>
-    <meta charset="utf-8" />
-</head>
-<body>
-    <div>
-        <div class="container" style="margin-top:20px;">
-            <div data-ng-view="" id="ng-view" class="slide-animation"></div>
-        </div>
-    </div>
-</body>
-</html>
-
-<script src="assets/libs/angularjs/angular.js"></script>
-<script src="assets/libs/angularjs/angular-resource.js"></script>
-<script src="assets/libs/angularjs/angular-route.js"></script>
-<script src="app/app.module.js"></script>
-<script src="app/app.routes.js"></script>-->

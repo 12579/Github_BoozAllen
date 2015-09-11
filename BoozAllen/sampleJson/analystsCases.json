@@ -1,26 +1,926 @@
-﻿[
-  {
-    "analystName": "Jack White",
-    "openCases": 24,
-    "action": "View Cases / Assign Cases / Unassign Cases",   
-    "id": 1
+﻿
+{
+   "pieChartData": [
+    {
+      "key": "< 5 Days",
+      "y": {
+        "Alerts": 10,
+        "Cases": 14,
+        "Periodic Reviews": 9,
+        "Onboard Reviews": 10
+      }
+    },
+    {
+      "key": "6-10 Days",
+      "y": {
+        "Alerts": 5,
+        "Cases": 6,
+        "Periodic Reviews": 4,
+        "Onboard Reviews": 4
+      }
+    },
+    {
+      "key": "11-20 Days",
+      "y": {
+        "Alerts": 9,
+        "Cases": 7,
+        "Periodic Reviews": 10,
+        "Onboard Reviews": 13
+      }
+    },
+    {
+      "key": "20 Days +",
+      "y": {
+        "Alerts": 8,
+        "Cases": 12,
+        "Periodic Reviews": 17,
+        "Onboard Reviews": 12
+      }
+    }
+  ],
+  "ReviewStatusData": [
+    {
+      "key": "Cases",
+      "values": [
+        [ "Awaiting Assignment", 50 ],
+        [ "New", 20 ],
+        [ "Data Collection", 30 ],
+        [ "Analysis", 30 ],
+        [ "Q/A", 20 ]
+      ]
+    },
+    {
+      "key": "Alerts",
+      "values": [
+        [ "Awaiting Assignment", 40 ],
+        [ "New", 30 ],
+        [ "Data Collection", 40 ],
+        [ "Analysis", 20 ],
+        [ "Q/A", 50 ]
+      ]
+    },
+    {
+      "key": "Onboard Reviews",
+      "values": [
+        [ "Awaiting Assignment", 60 ],
+        [ "New", 40 ],
+        [ "Data Collection", 50 ],
+        [ "Analysis", 10 ],
+        [ "Q/A", 80 ]
+      ]
+    },
+    {
+      "key": "Periodic Reviews",
+      "values": [
+        [ "Awaiting Assignment", 70 ],
+        [ "New", 50 ],
+        [ "Data Collection", 60 ],
+        [ "Analysis", 40 ],
+        [ "Q/A", 60 ]
+      ]
+    }
+  ],
+  "productionOutputData": [
+    {
+      "key": "Alerts",
+      "values": [
+        [ 1, 12 ],
+        [ 2, 2 ],
+        [ 3, 3 ],
+        [ 4, 4 ],
+        [ 7, 1 ],
+        [ 8, 2 ],
+        [ 9, 3 ],
+        [ 10, 4 ],
+        [ 11, 5 ],
+        [ 14, 2 ],
+        [ 15, 3 ],
+        [ 16, 1 ],
+        [ 17, 1 ],
+        [ 18, 2 ],
+        [ 21, 5 ],
+        [ 22, 1 ],
+        [ 23, 1 ],
+        [ 24, 2 ],
+        [ 25, 3 ],
+        [ 28, 1 ],
+        [ 29, 4 ],
+        [ 30, 5 ]
+      ]
+    },
+    {
+      "key": "Cases",
+      "values": [
+        [ 1, 12 ],
+        [ 2, 2 ],
+        [ 3, 3 ],
+        [ 4, 4 ],
+        [ 7, 1 ],
+        [ 8, 2 ],
+        [ 9, 3 ],
+        [ 10, 4 ],
+        [ 11, 5 ],
+        [ 14, 2 ],
+        [ 15, 3 ],
+        [ 16, 1 ],
+        [ 17, 1 ],
+        [ 18, 2 ],
+        [ 21, 5 ],
+        [ 22, 1 ],
+        [ 23, 1 ],
+        [ 24, 2 ],
+        [ 25, 3 ],
+        [ 28, 1 ],
+        [ 29, 4 ],
+        [ 30, 5 ]
+      ]
+    },
+    {
+      "key": "Onboard Reviews",
+      "values": [
+        [ 1, 12 ],
+        [ 2, 2 ],
+        [ 3, 3 ],
+        [ 4, 4 ],
+        [ 7, 1 ],
+        [ 8, 2 ],
+        [ 9, 3 ],
+        [ 10, 4 ],
+        [ 11, 5 ],
+        [ 14, 2 ],
+        [ 15, 3 ],
+        [ 16, 1 ],
+        [ 17, 1 ],
+        [ 18, 2 ],
+        [ 21, 5 ],
+        [ 22, 1 ],
+        [ 23, 1 ],
+        [ 24, 2 ],
+        [ 25, 3 ],
+        [ 28, 1 ],
+        [ 29, 4 ],
+        [ 30, 5 ]
+      ]
+    },
+    {
+      "key": "Periodic Reviews",
+      "values": [
+        [ 1, 12 ],
+        [ 2, 2 ],
+        [ 3, 3 ],
+        [ 4, 4 ],
+        [ 7, 1 ],
+        [ 8, 2 ],
+        [ 9, 3 ],
+        [ 10, 4 ],
+        [ 11, 5 ],
+        [ 14, 2 ],
+        [ 15, 3 ],
+        [ 16, 1 ],
+        [ 17, 1 ],
+        [ 18, 2 ],
+        [ 21, 5 ],
+        [ 22, 1 ],
+        [ 23, 1 ],
+        [ 24, 2 ],
+        [ 25, 3 ],
+        [ 28, 1 ],
+        [ 29, 4 ],
+        [ 30, 5 ]
+      ]
+    }
+  ],
+  "kpiChart": {
+    "chartData": {
+      "DecisionQuality": 70,
+      "AnalyticQuality": 84,
+      "TechnicalQuality": 94,
+      "ResearchQuality": 81
+    }
   },
-   {
-    "analystName": "Jill Black",
-    "openCases": 200,
-    "action": "View Cases / Assign Cases / Unassign Cases",   
-    "id": 2
-  },
-   {
-    "analystName": "Mike Haul",
-    "openCases": 100,
-    "action": "View Cases / Assign Cases / Unassign Cases",   
-    "id": 3
-  },
-   {
-    "analystName": "Margi White",
-    "openCases": 123,
-    "action": "View Cases / Assign Cases / Unassign Cases",   
-    "id": 4
-  }]
+  "assignedData": [
+    {
+      "key": "Jack White",
+      "y": {
+        "Alerts": 20,
+        "Cases": 31,
+        "Periodic Reviews": 10,
+        "Onboard Reviews": 10
+      },
+      "id": 1
+    },
+    {
+      "key": "Jill Black",
+      "y": {
+        "Alerts": 10,
+        "Cases": 12,
+        "Periodic Reviews": 14,
+        "Onboard Reviews": 19
+      },
+      "id": 2
+    },
+    {
+      "key": "Mike Haul",
+      "y": {
+        "Alerts": 10,
+        "Cases": 21,
+        "Periodic Reviews": 30,
+        "Onboard Reviews": 40
+      },
+      "id": 3
+    },
+    {
+      "key": "Margi White",
+      "y": {
+        "Alerts": 20,
+        "Cases": 31,
+        "Periodic Reviews": 41,
+        "Onboard Reviews": 10
+      },
+      "id": 4
+    }
+  ],
+  "analysts": [
+    {
+      "analystName": "Jack White",
+      "openCases": 24,
+      "action": "View Cases / Assign Cases / Unassign Cases",
+      "id": 1,
+      "pieChartData": [
+        {
+          "key": "< 5 Days",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3
+          }
+        },
+        {
+          "key": "6-10 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 1
+          }
+        },
+        {
+          "key": "11-20 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 2
+          }
+        },
+        {
+          "key": "20 Days +",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3
+          }
+        }
+      ],
+      "ReviewStatusData": [
+        {
+          "key": "Cases",
+          "values": [
+            
+            [ "New", 20 ],
+            [ "Data Collection", 30 ],
+            [ "Analysis", 30 ],
+            [ "Q/A", 20 ]
+          ]
+        },
+        {
+          "key": "Alerts",
+          "values": [
+            
+            [ "New", 30 ],
+            [ "Data Collection", 40 ],
+            [ "Analysis", 20 ],
+            [ "Q/A", 50 ]
+          ]
+        }
+      ],
+      "productionOutputData": [
+        {
+          "key": "Alerts",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Cases",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        }
+      ],
+      "kpiChart": {
+        "chartData": {
+          "DecisionQuality": 70,
+          "AnalyticQuality": 84,
+          "TechnicalQuality": 94,
+          "ResearchQuality": 81
+        }
+      },
+      "assignedData": {
+        "Alerts": 20,
+        "Cases": 31
+      }
 
+    },
+    {
+      "analystName": "Jill Black",
+      "openCases": 200,
+      "action": "View Cases / Assign Cases / Unassign Cases",
+      "id": 2,
+      "pieChartData": [
+        {
+          "key": "< 5 Days",
+          "y": {
+            
+            "Periodic Reviews": 6,
+            "Onboard Reviews": 7
+          }
+        },
+        {
+          "key": "6-10 Days",
+          "y": {
+           
+            "Periodic Reviews": 1,
+            "Onboard Reviews": 1
+          }
+        },
+        {
+          "key": "11-20 Days",
+          "y": {
+           
+            "Periodic Reviews": 3,
+            "Onboard Reviews": 4
+          }
+        },
+        {
+          "key": "20 Days +",
+          "y": {
+           
+            "Periodic Reviews": 4,
+            "Onboard Reviews": 9
+          }
+        }
+      ],
+      "ReviewStatusData": [
+        {
+          
+          "key": "Onboard Reviews",
+          "values": [
+            
+            [ "New", 40 ],
+            [ "Data Collection", 70 ],
+            [ "Analysis", 10 ],
+            [ "Q/A", 80 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            
+            [ "New", 50 ],
+            [ "Data Collection", 90 ],
+            [ "Analysis", 40 ],
+            [ "Q/A", 60 ]
+          ]
+        }
+      ],
+      "productionOutputData": [
+        {
+          
+          "key": "Onboard Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 40 ],
+            [ 30, 50 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 10 ],
+            [ 29, 4 ],
+            [ 30, 50 ]
+          ]
+        }
+      ],
+      "kpiChart": {
+        "chartData": {
+          "DecisionQuality": 50,
+          "AnalyticQuality": 54,
+          "TechnicalQuality": 34,
+          "ResearchQuality": 61
+        }
+      },
+      "assignedData": {
+       
+        "Periodic Reviews": 14,
+        "Onboard Reviews": 19
+      }
+    },
+    {
+      "analystName": "Mike Haul",
+      "openCases": 100,
+      "action": "View Cases / Assign Cases / Unassign Cases",
+      "id": 3,
+      "pieChartData": [
+        {
+          "key": "< 5 Days",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3,
+            "Periodic Reviews": 1,
+            "Onboard Reviews": 1
+          }
+        },
+        {
+          "key": "6-10 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 1,
+            "Periodic Reviews": 1,
+            "Onboard Reviews": 1
+          }
+        },
+        {
+          "key": "11-20 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 2,
+            "Periodic Reviews": 3,
+            "Onboard Reviews": 4
+          }
+        },
+        {
+          "key": "20 Days +",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3,
+            "Periodic Reviews": 4,
+            "Onboard Reviews": 1
+          }
+        }
+      ],
+      "ReviewStatusData": [
+        {
+          "key": "Cases",
+          "values": [
+            
+            [ "New", 20 ],
+            [ "Data Collection", 30 ],
+            [ "Analysis", 30 ],
+            [ "Q/A", 20 ]
+          ]
+        },
+        {
+          "key": "Alerts",
+          "values": [
+            
+            [ "New", 30 ],
+            [ "Data Collection", 40 ],
+            [ "Analysis", 20 ],
+            [ "Q/A", 50 ]
+          ]
+        },
+        {
+          "key": "Onboard Reviews",
+          "values": [
+            
+            [ "New", 40 ],
+            [ "Data Collection", 50 ],
+            [ "Analysis", 10 ],
+            [ "Q/A", 80 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            
+            [ "New", 50 ],
+            [ "Data Collection", 60 ],
+            [ "Analysis", 40 ],
+            [ "Q/A", 60 ]
+          ]
+        }
+      ],
+      "productionOutputData": [
+        {
+          "key": "Alerts",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Cases",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Onboard Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        }
+      ],
+      "kpiChart": {
+        "chartData": {
+          "DecisionQuality": 88,
+          "AnalyticQuality": 84,
+          "TechnicalQuality": 94,
+          "ResearchQuality": 81
+        }
+      },
+      "assignedData": {
+        "Alerts": 10,
+        "Cases": 21,
+        "Periodic Reviews": 30,
+        "Onboard Reviews": 40
+      }
+    },
+    {
+      "analystName": "Margi White",
+      "openCases": 123,
+      "action": "View Cases / Assign Cases / Unassign Cases",
+      "id": 4,
+      "pieChartData": [
+        {
+          "key": "< 5 Days",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3,
+            "Periodic Reviews": 1,
+            "Onboard Reviews": 1
+          }
+        },
+        {
+          "key": "6-10 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 1,
+            "Periodic Reviews": 1,
+            "Onboard Reviews": 1
+          }
+        },
+        {
+          "key": "11-20 Days",
+          "y": {
+            "Alerts": 1,
+            "Cases": 2,
+            "Periodic Reviews": 3,
+            "Onboard Reviews": 4
+          }
+        },
+        {
+          "key": "20 Days +",
+          "y": {
+            "Alerts": 2,
+            "Cases": 3,
+            "Periodic Reviews": 4,
+            "Onboard Reviews": 1
+          }
+        }
+      ],
+      "ReviewStatusData": [
+        {
+          "key": "Cases",
+          "values": [
+            
+            [ "New", 20 ],
+            [ "Data Collection", 30 ],
+            [ "Analysis", 30 ],
+            [ "Q/A", 20 ]
+          ]
+        },
+        {
+          "key": "Alerts",
+          "values": [
+            
+            [ "New", 30 ],
+            [ "Data Collection", 40 ],
+            [ "Analysis", 20 ],
+            [ "Q/A", 50 ]
+          ]
+        },
+        {
+          "key": "Onboard Reviews",
+          "values": [
+            
+            [ "New", 40 ],
+            [ "Data Collection", 50 ],
+            [ "Analysis", 10 ],
+            [ "Q/A", 80 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            
+            [ "New", 50 ],
+            [ "Data Collection", 60 ],
+            [ "Analysis", 40 ],
+            [ "Q/A", 60 ]
+          ]
+        }
+      ],
+      "productionOutputData": [
+        {
+          "key": "Alerts",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Cases",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Onboard Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        },
+        {
+          "key": "Periodic Reviews",
+          "values": [
+            [ 1, 12 ],
+            [ 2, 2 ],
+            [ 3, 3 ],
+            [ 4, 4 ],
+            [ 7, 1 ],
+            [ 8, 2 ],
+            [ 9, 3 ],
+            [ 10, 4 ],
+            [ 11, 5 ],
+            [ 14, 2 ],
+            [ 15, 3 ],
+            [ 16, 1 ],
+            [ 17, 1 ],
+            [ 18, 2 ],
+            [ 21, 5 ],
+            [ 22, 1 ],
+            [ 23, 1 ],
+            [ 24, 2 ],
+            [ 25, 3 ],
+            [ 28, 1 ],
+            [ 29, 4 ],
+            [ 30, 5 ]
+          ]
+        }
+      ],
+      "kpiChart": {
+        "chartData": {
+          "DecisionQuality": 90,
+          "AnalyticQuality": 84,
+          "TechnicalQuality": 20,
+          "ResearchQuality": 10
+        }
+      },
+      "assignedData": {
+        "Alerts": 20,
+        "Cases": 31,
+        "Periodic Reviews": 41,
+        "Onboard Reviews": 10
+      }
+    }
+
+  ]
+}

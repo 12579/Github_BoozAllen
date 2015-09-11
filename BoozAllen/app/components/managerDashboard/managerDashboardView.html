@@ -6,7 +6,7 @@
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
 <div id="dashboard" class="dashboard">
-   
+
     <section class="mainBoard">
         <div class="boardArea">
 
@@ -15,34 +15,36 @@
                     <div class="col-md-12">
                         <h2>MANAGER - DASHBOARD</h2>
                         <p>Provides a snapshot of your team’s assigned Items and productivity.</p>
+                        <a href ng-if="analystname" ng-click="Refresh();" class="ovalButton pull-right yellowButton iconButton">
+                            <span>{{analystname}}</span>
+                            <i class="fa fa-times"></i>
+                        </a>
                     </div>
                 </div>
                 <ul class="row marginZero Charts">
-                    
-                    <li class="col-md-12" >
+
+                    <li class="col-md-12">
                         <div class="cards">
                             <h2>Production Output past 30 days Bar chart</h2>
                             <nvd3-multi-bar-chart data="productionOutputData"
                                                   id="productionOutputChartId"
-                                                  width="500"
+                                                  width="1750"
                                                   height="200"
                                                   showxaxis="true"
                                                   showyaxis="true"
-                                                  
                                                   stacked="true"
-                                                  
-                                                  color="colorFunction()"
-                                                  
-                                                  tooltips="true"
+                                                  color="colorFunctionMain()"
+                                                  showlegend="true"
+                                                  legendcolor="colorFunctionMain()"
                                                   clipEdge="false">
                                 <svg></svg>
-                                <h1>{{currentDate|date:'MMM'}}</h1>
+                                <h6> {{currentDate | date:'MMM'}}</h6>
                             </nvd3-multi-bar-chart>
                         </div>
                     </li>
-                    
+
                 </ul>
-                <ul class="row marginZero Charts">
+                <ul class="row marginZero Charts displayFlex">
                     <li class="col-md-4">
                         <div class="cards">
                             <h2>Reviews by Status</h2>
@@ -51,9 +53,9 @@
                                                   id="statusData"
                                                   Width="550"
                                                   height="200"
-                                                  color="colorFunction7()"
+                                                  color="colorFunctionMain()"
                                                   showXAxis="true"
-                                                  showYAxis="true">
+                                                  showYAxis="true" margin="{right:0}" showLegend="true" legendColor="colorFunctionMain()">
                                 <svg></svg>
                             </nvd3-multi-bar-chart>
 
@@ -63,14 +65,14 @@
                         <div class="cards">
                             <h2>Aging Pie Chart</h2>
 
-                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)" style="margin-top: -60px; float: right">
+                            <select id="Select" ng-model="data" ng-change="BindPieChart(this)">
                                 <option value="" selected="selected">All</option>
                                 <option value="Alerts">Alerts</option>
                                 <option value="Cases">Cases</option>
                                 <option value="Periodic Reviews">Periodic Reviews</option>
-                                <option value="Onboarding Reviews">Onboarding Reviews</option>
+                                <option value="Onboard Reviews">Onboard Reviews</option>
                             </select>
-                            <nvd3-pie-chart data="exampleData1" id="exampleId2" x="xFunction()" y="yFunction()" width="550" height="200" margin="{left:0,top:0,bottom:0,right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" legendPosition="right" showLegend="true" legendColor="colorFunction()" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
+                            <nvd3-pie-chart data="agingData" id="agingData" x="xFunction()" y="yFunction()" width="550" height="200" margin="{right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" showLegend="true" legendColor="colorFunction()" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
 
                                 <svg></svg>
                             </nvd3-pie-chart>
@@ -79,46 +81,64 @@
                     <li class="col-md-4">
                         <div class="cards">
                             <h2>Quality Score by Quality KPI</h2>
-                             <div class="qualityScore">
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.DecisionQuality}}%</span><br /><b>Decision Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.AnalyticQuality}}%</span><br /><b>Analytic Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.TechnicalQuality}}%</span><br /><b>Technical Quality</b></div>
-                                <div class="qualityScoreGraph"><span style="color: #f9db22;font-size: 1.25vw;font-style: normal;font-weight: 500;line-height: 26.4px">{{kpiData.kpiChart.chartData.ResearchQuality}}%</span><br /><b>Research Quality</b></div>
+                            <div class="qualityScore">
+                                <div class="qualityScoreGraph"><span ng-class="kpiData.chartData.DecisionQuality<=68?'qualityred': kpiData.chartData.DecisionQuality>68 && kpiData.chartData.DecisionQuality<=75?'qualitygrey':'qualityyellow'">{{kpiData.chartData.DecisionQuality}}%</span><b>Decision Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpiData.chartData.AnalyticQuality<=68?'qualityred': kpiData.chartData.AnalyticQuality>68 && kpiData.chartData.AnalyticQuality<=75?'qualitygrey':'qualityyellow'">{{kpiData.chartData.AnalyticQuality}}%</span><b>Analytic Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpiData.chartData.TechnicalQuality<=68?'qualityred': kpiData.chartData.TechnicalQuality>68 && kpiData.chartData.TechnicalQuality<=75?'qualitygrey':'qualityyellow'">{{kpiData.chartData.TechnicalQuality}}%</span><b>Technical Quality</b></div>
+                                <div class="qualityScoreGraph"><span ng-class="kpiData.chartData.ResearchQuality<=68?'qualityred': kpiData.chartData.ResearchQuality>68 && kpiData.chartData.ResearchQuality<=75?'qualitygrey':'qualityyellow'">{{kpiData.chartData.ResearchQuality}}%</span><b>Research Quality</b></div>
+
                             </div>
-                           
+
                         </div>
                     </li>
                 </ul>
 
-                <div class="col-md-12">&nbsp;</div>
-                <ul class="row marginZero Charts">
-                    <li class="col-md-4">
+
+                <ul class="row marginZero Charts displayFlex">
+                    <li class="col-md-4 assignedItemBlock">
                         <div class="cards">
-                            <h2>Assigned Items per Person Pie Chart</h2>
+                            <h2>Assigned Items per Person</h2>
+                            <select id="Select1" ng-model="singleSelect" ng-change="BindAssignedData()">
+                                <option value="" selected="selected">All</option>
+                                <option value="Alerts">Alerts</option>
+                                <option value="Cases">Cases</option>
+                                <option value="Periodic Reviews">Periodic Reviews</option>
+                                <option value="Onboard Reviews">Onboard Reviews</option>
+                            </select>
+
+
 
                             <nvd3-pie-chart data="assignedData"
-                                id="assignedData"
-                                x="xFunction()"
-                                y="yFunction()"
-                                width="250"
-                                height="200"
-                                margin="{left:0,top:0,bottom:0,right:0}"
-                                showlabels="true"
-                                showvalues="true"
-                                labeltype="value"
-                                pielabelsoutside="false"
-                                tooltips="true"
-                                tooltipcontent="toolTipContentFunction1()">
+                                            id="assignedData"
+                                            x="xFunction()"
+                                            y="yFunction()"
+                                            width="400"
+                                            height="200"
+                                            margin="{right:0}"
+                                            showlabels="true"
+                                            showvalues="true"
+                                            labeltype="percent"
+                                            pielabelsoutside="false"
+                                            tooltips="true"
+                                            tooltipcontent="toolTipContentFunction1()"
+                                            color="colorFunction()">
 
                                 <svg></svg>
                             </nvd3-pie-chart>
                         </div>
                     </li>
-                    <li class="col-md-8">
-                        <div>Analyst List</div>
+                    <li class="col-md-8 analystList">
+                        <h2>
+                            Analysts List
+                        </h2>
+                        <div class="gridSearch">
+                            <div class="searchInput">
+                                <input type="text" placeholder="Quick Search" ng-model="gridOptions.quickFilterText" />
+                                <i class="fa fa-search"></i>
+                            </div>
 
-                                <div ag-grid="gridOptions" class="ag-fresh" style="height: 320px;"></div>
-                           
+                        </div>
+                        <div ag-grid="gridOptions" class="ag-fresh"></div>
                     </li>
                 </ul>
             </div>
@@ -126,5 +146,5 @@
         </div>
 
     </section>
-   
+
 </div>
