@@ -5,20 +5,25 @@
 <script src="../../../assets/js/script.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
-<div id="dashboard" class="dashboard">
+<!--<div id="dashboard" class="dashboard">-->
+<div>
 
     <section class="mainBoard">
         <div class="boardArea">
 
             <div class="container-fluid">
                 <div class="row marginZero">
-                    <div class="col-md-12">
-                        <h2>MANAGER - DASHBOARD</h2>
-                        <p>Provides a snapshot of your team’s assigned Items and productivity.</p>
-                        <a href ng-if="analystname" ng-click="Refresh();" class="ovalButton pull-right yellowButton iconButton">
-                            <span>{{analystname}}</span>
-                            <i class="fa fa-times"></i>
-                        </a>
+                    <div class="col-md-12 pageHeading displayFlex">
+                        <div class="">
+                            <h2>MANAGER - DASHBOARD</h2>
+                            <p>Provides a snapshot of your team’s assigned Items and productivity.</p>    
+                        </div>
+                        <div class="displayFlex alignCenterV">
+                            <a href ng-if="analystname" ng-click="Refresh();" class="ovalButton yellowButton iconButton">
+                                <span>{{analystname}}</span>
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <ul class="row marginZero Charts">

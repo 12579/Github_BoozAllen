@@ -5,7 +5,8 @@
 <script src="../../../assets/js/script.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
-<div id="dashboard" class="dashboard">
+<!--<div id="dashboard" class="dashboard">-->
+<div>
 
     <div class="menuOverlay"></div>
     <!-- Dashboard Main Body -->
@@ -72,10 +73,10 @@
                                 </div>
                             </div>
                             <tabs>
-                                <pane icon="fa fa-file-text-o" title="Onboard Reviews" num="{{totalCaseRows}}">
+                                <pane icon="fa fa-file-text-o" tab-title="Onboard Reviews" num="{{totalCaseRows}}">
                                     <div ag-grid="casegridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
                                 </pane>
-                                <pane icon="fa fa-file-archive-o" title="Periodic Reviews" num="{{totalAlertRows}}">
+                                <pane icon="fa fa-file-archive-o" tab-title="Periodic Reviews" num="{{totalAlertRows}}">
                                     <div ag-grid="alertgridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
                                 </pane>
                             </tabs>

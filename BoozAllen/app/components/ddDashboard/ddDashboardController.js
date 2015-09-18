@@ -7,6 +7,11 @@
         var userInfo = authenticationSvc.getUserInfo();
         $scope.userInfo = userInfo;
         $scope.shareData = shareData;
+        var defaultVars = {
+            w: angular.element(window).width(),
+            winRef: 1920
+        };
+
         var casecolumnDefs = [
             {
                 headerName: "ID", field: "id", hide: true
@@ -34,8 +39,8 @@
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700,
-                cellRenderer: riskDnaHandler, filter: 'number',
+                width: 700 * defaultVars.w / defaultVars.winRef, filter: 'number',
+                cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
                     'rag-green': function (params) { return params.data.entityRiskScore < 33.334 },
@@ -83,8 +88,8 @@
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700,
-                cellRenderer: riskDnaHandler, filter: 'number',
+                width: 700 * defaultVars.w / defaultVars.winRef, filter: 'number',
+                cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
                     'rag-green': function (params) { return params.data.entityRiskScore < 33.334 },
@@ -119,25 +124,39 @@
         }
 
         function riskDnaHandler(params) {
+            debugger;
+            var cellWidth = params.eGridCell.style.width;
+            cellWidth = cellWidth.substring(0, cellWidth.length - 2);
+            var cellwidthInt = parseInt(cellWidth);
+
             params.$scope.dnaData = params.data;
+            var totalSequence = params.data.riskDNA.sequences.length;
+            //var sequenceWidthMain = 700*defaultVars.w/defaultVars.winRef / totalSequence;
+            var sequenceWidthMain = cellwidthInt * defaultVars.w / defaultVars.winRef / totalSequence;
+            var sequenceWidth = sequenceWidthMain - 5;
+            params.$scope.SequenceWidth = sequenceWidth;
+            //+ '<div style="float: left; background-color: white; height: 1.47em;">&nbsp;</div>'
+            //             style=" width:' + sequenceWidthMain + 'px"  
             var data =
                 '<div class="riskData">'
                     + '<div style="float: left;" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">'
-                    + '<div style="float: left; background-color: white; height: 1.47em;">&nbsp;</div>'
-                    + '<div class="dataPopup" style="position: absolute; z-index: 100;" ng-show="popoverIsVisible">{{dna.sequenceType}} : {{dna.sequenceScore|number:2}}</div>'
-                    + '<div style="float: left;" ng-repeat="gene in dna.genes">'
-                    + '<div ng-style="{\'border-left\': \'2px solid gray\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>'
-                    + '<div ng-style="{\'border-left\' : \'2px solid yellow\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'
-                    + '<div ng-style="{\'border-left\': \'2px solid red\',\'height\': \'1.47em\', \'float\':\'left\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>'
-                    + '<div class="dataPopdown" style="position: absolute;z-index: 100;" ng-show="popoverIsVisibleGene">{{gene.geneName}} : {{gene.geneScore}}</div>'
-                    + '</div>'
-                    + '</div>'
-                    + '<div style="float: left;" class="dataNo">'
-                    + '<div><span>{{data.entityRiskScore}}</span></div>'
-                    + '</div>'
+
+                        + '<div class="dataPopup" style="position: absolute; z-index: 100;" ng-show="popoverIsVisible">{{dna.sequenceType}}</div>'// : {{dna.sequenceScore|number:2}}
+                            + '<div style="float: left; width:{{SequenceWidth/dna.genes.length}}px"  ng-repeat="gene in dna.genes">'
+                                + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'gray\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>' //\'border-left\': \'1px solid white\',
+                                + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'yellow\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'//\'border-left\' : \'1px solid white\',
+                                + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'red\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>'//\'border-left\': \'1px solid white\',
+                                + '<div class="dataPopdown" style="position: absolute;z-index: 100;" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>'
+                            + '</div>'
+                        + '</div>'
+
+                        + '<div style="float: right;" class="dataNo">'
+                            + '<div><span>{{data.entityRiskScore}}</span></div>'
+                        + '</div>'
                     + '</div>';
             return data;
         }
+
 
         $scope.casegridOptions = {
             columnDefs: casecolumnDefs,
@@ -288,8 +307,8 @@
             }
 
             var yearNumber = date.substring(6, 10);
-            var monthNumber = date.substring(3, 5);
-            var dayNumber = date.substring(0, 2);
+            var monthNumber = date.substring(0,2);
+            var dayNumber = date.substring(3,5);
 
             var result = (yearNumber * 10000) + (monthNumber * 100) + dayNumber;
             return result;

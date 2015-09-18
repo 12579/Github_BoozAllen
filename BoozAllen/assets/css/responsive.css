@@ -20,19 +20,20 @@
 
 @media (max-width: 1499px) {
     .dataPopdown {
-        top: 3.5em;
+/*        top: 3.5em;*/
     }
 }
 @media (max-width: 1024px) {
     .Charts .cards {
         padding: .78vw 0.82vw;
     }
-    .boardArea h2{
+    .boardArea h2 {
         margin-top: 0;
     }
+    .loginPage{
+        background-color: rgba(255, 255, 255, 0.05)
+    }
 }
-
-
 
 @media (max-height: 600px) {
     .loginPage header {

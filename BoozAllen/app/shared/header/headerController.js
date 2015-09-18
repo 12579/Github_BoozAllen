@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular.module('riskCanvasApp')
@@ -21,6 +21,9 @@
         $scope.openHeadMenu = function () {
             var menu = angular.element(document.querySelector('#headMenu'));
             angular.element(menu).hasClass('ng-hide') ? angular.element(menu).addClass('ng-show').removeClass('ng-hide') : angular.element(menu).addClass('ng-hide').removeClass('ng-show');
+            
+//               if (!$('#headMenu').is(e.target) && $('#headMenu').has(e.target).length === 0)
+//                   $('#headMenu').hide();
 
         }
         $scope.OpenProfilePage = function () {
