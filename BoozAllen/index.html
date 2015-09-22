@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="riskCanvasApp">
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link href="assets/css/vis.css" rel="stylesheet" />
     <link href="assets/css/libraries.css" rel="stylesheet" />
-	<link href="assets/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/perfect-scrollbar.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/script.js"></script>
 
@@ -36,6 +36,8 @@
     <script src="assets/libs/googleAnalytics.js"></script>
     <script src="assets/libs/analytics.js"></script>
     <script src="assets/libs/checklist-model.js"></script>
+    <script src="assets/libs/alasql.min.js"></script>
+    <script src="assets/libs/xlsx.core.min.js"></script>
     <!-- Application Scripts -->
     <script src="app/app.routes.js"></script> 
    
@@ -48,7 +50,10 @@
     <script src="app/components/managerDashboard/managerDashboardController.js"></script>
     <script src="app/components/ddDashboard/ddDashboardController.js"></script>
     <script src="app/components/entityDetails/entityDetailController.js"></script>
-
+    <script src="app/components/caseDetails/caseDetailController.js"></script>
+    <script src="app/components/admin/adminController.js"></script>
+    <script src="app/components/alertDetails/alertDetailController.js"></script>
+    <script src="app/components/caseEntityDetails/caseEntityDetailController.js"></script>
 
     <!-- Application Css -->
     <link href="assets/css/angular.grid.css?ignore=notused5" rel="stylesheet" />

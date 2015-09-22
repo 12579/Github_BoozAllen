@@ -1,0 +1,398 @@
+﻿{
+  "e3UID": "53232af0-cb12-4904-b641-551c84babf2c",
+  "personBaseData": {
+    "timestamp": 0,
+    "createdDate": "Aug 25, 2015 4:12:46 AM",
+    "organizationID": "166776925",
+    "idType": "SSN",
+    "firstName": "Karl",
+    "lastName": "Meyer",
+    "address": {
+      "street1": "9409 Shouse Dr",
+      "city": "Vienna",
+      "state": "VA",
+      "zipcode": "22182",
+      "country": "UNITED_STATES"
+    },
+    "phone": "7034474272",
+    "email": "karl88@vt.edu",
+    "dob": "4/13/1990",
+    "accountNumber": "54470043",
+    "accountType": "MOBILE_BANKING",
+    "bankID": "v53O2CRu",
+    "accountPurpose": "Save Money",
+    "sourceOfFunds": "Check"
+  },
+  "personas": [
+    {
+      "personaProvider": "PIPL",
+      "personaAssociation": "SELF",
+      "matchScore": 0.923259973526001,
+      "names": [
+        "Karl Meyer"
+      ],
+      "addresses": [
+        "Vienna,VA,22182,US"
+      ],
+      "phones": [7034474274],
+      "emails": [ "karl81@vt.edu" ],
+      "isActive": true
+    },
+    {
+      "personaProvider": "PIPL",
+      "personaAssociation": "SELF",
+      "matchScore": 0.18932999670505524,
+      "names": [
+        "Carl Meyer"
+      ],
+      "addresses": [
+        "Vienna,VA,US",
+        "Norfolk,VA,US",
+        "Fenn,ID,83531,US",
+        "Grangeville,ID,US",
+        "Austin,TX,US"
+      ],
+      "phones": [ 7034474273 ],
+      "emails": [ "karl82@vt.edu" ],
+      "isActive": true
+    }
+  ],
+  "cddPersonData": {
+    "attributeCDD": {
+      "nameCorroborationScore": 0,
+      "collectedNames": [
+        "Rick Hanoover",
+        "Jane Boden"
+      ],
+      "addressCorroborationScore": 0,
+      "collectedAddresses": [
+        "4591 Albemarle Street, Kingman AZ",
+        "9821 Leopard Street, Denver CO"
+      ],
+      "phoneCorroborationScore": 0,
+      "collectedPhones": [
+        "765-244-0922",
+        "865-244-0922"
+      ],
+      "emailCorroborationScore": 0,
+      "collectedEmails": [
+        "rickysmalls@yahoo.com",
+        "janedoe@gmail.com"
+      ]
+    },
+    "watchlistCDD": {
+      "watchlistHits": [
+        {
+          "nameParameter": "Georget Akparanta",
+          "watchlistProvider": "SBS",
+          "watchlistName": "OFAC",
+          "ranking": {
+            "ExposureIndex": 74,
+            "StrengthIndex": 112
+          }
+        }
+      ]
+    },
+    "activityCDD": {
+      "accounts": [
+        {
+          "accountNumber": "149479265",
+          "accountType": "Checking"
+        },
+        {
+          "accountNumber": "113535734",
+          "accountType": "Checking"
+        },
+        {
+          "accountNumber": "329684217",
+          "accountType": "Checking"
+        },
+        {
+          "accountNumber": "832163561",
+          "accountType": "Saving"
+        },
+        {
+          "accountNumber": "255327367",
+          "accountType": "Saving"
+        },
+        {
+          "accountNumber": "128394065",
+          "accountType": "Saving"
+        },
+        {
+          "accountNumber": "504050128",
+          "accountType": "Checking"
+        },
+        {
+          "accountNumber": "726181654",
+          "accountType": "Saving"
+        },
+        {
+          "accountNumber": "216322584",
+          "accountType": "Checking"
+        }
+      ],
+      "alerts": [
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        },
+        {
+          "triggers": [ ],
+          "transactions": [ ]
+        }
+      ]
+    }
+  },
+  "eddPersonData": {
+    "attributeData": {
+      "employerAddress": {
+        "street1": "575 Herdon Parkway",
+        "city": "Herndon",
+        "state": "VA",
+        "zipcode": "20170",
+        "country": "UNITED_STATES"
+      },
+      "employerToBankDistance": 1.4451189052954507,
+      "homeToBankDistance": 8.402294629239886,
+      "accountPurpose": "Save Money",
+      "sourcOfAccountFunds": "Check",
+      "homeLat": 38.944507,
+      "homeLng": -77.2708,
+      "employerLat": 38.9537497,
+      "employerLng": -77.3836634,
+      "bankLat": 38.9549779,
+      "bankLng": -77.3670259
+    },
+    "negativeNewsData": {
+      "articles": [ ]
+    }
+  },
+  "riskDNA": {
+    "riskDnaScore": 127.56666666666668,
+    "sequences": [
+      {
+        "sequenceType": "ATTRIBUTE",
+        "sequenceScore": 51.8,
+        "genes": [
+          {
+            "geneName": "Name Frequency",
+            "geneValue": "2",
+            "geneScore": "10.0"
+          },
+          {
+            "geneName": "Name Variation",
+            "geneValue": "2",
+            "geneScore": "100.0"
+          },
+          {
+            "geneName": "Address Frequency",
+            "geneValue": "2",
+            "geneScore": "10.0"
+          },
+          {
+            "geneName": "Address Variation",
+            "geneValue": "2",
+            "geneScore": "100.0"
+          },
+          {
+            "geneName": "Address Location Threat",
+            "geneValue": "UNITED_STATES",
+            "geneScore": "52.0"
+          },
+          {
+            "geneName": "Hifca Threat",
+            "geneValue": "MD",
+            "geneScore": "10.0"
+          },
+          {
+            "geneName": "Phone Frequency",
+            "geneValue": "2",
+            "geneScore": "10.0"
+          },
+          {
+            "geneName": "Phone Variation",
+            "geneValue": "2",
+            "geneScore": "100.0"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "765-244-0922-FALSE",
+            "geneScore": "0.0"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "865-244-0922-FALSE",
+            "geneScore": "0.0"
+          },
+          {
+            "geneName": "Phone Carrier",
+            "geneValue": "TMobile",
+            "geneScore": "70.0"
+          },
+          {
+            "geneName": "Phone Carrier",
+            "geneValue": "Verizon",
+            "geneScore": "70.0"
+          },
+          {
+            "geneName": "Phone Location Threat",
+            "geneValue": "US",
+            "geneScore": "52.0"
+          },
+          {
+            "geneName": "Phone Location Threat",
+            "geneValue": "US",
+            "geneScore": "52.0"
+          },
+          {
+            "geneName": "Email Frequency",
+            "geneValue": "2",
+            "geneScore": "10.0"
+          },
+          {
+            "geneName": "Email Variation",
+            "geneValue": "2",
+            "geneScore": "100.0"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "rickysmalls@yahoo.com-VALID SINCE 2015-04-19T00:00:00",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "janedoe@gmail.com-VALID SINCE 2014-05-12T00:00:00",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Email Domain",
+            "geneValue": "yahoo",
+            "geneScore": "70.0"
+          },
+          {
+            "geneName": "Email Domain",
+            "geneValue": "gmail",
+            "geneScore": "70.0"
+          }
+        ]
+      },
+      {
+        "sequenceType": "WATCHLIST",
+        "sequenceScore": 80,
+        "genes": [
+          {
+            "geneName": "Watchlist",
+            "geneValue": "OFAC",
+            "geneScore": "80.0"
+          }
+        ]
+      },
+      {
+        "sequenceType": "ACTIVITY",
+        "sequenceScore": 75,
+        "genes": [
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          },
+          {
+            "geneName": "Account",
+            "geneValue": "CHECKING",
+            "geneScore": "75.0"
+          }
+        ]
+      },
+      {
+        "sequenceType": "NETWORK",
+        "sequenceScore": 48.333333333333336,
+        "genes": [
+          {
+            "geneName": "Jane Smith | roomate",
+            "geneValue": "I",
+            "geneScore": "25.0"
+          },
+          {
+            "geneName": "Ralph Johnson | co-worker",
+            "geneValue": "II",
+            "geneScore": "40.0"
+          },
+          {
+            "geneName": "Alert | $10,000",
+            "geneValue": "III",
+            "geneScore": "80.0"
+          }
+        ]
+      },
+      {
+        "sequenceType": "NEGATIVENEWS",
+        "sequenceScore": 0,
+        "genes": [
+          {
+            "geneName": "Article",
+            "geneValue": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+            "geneScore": "0.0"
+          }
+        ]
+      }
+    ],
+    "riskLevel": "PROHIBITED"
+  },
+  "workflowState": "Machine Analytics"
+}

@@ -293,6 +293,7 @@ svg.nvd3-svg {
 .nvd3.nv-noData {
     font-size: 18px;
     font-weight: bold;
+    display: none;
 }
 
 

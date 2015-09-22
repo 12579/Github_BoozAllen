@@ -62,11 +62,17 @@
   <ItemGroup>
     <Content Include="app\app.module.js" />
     <Content Include="app\app.routes.js" />
-    <Content Include="app\Cards\Cards.html" />
-    <Content Include="app\Cards\Cards.js" />
     <Content Include="app\components\adminDashboard\adminDashboardController.js" />
     <Content Include="app\components\adminDashboard\adminDashboardService.js" />
     <Content Include="app\components\adminDashboard\adminDashboardView.html" />
+    <Content Include="app\components\admin\adminController.js" />
+    <Content Include="app\components\admin\adminView.html" />
+    <Content Include="app\components\alertDetails\alertDetailController.js" />
+    <Content Include="app\components\alertDetails\alertDetailView.html" />
+    <Content Include="app\components\caseDetails\caseDetailController.js" />
+    <Content Include="app\components\caseDetails\caseDetailView.html" />
+    <Content Include="app\components\caseEntityDetails\caseEntityDetails.html" />
+    <Content Include="app\components\caseEntityDetails\caseEntityDetailController.js" />
     <Content Include="app\components\ddDashboard\ddDashboardController.js" />
     <Content Include="app\components\ddDashboard\ddDashboardService.js" />
     <Content Include="app\components\ddDashboard\ddDashboardView.html" />
@@ -76,11 +82,7 @@
     <Content Include="app\components\entityDetails\entityDetail.html" />
     <Content Include="app\components\entityDetails\entityDetailController.js" />
     <Content Include="app\components\home.html" />
-    <Content Include="app\components\node\nodeController.js" />
-    <Content Include="app\components\node\nodeView.html" />
     <Content Include="app\components\profile.html" />
-    <Content Include="app\components\RiskDnaChangeLog\RiskDnaView.html" />
-    <Content Include="app\components\RiskDnaChangeLog\RiskDnaController.js" />
     <Content Include="app\components\vpDashboard\vpDashboardController.js" />
     <Content Include="app\components\vpDashboard\vpDashboardService.js" />
     <Content Include="app\components\vpDashboard\vpDashboardView.html" />
@@ -102,6 +104,7 @@
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\jquery.mCustomScrollbar.css" />
     <Content Include="assets\css\libraries.css" />
     <Content Include="assets\css\materialize.css" />
     <Content Include="assets\css\responsive.css" />
@@ -135,6 +138,7 @@
     <Content Include="assets\img\image2.png" />
     <Content Include="assets\img\image3.png" />
     <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\network-img.jpg" />
     <Content Include="assets\img\riskDnaImg.png" />
     <Content Include="assets\img\status1.png" />
     <Content Include="assets\img\status2.png" />
@@ -142,7 +146,9 @@
     <Content Include="assets\img\status4.png" />
     <Content Include="assets\img\status5.png" />
     <Content Include="assets\img\video-bg.jpg" />
+    <Content Include="assets\js\jquery.mCustomScrollbar.js" />
     <Content Include="assets\js\vis.js" />
+    <Content Include="assets\libs\alasql.min.js" />
     <Content Include="assets\libs\analytics.js" />
     <Content Include="assets\libs\angularjs\angular-ui-router.js" />
     <Content Include="assets\js\bootstrap.js" />
@@ -162,9 +168,11 @@
     <Content Include="assets\libs\angularjs\angular.js" />
     <Content Include="assets\libs\checklist-model.js" />
     <Content Include="assets\libs\googleAnalytics.js" />
+    <Content Include="assets\libs\xlsx.core.min.js" />
     <Content Include="assets\media\3275175.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
+    <None Include="sampleJson\alertObject.json" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -224,8 +232,7 @@
     <Content Include="sampleJson\dashboardJsonFiu.json" />
     <Content Include="sampleJson\dashboardJsonDd.json" />
     <Content Include="sampleJson\personObject.json" />
-    <Content Include="sampleJson\person.json" />
-    <Content Include="sampleJson\EntityData.json" />
+    <Content Include="sampleJson\caseObject.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

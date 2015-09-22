@@ -1,0 +1,2183 @@
+{
+  "person": {
+    "personBaseData": {
+      "timestamp": 1442497370702,
+      "createdDate": "Sep 17, 2015 6:42:50 AM",
+      "organizationID": "319132151",
+      "idType": "SSN",
+      "firstName": "Edward",
+      "lastName": "Damon",
+      "address": {
+        "street1": "575 Herdon Parkway",
+        "city": "Herndon",
+        "state": "VA",
+        "zipcode": "20170",
+        "country": "UNITED_STATES"
+      },
+      "phone": "6073515787",
+      "email": "edward.damon@gmail.com",
+      "dob": "2/12/1981",
+      "accountNumber": "45011283",
+      "accountType": "OTHER",
+      "bankID": "wy4d0itUwoj",
+      "accountPurpose": "Save Money",
+      "sourceOfFunds": "Check"
+    },
+    "personas": [
+      {
+        "personaProvider": "PIPL",
+        "personaAssociation": "SELF",
+        "matchScore": 45,
+        "sources": [
+          "pipl"
+        ],
+        "names": [
+          "Rick Hanoover"
+        ],
+        "addresses": [
+          "4591 Albemarle Street, Kingman AZ"
+        ],
+        "phones": [
+          {
+            "phoneNumber": "765-244-0922",
+            "associatedLocations": [
+              "Albania"
+            ],
+            "countryCode": "US",
+            "isValid": false,
+            "isConnected": true,
+            "carrier": "TMobile",
+            "validDate": "Sep 17, 2015 6:42:53 AM"
+          }
+        ],
+        "emails": [
+          {
+            "emailAddress": "rickysmalls@yahoo.com",
+            "domain": "yahoo",
+            "validDate": "Apr 19, 2015 12:00:00 AM"
+          }
+        ],
+        "associates": [ ],
+        "isNew": true,
+        "isActive": true
+      },
+      {
+        "personaProvider": "WHITEPAGES",
+        "personaAssociation": "SELF",
+        "matchScore": 39,
+        "sources": [
+          "whitepages"
+        ],
+        "names": [
+          "Jane Boden"
+        ],
+        "addresses": [
+          "9821 Leopard Street, Denver CO"
+        ],
+        "phones": [
+          {
+            "phoneNumber": "865-244-0922",
+            "associatedLocations": [
+              "Russia"
+            ],
+            "countryCode": "US",
+            "isValid": false,
+            "isConnected": true,
+            "carrier": "Verizon",
+            "validDate": "Sep 17, 2015 6:42:54 AM"
+          }
+        ],
+        "emails": [
+          {
+            "emailAddress": "janedoe@gmail.com",
+            "domain": "gmail",
+            "validDate": "May 12, 2014 12:00:00 AM"
+          }
+        ],
+        "associates": [ ],
+        "isNew": false,
+        "isActive": true
+      }
+    ],
+    "cddPersonData": {
+      "attributeCDD": {
+        "nameCorroborationScore": 0,
+        "collectedNames": [
+          "Rick Hanoover",
+          "Jane Boden"
+        ],
+        "addressCorroborationScore": 0,
+        "collectedAddresses": [
+          "4591 Albemarle Street, Kingman AZ",
+          "9821 Leopard Street, Denver CO"
+        ],
+        "phoneCorroborationScore": 0,
+        "collectedPhones": [
+          "765-244-0922",
+          "865-244-0922"
+        ],
+        "emailCorroborationScore": 0,
+        "collectedEmails": [
+          "rickysmalls@yahoo.com",
+          "janedoe@gmail.com"
+        ]
+      },
+      "watchlistCDD": {
+        "watchlistHits": [
+          {
+            "names": [
+              "DIAMOND, EDWARD"
+            ],
+            "watchlistProvider": "SBS",
+            "watchlistNames": [
+              "NYSE"
+            ],
+            "ranking": {
+              "ExposureIndex": 12,
+              "StrengthIndex": -2
+            }
+          },
+          {
+            "names": [
+              "EDWARDS, DAMON"
+            ],
+            "watchlistProvider": "SBS",
+            "watchlistNames": [ ],
+            "ranking": {
+              "ExposureIndex": 72,
+              "StrengthIndex": -3
+            }
+          }
+        ],
+        "pepHits": [
+          {
+            "entityName": "John Doe",
+            "PEP Provider": "SBS",
+            "PEP List": "Russian Heads of State"
+          },
+          {
+            "entityName": "Jane Doe",
+            "PEP Provider": "SBS",
+            "PEP List": "UK Parliament"
+          }
+        ]
+      },
+      "activityCDD": {
+        "accounts": [
+          {
+            "accountNumber": "999125750",
+            "accountType": "CHECKING"
+          }
+        ],
+        "alerts": [
+          {
+            "id": "7fc57965-ba64-4518-9f97-47ceb5d36fcd",
+            "description": "Large Incoming Wires",
+            "alertStatus": "Active",
+            "triggers": [
+              "Total Wire Deposits: 37999"
+            ],
+            "alertOpenDate": "9/16/15",
+            "alertType": "Wire Activity",
+            "alertDueDate": "9/30/15",
+            "entityRiskScore": 0,
+            "entityName": "Edward Damon",
+            "accountType": "CHECKING",
+            "transactions": [
+              {
+                "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                "refNumber": "12345678",
+                "transactionType": "WIRE",
+                "currency": "Dollars",
+                "debit": 15000,
+                "credit": 0,
+                "accountNumber": "999125750",
+                "branch": "Washington "
+              }
+            ]
+          }
+        ],
+        "transactions": [ ]
+      }
+    },
+    "eddPersonData": {
+      "attributeData": {
+        "employerAddress": {
+          "street1": "575 Herdon Parkway",
+          "city": "Herndon",
+          "state": "VA",
+          "zipcode": "20170",
+          "country": "UNITED_STATES"
+        },
+        "employerToBankDistance": 1.4451189052954507,
+        "homeToBankDistance": 31.94185148856169,
+        "accountPurpose": "Save Money",
+        "sourcOfAccountFunds": "Check",
+        "homeLat": 38.8727414,
+        "homeLng": -77.0132919,
+        "employerLat": 38.9537497,
+        "employerLng": -77.3836634,
+        "bankLat": 38.9549779,
+        "bankLng": -77.3670259
+      },
+      "negativeNewsData": {
+        "articles": [
+          {
+            "title": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+            "doa": "Dec 31, 1969 3:59:57 PM",
+            "url": "http://www.sharechat.co.nz/article/c5811343/fx-trader-jin-yuan-finance-warned-over-anti-money-laundering-controls.html",
+            "indicators": {
+              "laundering": 4
+            },
+            "text": "Jin Yuan Finance, an Auckland based foreign exchange trader, has been warned over its lack of anti-money laundering processes in place in the first public notification by the Department of Internal Affairs. The FX trader, whose sole director and shareholder is Auckland based Rex Young, was warned on July 7 for failing to conduct customer due diligence, adequately monitor accounts and transactions, keep adequate records, have an anti-money laundering programme, or ensure its branches met the legislation, the DIA said in a statement. The government agency has issued 13 formal warnings under the Anti-Money Laundering/Countering Financing of Terrorism Act since the legislation first came into effect, but hasn't made any public in the past. DIA supervises firms not covered by the Financial Markets Authority or the Reserve Bank. It decided to make this warning public because of the seriousness of the failings, which were ongoing and extensive. The investigations identified that Jin Yuan Finance had failed to establish, implement and maintain an adequate and effective AML/CFT programme, said Maarten Quivooy, DIA general manager of regulatory services.The AML/CFT legislation came into effect in mid-2013, increasing the monitoring of financial firms in a bid to stamp out as much as $1.5 billion of money laundering. Lenders bear the cost of increased compliance, and the government is now looking at extending those obligations to professionals such as accountants and lawyers.The DIA will monitor Jin Yuan Finance to ensure it introduces processes to comply with the legislation, and will consider if further enforcement action is appropriate, including court imposed penalties or undertakings.The department can issue formal warnings for conduct that attracts a civil penalty rather than criminal sanctions.The DIA weighs up the benefits of encouraging firms to comply with the legislation against minimising harm in deciding whether to notify the public of a warning, it said."
+          }
+        ]
+      },
+      "networkData": {
+        "nodes": [
+          {
+            "label": "Billy Hoyle",
+            "relationship": "Friends",
+            "source": "LinkedIn",
+            "attributes": {
+              "confidenceScore": "30",
+              "email": "Billy@email.com",
+              "link": "LinkedIn Connections",
+              "name": "Billy Hoyle"
+            }
+          },
+          {
+            "label": "Sidney Deane",
+            "relationship": "Friends",
+            "source": "Facebook",
+            "attributes": {
+              "confidenceScore": "45",
+              "email": "Sidney@email.com",
+              "link": "Facebook friends",
+              "name": "Sidney Deane"
+            }
+          },
+          {
+            "label": "Chris Damon",
+            "relationship": "Counterparties",
+            "source": "Bank Account",
+            "attributes": {
+              "confidenceScore": "78",
+              "accountNumber": "12345678",
+              "link": "Joint Account",
+              "name": ""
+            }
+          },
+          {
+            "label": "MorganDamon",
+            "relationship": "Household",
+            "source": "Whitepages",
+            "attributes": {
+              "confidenceScore": "65",
+              "link": "Same Phone Number",
+              "name": "Morgan Damon"
+            }
+          }
+        ]
+      }
+    },
+    "riskDNA": {
+      "riskDnaScore": 100,
+      "sequences": [
+        {
+          "sequenceType": "ATTRIBUTE",
+          "sequenceScore": 45.69565217391305,
+          "genes": [
+            {
+              "geneName": "Name Frequency",
+              "geneValue": "2",
+              "geneScore": "10.0",
+              "geneDescription": "This gene indicates all the discovered names for the entity"
+            },
+            {
+              "geneName": "Name Variation",
+              "geneValue": "2",
+              "geneScore": "100.0",
+              "geneDescription": "This gene indicates the different name variations discovered for the entity"
+            },
+            {
+              "geneName": "Address Frequency",
+              "geneValue": "2",
+              "geneScore": "10.0",
+              "geneDescription": "This gene indicates the number of addresses discovered for the entity"
+            },
+            {
+              "geneName": "Address Variation",
+              "geneValue": "2",
+              "geneScore": "100.0",
+              "geneDescription": "This gene indicates the different addresses discovered for the entitiy"
+            },
+            {
+              "geneName": "Geographic Threat",
+              "geneValue": "UNITED_STATES",
+              "geneScore": "52.0",
+              "geneDescription": "This gene indicates the threat level based on the entity's country location"
+            },
+            {
+              "geneName": "Hifca Threat",
+              "geneValue": "DC",
+              "geneScore": "10.0",
+              "geneDescription": "This gene indicates the Hifca threat level for the entity"
+            },
+            {
+              "geneName": "Phone Frequency",
+              "geneValue": "2",
+              "geneScore": "10.0",
+              "geneDescription": "This gene indicates the phones discovered for the entity"
+            },
+            {
+              "geneName": "Phone Variation",
+              "geneValue": "2",
+              "geneScore": "100.0",
+              "geneDescription": "This gene indicates the phone variation discovered for the entity"
+            },
+            {
+              "geneName": "Phone Validation",
+              "geneValue": "765-244-0922-FALSE",
+              "geneScore": "0.0",
+              "geneDescription": "This gene indicates whether the phone is valid or not"
+            },
+            {
+              "geneName": "Phone Validation",
+              "geneValue": "865-244-0922-FALSE",
+              "geneScore": "0.0",
+              "geneDescription": "This gene indicates whether the phone is valid or not"
+            },
+            {
+              "geneName": "Phone Carrier",
+              "geneValue": "TMobile",
+              "geneScore": "70.0",
+              "geneDescription": "This gene indicates the commonness of the phone provider"
+            },
+            {
+              "geneName": "Phone Carrier",
+              "geneValue": "Verizon",
+              "geneScore": "70.0",
+              "geneDescription": "This gene indicates the commonness of the phone provider"
+            },
+            {
+              "geneName": "Phone Location Threat",
+              "geneValue": "US",
+              "geneScore": "52.0",
+              "geneDescription": "This gene indicates the phone country code location threat level"
+            },
+            {
+              "geneName": "Phone Location Threat",
+              "geneValue": "US",
+              "geneScore": "52.0",
+              "geneDescription": "This gene indicates the phone country code location threat level"
+            },
+            {
+              "geneName": "Email Frequency",
+              "geneValue": "2",
+              "geneScore": "10.0",
+              "geneDescription": "This gene indicates all the emails discovered for the entity"
+            },
+            {
+              "geneName": "Email Variation",
+              "geneValue": "2",
+              "geneScore": "100.0",
+              "geneDescription": "This gene indicates all the different emails discovered for the entity"
+            },
+            {
+              "geneName": "Phone Validation",
+              "geneValue": "rickysmalls@yahoo.com-VALID SINCE 2015-04-19T00:00:00",
+              "geneScore": "75.0",
+              "geneDescription": "This gene indicates whether or not the email is valid"
+            },
+            {
+              "geneName": "Phone Validation",
+              "geneValue": "janedoe@gmail.com-VALID SINCE 2014-05-12T00:00:00",
+              "geneScore": "75.0",
+              "geneDescription": "This gene indicates whether or not the email is valid"
+            },
+            {
+              "geneName": "Email Domain",
+              "geneValue": "yahoo",
+              "geneScore": "70.0",
+              "geneDescription": "This gene indicates the commonness of the email provider"
+            },
+            {
+              "geneName": "Email Domain",
+              "geneValue": "gmail",
+              "geneScore": "70.0",
+              "geneDescription": "This gene indicates the commonness of the email provider"
+            },
+            {
+              "geneName": "Distance from home to Bank",
+              "geneValue": "31.94185148856169",
+              "geneScore": "0.0",
+              "geneDescription": "This gene indicates the distance the entity's home address is bank branch address"
+            },
+            {
+              "geneName": "Distance from employer to Bank",
+              "geneValue": "1.4451189052954507",
+              "geneScore": "0.0",
+              "geneDescription": "This gene indicates the distance the entity's employer address is bank branch address"
+            },
+            {
+              "geneName": "Source of Funds",
+              "geneValue": "Check",
+              "geneScore": "15.0",
+              "geneDescription": "This gene indicates the source of the funds for this account"
+            }
+          ]
+        },
+        {
+          "sequenceType": "WATCHLIST",
+          "sequenceScore": 45,
+          "genes": [
+            {
+              "geneName": "Watchlist",
+              "geneValue": "NYSE",
+              "geneScore": "15.0",
+              "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+            },
+            {
+              "geneName": "Watchlist",
+              "geneValue": "",
+              "geneScore": "75.0",
+              "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+            }
+          ]
+        },
+        {
+          "sequenceType": "ACTIVITY",
+          "sequenceScore": 80,
+          "genes": [
+            {
+              "geneName": "Account Type",
+              "geneValue": "CHECKING",
+              "geneScore": "75.0",
+              "geneDescription": "This gene indicates the account type for the individual"
+            },
+            {
+              "geneName": "Transaction Alert",
+              "geneValue": "Wire Activity Large Incoming Wires",
+              "geneScore": "85.0",
+              "geneDescription": "This gene identifies a triggered transaction alert"
+            }
+          ]
+        },
+        {
+          "sequenceType": "NETWORK",
+          "sequenceScore": 21.5,
+          "genes": [
+            {
+              "geneName": "Billy Hoyle",
+              "geneValue": "Friends",
+              "geneScore": "36.0",
+              "geneDescription": "This gene indicates the entities associated with the user"
+            },
+            {
+              "geneName": "Sidney Deane",
+              "geneValue": "Friends",
+              "geneScore": "3.0",
+              "geneDescription": "This gene indicates the entities associated with the user"
+            },
+            {
+              "geneName": "Chris Damon",
+              "geneValue": "Counterparties",
+              "geneScore": "13.0",
+              "geneDescription": "This gene indicates the entities associated with the user"
+            },
+            {
+              "geneName": "MorganDamon",
+              "geneValue": "Household",
+              "geneScore": "34.0",
+              "geneDescription": "This gene indicates the entities associated with the user"
+            }
+          ]
+        },
+        {
+          "sequenceType": "NEGATIVENEWS",
+          "sequenceScore": 0,
+          "genes": [
+            {
+              "geneName": "Article",
+              "geneValue": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+              "geneScore": "0.0",
+              "geneDescription": "This gene indicates founds articles based on entity information"
+            }
+          ]
+        }
+      ],
+      "riskLevel": "HIGH_RISK"
+    },
+    "workflowState": "Machine Analytics"
+  },
+  "history": {
+    "events": [
+      {
+        "eventDate": "Sep 17, 2014 6:42:53 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "INGEST",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "9073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [ ],
+          "workflowState": "Ingest"
+        }
+      },
+      {
+        "eventDate": "Nov 17, 2014 6:42:54 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "ENRICHMENT_PIPL",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "6073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [
+            {
+              "personaProvider": "PIPL",
+              "personaAssociation": "SELF",
+              "matchScore": 45,
+              "sources": [
+                "pipl"
+              ],
+              "names": [
+                "Rick Hanoover"
+              ],
+              "addresses": [
+                "4591 Albemarle Street, Kingman AZ"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "765-244-0922",
+                  "associatedLocations": [
+                    "Albania"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "TMobile",
+                  "validDate": "Sep 17, 2015 6:42:53 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "rickysmalls@yahoo.com",
+                  "domain": "yahoo",
+                  "validDate": "Apr 19, 2015 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": true,
+              "isActive": true
+            }
+          ],
+          "workflowState": "Ingest"
+        }
+      },
+      {
+        "eventDate": "Jan 17, 2015 6:42:54 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "ENRICHMENT_WHITEPAGES",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "6073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [
+            {
+              "personaProvider": "PIPL",
+              "personaAssociation": "SELF",
+              "matchScore": 45,
+              "sources": [
+                "pipl"
+              ],
+              "names": [
+                "Rick Hanoover"
+              ],
+              "addresses": [
+                "4591 Albemarle Street, Kingman AZ"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "765-244-0922",
+                  "associatedLocations": [
+                    "Albania"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "TMobile",
+                  "validDate": "Sep 17, 2015 6:42:53 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "rickysmalls@yahoo.com",
+                  "domain": "yahoo",
+                  "validDate": "Apr 19, 2015 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": true,
+              "isActive": true
+            },
+            {
+              "personaProvider": "WHITEPAGES",
+              "personaAssociation": "SELF",
+              "matchScore": 39,
+              "sources": [
+                "whitepages"
+              ],
+              "names": [
+                "Jane Boden"
+              ],
+              "addresses": [
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "865-244-0922",
+                  "associatedLocations": [
+                    "Russia"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "Verizon",
+                  "validDate": "Sep 17, 2015 6:42:54 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "janedoe@gmail.com",
+                  "domain": "gmail",
+                  "validDate": "May 12, 2014 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": false,
+              "isActive": true
+            }
+          ],
+          "workflowState": "Ingest"
+        }
+      },
+      {
+        "eventDate": "May 17, 2015 6:43:03 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "PERSON_CDD",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "6073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [
+            {
+              "personaProvider": "PIPL",
+              "personaAssociation": "SELF",
+              "matchScore": 45,
+              "sources": [
+                "pipl"
+              ],
+              "names": [
+                "Rick Hanoover"
+              ],
+              "addresses": [
+                "4591 Albemarle Street, Kingman AZ"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "765-244-0922",
+                  "associatedLocations": [
+                    "Albania"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "TMobile",
+                  "validDate": "Sep 17, 2015 6:42:53 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "rickysmalls@yahoo.com",
+                  "domain": "yahoo",
+                  "validDate": "Apr 19, 2015 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": true,
+              "isActive": true
+            },
+            {
+              "personaProvider": "WHITEPAGES",
+              "personaAssociation": "SELF",
+              "matchScore": 39,
+              "sources": [
+                "whitepages"
+              ],
+              "names": [
+                "Jane Boden"
+              ],
+              "addresses": [
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "865-244-0922",
+                  "associatedLocations": [
+                    "Russia"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "Verizon",
+                  "validDate": "Sep 17, 2015 6:42:54 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "janedoe@gmail.com",
+                  "domain": "gmail",
+                  "validDate": "May 12, 2014 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": false,
+              "isActive": true
+            }
+          ],
+          "cddPersonData": {
+            "attributeCDD": {
+              "nameCorroborationScore": 0,
+              "collectedNames": [
+                "Rick Hanoover",
+                "Jane Boden"
+              ],
+              "addressCorroborationScore": 0,
+              "collectedAddresses": [
+                "4591 Albemarle Street, Kingman AZ",
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phoneCorroborationScore": 0,
+              "collectedPhones": [
+                "765-244-0922",
+                "865-244-0922"
+              ],
+              "emailCorroborationScore": 0,
+              "collectedEmails": [
+                "rickysmalls@yahoo.com",
+                "janedoe@gmail.com"
+              ]
+            },
+            "watchlistCDD": {
+              "watchlistHits": [
+                {
+                  "names": [
+                    "DIAMOND, EDWARD"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [
+                    "NYSE"
+                  ],
+                  "ranking": {
+                    "ExposureIndex": 12,
+                    "StrengthIndex": -2
+                  }
+                },
+                {
+                  "names": [
+                    "EDWARDS, DAMON"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [ ],
+                  "ranking": {
+                    "ExposureIndex": 72,
+                    "StrengthIndex": -3
+                  }
+                }
+              ]
+            },
+            "activityCDD": {
+              "accounts": [
+                {
+                  "accountNumber": "999125750",
+                  "accountType": "CHECKING"
+                }
+              ],
+              "alerts": [
+                {
+                  "id": "7fc57965-ba64-4518-9f97-47ceb5d36fcd",
+                  "description": "Large Incoming Wires",
+                  "alertStatus": "Active",
+                  "triggers": [
+                    "Total Wire Deposits: 37999"
+                  ],
+                  "alertOpenDate": "9/16/15",
+                  "alertType": "Wire Activity",
+                  "alertDueDate": "9/30/15",
+                  "entityRiskScore": 0,
+                  "entityName": "Edward Damon",
+                  "accountType": "CHECKING",
+                  "transactions": [
+                    {
+                      "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                      "refNumber": "12345678",
+                      "transactionType": "WIRE",
+                      "currency": "Dollars",
+                      "debit": 15000,
+                      "credit": 0,
+                      "accountNumber": "999125750",
+                      "branch": "Washington "
+                    }
+                  ]
+                }
+              ],
+              "transactions": [ ]
+            }
+          },
+          "workflowState": "Machine Analytics"
+        }
+      },
+      {
+        "eventDate": "Jul 17, 2015 6:43:07 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "PERSON_EDD",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "6073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [
+            {
+              "personaProvider": "PIPL",
+              "personaAssociation": "SELF",
+              "matchScore": 45,
+              "sources": [
+                "pipl"
+              ],
+              "names": [
+                "Rick Hanoover"
+              ],
+              "addresses": [
+                "4591 Albemarle Street, Kingman AZ"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "765-244-0922",
+                  "associatedLocations": [
+                    "Albania"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "TMobile",
+                  "validDate": "Sep 17, 2015 6:42:53 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "rickysmalls@yahoo.com",
+                  "domain": "yahoo",
+                  "validDate": "Apr 19, 2015 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": true,
+              "isActive": true
+            },
+            {
+              "personaProvider": "WHITEPAGES",
+              "personaAssociation": "SELF",
+              "matchScore": 39,
+              "sources": [
+                "whitepages"
+              ],
+              "names": [
+                "Jane Boden"
+              ],
+              "addresses": [
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "865-244-0922",
+                  "associatedLocations": [
+                    "Russia"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "Verizon",
+                  "validDate": "Sep 17, 2015 6:42:54 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "janedoe@gmail.com",
+                  "domain": "gmail",
+                  "validDate": "May 12, 2014 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": false,
+              "isActive": true
+            }
+          ],
+          "cddPersonData": {
+            "attributeCDD": {
+              "nameCorroborationScore": 0,
+              "collectedNames": [
+                "Rick Hanoover",
+                "Jane Boden"
+              ],
+              "addressCorroborationScore": 0,
+              "collectedAddresses": [
+                "4591 Albemarle Street, Kingman AZ",
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phoneCorroborationScore": 0,
+              "collectedPhones": [
+                "765-244-0922",
+                "865-244-0922"
+              ],
+              "emailCorroborationScore": 0,
+              "collectedEmails": [
+                "rickysmalls@yahoo.com",
+                "janedoe@gmail.com"
+              ]
+            },
+            "watchlistCDD": {
+              "watchlistHits": [
+                {
+                  "names": [
+                    "DIAMOND, EDWARD"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [
+                    "NYSE"
+                  ],
+                  "ranking": {
+                    "StrengthIndex": -2,
+                    "ExposureIndex": 12
+                  }
+                },
+                {
+                  "names": [
+                    "EDWARDS, DAMON"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [ ],
+                  "ranking": {
+                    "StrengthIndex": -3,
+                    "ExposureIndex": 72
+                  }
+                }
+              ]
+            },
+            "activityCDD": {
+              "accounts": [
+                {
+                  "accountNumber": "999125750",
+                  "accountType": "CHECKING"
+                }
+              ],
+              "alerts": [
+                {
+                  "id": "7fc57965-ba64-4518-9f97-47ceb5d36fcd",
+                  "description": "Large Incoming Wires",
+                  "alertStatus": "Active",
+                  "triggers": [
+                    "Total Wire Deposits: 37999"
+                  ],
+                  "alertOpenDate": "9/16/15",
+                  "alertType": "Wire Activity",
+                  "alertDueDate": "9/30/15",
+                  "entityRiskScore": 0,
+                  "entityName": "Edward Damon",
+                  "accountType": "CHECKING",
+                  "transactions": [
+                    {
+                      "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                      "refNumber": "12345678",
+                      "transactionType": "WIRE",
+                      "currency": "Dollars",
+                      "debit": 15000,
+                      "credit": 0,
+                      "accountNumber": "999125750",
+                      "branch": "Washington "
+                    }
+                  ]
+                }
+              ],
+              "transactions": [ ]
+            }
+          },
+          "eddPersonData": {
+            "attributeData": {
+              "employerAddress": {
+                "street1": "575 Herdon Parkway",
+                "city": "Herndon",
+                "state": "VA",
+                "zipcode": "20170",
+                "country": "UNITED_STATES"
+              },
+              "employerToBankDistance": 1.4451189052954507,
+              "homeToBankDistance": 31.94185148856169,
+              "accountPurpose": "Save Money",
+              "sourcOfAccountFunds": "Check",
+              "homeLat": 38.8727414,
+              "homeLng": -77.0132919,
+              "employerLat": 38.9537497,
+              "employerLng": -77.3836634,
+              "bankLat": 38.9549779,
+              "bankLng": -77.3670259
+            },
+            "negativeNewsData": {
+              "articles": [
+                {
+                  "title": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+                  "doa": "Dec 31, 1969 3:59:57 PM",
+                  "url": "http://www.sharechat.co.nz/article/c5811343/fx-trader-jin-yuan-finance-warned-over-anti-money-laundering-controls.html",
+                  "indicators": {
+                    "laundering": 4
+                  },
+                  "text": "Jin Yuan Finance, an Auckland based foreign exchange trader, has been warned over its lack of anti-money laundering processes in place in the first public notification by the Department of Internal Affairs. The FX trader, whose sole director and shareholder is Auckland based Rex Young, was warned on July 7 for failing to conduct customer due diligence, adequately monitor accounts and transactions, keep adequate records, have an anti-money laundering programme, or ensure its branches met the legislation, the DIA said in a statement. The government agency has issued 13 formal warnings under the Anti-Money Laundering/Countering Financing of Terrorism Act since the legislation first came into effect, but hasn't made any public in the past. DIA supervises firms not covered by the Financial Markets Authority or the Reserve Bank. It decided to make this warning public because of the seriousness of the failings, which were ongoing and extensive. The investigations identified that Jin Yuan Finance had failed to establish, implement and maintain an adequate and effective AML/CFT programme, said Maarten Quivooy, DIA general manager of regulatory services.The AML/CFT legislation came into effect in mid-2013, increasing the monitoring of financial firms in a bid to stamp out as much as $1.5 billion of money laundering. Lenders bear the cost of increased compliance, and the government is now looking at extending those obligations to professionals such as accountants and lawyers.The DIA will monitor Jin Yuan Finance to ensure it introduces processes to comply with the legislation, and will consider if further enforcement action is appropriate, including court imposed penalties or undertakings.The department can issue formal warnings for conduct that attracts a civil penalty rather than criminal sanctions.The DIA weighs up the benefits of encouraging firms to comply with the legislation against minimising harm in deciding whether to notify the public of a warning, it said."
+                }
+              ]
+            },
+            "networkData": {
+              "nodes": [
+                {
+                  "label": "Billy Hoyle",
+                  "relationship": "Friends",
+                  "source": "LinkedIn",
+                  "attributes": {
+                    "confidenceScore": "30",
+                    "email": "Billy@email.com",
+                    "link": "LinkedIn Connections",
+                    "name": "Billy Hoyle"
+                  }
+                },
+                {
+                  "label": "Sidney Deane",
+                  "relationship": "Friends",
+                  "source": "Facebook",
+                  "attributes": {
+                    "confidenceScore": "45",
+                    "email": "Sidney@email.com",
+                    "link": "Facebook friends",
+                    "name": "Sidney Deane"
+                  }
+                },
+                {
+                  "label": "Chris Damon",
+                  "relationship": "Counterparties",
+                  "source": "Bank Account",
+                  "attributes": {
+                    "confidenceScore": "78",
+                    "accountNumber": "12345678",
+                    "link": "Joint Account",
+                    "name": ""
+                  }
+                },
+                {
+                  "label": "MorganDamon",
+                  "relationship": "Household",
+                  "source": "Whitepages",
+                  "attributes": {
+                    "confidenceScore": "65",
+                    "link": "Same Phone Number",
+                    "name": "Morgan Damon"
+                  }
+                }
+              ]
+            }
+          },
+          "riskDNA": {
+            "riskDnaScore": 88.4,
+            "sequences": [
+              {
+                "sequenceType": "ATTRIBUTE",
+                "sequenceScore": 51.8,
+                "genes": [
+                  {
+                    "geneName": "Name Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the discovered names for the entity"
+                  },
+                  {
+                    "geneName": "Name Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different name variations discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the number of addresses discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different addresses discovered for the entitiy"
+                  },
+                  {
+                    "geneName": "Geographic Threat",
+                    "geneValue": "UNITED_STATES",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the threat level based on the entity's country location"
+                  },
+                  {
+                    "geneName": "Hifca Threat",
+                    "geneValue": "DC",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the Hifca threat level for the entity"
+                  },
+                  {
+                    "geneName": "Phone Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the phones discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the phone variation discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "765-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "865-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "TMobile",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "Verizon",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Email Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Email Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates all the different emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "rickysmalls@yahoo.com-VALID SINCE 2015-04-19T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "janedoe@gmail.com-VALID SINCE 2014-05-12T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "yahoo",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "gmail",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "WATCHLIST",
+                "sequenceScore": 45,
+                "genes": [
+                  {
+                    "geneName": "Watchlist",
+                    "geneValue": "NYSE",
+                    "geneScore": "15.0",
+                    "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+                  },
+                  {
+                    "geneName": "Watchlist",
+                    "geneValue": "",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "ACTIVITY",
+                "sequenceScore": 80,
+                "genes": [
+                  {
+                    "geneName": "Account Type",
+                    "geneValue": "CHECKING",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates the account type for the individual"
+                  },
+                  {
+                    "geneName": "Transaction Alert",
+                    "geneValue": "Wire Activity Large Incoming Wires",
+                    "geneScore": "85.0",
+                    "geneDescription": "This gene identifies a triggered transaction alert"
+                  }
+                ]
+              }
+            ],
+            "riskLevel": "HIGH_RISK"
+          },
+          "workflowState": "Machine Analytics"
+        }
+      },
+      {
+        "eventDate": "Aug 17, 2015 6:43:07 AM",
+        "eventType": "SYSTEM",
+        "eventAction": "RISK_DNA",
+        "e3User": {
+          "id": "N/A",
+          "userType": "N/A"
+        },
+        "snapshot": {
+          "e3UID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+          "personBaseData": {
+            "timestamp": 0,
+            "createdDate": "Sep 17, 2015 6:42:50 AM",
+            "organizationID": "319132151",
+            "idType": "SSN",
+            "firstName": "Edward",
+            "lastName": "Damon",
+            "address": {
+              "street1": "1400 Canal St ",
+              "city": "Washington ",
+              "state": "DC",
+              "zipcode": "20024",
+              "country": "UNITED_STATES"
+            },
+            "phone": "6073515787",
+            "email": "edward.damon@gmail.com",
+            "dob": "2/12/1981",
+            "accountNumber": "45011283",
+            "accountType": "FIVE29",
+            "employerAddress": {
+              "street1": "575 Herdon Parkway",
+              "city": "Herndon",
+              "state": "VA",
+              "zipcode": "20170",
+              "country": "UNITED_STATES"
+            },
+            "bankID": "wy4d0itUwoj",
+            "bankAddress": {
+              "street1": "12170 Sunset Hills Rd",
+              "city": "Reston",
+              "state": "UNKNOWN",
+              "zipcode": "20190",
+              "country": "UNITED_STATES"
+            },
+            "accountPurpose": "Save Money",
+            "sourceOfFunds": "Check"
+          },
+          "personas": [
+            {
+              "personaProvider": "PIPL",
+              "personaAssociation": "SELF",
+              "matchScore": 45,
+              "sources": [
+                "pipl"
+              ],
+              "names": [
+                "Rick Hanoover"
+              ],
+              "addresses": [
+                "4591 Albemarle Street, Kingman AZ"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "765-244-0922",
+                  "associatedLocations": [
+                    "Albania"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "TMobile",
+                  "validDate": "Sep 17, 2015 6:42:53 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "rickysmalls@yahoo.com",
+                  "domain": "yahoo",
+                  "validDate": "Apr 19, 2015 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": true,
+              "isActive": true
+            },
+            {
+              "personaProvider": "WHITEPAGES",
+              "personaAssociation": "SELF",
+              "matchScore": 39,
+              "sources": [
+                "whitepages"
+              ],
+              "names": [
+                "Jane Boden"
+              ],
+              "addresses": [
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phones": [
+                {
+                  "phoneNumber": "865-244-0922",
+                  "associatedLocations": [
+                    "Russia"
+                  ],
+                  "countryCode": "US",
+                  "isValid": false,
+                  "isConnected": true,
+                  "carrier": "Verizon",
+                  "validDate": "Sep 17, 2015 6:42:54 AM"
+                }
+              ],
+              "emails": [
+                {
+                  "emailAddress": "janedoe@gmail.com",
+                  "domain": "gmail",
+                  "validDate": "May 12, 2014 12:00:00 AM"
+                }
+              ],
+              "associates": [ ],
+              "isNew": false,
+              "isActive": true
+            }
+          ],
+          "cddPersonData": {
+            "attributeCDD": {
+              "nameCorroborationScore": 0,
+              "collectedNames": [
+                "Rick Hanoover",
+                "Jane Boden"
+              ],
+              "addressCorroborationScore": 0,
+              "collectedAddresses": [
+                "4591 Albemarle Street, Kingman AZ",
+                "9821 Leopard Street, Denver CO"
+              ],
+              "phoneCorroborationScore": 0,
+              "collectedPhones": [
+                "765-244-0922",
+                "865-244-0922"
+              ],
+              "emailCorroborationScore": 0,
+              "collectedEmails": [
+                "rickysmalls@yahoo.com",
+                "janedoe@gmail.com"
+              ]
+            },
+            "watchlistCDD": {
+              "watchlistHits": [
+                {
+                  "names": [
+                    "DIAMOND, EDWARD"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [
+                    "NYSE"
+                  ],
+                  "ranking": {
+                    "StrengthIndex": -2,
+                    "ExposureIndex": 12
+                  }
+                },
+                {
+                  "names": [
+                    "EDWARDS, DAMON"
+                  ],
+                  "watchlistProvider": "SBS",
+                  "watchlistNames": [ ],
+                  "ranking": {
+                    "StrengthIndex": -3,
+                    "ExposureIndex": 72
+                  }
+                }
+              ]
+            },
+            "activityCDD": {
+              "accounts": [
+                {
+                  "accountNumber": "999125750",
+                  "accountType": "CHECKING"
+                }
+              ],
+              "alerts": [
+                {
+                  "id": "7fc57965-ba64-4518-9f97-47ceb5d36fcd",
+                  "description": "Large Incoming Wires",
+                  "alertStatus": "Active",
+                  "triggers": [
+                    "Total Wire Deposits: 37999"
+                  ],
+                  "alertOpenDate": "9/16/15",
+                  "alertType": "Wire Activity",
+                  "alertDueDate": "9/30/15",
+                  "entityRiskScore": 0,
+                  "entityName": "Edward Damon",
+                  "accountType": "CHECKING",
+                  "transactions": [
+                    {
+                      "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                      "refNumber": "12345678",
+                      "transactionType": "WIRE",
+                      "currency": "Dollars",
+                      "debit": 15000,
+                      "credit": 0,
+                      "accountNumber": "999125750",
+                      "branch": "Washington "
+                    }
+                  ]
+                }
+              ],
+              "transactions": [ ]
+            }
+          },
+          "eddPersonData": {
+            "attributeData": {
+              "employerAddress": {
+                "street1": "575 Herdon Parkway",
+                "city": "Herndon",
+                "state": "VA",
+                "zipcode": "20170",
+                "country": "UNITED_STATES"
+              },
+              "employerToBankDistance": 1.4451189052954507,
+              "homeToBankDistance": 31.94185148856169,
+              "accountPurpose": "Save Money",
+              "sourcOfAccountFunds": "Check",
+              "homeLat": 38.8727414,
+              "homeLng": -77.0132919,
+              "employerLat": 38.9537497,
+              "employerLng": -77.3836634,
+              "bankLat": 38.9549779,
+              "bankLng": -77.3670259
+            },
+            "negativeNewsData": {
+              "articles": [
+                {
+                  "title": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+                  "doa": "Dec 31, 1969 3:59:57 PM",
+                  "url": "http://www.sharechat.co.nz/article/c5811343/fx-trader-jin-yuan-finance-warned-over-anti-money-laundering-controls.html",
+                  "indicators": {
+                    "laundering": 4
+                  },
+                  "text": "Jin Yuan Finance, an Auckland based foreign exchange trader, has been warned over its lack of anti-money laundering processes in place in the first public notification by the Department of Internal Affairs. The FX trader, whose sole director and shareholder is Auckland based Rex Young, was warned on July 7 for failing to conduct customer due diligence, adequately monitor accounts and transactions, keep adequate records, have an anti-money laundering programme, or ensure its branches met the legislation, the DIA said in a statement. The government agency has issued 13 formal warnings under the Anti-Money Laundering/Countering Financing of Terrorism Act since the legislation first came into effect, but hasn't made any public in the past. DIA supervises firms not covered by the Financial Markets Authority or the Reserve Bank. It decided to make this warning public because of the seriousness of the failings, which were ongoing and extensive. The investigations identified that Jin Yuan Finance had failed to establish, implement and maintain an adequate and effective AML/CFT programme, said Maarten Quivooy, DIA general manager of regulatory services.The AML/CFT legislation came into effect in mid-2013, increasing the monitoring of financial firms in a bid to stamp out as much as $1.5 billion of money laundering. Lenders bear the cost of increased compliance, and the government is now looking at extending those obligations to professionals such as accountants and lawyers.The DIA will monitor Jin Yuan Finance to ensure it introduces processes to comply with the legislation, and will consider if further enforcement action is appropriate, including court imposed penalties or undertakings.The department can issue formal warnings for conduct that attracts a civil penalty rather than criminal sanctions.The DIA weighs up the benefits of encouraging firms to comply with the legislation against minimising harm in deciding whether to notify the public of a warning, it said."
+                }
+              ]
+            },
+            "networkData": {
+              "nodes": [
+                {
+                  "label": "Billy Hoyle",
+                  "relationship": "Friends",
+                  "source": "LinkedIn",
+                  "attributes": {
+                    "confidenceScore": "30",
+                    "email": "Billy@email.com",
+                    "link": "LinkedIn Connections",
+                    "name": "Billy Hoyle"
+                  }
+                },
+                {
+                  "label": "Sidney Deane",
+                  "relationship": "Friends",
+                  "source": "Facebook",
+                  "attributes": {
+                    "confidenceScore": "45",
+                    "email": "Sidney@email.com",
+                    "link": "Facebook friends",
+                    "name": "Sidney Deane"
+                  }
+                },
+                {
+                  "label": "Chris Damon",
+                  "relationship": "Counterparties",
+                  "source": "Bank Account",
+                  "attributes": {
+                    "confidenceScore": "78",
+                    "accountNumber": "12345678",
+                    "link": "Joint Account",
+                    "name": ""
+                  }
+                },
+                {
+                  "label": "MorganDamon",
+                  "relationship": "Household",
+                  "source": "Whitepages",
+                  "attributes": {
+                    "confidenceScore": "65",
+                    "link": "Same Phone Number",
+                    "name": "Morgan Damon"
+                  }
+                }
+              ]
+            }
+          },
+          "riskDNA": {
+            "riskDnaScore": 95,
+            "sequences": [
+              {
+                "sequenceType": "ATTRIBUTE",
+                "sequenceScore": 45.69565217391305,
+                "genes": [
+                  {
+                    "geneName": "Name Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the discovered names for the entity"
+                  },
+                  {
+                    "geneName": "Name Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different name variations discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the number of addresses discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different addresses discovered for the entitiy"
+                  },
+                  {
+                    "geneName": "Geographic Threat",
+                    "geneValue": "UNITED_STATES",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the threat level based on the entity's country location"
+                  },
+                  {
+                    "geneName": "Hifca Threat",
+                    "geneValue": "DC",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the Hifca threat level for the entity"
+                  },
+                  {
+                    "geneName": "Phone Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the phones discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the phone variation discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "765-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "865-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "TMobile",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "Verizon",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Email Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Email Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates all the different emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "rickysmalls@yahoo.com-VALID SINCE 2015-04-19T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "janedoe@gmail.com-VALID SINCE 2014-05-12T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "yahoo",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "gmail",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  },
+                  {
+                    "geneName": "Distance from home to Bank",
+                    "geneValue": "31.94185148856169",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates the distance the entity's home address is bank branch address"
+                  },
+                  {
+                    "geneName": "Distance from employer to Bank",
+                    "geneValue": "1.4451189052954507",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates the distance the entity's employer address is bank branch address"
+                  },
+                  {
+                    "geneName": "Source of Funds",
+                    "geneValue": "Check",
+                    "geneScore": "15.0",
+                    "geneDescription": "This gene indicates the source of the funds for this account"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "WATCHLIST",
+                "sequenceScore": 45,
+                "genes": [
+                  {
+                    "geneName": "Watchlist",
+                    "geneValue": "NYSE",
+                    "geneScore": "15.0",
+                    "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+                  },
+                  {
+                    "geneName": "Watchlist",
+                    "geneValue": "",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates discovered watchlist hits for the given entity information"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "ACTIVITY",
+                "sequenceScore": 80,
+                "genes": [
+                  {
+                    "geneName": "Account Type",
+                    "geneValue": "CHECKING",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates the account type for the individual"
+                  },
+                  {
+                    "geneName": "Transaction Alert",
+                    "geneValue": "Wire Activity Large Incoming Wires",
+                    "geneScore": "85.0",
+                    "geneDescription": "This gene identifies a triggered transaction alert"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "ATTRIBUTE",
+                "sequenceScore": 45.69565217391305,
+                "genes": [
+                  {
+                    "geneName": "Name Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the discovered names for the entity"
+                  },
+                  {
+                    "geneName": "Name Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different name variations discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the number of addresses discovered for the entity"
+                  },
+                  {
+                    "geneName": "Address Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the different addresses discovered for the entitiy"
+                  },
+                  {
+                    "geneName": "Geographic Threat",
+                    "geneValue": "UNITED_STATES",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the threat level based on the entity's country location"
+                  },
+                  {
+                    "geneName": "Hifca Threat",
+                    "geneValue": "DC",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the Hifca threat level for the entity"
+                  },
+                  {
+                    "geneName": "Phone Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates the phones discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates the phone variation discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "765-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "865-244-0922-FALSE",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates whether the phone is valid or not"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "TMobile",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Carrier",
+                    "geneValue": "Verizon",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the phone provider"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Phone Location Threat",
+                    "geneValue": "US",
+                    "geneScore": "52.0",
+                    "geneDescription": "This gene indicates the phone country code location threat level"
+                  },
+                  {
+                    "geneName": "Email Frequency",
+                    "geneValue": "2",
+                    "geneScore": "10.0",
+                    "geneDescription": "This gene indicates all the emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Email Variation",
+                    "geneValue": "2",
+                    "geneScore": "100.0",
+                    "geneDescription": "This gene indicates all the different emails discovered for the entity"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "rickysmalls@yahoo.com-VALID SINCE 2015-04-19T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Phone Validation",
+                    "geneValue": "janedoe@gmail.com-VALID SINCE 2014-05-12T00:00:00",
+                    "geneScore": "75.0",
+                    "geneDescription": "This gene indicates whether or not the email is valid"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "yahoo",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  },
+                  {
+                    "geneName": "Email Domain",
+                    "geneValue": "gmail",
+                    "geneScore": "70.0",
+                    "geneDescription": "This gene indicates the commonness of the email provider"
+                  },
+                  {
+                    "geneName": "Distance from home to Bank",
+                    "geneValue": "31.94185148856169",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates the distance the entity's home address is bank branch address"
+                  },
+                  {
+                    "geneName": "Distance from employer to Bank",
+                    "geneValue": "1.4451189052954507",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates the distance the entity's employer address is bank branch address"
+                  },
+                  {
+                    "geneName": "Source of Funds",
+                    "geneValue": "Check",
+                    "geneScore": "15.0",
+                    "geneDescription": "This gene indicates the source of the funds for this account"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "NETWORK",
+                "sequenceScore": 21.5,
+                "genes": [
+                  {
+                    "geneName": "Billy Hoyle",
+                    "geneValue": "Friends",
+                    "geneScore": "36.0",
+                    "geneDescription": "This gene indicates the entities associated with the user"
+                  },
+                  {
+                    "geneName": "Sidney Deane",
+                    "geneValue": "Friends",
+                    "geneScore": "3.0",
+                    "geneDescription": "This gene indicates the entities associated with the user"
+                  },
+                  {
+                    "geneName": "Chris Damon",
+                    "geneValue": "Counterparties",
+                    "geneScore": "13.0",
+                    "geneDescription": "This gene indicates the entities associated with the user"
+                  },
+                  {
+                    "geneName": "MorganDamon",
+                    "geneValue": "Household",
+                    "geneScore": "34.0",
+                    "geneDescription": "This gene indicates the entities associated with the user"
+                  }
+                ]
+              },
+              {
+                "sequenceType": "NEGATIVENEWS",
+                "sequenceScore": 0,
+                "genes": [
+                  {
+                    "geneName": "Article",
+                    "geneValue": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+                    "geneScore": "0.0",
+                    "geneDescription": "This gene indicates founds articles based on entity information"
+                  }
+                ]
+              }
+            ],
+            "riskLevel": "HIGH_RISK"
+          },
+          "workflowState": "Machine Analytics"
+        }
+      }
+    ]
+  },
+  "documents": [
+    {
+      "documentName": "data.txt",
+      "serializedContent": "sehehn589shdu999nsd98ann844a48ah8hr84f48j8ja8j8jf408fj48aj8j94jqr84j8r48fj0j4fj4mtmu587ah75a-5555a5a",
+      "uploadDate": "09/16/15",
+      "lastUpdated": "09/16/15",
+      "validated": true,
+      "uploadedBy": "ManagerSchmoe",
+      "shortDescription": "Bank Application",
+      "screenId": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "entityId": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f"
+    }
+  ],
+  "notes": [
+    {
+      "title": "This entity needs Deeper Investigation",
+      "createdDate": "09/16/15",
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "entityID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "text": "Upon review of gathered data, this entity will need advanced investigation",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f"
+    }
+  ],
+  "tasks": [
+    {
+      "task": "Call 1 Fred to check References - 444-333-2222",
+      "completed": false,
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "dateCreated": "09/16/15",
+      "order": 2,
+      "taskID": "372d0d25-2332-48f4-8f50-39d453b11134"
+    },
+    {
+      "task": "Call 2 Fred to check References - 444-333-2222",
+      "completed": false,
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "dateCreated": "09/16/15",
+      "order": 1,
+      "taskID": "372d0d25-2332-48f4-8f50-39d453b11134"
+    },
+    {
+            "task": "Call 3 Fred to check References - 444-333-2222",
+            "completed": false,
+            "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+            "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+            "dateCreated": "09/16/15",
+            "order": 0,
+            "taskID": "372d0d25-2332-48f4-8f50-39d453b11134"
+        }
+  ]
+}

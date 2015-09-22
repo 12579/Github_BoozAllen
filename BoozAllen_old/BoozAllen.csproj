@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC5046AC-E162-498F-B124-DCB609E73576}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BoozAllen</RootNamespace>
+    <AssemblyName>BoozAllen</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.module.js" />
+    <Content Include="app\app.routes.js" />
+    <Content Include="app\Cards\Cards.html" />
+    <Content Include="app\Cards\Cards.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardController.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardService.js" />
+    <Content Include="app\components\adminDashboard\adminDashboardView.html" />
+    <Content Include="app\components\ddDashboard\ddDashboardController.js" />
+    <Content Include="app\components\ddDashboard\ddDashboardService.js" />
+    <Content Include="app\components\ddDashboard\ddDashboardView.html" />
+    <Content Include="app\components\dashboard\dashboardController.js" />
+    <Content Include="app\components\dashboard\dashboardService.js" />
+    <Content Include="app\components\dashboard\dashboardViewNew.html" />
+    <Content Include="app\components\entityDetails\entityDetail.html" />
+    <Content Include="app\components\entityDetails\entityDetailController.js" />
+    <Content Include="app\components\home.html" />
+    <Content Include="app\components\node\nodeController.js" />
+    <Content Include="app\components\node\nodeView.html" />
+    <Content Include="app\components\profile.html" />
+    <Content Include="app\components\RiskDnaChangeLog\RiskDnaView.html" />
+    <Content Include="app\components\RiskDnaChangeLog\RiskDnaController.js" />
+    <Content Include="app\components\vpDashboard\vpDashboardController.js" />
+    <Content Include="app\components\vpDashboard\vpDashboardService.js" />
+    <Content Include="app\components\vpDashboard\vpDashboardView.html" />
+    <Content Include="app\components\managerDashboard\managerDashboardController.js" />
+    <Content Include="app\components\managerDashboard\managerDashboardService.js" />
+    <Content Include="app\components\managerDashboard\managerDashboardView.html" />
+    <Content Include="app\login\LoginController.js" />
+    <Content Include="app\login\LoginService.js" />
+    <Content Include="app\login\LoginView.html" />
+    <Content Include="app\shared\footer\footerView.html" />
+    <Content Include="app\shared\header\headerController.js" />
+    <Content Include="app\shared\header\headerView.html" />
+    <Content Include="app\shared\menu\menuController.js" />
+    <Content Include="app\shared\menu\menuView.html" />
+    <Content Include="assets\css\angular-chart.css" />
+    <Content Include="assets\css\angular.grid.css" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\libraries.css" />
+    <Content Include="assets\css\materialize.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\nv.d3.css" />
+    <Content Include="assets\css\theme-fresh.css" />
+    <Content Include="assets\css\vis.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\arrow.png" />
+    <Content Include="assets\img\back.jpg" />
+    <Content Include="assets\img\chart-1.png" />
+    <Content Include="assets\img\chart-2.png" />
+    <Content Include="assets\img\chart-3.png" />
+    <Content Include="assets\img\contracted.png" />
+    <Content Include="assets\img\db-logo.png" />
+    <Content Include="assets\img\dna.png" />
+    <Content Include="assets\img\expanded.jpg" />
+    <Content Include="assets\img\icon1.png" />
+    <Content Include="assets\img\icon10.png" />
+    <Content Include="assets\img\icon11.png" />
+    <Content Include="assets\img\icon2.png" />
+    <Content Include="assets\img\icon3.png" />
+    <Content Include="assets\img\icon4.png" />
+    <Content Include="assets\img\icon5.png" />
+    <Content Include="assets\img\icon6.png" />
+    <Content Include="assets\img\icon7.png" />
+    <Content Include="assets\img\icon8.png" />
+    <Content Include="assets\img\icon9.png" />
+    <Content Include="assets\img\image1.png" />
+    <Content Include="assets\img\image2.png" />
+    <Content Include="assets\img\image3.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\riskDnaImg.png" />
+    <Content Include="assets\img\status1.png" />
+    <Content Include="assets\img\status2.png" />
+    <Content Include="assets\img\status3.png" />
+    <Content Include="assets\img\status4.png" />
+    <Content Include="assets\img\status5.png" />
+    <Content Include="assets\img\video-bg.jpg" />
+    <Content Include="assets\js\vis.js" />
+    <Content Include="assets\libs\analytics.js" />
+    <Content Include="assets\libs\angularjs\angular-ui-router.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\materialize.js" />
+    <Content Include="assets\js\npm.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\angularjs-nvd3-directives.js" />
+    <Content Include="assets\js\d3.js" />
+    <Content Include="assets\js\nv.d3.js" />
+    <Content Include="assets\libs\angularjs\angular-chart.js" />
+    <Content Include="assets\libs\angularjs\angular-grid.js" />
+    <Content Include="assets\libs\angularjs\angular-resource.js" />
+    <Content Include="assets\libs\angularjs\angular-route.js" />
+    <Content Include="assets\libs\angularjs\angular-vis.js" />
+    <Content Include="assets\libs\angularjs\angular.js" />
+    <Content Include="assets\libs\checklist-model.js" />
+    <Content Include="assets\libs\googleAnalytics.js" />
+    <Content Include="assets\media\3275175.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="index.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\angular-chart.css.map" />
+    <Content Include="sampleJson\analystsCases.json" />
+    <Content Include="sampleJson\LoginDataJson.json" />
+    <Content Include="assets\css\bootstrap-theme.css.map" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\fonts\FoundersGrotesk-Bold.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-Bold.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-Bold.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-BoldItalic.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-BoldItalic.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-BoldItalic.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-Light.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-Light.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-Light.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-LightItalic.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-LightItalic.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-LightItalic.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-Medium.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-Medium.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-Medium.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-MediumItalic.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-MediumItalic.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-MediumItalic.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-Regular.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-Regular.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-Regular.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-RegularItalic.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-RegularItalic.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-RegularItalic.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-Semibold.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-Semibold.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-Semibold.woff" />
+    <Content Include="assets\fonts\FoundersGrotesk-SemiboldItalic.eot" />
+    <Content Include="assets\fonts\FoundersGrotesk-SemiboldItalic.ttf" />
+    <Content Include="assets\fonts\FoundersGrotesk-SemiboldItalic.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\media\3275175.ogg" />
+    <None Include="Properties\PublishProfiles\BoozAllen.pubxml" />
+    <Content Include="sampleJson\dashboardJsonFiu.json" />
+    <Content Include="sampleJson\dashboardJsonDd.json" />
+    <Content Include="sampleJson\personObject.json" />
+    <Content Include="sampleJson\person.json" />
+    <Content Include="sampleJson\EntityData.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>sampleJson\personObject.json</ApplicationManifest>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63394</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60956/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

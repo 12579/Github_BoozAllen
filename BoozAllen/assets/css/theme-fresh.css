@@ -1,4 +1,4 @@
-﻿.ag-fresh .ag-root {
+.ag-fresh .ag-root {
     /*
     font-family: 'Oxygen', sans-serif;
     font-size: 0.9375em;
@@ -130,6 +130,7 @@
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    margin-top: -.1em;
     /* When using bootstrap, box-sizing was set to 'border-box' */
 }
 

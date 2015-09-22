@@ -1,0 +1,1066 @@
+﻿  {
+    "id": "83795377",
+    "caseTitle": "Anna Mathew",
+    "assignedAnalystID": "543123",
+    "assignedAnalystName": "Jim Anderson",
+    "accountNumber": "1234567809",
+    "accountType": "Private Checking",
+    "accountOpenDate": "09/01/2015",
+    "relationshipManager": "Dan Stevens",
+    "relationshipManagerID": "765301",
+    "caseType": "Structing Alert",
+    "startedDate": "10/01/2015",
+    "caseOpenDate": "09/15/2015",
+    "dueDate": "10/20/2015",
+    "caseStatus": "Analysis",
+    "caseClosedDeposition": "N/A",
+    "caseSummary1": "SAR was filed",
+    "caseSummary2": "Suspicous activity was discovered on the transactions",
+    "caseSummary3": "Will review in 3 months",
+    "decisionSummary": "Based all known data, a SAR was submitted for review",
+    "caseCheckListItems": [
+      {
+        "caseChecklistName": "Review related Alerts and Cases",
+        "isComplete": true,
+        "caseChecklistDescription": "blah blah blah",
+        "order": 0
+      },
+      {
+        "caseChecklistName": "Analyze Alerted Transaction(s)",
+        "isComplete": false,
+        "caseChecklistDescription": "blah blah blah",
+        "order": 1
+      },
+      {
+        "caseChecklistName": "Conduct Due Dilligence Research",
+        "isComplete": true,
+        "caseChecklistDescription": "blah blah blah",
+        "order": 2
+      },
+      {
+        "caseChecklistName": "Write Case Summary",
+        "isComplete": false,
+        "caseChecklistDescription": "blah blah blah",
+        "order": 3
+      },
+      {
+        "caseChecklistName": "Close Case",
+        "isComplete": false,
+        "caseChecklistDescription": "blah blah blah",
+        "order": 4
+      }
+    ],
+    "relatedCases": [
+      {
+        "id": "74612",
+        "caseTitle": "Johana Smith",
+        "assignedAnalystName": "Becky Walters",
+        "accountNumber": "6331216235",
+        "accountType": "Private Checking",
+        "caseOpenDate": "03/22/2014",
+        "caseClosedDeposition": "SAR",
+        "caseClosedDate": "04/15/2014",
+        "caseCheckListItems": [ ],
+        "relatedCases": [ ],
+        "relatedAlerts": [ ],
+        "alertTransactions": [ ],
+        "cdd": [ ],
+        "caseDocuments": [ ],
+        "caseNotes": [ ],
+        "caseTasks": [ ],
+        "entity": {
+          "entityDocuments": [ ],
+          "entityNotes": [ ],
+          "entityTasks": [ ],
+          "entityName": "Anna Mathew",
+          "entityAddress": "123 Main Street, Houston TX 10022, USA",
+          "entityPhone": "123.456.7899",
+          "entityEmail": "annaMathew@gmail.com",
+          "numberOfNewPersonas": "1",
+          "personas": [
+            {
+              "personaName": "Anna Matthew",
+              "personaAddress": "800 West Stree, Braintree MA 18426, USA",
+              "personaPhone": "557.334.5656",
+              "personaEmail": "amatthew@gmail.com",
+              "personaSource": "Facebook",
+              "isActive": true,
+              "isNew": true
+            }
+          ],
+          "associatedAccounts": [
+            {
+              "accountID": "75629112",
+              "accountType": "Joint Saving",
+              "accountOpenDate": "02/15/1999",
+              "relationshipManager": "Bill Watkins",
+              "accountBeneficiaries": [
+                "Anna Mathew - Primary Account Holder",
+                "Mark Mathew - Joint Account Holder"
+              ]
+            }
+          ],
+          "riskDNA": {
+            "entityRiskScore": "100",
+            "entityRiskLevel": "HIGH RISK",
+            "attributeRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Name Frequency",
+                  "geneValue": "2",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Name Variation",
+                  "geneValue": "2",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Address Variation",
+                  "geneValue": "3",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Address Frequency",
+                  "geneValue": "3",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Geographic Threat",
+                  "geneValue": "United States",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Hifca Threat",
+                  "geneValue": "TX",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Frequency",
+                  "geneValue": "2",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Variation",
+                  "geneValue": "2",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Validation",
+                  "geneValue": "123.456.7899 - FALSE",
+                  "geneScore": "80",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Carrier",
+                  "geneValue": "Sprint",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Location Threat",
+                  "geneValue": "United States",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Frequency",
+                  "geneValue": "1",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Variation",
+                  "geneValue": "4",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Validation",
+                  "geneValue": "annaMathrew@gmail.com - INVALID",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Domain",
+                  "geneValue": "Google",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Home To Bank",
+                  "geneValue": "45 miles",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "nameFrequency": "2",
+              "nameVariation": "2",
+              "addressFrequency": "3",
+              "addressVariation": "3",
+              "geographicThreat": "United States",
+              "hifcaThreat": "TX",
+              "phoneFrequency": "2",
+              "phoneVariation": "2",
+              "phoneValidation": "123.456.7899 - FALSE",
+              "phoneCarrier": "Sprint",
+              "phoneLocationThreat": "United States",
+              "emailFrequency": "1",
+              "emailVariation": "4",
+              "emailValidation": "annaMathew@gmail.com - VALID",
+              "emailDomain": "Google",
+              "homeToBankDistance": "45 miles"
+            },
+            "watchlistRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Anna Mathew",
+                  "geneValue": "FBI",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Anna Mathew",
+                  "geneValue": "AU",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "watchlistHitItems": [
+                {
+                  "entityName": "Anna Mathew",
+                  "watchlistProvider": "SBS",
+                  "listName": "FBI",
+                  "ranking": "Strength Index 2 / Exposure Index 80"
+                }
+              ],
+              "pepHitItems": [
+                {
+                  "entityName": "Anna Matthew",
+                  "pepProvider": "Nonmino",
+                  "pepListName": "AU"
+                }
+              ]
+            },
+            "negativeNewsRiskSequence": {
+              "articles": [
+                {
+                  "articleName": "CEO commits fraud",
+                  "keywordHits": "fraud",
+                  "articlePublicationDate": "01-13-2010",
+                  "articleRiskScore": "100.0",
+                  "articleURL": "www.cnn.com"
+                },
+                {
+                  "articleName": "CEO commits fraud",
+                  "keywordHits": "fraud",
+                  "articlePublicationDate": "01-13-2010",
+                  "articleRiskScore": "100.0",
+                  "articleURL": "www.cnn.com"
+                }
+              ],
+              "keywordMap": {
+                "laundering": "5",
+                "fraud": "3"
+              }
+            },
+            "activityRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "12345",
+                  "geneValue": "Transfer-Debit",
+                  "geneScore": "57",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "activities": [
+                {
+                  "itemID": "123987345",
+                  "ItemType": "Transfer",
+                  "item": "Debit",
+                  "accountNumber": "12334",
+                  "closedDate": "04/24/2014",
+                  "assignedAnalyst": "Scott Smith"
+                }
+              ]
+            },
+            "networkRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Sara Watts",
+                  "geneValue": "family",
+                  "geneScore": "15",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "John Noes",
+                  "geneValue": "co-worker",
+                  "geneScore": "15",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Transaction Alert 12345",
+                  "geneValue": "counteryparty",
+                  "geneScore": "98",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "networkNodes": [
+                {
+                  "nodeName": "Sara Watts",
+                  "relationship": "family",
+                  "source": "Facebook",
+                  "riskScore": "25.5"
+                },
+                {
+                  "nodeName": "Sara Watts",
+                  "relationship": "family",
+                  "source": "Facebook",
+                  "riskScore": "25.5"
+                },
+                {
+                  "nodeName": "Transaction Alert 12345",
+                  "relationship": "counterparty",
+                  "source": "Alert System",
+                  "riskScore": "75"
+                }
+              ]
+            }
+          },
+          "riskDNAGraph": {
+            "graphData": {
+              "09/01/2015": "54",
+              "09/20/2015": "75",
+              "09/15/2015": "66"
+            }
+          },
+          "changeLogItems": [
+            {
+              "analystName": "Julie Sanders",
+              "analystID": "1234",
+              "changeType": "SYSTEM",
+              "changeDate": "Aug 23, 2014 9:30:32 AM",
+              "action": "RISK DNA"
+            }
+          ]
+
+
+        }
+      }
+    ],
+    "relatedAlerts": [
+      {
+        "id": "523409",
+        "alertTitle": "Ronnia Smith",
+        "assignedAnalystID": "42390",
+        "assignedAnalytstName": "George Black",
+        "accountNumber": "0198623312",
+        "accountType": "Private Checking",
+        "alertOpenDate": "08/01/2015",
+        "alertClosedDate": "09/02/2015",
+        "alertClosedDeposition": "NO SAR",
+        "alertCheckListItems": [ ],
+        "relatedCases": [ ],
+        "relatedAlerts": [ ],
+        "alertTransactions": [ ],
+        "associatedEntities": [ ],
+        "entity": {
+          "entityDocuments": [ ],
+          "entityNotes": [ ],
+          "entityTasks": [ ],
+          "entityName": "Anna Mathew",
+          "entityAddress": "123 Main Street, Houston TX 10022, USA",
+          "entityPhone": "123.456.7899",
+          "entityEmail": "annaMathew@gmail.com",
+          "numberOfNewPersonas": "1",
+          "personas": [
+            {
+              "personaName": "Anna Matthew",
+              "personaAddress": "800 West Stree, Braintree MA 18426, USA",
+              "personaPhone": "557.334.5656",
+              "personaEmail": "amatthew@gmail.com",
+              "personaSource": "Facebook",
+              "isActive": true,
+              "isNew": true
+            }
+          ],
+          "associatedAccounts": [
+            {
+              "accountID": "75629112",
+              "accountType": "Joint Saving",
+              "accountOpenDate": "02/15/1999",
+              "relationshipManager": "Bill Watkins",
+              "accountBeneficiaries": [
+                "Anna Mathew - Primary Account Holder",
+                "Mark Mathew - Joint Account Holder"
+              ]
+            }
+          ],
+          "riskDNA": {
+            "entityRiskScore": "50",
+            "entityRiskLevel": "HIGH RISK",
+            "attributeRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Name Frequency",
+                  "geneValue": "2",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Name Variation",
+                  "geneValue": "2",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Address Variation",
+                  "geneValue": "3",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Address Frequency",
+                  "geneValue": "3",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Geographic Threat",
+                  "geneValue": "United States",
+                  "geneScore": "50",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Hifca Threat",
+                  "geneValue": "TX",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Frequency",
+                  "geneValue": "2",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Variation",
+                  "geneValue": "2",
+                  "geneScore": "10",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Validation",
+                  "geneValue": "123.456.7899 - FALSE",
+                  "geneScore": "80",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Carrier",
+                  "geneValue": "Sprint",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Phone Location Threat",
+                  "geneValue": "United States",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Frequency",
+                  "geneValue": "1",
+                  "geneScore": "5",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Variation",
+                  "geneValue": "4",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Validation",
+                  "geneValue": "annaMathrew@gmail.com - INVALID",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Email Domain",
+                  "geneValue": "Google",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Home To Bank",
+                  "geneValue": "45 miles",
+                  "geneScore": "77",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "nameFrequency": "2",
+              "nameVariation": "2",
+              "addressFrequency": "3",
+              "addressVariation": "3",
+              "geographicThreat": "United States",
+              "hifcaThreat": "TX",
+              "phoneFrequency": "2",
+              "phoneVariation": "2",
+              "phoneValidation": "123.456.7899 - FALSE",
+              "phoneCarrier": "Sprint",
+              "phoneLocationThreat": "United States",
+              "emailFrequency": "1",
+              "emailVariation": "4",
+              "emailValidation": "annaMathew@gmail.com - VALID",
+              "emailDomain": "Google",
+              "homeToBankDistance": "45 miles"
+            },
+            "watchlistRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Anna Mathew",
+                  "geneValue": "FBI",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Anna Mathew",
+                  "geneValue": "AU",
+                  "geneScore": "100",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "watchlistHitItems": [
+                {
+                  "entityName": "Anna Mathew",
+                  "watchlistProvider": "SBS",
+                  "listName": "FBI",
+                  "ranking": "Strength Index 2 / Exposure Index 80"
+                }
+              ],
+              "pepHitItems": [
+                {
+                  "entityName": "Anna Matthew",
+                  "pepProvider": "Nonmino",
+                  "pepListName": "AU"
+                }
+              ]
+            },
+            "negativeNewsRiskSequence": {
+              "articles": [
+                {
+                  "articleName": "CEO commits fraud",
+                  "keywordHits": "fraud",
+                  "articlePublicationDate": "01-13-2010",
+                  "articleRiskScore": "100.0",
+                  "articleURL": "www.cnn.com"
+                },
+                {
+                  "articleName": "CEO commits fraud",
+                  "keywordHits": "fraud",
+                  "articlePublicationDate": "01-13-2010",
+                  "articleRiskScore": "100.0",
+                  "articleURL": "www.cnn.com"
+                }
+              ],
+              "keywordMap": {
+                "laundering": "5",
+                "fraud": "3"
+              }
+            },
+            "activityRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "12345",
+                  "geneValue": "Transfer-Debit",
+                  "geneScore": "57",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "activities": [
+                {
+                  "itemID": "123987345",
+                  "ItemType": "Transfer",
+                  "item": "Debit",
+                  "accountNumber": "12334",
+                  "closedDate": "04/24/2014",
+                  "assignedAnalyst": "Scott Smith"
+                }
+              ]
+            },
+            "networkRiskSequence": {
+              "genes": [
+                {
+                  "geneName": "Sara Watts",
+                  "geneValue": "family",
+                  "geneScore": "15",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "John Noes",
+                  "geneValue": "co-worker",
+                  "geneScore": "15",
+                  "geneDescription": "blahblahbal"
+                },
+                {
+                  "geneName": "Transaction Alert 12345",
+                  "geneValue": "counteryparty",
+                  "geneScore": "98",
+                  "geneDescription": "blahblahbal"
+                }
+              ],
+              "networkNodes": [
+                {
+                  "nodeName": "Sara Watts",
+                  "relationship": "family",
+                  "source": "Facebook",
+                  "riskScore": "25.5"
+                },
+                {
+                  "nodeName": "Sara Watts",
+                  "relationship": "family",
+                  "source": "Facebook",
+                  "riskScore": "25.5"
+                },
+                {
+                  "nodeName": "Transaction Alert 12345",
+                  "relationship": "counterparty",
+                  "source": "Alert System",
+                  "riskScore": "75"
+                }
+              ]
+            }
+          },
+          "riskDNAGraph": {
+            "graphData": {
+              "09/01/2015": "54",
+              "09/20/2015": "75",
+              "09/15/2015": "66"
+            }
+          },
+          "changeLogItems": [
+            {
+              "analystName": "Julie Sanders",
+              "analystID": "1234",
+              "changeType": "SYSTEM",
+              "changeDate": "Aug 23, 2014 9:30:32 AM",
+              "action": "RISK DNA"
+            }
+          ]
+
+
+        }
+      }
+    ],
+    "alertTransactions": [
+      {
+        "transactionDate": "09/01/2015",
+        "transactionType": "TRANSFER",
+        "currency": "USD",
+        "amount": 4000,
+        "branch": "2344",
+        "checkNumber": "921",
+        "checkDescription": "TO DDA#80007623 on 09/01",
+        "additionalInfo": "Misc Food Stores - Convience Stores",
+        "accountHolderName": "John Doe",
+        "accountHolderAccNumber": "876231771",
+        "holderTransferType": "Debit",
+        "beneficiaryName": "Steve Smith",
+        "beneficiaryAccNumber": "0143165723",
+        "beneficiaryTransferType": "Credit",
+        "transactionDescription": "Internal transfer WD via online",
+        "accountHolderRiskScore": 22,
+        "beneficiaryRiskScore": 50
+      },
+      {
+        "transactionDate": "09/01/2015",
+        "transactionType": "TRANSFER",
+        "currency": "USD",
+        "amount": 5000,
+        "branch": "2314",
+        "checkNumber": "922",
+        "checkDescription": "TO DDA#80007434 on 09/01",
+        "additionalInfo": "Misc Food Stores - Convience Stores",
+        "accountHolderName": "Michael John",
+        "accountHolderAccNumber": "286231771",
+        "holderTransferType": "Debit",
+        "beneficiaryName": "Greme Smith",
+        "beneficiaryAccNumber": "1233165723",
+        "beneficiaryTransferType": "Credit",
+        "transactionDescription": "Internal transfer WD via online",
+        "accountHolderRiskScore": 50,
+        "beneficiaryRiskScore": 80
+      },
+      {
+        "transactionDate": "09/01/2015",
+        "transactionType": "TRANSFER",
+        "currency": "USD",
+        "amount": 6000,
+        "branch": "1234",
+        "checkNumber": "923",
+        "checkDescription": "TO DDA#33007623 on 09/01",
+        "additionalInfo": "Misc Food Stores - Convience Stores",
+        "accountHolderName": "Steve Waugh",
+        "accountHolderAccNumber": "876231771",
+        "holderTransferType": "Debit",
+        "beneficiaryName": "Dwayne Smith",
+        "beneficiaryAccNumber": "9873165723",
+        "beneficiaryTransferType": "Credit",
+        "transactionDescription": "Internal transfer WD via online",
+        "accountHolderRiskScore": 30,
+        "beneficiaryRiskScore": 75
+      }
+    ],
+    "cdd": [
+      {
+        "accountID": "75629112",
+        "accountType": "Joint Saving",
+        "accountOpenDate": "02/15/1999",
+        "relationshipManager": "Bill Watkins",
+        "accountBeneficiaries": [
+          "Anna Mathew - Primary Account Holder",
+          "Mark Mathew - Joint Account Holder"
+        ]
+      }
+    ],
+    "entity": {
+      "entityDocuments": [ ],
+      "entityNotes": [ ],
+      "entityTasks": [ ],
+      "entityName": "Anna Mathew",
+      "entityAddress": "123 Main Street, Houston TX 10022, USA",
+      "entityPhone": "123.456.7899",
+      "entityEmail": "annaMathew@gmail.com",
+      "numberOfNewPersonas": "1",
+      "personas": [
+        {
+          "personaName": "Anna Matthew",
+          "personaAddress": "800 West Stree, Braintree MA 18426, USA",
+          "personaPhone": "557.334.5656",
+          "personaEmail": "amatthew@gmail.com",
+          "personaSource": "Facebook",
+          "isActive": true,
+          "isNew": true
+        }
+      ],
+      "associatedAccounts": [
+        {
+          "accountID": "75629112",
+          "accountType": "Joint Saving",
+          "accountOpenDate": "02/15/1999",
+          "relationshipManager": "Bill Watkins",
+          "accountBeneficiaries": [
+            "Anna Mathew - Primary Account Holder",
+            "Mark Mathew - Joint Account Holder"
+          ]
+        }
+      ],
+      "riskDNA": {
+        "entityRiskScore": "100",
+        "entityRiskLevel": "HIGH RISK",
+        "attributeRiskSequence": {
+          "genes": [
+            {
+              "geneName": "Name Frequency",
+              "geneValue": "2",
+              "geneScore": "100",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Name Variation",
+              "geneValue": "2",
+              "geneScore": "100",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Address Variation",
+              "geneValue": "3",
+              "geneScore": "50",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Address Frequency",
+              "geneValue": "3",
+              "geneScore": "50",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Geographic Threat",
+              "geneValue": "United States",
+              "geneScore": "50",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Hifca Threat",
+              "geneValue": "TX",
+              "geneScore": "10",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Phone Frequency",
+              "geneValue": "2",
+              "geneScore": "10",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Phone Variation",
+              "geneValue": "2",
+              "geneScore": "10",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Phone Validation",
+              "geneValue": "123.456.7899 - FALSE",
+              "geneScore": "80",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Phone Carrier",
+              "geneValue": "Sprint",
+              "geneScore": "5",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Phone Location Threat",
+              "geneValue": "United States",
+              "geneScore": "5",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Email Frequency",
+              "geneValue": "1",
+              "geneScore": "5",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Email Variation",
+              "geneValue": "4",
+              "geneScore": "77",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Email Validation",
+              "geneValue": "annaMathrew@gmail.com - INVALID",
+              "geneScore": "77",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Email Domain",
+              "geneValue": "Google",
+              "geneScore": "77",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Home To Bank",
+              "geneValue": "45 miles",
+              "geneScore": "77",
+              "geneDescription": "blahblahbal"
+            }
+          ],
+          "nameFrequency": "2",
+          "nameVariation": "2",
+          "addressFrequency": "3",
+          "addressVariation": "3",
+          "geographicThreat": "United States",
+          "hifcaThreat": "TX",
+          "phoneFrequency": "2",
+          "phoneVariation": "2",
+          "phoneValidation": "123.456.7899 - FALSE",
+          "phoneCarrier": "Sprint",
+          "phoneLocationThreat": "United States",
+          "emailFrequency": "1",
+          "emailVariation": "4",
+          "emailValidation": "annaMathew@gmail.com - VALID",
+          "emailDomain": "Google",
+          "homeToBankDistance": "45 miles"
+        },
+        "watchlistRiskSequence": {
+          "genes": [
+            {
+              "geneName": "Anna Mathew",
+              "geneValue": "FBI",
+              "geneScore": "100",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Anna Mathew",
+              "geneValue": "AU",
+              "geneScore": "100",
+              "geneDescription": "blahblahbal"
+            }
+          ],
+          "watchlistHitItems": [
+            {
+              "entityName": "Anna Mathew",
+              "watchlistProvider": "SBS",
+              "listName": "FBI",
+              "ranking": "Strength Index 2 / Exposure Index 80"
+            }
+          ],
+          "pepHitItems": [
+            {
+              "entityName": "Anna Matthew",
+              "pepProvider": "Nonmino",
+              "pepListName": "AU"
+            }
+          ]
+        },
+        "negativeNewsRiskSequence": {
+          "articles": [
+            {
+              "articleName": "CEO commits fraud",
+              "keywordHits": "fraud",
+              "articlePublicationDate": "01-13-2010",
+              "articleRiskScore": "100.0",
+              "articleURL": "www.cnn.com"
+            },
+            {
+              "articleName": "CEO commits fraud",
+              "keywordHits": "fraud",
+              "articlePublicationDate": "01-13-2010",
+              "articleRiskScore": "100.0",
+              "articleURL": "www.cnn.com"
+            }
+          ],
+          "keywordMap": {
+            "laundering": "5",
+            "fraud": "3"
+          }
+        },
+        "activityRiskSequence": {
+          "genes": [
+            {
+              "geneName": "12345",
+              "geneValue": "Transfer-Debit",
+              "geneScore": "57",
+              "geneDescription": "blahblahbal"
+            }
+          ],
+          "activities": [
+            {
+              "itemID": "123987345",
+              "ItemType": "Transfer",
+              "item": "Debit",
+              "accountNumber": "12334",
+              "closedDate": "04/24/2014",
+              "assignedAnalyst": "Scott Smith"
+            }
+          ]
+        },
+        "networkRiskSequence": {
+          "genes": [
+            {
+              "geneName": "Sara Watts",
+              "geneValue": "family",
+              "geneScore": "15",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "John Noes",
+              "geneValue": "co-worker",
+              "geneScore": "15",
+              "geneDescription": "blahblahbal"
+            },
+            {
+              "geneName": "Transaction Alert 12345",
+              "geneValue": "counteryparty",
+              "geneScore": "98",
+              "geneDescription": "blahblahbal"
+            }
+          ],
+          "networkNodes": [
+            {
+              "nodeName": "Sara Watts",
+              "relationship": "family",
+              "source": "Facebook",
+              "riskScore": "25.5"
+            },
+            {
+              "nodeName": "Sara Watts",
+              "relationship": "family",
+              "source": "Facebook",
+              "riskScore": "25.5"
+            },
+            {
+              "nodeName": "Transaction Alert 12345",
+              "relationship": "counterparty",
+              "source": "Alert System",
+              "riskScore": "75"
+            }
+          ]
+        }
+      },
+      "riskDNAGraph": {
+        "graphData": {
+          "09/01/2015": "54",
+          "09/20/2015": "75",
+          "09/15/2015": "66"
+        }
+      },
+      "changeLogItems": [
+        {
+          "analystName": "Julie Sanders",
+          "analystID": "1234",
+          "changeType": "SYSTEM",
+          "changeDate": "Aug 23, 2014 9:30:32 AM",
+          "action": "RISK DNA"
+        }
+      ]
+
+    },
+    "caseDocuments": [
+      {
+        "documentName": "Casedata.txt",
+        "serializedContent": "sehehn589shdu999nsd98ann844a48ah8hr84f48j8ja8j8jf408fj48aj8j94jqr84j8r48fj0j4fj4mtmu587ah75a-5555a5a",
+        "uploadDate": "09/16/15",
+        "lastUpdated": "09/16/15",
+        "validated": true,
+        "uploadedBy": "ManagerSchmoe",
+        "shortDescription": "Bank Application",
+        "screenId": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "entityId": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "documentId": "document111"
+      }
+    ],
+    "caseNotes": [
+      {
+        "title": "This entity needs Deeper Investigation",
+        "createdDate": "09/16/15",
+        "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+        "entityID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "text": "Upon review of gathered data, this entity will need advanced investigation",
+        "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "noteID": "note222"
+      }
+    ],
+    "caseTasks": [
+      {
+        "task": "Call 3 Fred to check References - 444-333-2222",
+        "completed": false,
+        "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+        "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "dateCreated": "09/16/15",
+        "order": 1,
+        "taskID": "task333"
+      },
+      {
+        "task": "Call 1 Fred to check References - 444-333-2222",
+        "completed": true,
+        "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+        "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+        "dateCreated": "09/16/15",
+        "order": 2,
+        "taskID": "task111"
+      }
+    ]
+  }
+
+ 

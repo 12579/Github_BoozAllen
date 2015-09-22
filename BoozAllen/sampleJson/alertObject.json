@@ -1,0 +1,522 @@
+﻿{
+  "id": "1929482726",
+  "alertTitle": "Justin Watts",
+  "assignedAnalystID": "782053ca-237c-4091-aea5-7a6dba0d946f",
+  "assignedAnalystName": "Scott Reilly",
+  "accountNumber": "382920392",
+  "accountType": "Private Checking",
+  "accountOpenDate": "08/03/2015",
+  "relationshipManager": "Chris Hoiles",
+  "relationshipManagerID": "765202",
+  "alertType": "Structuring",
+  "startedDate": "09/21/2015",
+  "alertOpenDate": "09/20/2015",
+  "dueDate": "09/30/2015",
+  "alertStatus": "New",
+  "alertClosedDeposition": "N/A",
+  "alertSummary1": "Several suspicous transaction alerts that require more investigation",
+  "alertSummary2": "Significant wire transfer activity",
+  "alertSummary3": "CounterParty relationships is valid",
+  "descionSummary": "After further investigation into the alert activity, the alerts where false positives so NO SAR will be submitted",
+  "alertCheckListItems": [
+    {
+      "caseChecklistName": "Review related Alerts and Cases",
+      "isComplete": false,
+      "caseChecklistDescription": "blah blah blah",
+      "order": 0
+    },
+    {
+      "caseChecklistName": "Analyze alert transactions",
+      "isComplete": false,
+      "caseChecklistDescription": "blah blah blah",
+      "order": 1
+    },
+    {
+      "caseChecklistName": "Conduct Due Dilligence Research",
+      "isComplete": false,
+      "caseChecklistDescription": "blah blah blah",
+      "order": 2
+    },
+    {
+      "caseChecklistName": "Write Case Summary",
+      "isComplete": false,
+      "caseChecklistDescription": "blah blah blah",
+      "order": 3
+    },
+    {
+      "caseChecklistName": "Close case",
+      "isComplete": false,
+      "caseChecklistDescription": "blah blah blah",
+      "order": 4
+    }
+  ],
+  "relatedCases": [
+    {
+      "id": "90131712",
+      "caseTitle": "Dustin Watts",
+      "hasRiskScore": "false",
+      "riskScore": "N/A",
+      "assignedAnalystID": "573234",
+      "assignedAnalystName": "Scott Bevins",
+      "accountNumber": "238947301",
+      "accountType": "Private Checking",
+      "caseOpenDate": "07/10/2012",
+      "caseClosedDeposition": "False Positive",
+      "caseClosedDate": "07/30/2012",
+      "caseCheckListItems": [ ],
+      "relatedCases": [ ],
+      "relatedAlerts": [ ],
+      "alertTransactions": [ ],
+      "cdd": [ ],
+      "caseDocuments": [ ],
+      "caseNotes": [ ],
+      "caseTasks": [ ],
+      "caseSummary1": "SAR was filed",
+      "caseSummary2": "Suspicous activity was discovered on the transactions",
+      "caseSummary3": "Will review in 3 months",
+      "decisionSummary": "Based all known data, a SAR was submitted for review"
+    }
+  ],
+  "relatedAlerts": [
+    {
+      "id": "813409",
+      "alertTitle": "Justin Watts",
+      "hasRiskScore": "false",
+      "riskScore": "N/A",
+      "assignedAnalystID": "73441",
+      "assignedAnalystName": "Jill Peters",
+      "accountNumber": "382920392",
+      "accountType": "Private Checking",
+      "alertOpenDate": "01/01/2014",
+      "alertClosedDate": "01/20/2014",
+      "alertClosedDeposition": "Closed Escalation",
+      "alertCheckListItems": [ ],
+      "relatedCases": [ ],
+      "relatedAlerts": [ ],
+      "alertTransactions": [ ],
+      "cdd": [ ],
+      "alertDocuments": [ ],
+      "alertNotes": [ ],
+      "alertTasks": [ ],
+      "alertSummary1": "Several suspicous transaction alerts that require more investigation",
+      "alertSummary2": "Significant wire transfer activity",
+      "alertSummary3": "CounterParty relationships is valid",
+      "descionSummary": "After further investigation into the alert activity, the alerts where false positives so NO SAR will be submitted"
+    }
+  ],
+  "alertTransactions": [
+    {
+      "transactionDate": "09/01/2014",
+      "transactionType": "TRANSFER",
+      "currency": "USD",
+      "amount": "9999",
+      "branch": "113",
+      "checkNumber": "183",
+      "checkDescription": "TO DDA#80007623 on 09/04",
+      "additionalInfo": "Turks Savings",
+      "accountHolderName": "Justin Watts",
+      "accountHolderAccNumber": "382920392",
+      "holderTransferType": "Debit",
+      "beneficiaryName": "Michael Douglas",
+      "beneficiaryAccNumber": "9330283472",
+      "beneficiaryTransferType": "Credit",
+      "transactionDescription": "Internal transfer WD via online",
+      "holderRiskScore": "74",
+      "beneficiaryHasRiskScore": "false",
+      "beneficiaryRiskScore": "N/A"
+    }
+  ],
+  "cdd": [
+    {
+      "accountID": "382920392",
+      "accountType": "Joint Saving",
+      "accountOpenDate": "01/23/1992",
+      "relationshipManager": "Henry Rodriguez",
+      "accountBeneficiaries": [
+        "Justin Watts - Primary Account Holder",
+        "Katherine Watts - Joint Account Holder"
+      ]
+    }
+  ],
+  "entity": {
+    "entityDocuments": [ ],
+    "entityNotes": [ ],
+    "entityTasks": [ ],
+    "entityName": "Justin Watts",
+    "entityAddress": "6540 N 27th St Arlington, VA 22213",
+    "entityPhone": "540.829.5029",
+    "entityEmail": "HighWATTage@gmail.com",
+    "numberOfNewPersonas": "2",
+    "personas": [
+      {
+        "personaName": "Larry Jefferson",
+        "personaAddress": "6540 N 27th St Arlington, VA 22213",
+        "personaPhone": "703.649.7763",
+        "personaEmail": "LJ@yahoo.com",
+        "personaSource": "Facebook",
+        "isActive": true,
+        "isNew": true
+      },
+      {
+        "personaName": "Justin Watts",
+        "personaAddress": "6540 N 27th St Arlington, VA 22213",
+        "personaPhone": "540.829.5029",
+        "personaEmail": "HighWATTage@gmail.com",
+        "personaSource": "Pipl",
+        "isActive": true,
+        "isNew": true
+      }
+    ],
+    "associatedAccounts": [
+      {
+        "accountID": "382920392",
+        "accountType": "Joint Saving",
+        "accountOpenDate": "01/23/1992",
+        "relationshipManager": "Henry Rodriguez",
+        "accountBeneficiaries": [
+          "Justin Watts - Primary Account Holder",
+          "Katherine Watts - Joint Account Holder"
+        ]
+      }
+    ],
+    "riskDNA": {
+      "entityRiskScore": "85",
+      "entityRiskLevel": "HIGH RISK",
+      "attributeRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Name Frequency",
+            "geneValue": "3",
+            "geneScore": "65%",
+            "geneDescription": "This gene indicates the number of discovered names"
+          },
+          {
+            "geneName": "Name Variation",
+            "geneValue": "2",
+            "geneScore": "50%",
+            "geneDescription": "This gene indicates the number of uniqeuly discovered names"
+          },
+          {
+            "geneName": "Address Variation",
+            "geneValue": "2",
+            "geneScore": "55%",
+            "geneDescription": "This gene indicates the number of uniquely discovered addresses"
+          },
+          {
+            "geneName": "Address Frequency",
+            "geneValue": "3",
+            "geneScore": "61%",
+            "geneDescription": "This gene indicates the number of discovered addresses "
+          },
+          {
+            "geneName": "Geographic Threat",
+            "geneValue": "United States",
+            "geneScore": "33%",
+            "geneDescription": "This gene indicates the entity's country threat level"
+          },
+          {
+            "geneName": "Hifca Threat",
+            "geneValue": "VA",
+            "geneScore": "45%",
+            "geneDescription": "This gene indicates the entity's US region threat level "
+          },
+          {
+            "geneName": "Phone Frequency",
+            "geneValue": "3",
+            "geneScore": "64%",
+            "geneDescription": "This gene indicates the number of discovered phones"
+          },
+          {
+            "geneName": "Phone Variation",
+            "geneValue": "2",
+            "geneScore": "43%",
+            "geneDescription": "This gene indicates the number of uniquely discovered phones"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "540.829.5029 - VALID",
+            "geneScore": "0%",
+            "geneDescription": "This gene indicates the phone validity"
+          },
+          {
+            "geneName": "Phone Carrier",
+            "geneValue": "Verizon",
+            "geneScore": "10%",
+            "geneDescription": "This gene indicates the phone carrier threat"
+          },
+          {
+            "geneName": "Phone Location Threat",
+            "geneValue": "United States",
+            "geneScore": "17%",
+            "geneDescription": "This gene indicates the phone's country code threat"
+          },
+          {
+            "geneName": "Email Frequency",
+            "geneValue": "2",
+            "geneScore": "45%",
+            "geneDescription": "This gene indicates the number of email's discovered"
+          },
+          {
+            "geneName": "Email Variation",
+            "geneValue": "2",
+            "geneScore": "36%",
+            "geneDescription": "This gene indicates the number uniquely discovered emails"
+          },
+          {
+            "geneName": "Email Validation",
+            "geneValue": "MeeksMill@gmail.com - VALID",
+            "geneScore": "15%",
+            "geneDescription": "This gene indicates that the email validitiy"
+          },
+          {
+            "geneName": "Email Domain",
+            "geneValue": "Gmail",
+            "geneScore": "10%",
+            "geneDescription": "This gene indicates the email domains threat level"
+          },
+          {
+            "geneName": "Home To Bank",
+            "geneValue": "1500 miles",
+            "geneScore": "90%",
+            "geneDescription": "This gene indicates the distance to the bank from the home address"
+          }
+        ],
+        "nameFrequency": "3",
+        "nameVariation": "3",
+        "addressFrequency": "3",
+        "addressVariation": "2",
+        "geographicThreat": "United States",
+        "hifcaThreat": "VA",
+        "phoneFrequency": "3",
+        "phoneVariation": "2",
+        "phoneValidation": "540.829.5029 - VALID",
+        "phoneCarrier": "Sprint",
+        "phoneLocationThreat": "United States",
+        "emailFrequency": "2",
+        "emailVariation": "2",
+        "emailValidation": "MeeksMill@gmail.com - VALID",
+        "emailDomain": "Gmail",
+        "homeToBankDistance": "1500 miles"
+      },
+      "watchlistRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Justin Watts",
+            "geneValue": "FBI",
+            "geneScore": "90%",
+            "geneDescription": "This gene indicates a found watchlist hit"
+          },
+          {
+            "geneName": "Walter Justinson",
+            "geneValue": "AU",
+            "geneScore": "40%",
+            "geneDescription": "This gene indicates a found PEP hit"
+          }
+        ],
+        "watchlistHitItems": [
+          {
+            "entityName": "Allen Meeks",
+            "watchlistProvider": "SBS",
+            "listName": "OFAC",
+            "ranking": "Strength Index 7 / Exposure Index 90"
+          }
+        ],
+        "pepHitItems": [
+          {
+            "entityName": "Walter Justinson",
+            "pepProvider": "PEP-Check",
+            "pepListName": "AU"
+          }
+        ]
+      },
+      "negativeNewsRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Money Laundering Ring Subpoenaed",
+            "geneValue": "Shell Company",
+            "geneScore": "90%",
+            "geneDescription": "This gene indicates a found negative news stories"
+          },
+          {
+            "geneName": "Watts Caught Using Prescious Metals to Launder Funds",
+            "geneValue": "Precious Metals",
+            "geneScore": "75%",
+            "geneDescription": "This gene indicates a found negative news stories"
+          }
+        ],
+        "articles": [
+          {
+            "articleName": "Money Laundering Ring Subpoenaed",
+            "keywordHits": "Shell Company",
+            "articlePublicationDate": "06-14-2012",
+            "articleRiskScore": "90%",
+            "articleURL": "www.nyt.com",
+            "articleText": "text goes here"
+          },
+          {
+            "articleName": "Watts Caught Using Prescious Metals to Launder Funds",
+            "keywordHits": "Precious Metals",
+            "articlePublicationDate": "01-12-2014",
+            "articleRiskScore": "75%",
+            "articleURL": "www.news.com",
+            "articleText": "text goes here"
+          }
+        ],
+        "keywordMap": {
+          "laundering": "12",
+          "Prescious Metals": "15",
+          "Shell Company": "21"
+        }
+      },
+      "activityRiskSequence": {
+        "genes": [
+          {
+            "geneName": "382920392",
+            "geneValue": "Transfer-Debit",
+            "geneScore": "67%",
+            "geneDescription": "This gene indicates additional alerted transactions"
+          },
+          {
+            "geneName": "Checking Account",
+            "geneValue": "0198453313",
+            "geneScore": "33%",
+            "geneDescription": "This gene indicates the type of account risk"
+          }
+        ],
+        "activities": [
+          {
+            "itemID": "0443465623",
+            "ItemType": "Transfer",
+            "item": "Alert",
+            "accountNumber": "382920392",
+            "closedDate": "03/12/2011",
+            "status": "Active",
+            "assignedAnalyst": "Bill Watson"
+          }
+        ]
+      },
+      "networkRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Katherine Watts",
+            "geneValue": "Household",
+            "geneScore": "50%",
+            "geneDescription": "This gene indicates a shared attribute between the entities"
+          },
+          {
+            "geneName": "Preston Mullaney",
+            "geneValue": "Friends",
+            "geneScore": "60%",
+            "geneDescription": "This gene indicates a discovered social network linkage between the entities"
+          },
+          {
+            "geneName": "Transaction Alert 382920392",
+            "geneValue": "CounterParty",
+            "geneScore": "90%",
+            "geneDescription": "This gene indicates a triggered transaction frequency alert"
+          }
+        ],
+        "networkNodes": [
+          {
+            "nodeName": "Katherine Watts",
+            "relationship": "Household",
+            "source": "Facebook",
+            "riskScore": "50%",
+            "data1": "Email - kw321@yahoo.com",
+            "data2": "Address - N/A",
+            "data3": "Phone - 467.319.8734"
+          },
+          {
+            "nodeName": "Preston Mullaney",
+            "relationship": "Friends",
+            "source": "Linkedin",
+            "riskScore": "60%",
+            "data1": "Email - mullaney4387@yahoo.com",
+            "data2": "Address - N/A",
+            "data3": "Phone - 467.319.8734"
+          },
+          {
+            "nodeName": "Transaction Alert 382920392",
+            "relationship": "CounterParty",
+            "source": "Alert System",
+            "riskScore": "90%",
+            "data1": "Email - N/A",
+            "data2": "Address - N/A",
+            "data3": "Phone - N/A"
+          }
+        ]
+      }
+    },
+    "riskDNAGraph": {
+      "graphData": {
+        "07/15/2015": "70",
+        "04/20/2015": "65",
+        "10/21/2015": "85"
+      }
+    },
+    "changeLogItems": [
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "09/01/2015",
+        "action": "INGEST"
+      },
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "09/01/2015",
+        "action": "ENRICHMENT"
+      },
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "09/01/2015",
+        "action": "RiskDNA"
+      },
+      {
+        "analystName": "Paul Simpson",
+        "analystID": "53245",
+        "changeType": "SYSTEM",
+        "changeDate": "09/15/2015",
+        "action": "Reprocess"
+      },
+      {
+        "analystName": "Wendy Pools",
+        "analystID": "48241",
+        "changeType": "SYSTEM",
+        "changeDate": "09/15/2015",
+        "action": "Reprocess"
+      }
+    ]
+  },
+  "caseDocuments": [
+    {
+      "documentName": "InitialReport.txt",
+      "serializedContent": "text goes here",
+      "uploadDate": "09/01/2015",
+      "lastUpdated": "09/01/2015",
+      "validated": "true",
+      "uploadedBy": "Josh Jenkins",
+      "shortDescription": "blah blah blah"
+    }
+  ],
+  "caseNotes": [
+    {
+      "title": "Contact Anna",
+      "createdDate": "09/02/2015",
+      "text": "email is a preferred form of contact",
+      "createdBy": "Scott Reilly"
+    }
+  ],
+  "caseTasks": [
+    {
+      "task": "Review alert transactions",
+      "completed": "false",
+      "dateCreated": "09/01/2015",
+      "order": "0"
+    }
+  ]
+}

@@ -6,9 +6,18 @@
         var userInfo = authenticationSvc.getUserInfo();
         $scope.userInfo = userInfo;
         $scope.shareData = shareData;
-        $scope.GridFunction = function (id) {
+        $scope.gridFunction = function (id) {
             authenticationSvc.selectedGridID = id;
-            $state.transitionTo('Home.dashboard.entityDetail');
+            $state.transitionTo('Home.entityDetail');
+        }
+        $scope.openCase = function (id) {
+            authenticationSvc.selectedGridID = id;
+            $state.transitionTo('Home.caseDetails');
+        }
+
+        $scope.openAlert = function (id) {
+            authenticationSvc.selectedGridID = id;
+            $state.transitionTo('Home.alertDetails');
         }
         var defaultVars = {
             w: angular.element(window).width(),
@@ -36,7 +45,7 @@
             },
             {
                 headerName: "", field: "", width: 300, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
-                    return '<span><a style="cursor:pointer!important;" ng-click="GridFunction( ' + params.data.id + ')" > <b>' + params.data.entityName + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
+                    return '<span><a style="cursor:pointer!important;" ng-click="gridFunction( ' + params.data.id + ')" > <b>' + params.data.entityName + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
 
                     //<a ui-sref="home.entityDetail({id:' + params.data.id + '})" title="Click"></a>'
                 }
@@ -66,11 +75,22 @@
             {
                 headerName: "Case Type", field: "caseType", width: 150
             },
-            { headerName: "Open Date", field: "caseOpenDate", width: 150, filter: 'number', suppressMenu: 'true', comparator: dateComparator },
+            { headerName: "Open Date", field: "caseOpenDate", width: 120, filter: 'number', suppressMenu: 'true', comparator: dateComparator },
             {
-                headerName: "Due Date", field: "caseDueDate", width: 170, filter: 'number', suppressMenu: 'true', comparator: dateComparator
+                headerName: "Due Date", field: "caseDueDate", width: 120, filter: 'number', suppressMenu: 'true', comparator: dateComparator
+            },
+            {
+                headerName: "", field: "", width: 80, suppressMenu: 'true', suppressSorting: 'true',
+                suppressSizeToFit: 'true', cellRenderer: function (params) {
+                    return '<a class="clickButton" style="" ng-click="openCase( ' + params.data.id + ')" >Open</a>';
+                }
             }
         ];
+
+        function actionHandler() {
+            return "<span class='clickButton'>Manage Items</span>";
+        }
+
         var alertcolumnDefs = [
             {
                 headerName: "ID", field: "id", hide: true
@@ -91,8 +111,8 @@
                 }
             },
             {
-                headerName: "", field: "", width: 300, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
-                    return '<span><b>' + params.data.entityName + '</b> -' + params.data.id + '<br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
+                headerName: "", field: "", width: 300, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function(params) {
+                    return '<span><a style="cursor:pointer!important;" ng-click="gridFunction( ' + params.data.id + ')" > <b>' + params.data.entityName + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
                 }
             },
             {
@@ -120,7 +140,13 @@
             },
             { headerName: "Alert Type", field: "alertType" },
             { headerName: "Open Date", field: "alertOpenDate", width: 150, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
-            { headerName: "Due Date", field: "alertDueDate", width: 170, suppressMenu: 'true', comparator: dateComparator, filter: 'number' }
+            { headerName: "Due Date", field: "alertDueDate", width: 170, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
+            {
+                headerName: "", field: "", suppressMenu: 'true', suppressSorting: 'true',
+                suppressSizeToFit: 'true', cellRenderer: function (params) {
+                    return '<a class="clickButton" style="cursor:pointer!important;" ng-click="openAlert( ' + params.data.id + ')" >Open</a>';
+                }
+            }
         ];
 
         function upperCaseNewValueHandler(params) {
@@ -135,7 +161,6 @@
         }
 
         function riskDnaHandler(params) {
-            debugger;
             var cellWidth = params.eGridCell.style.width;
             cellWidth = cellWidth.substring(0, cellWidth.length - 2);
             var cellwidthInt = parseInt(cellWidth);
@@ -144,7 +169,7 @@
             var totalSequence = params.data.riskDNA.sequences.length;
             //var sequenceWidthMain = 700*defaultVars.w/defaultVars.winRef / totalSequence;
             var sequenceWidthMain = cellwidthInt * defaultVars.w / defaultVars.winRef / totalSequence;
-            var sequenceWidth = sequenceWidthMain - 20*defaultVars.w / defaultVars.winRef;
+            var sequenceWidth = sequenceWidthMain - 20 * defaultVars.w / defaultVars.winRef;
             params.$scope.SequenceWidth = sequenceWidth;
             //+ '<div style="float: left; background-color: white; height: 1.47em;">&nbsp;</div>'
             //             style=" width:' + sequenceWidthMain + 'px"  
@@ -197,23 +222,23 @@
                 data[i].y = value;
             }
             $scope.agingData = data;
-            setTimeout(function () {
-                var elems = angular.element('#exampleId2 .nv-legend .nv-series');
-                if (!!!elems) {
-                    var len = elems.length;
-                    var val = angular.element(elems[len - 1]).attr('transform');
-                    var numb = val.match(/\d/g);
-                    numb = numb.join("");
-                    numb = numb.substring(0, 3);
-                    var xVal = parseInt(numb);
-                    var yVal = 30;
-                    for (var i = 0; i < len; i++) {
-                        var elem = angular.element(elems)[i];
-                        angular.element(elem).attr('transform', 'translate(' + xVal + ',' + yVal + ')');
-                        yVal = yVal + 30;
-                    }
-                }
-            }, 100);
+            //            setTimeout(function () {
+            //                var elems = angular.element('#exampleId2 .nv-legend .nv-series');
+            //                if (!!!elems) {
+            //                    var len = elems.length;
+            //                    var val = angular.element(elems[len - 1]).attr('transform');
+            //                    var numb = val.match(/\d/g);
+            //                    numb = numb.join("");
+            //                    numb = numb.substring(0, 3);
+            //                    var xVal = parseInt(numb);
+            //                    var yVal = 30;
+            //                    for (var i = 0; i < len; i++) {
+            //                        var elem = angular.element(elems)[i];
+            //                        angular.element(elem).attr('transform', 'translate(' + xVal + ',' + yVal + ')');
+            //                        yVal = yVal + 30;
+            //                    }
+            //                }
+            //            }, 100);
         };
 
         $http.get("../../../sampleJson/dashboardJsonFiu.json")
@@ -256,7 +281,7 @@
 
 
         $scope.BindPieChart = function () {
-            debugger;
+
             var selectedItem = $scope.data;
             var data = angular.copy($scope.agingPieChartData);
             if (selectedItem == "") {

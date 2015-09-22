@@ -1,0 +1,372 @@
+﻿<meta charset="utf-8">
+<script src="../../../assets/js/d3.js"></script>
+<script src="../../../assets/js/nv.d3.js"></script>
+<script src="../../../assets/libs/angularjs/angular.js"></script>
+<script src="../../../assets/js/script.js"></script>
+<link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
+
+
+<section id="entityDetail">
+    <section class="mainBoard">
+        <div class="boardArea">
+            <div class="container-fluid">
+                <div class="row marginZero">
+                    <div class="col-md-12 pageHeading displayFlex">
+                        <div class="">
+                            <h2>Entity Detail</h2>
+                        </div>
+                      
+                        <div class="displayFlex">
+                              <a href ng-if="eventDate" ng-click="Refresh();" class="ovalButton yellowButton iconButton">
+                                <span>{{eventDate}}</span>
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a href class="ovalButton yellowButton iconButton">
+                                <i class="fa fa-floppy-o"></i>
+                                <span>Save &amp; Refresh</span>
+                            </a>
+                            <a href class="ovalButton yellowButton iconButton">
+                                <i><img src="/assets/img/icon5.png" class="img-responsive" alt=""></i>
+                                <span>Reprocess</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row displayFlex entityRow1">
+                    <div class="col-md-2">
+                        <div class="entityDetailCards">
+                            <div class="entityCard active" ng-class="primaryDatas.score<=33.33?'cardGrey': primaryDatas.score>33.33 && primaryDatas.score<=66.66?'cardYellow':'cardRed'">
+                                <span class="cardsCounter yellowButton">{{cardcount+1}}</span>
+                                <span class="addNewCard"><i class="fa fa-plus"></i></span>
+                                <div class="text-center">
+                                    <h2 class="nameInitial">{{primaryDatas.shortname}}</h2>
+                                </div>
+                                <h2 class="text-center riskScore">{{primaryDatas.score|number:2}}</h2>
+                                <h3 class="text-center">{{primaryDatas.risktype}}</h3>
+
+
+                            </div>
+                            <div class="entityCard" ng-class="cardData.active && cardData.new?'secCardWhite': cardData.active ?'secCardGrey':'secCardLightgrey'"  ng-repeat="cardData in cardDatas">                 <span class="headSource">{{cardData.source}}</span>
+                               <span ng-hide="" class="cardsCounter yellowButton">{{cardcount}}</span>
+<!--
+                                <div class="toggleButton">
+                                    <div class="switch">
+                                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" value="{{cardData.active}}">
+                                        <label for="cmn-toggle-1"></label>
+                                    </div>
+                                </div>
+-->
+                                <div class="text-center">
+                                    <h2 class="nameInitial">{{cardData.shortname}}</h2>
+                                </div>
+                                <div class="newToggleButton">
+                                    <div class="button">
+                                        <span class="active">ON</span>
+                                        <span>NEW</span>
+                                        <span>OFF</span>
+                                    </div>
+                                </div>
+                                <address>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-map-marker"></i>
+                                    <p>{{cardData.address}}</p>
+                                </div>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-envelope"></i>
+                                    <p>{{cardData.email}}</p>
+                                </div>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-phone-alt"></i>
+                                    <p>{{cardData.phone}}</p>
+                                </div>
+                            </address>
+                            </div>
+                        </div>
+
+                        <div class="cardNav">
+                            <a href ng-click="cardPrev()" class="pull-left cardPrev"><i class="fa fa-angle-left"></i><span>Prev</span></a>
+                            <a href ng-click="cardNext()" class="pull-right cardNext"><span>next</span><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <article>
+                            <h3>{{entityDetail.personBaseData.firstName}} {{entityDetail.personBaseData.lastName}}</h3>
+                            <address>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-map-marker"></i>
+                                    <p>{{entityDetail.personBaseData.address.street1}}, {{entityDetail.personBaseData.address.city}}, {{entityDetail.personBaseData.address.state}} {{entityDetail.personBaseData.address.zipcode}}</p>
+                                </div>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-envelope"></i>
+                                    <p>{{entityDetail.personBaseData.email}}</p>
+                                </div>
+                                <div class="displayFlex">
+                                    <i class="glyphicon glyphicon-phone-alt"></i>
+                                    <p>{{entityDetail.personBaseData.phone}}</p>
+                                </div>
+                            </address>
+                            <p></p>
+                        </article>
+                        <article class="entityAccounts">
+                            <h3>Associated Accounts</h3>
+                            <div ag-grid="accountgridOptions" class="ag-fresh"></div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 entityInfoTabs">
+                        <div class="sectionShadow">
+                            <entity-tabs-one>
+                                <entity-pane-one tab-title="Document Center">
+                                    <div ag-grid="DocumentCenterGrid" class="ag-fresh" style="width: 100%">
+                                    </div>
+                                    <footer class="displayFlex docsFooter">
+                                        <a href="" ng-click="addNewDocument($event, 'document')"><i class="fa fa-plus"></i></a>
+                                        <!--<a href=""><i class="fa fa-times"></i></a>-->
+                                    </footer>
+                                    <div data-type="document" class="addPopup">
+                                        <a href="#" class="closePopup" ng-click="closePopup()"><i class="fa fa-times"></i></a>
+                                        <form name="DocumentCenterForm">
+                                            <div class="displayFlex">
+                                                <input type="text" class="form-control flex1" placeholder="FileDesc" ng-model="FileDesc" id="FileDesc" required>
+                                                <input type="file" ngf-select ng-model="picFile" name="file" accept="'.pdf','.docx','.doc','.txt'" onchange="angular.element(this).scope().file_changed(this)" required>
+                                                <!--ngf-select-->
+                                            </div>
+
+                                            <!--<input type="text" placeholder="Type Description">-->
+                                            <!--<i ng-show="myForm.file.$error.required">*required</i>-->
+                                            <button ng-click="DocumentCenterGridUpload(FileDesc)">Submit</button>
+                                            <!--<button ng-disabled="!DocumentCenterForm.$valid" ng-click="DocumentCenterGridUpload(picFile,FileDesc)">Submit</button>-->
+                                            <!--<button ng-click="DocumentCenterGridUpload()">Submit</button>-->
+                                            <!--//ng-disabled="DocumentCenterForm.$valid"-->
+                                            <button ng-disabled="DocumentIDArray.length<=0" ng-click="RemoveDocument()">Remove</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                                <entity-pane-one tab-title="Notes">
+                                    <div ag-grid="NotesGrid" class="notesGrid ag-fresh" style="width: 100%">
+                                    </div>
+                                    <footer class="displayFlex docsFooter">
+                                        <a href="" ng-click="addNewDocument($event, 'notes')"><i class="fa fa-plus"></i></a>
+                                    </footer>
+                                    <div data-type="notes" class="addPopup">
+                                        <a href="#" class="closePopup" ng-click="closePopup()"><i class="fa fa-times"></i></a>
+                                        <form name="NotesForm">
+                                            <input type="text" class="form-control" placeholder="NotesTitle" ng-model="NotesTitle" required>
+                                            <input type="text" class="form-control" placeholder="NotesData" ng-model="NotesData" required>
+                                            <!--<i ng-show="myForm.file.$error.required">*required</i>-->
+                                            <button ng-disabled="!NotesForm.$valid" ng-click="AddNotes(NotesTitle,NotesData)">Save</button>
+                                            <!--ng-disabled="!NotesForm.$valid"-->
+                                            <button ng-disabled="NotesIDArray.length<=0" ng-click="RemoveNotes()">Remove</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                                <entity-pane-one tab-title="Tasks">
+                                    <div ag-grid="TasksGrid" class="ag-fresh taskGrid" style="width: 100%">
+                                    </div>
+                                    <footer class="displayFlex docsFooter">
+                                        <a href="" ng-click="addNewDocument($event, 'task')"><i class="fa fa-plus"></i></a>
+                                        <a href="" ng-click=""><i class="fa fa-close"></i></a>
+                                        <a href="" ng-click=""><i class="fa fa-times"></i></a>
+                                    </footer>
+                                    <div data-type="task" class="addPopup">
+                                        <a href="#" class="closePopup" ng-click="closePopup()"><i class="fa fa-times"></i></a>
+                                        <form name="TasksForm">
+                                            <input type="text" class="form-control" placeholder="Task" ng-model="Task" required>
+                                            <!--<i ng-show="myForm.file.$error.required">*required</i>-->
+                                            <button ng-disabled="!TasksForm.$valid" ng-click="AddTask(Task)">Save</button>
+                                            <button ng-disabled="TaskIDArray.length<=0" ng-click="RemoveTask()">Remove</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                            </entity-tabs-one>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                                <div class="row riskScore">
+                                    <img src="/assets/img/dna.png" alt="">
+                                    <h4>Aggregate risk score <strong>94</strong></h4>
+                                </div>
+                -->
+                <div class="row rowSec entityRiskTabs">
+                    <div class="col-md-12">
+                        <div class="sectionShadow">
+                            <entity-tabs-two>
+                                <entity-pane-two icon="fa fa-sort-amount-asc" tab-title="Attribute Risk">
+                                    <div ag-grid="casegridOptions" class="ag-fresh">
+                                        <article class="tabContent attributeRiskGrid">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <ul class="tabGrid" ng-repeat="seq in entityDetail.riskDNA.sequences" ng-if="seq.sequenceType=='ATTRIBUTE' ">
+                                                        <div class="attributeRiskLeft">
+                                                            <li class="tabRow tabRowLeft" ng-repeat="gene in seq.genes|limitTo:seq.genes.length/2">
+                                                                <div class="displayFlex" style="border: 2px solid gray;" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="displayFlex" style="border: 2px solid yellow;" ng-show="gene.geneScore>=33.32 && gene.geneScore<66.66">
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="displayFlex" style="border: 2px solid red;" ng-show="gene.geneScore>=66.65 && gene.geneScore<100.01">
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tabCell">
+                                                                        <div class="cellItem displayFlex">
+                                                                            <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </div>
+                                                        <div class="attributeRiskRight">
+                                                            <li class="tabRow tabRowRight" ng-repeat="gene in seq.genes|limitTo: -(seq.genes.length-seq.genes.length/2)">
+                                                                <div>
+                                                                    <div class="displayFlex" style="border: 2px solid gray;" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="displayFlex" style="border: 2px solid yellow;" ng-show="gene.geneScore>=33.32 && gene.geneScore<66.66">
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="displayFlex" style="border: 2px solid red;" ng-show="gene.geneScore>=66.65 && gene.geneScore<100.01">
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneName}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tabCell">
+                                                                            <div class="cellItem displayFlex">
+                                                                                <h4 class="flex1">{{gene.geneValue}}</h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </entity-pane-two>
+                                <entity-pane-two icon="fa fa-clock-o" tab-title="Watchlist Risk">
+                                    <div style="float: left;width: 60%" class="watchListSec">
+                                        <header class="watchListTitle sectionHeading displayFlex">
+                                            <h3 class="flex1 marginZero">Watchlist Hits</h3>
+                                        </header>
+                                        <div ag-grid="watchListGridOptions" class="watchListGrid ag-fresh"></div>
+                                    </div>
+                                    <div style="float: right;width: 40%" class="PepHitsSec">
+                                        <header class="watchListTitle sectionHeading displayFlex">
+                                            <h3 class="flex1 marginZero">Pep Hits</h3>
+                                        </header>
+                                        <div ag-grid="pepHitsGridOptions" class="pepHitsGrid ag-fresh"></div>
+                                    </div>
+                                </entity-pane-two>
+                                <entity-pane-two icon="fa fa-newspaper-o" tab-title="Negative News Risk">
+                                    <div ag-grid="alertgridOptions" class="ag-fresh">
+                                        <article class="tabContent negativeRisk">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <header class="sectionHeading displayFlex">
+                                                        <h3 class="flex1 marginZero">Adverse Keywords</h3>
+                                                    </header>
+                                                    <nvd3-pie-chart data="agingData" objectEquality="true" id="agingData" x="xFunction()" y="yFunction()" width="550" height="200" margin="{right:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" tooltips="true" donutRatio=".40" showLegend="true" legendColor="colorFunction()" color="colorFunction()" tooltipcontent="toolTipContentFunction1()" donut="true">
+                                                        <svg></svg>
+                                                    </nvd3-pie-chart>
+                                                </div>
+                                                <div class="ag-fresh" ag-grid="negativeriskgridOptions"></div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </entity-pane-two>
+                                <entity-pane-two icon="fa fa-clock-o" tab-title="Network Risk">
+                                    <div>
+                                        <label ng-repeat="role in relations">
+                                            <input type="checkbox" checklist-model="relationship" checklist-value="role" ng-change="check(role, checked)"> {{role}}
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <vis-network data="networkChartdata" options="networkChartOptions"></vis-network>
+
+                                    </div>
+                                </entity-pane-two>
+                                <entity-pane-two icon="fa fa-credit-card" tab-title="Activity Risk">
+                                    <div ag-grid="entityDetailOptions" class="ag-fresh"></div>
+                                </entity-pane-two>
+                            </entity-tabs-two>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row rowSec">
+                    <div class="col-md-12">
+                        <article class="sectionPadding">
+                            <header class="sectionHeading displayFlex">
+                                <h3 class="flex1 marginZero">Risk DNA Over Time</h3>
+                                <a href="javascript:void()" ng-click="slideToggleSec($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                            </header>
+                            <div class="toggleSec riskDnaGraph">
+
+                                <nvd3-stacked-area-chart data="riskDnaLog" width="1750" height="400" showXAxis="true" showYAxis="true" xAxisTickFormat="xAxisTickFormatFunction()" color="colorFunctionRiskDna()" interactive="true" tooltips="true" tooltipcontent="toolTipContentFunction()">
+                                </nvd3-stacked-area-chart>
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="row rowSec">
+                    <div class="col-md-12">
+                        <article class="sectionPadding">
+                            <header class="sectionHeading displayFlex">
+                                <h3 class="flex1 marginZero">Change Log</h3>
+                                <a href="javascript:void()" ng-click="slideToggleSec($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                            </header>
+                            <div class="toggleSec">
+                                <div ag-grid="changeLogGridOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>

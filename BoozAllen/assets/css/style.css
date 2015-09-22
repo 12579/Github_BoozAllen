@@ -82,7 +82,7 @@
 Global CSS (Start)
 #######################*/
 
-* {
+*,*:focus,*:hover,*:visited {
     outline: none;
 }
 h4, .h4{
@@ -90,11 +90,13 @@ h4, .h4{
 }
 a,a:hover,a:focus,a:active{
     text-decoration: none;
+    cursor: pointer;
 }
 body {
     font-family: 'FoundersGrotesk', sans-serif;
     font-size: 0.8333vw;
 }
+
 input,
 button,
 select,
@@ -102,8 +104,13 @@ textarea {
     font-family: 'Oxygen', sans-serif;
     font-size: 0.9em
 }
+.customScrollBar{
+    position: relative;
+}
 .container-fluid{
-    width: calc(100vw - 30px);
+    width: calc(100vw - 2em);
+    padding-left: 1em;
+    padding-right: 1em;
 }
 .marginZero {
     margin: 0;
@@ -116,7 +123,7 @@ textarea {
     margin-bottom: .625em;
 }
 .ovalButton {
-    padding: .8em 1em .5em 1em;
+    padding: .6em 1em .5em 1em;
     border-radius: 2em;
     margin-left: .6em;
 }
@@ -130,12 +137,23 @@ textarea {
     text-decoration: none;
     color: #080700;
 }
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
+.row {
+    margin-left: -1em;
+    margin-right: -1em;
+}
 .iconButton i {
-    margin: 0 .2em;
+    margin: 0 .4em 0 .2em;
     vertical-align: top;
     width: 1.2em;
     display: inline-block;
+}
+.clickButton:hover{
+    color: #fff;
 }
 .alignCenterV{
     align-items: center;
@@ -168,6 +186,30 @@ address {
 .pageHeading {
     margin-top: 1em;
 }
+.pageHeading a {
+    height: 2.8em;
+}
+
+.pageHeading .iconButton i {
+    font-size: 1.2em;
+    width: 1.4em;
+    text-align: right;
+}
+
+.pageHeading .iconButton span {
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.pageHeading .iconButton i.fa {
+    padding-top: .2em;
+}
+ input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /*#####################
 Global CSS (Ends)
 #######################*/
@@ -607,7 +649,7 @@ Dashboard Css (Starts)
     font-style: normal;
     font-size: 1.1875em;
     line-height: 2.89em;
-    background-color: #5b5b5b;
+    background-color: #000;
     color: #fff;
     width: 2.89em;
     height: 2.89em;
@@ -889,8 +931,7 @@ Dashboard Css (Starts)
 }
 .displayFlex {
     display: flex;
-    display: 
-    -webkit-flex;
+    display: -webkit-flex;
     display: -moz-flex;
 }
 
@@ -1181,18 +1222,19 @@ Entity Detail Page CSS (Start)
     -moz-flex: 6;
     -ms-flex: 6;
     -webkit-flex: 6;
+    /* margin-right: 1em; */
 }
 .entityRow1 > div:nth-child(2){
-    flex: 13;    
-    -moz-flex: 13;    
-    -ms-flex: 13;    
-    -webkit-flex: 13;    
+    flex: 12;
+    -moz-flex: 12;
+    -ms-flex: 12;
+    -webkit-flex: 12;
 }
 .entityRow1 > div:nth-child(3){
-    flex: 10;
-    -moz-flex: 10;
-    -ms-flex: 10;
-    -webkit-flex: 10;
+    flex: 11;
+    -moz-flex: 11;
+    -ms-flex: 11;
+    -webkit-flex: 11;
 }
 .entityRow1 article {
     padding: .3125em 1.5625em .9375em 1.5625em;
@@ -1230,10 +1272,6 @@ address i {
 .newToggleButton {
     text-align: center;
     margin-top: 2em;
-    display: none;
-}
-.secCardGrey .newToggleButton{
-    display: block;
 }
 .entityCard.secCardGrey address {
     margin-top: 1em;
@@ -1270,16 +1308,41 @@ address i {
     padding: 0;
     /* border-radius: 1em; */
 }
+.secCardWhite .newToggleButton .button span {
+    padding: 0.7em .8em .1em .8em;
+    display: inline-block;
+    font-size: .8em;
+    float: left;
+    color: #fff;
+    background-color: #9A9A9A;
+}
+
+.secCardWhite .newToggleButton .button span:nth-child(2) {
+    border: 1px solid #5B5B5B;
+    border-bottom: none;
+    border-top: none;
+}
+
+.secCardWhite .newToggleButton .button span.active {
+    background-color: rgb(91, 91, 91);
+    color: #fcfcfc;
+}
+
+.newToggleButton .button span:last-child {
+    border-radius: 0 1em 1em 0;
+}
+.newToggleButton .button {
+    display: inline-block;
+    /* background-color: #FFF; */
+    padding: 0;
+    /* border-radius: 1em; */
+}
+.entityCard.secCardWhite .headSource {
+    color: #fff;
+}
+
 .headSource {
-    display: none;
-}
-
-.entityCard.secCardGrey .headSource {
-    display: inline-block;
-}
-
-.secCardGrey .headSource {
-    display: inline-block;
+/*    display: inline-block;*/
     background-color: rgba(91, 91, 91, 0.67);
     color: #fff;
     font-size: .8em;
@@ -1290,16 +1353,16 @@ address i {
 .entityCard {
     background-color: rgba(51, 51, 51, 0.47);
     padding: 1.25em .9375em .625em .9375em;
-    min-width: 23.25em;
+    min-width: 22.9em;
     border-radius: 0;
     height: 100%;
     position: absolute;
-    z-index: 10;
+    z-index: 9;
     /* transform: translateY(2em); */
-    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-    -moz-transition:  -moz-transform .3s ease-in-out, opacity .3s ease-in-out;
-    -ms-transition: -ms-transform .3s ease-in-out, opacity .3s ease-in-out;
-    -webkit-transition: -webkit-transform .3s ease-in-out, opacity .3s ease-in-out;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+    -ms-transition: -ms-transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
     box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.25);
 }
 .cardNav{
@@ -1310,12 +1373,10 @@ address i {
     -ms-justify-content: space-between;
     -webkit-justify-content: space-between;
 */
-    position: absolute;
-    bottom: 1em;
+    position: absolute;bottom: 0em;
     z-index: 10;
     width: calc(100% - 30px);
-    padding: 0 1em;
-}
+    padding: 0 1em;}
 .cardNav a{
     color: #fff;
     text-transform: uppercase;
@@ -1323,6 +1384,7 @@ address i {
     -moz-transition: color .2s ease-in-out;
     -ms-transition: color .2s ease-in-out;
     -webkit-transition: color .2s ease-in-out;
+    margin-top: -2.5em;
 } 
 .cardNav.whiteActive a {
     color: #232323;
@@ -1350,7 +1412,7 @@ address i {
 
 .entityCard address {
     width: 55%;
-    margin: 3em auto 2em auto;
+    margin: 1em auto 2em auto;
 }
 .entityRow1 article h4 {
     font-size: 1em;
@@ -1433,6 +1495,38 @@ address p {
     transform: translateY(-6em) scale(.7);
     z-index: 7;
 }
+.entityCard:nth-child(5){
+    transform: translateY(-8em) scale(.6);
+    z-index: 6;
+/*
+    opacity: 0;
+    visibility: hidden;
+*/
+}
+.entityCard:nth-child(6){
+    transform: translateY(-10em) scale(.5);
+    z-index: 5;
+/*
+    opacity: 0;
+    visibility: hidden;
+*/
+}
+.entityCard:nth-child(7){
+    transform: translateY(-12em) scale(.4);
+    z-index: 4;
+/*
+    opacity: 0;
+    visibility: hidden;
+*/
+}
+.entityCard:nth-child(8){
+    transform: translateY(-14em) scale(.3);
+    z-index: 3;
+/*
+    opacity: 0;
+    visibility: hidden;
+*/
+}
 .entityRow1 article .accInfo {
     padding: 1.2em 0 0.3em 0;
     border-bottom: 1px solid #ddd;
@@ -1473,8 +1567,21 @@ address p {
     display: -ms-flex;
     display: -webkit-flex;
 }
+.entityRiskTabs .nav-tabs > li:hover {
+    background-color: #eee;
+}
 .entityRiskTabs .tabbable li a{
     text-align: center;
+}
+.entityRiskTabs .nav-tabs > li.active {
+    background-color: #fff;
+}
+
+.entityRiskTabs .riskData {
+    padding: 0;
+}
+.entityRiskTabs .sectionShadow {
+    background-color: #fff;
 }
 .tabGrid {
     padding: 0 1em;
@@ -1487,21 +1594,28 @@ address p {
 .tabRow {
     display: table-row;
 }
-
+.attributeRiskLeft .tabRow{
+    display: inline-table;
+}
+.attributeRiskRight .tabRow{
+    display: inline-table;
+}
 .docGrid div:nth-child(2) {
     width: 36%;
 }
-
+.attributeRiskGrid {
+    padding-bottom: 1em;
+}
  .notesGrid .tabRow div:nth-child(1) {
     width: 3em;
     vertical-align: top;
     text-align: center;
 } 
 .tabRow .tabCell {
-    display: table-cell;
+/*    display: table-cell;*/
     vertical-align: middle;
     border-bottom: 1px solid #E4E4E4;
-    padding: 1.2em 0 .8em 0;
+    padding: .4em 0 .5em 0;
 }
 .tabGridHead {
     height: 1em;
@@ -1523,6 +1637,7 @@ address p {
 .tabGrid h4 {
     font-weight: 400;
     margin-bottom: 0.2em;
+    margin-top: 0;
 }
 
 .notesGrid {
@@ -1555,7 +1670,13 @@ address p {
     background-color: #fff;
     height: calc(25.6875em - 9.0625em) !important;
 }
-
+.dnaHead > div {
+    cursor: pointer;
+    position: relative;
+}
+.entityRiskTabs .dataPopdown {
+    left: 50%;
+}
 .cellItem {
     height: 2.5em;
     padding: .9em 1em .9em 0.8em;
@@ -1573,14 +1694,27 @@ address p {
 .entityRiskTabs .nav-tabs li.active a {
     color: #FFCC00;
 }
-.entityInfoTabs .nav-tabs > li,.entityRiskTabs .nav-tabs > li {
+.entityInfoTabs .nav-tabs > li{
     float: none;
     flex-grow: 1;
     -moz-flex-grow: 1;
     -ms-flex-grow: 1;
     -webkit-flex-grow: 1;
 }
-
+.entityRiskTabs .nav-tabs > li{
+    float: none;
+    width: 20%;
+    position: relative;
+    height: 9em;
+}
+.entityRiskTabs .riskData > div {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    margin: 0 auto;
+    width: 90%;
+}
 .nav-tabs > li {
     border-right: 1px solid #e4e4e4;
 }
@@ -1619,15 +1753,22 @@ address p {
     text-align: center;
     padding-top: 0.2em;
     vertical-align: middle;
+    transition: all .3s ease-in-out;
 }
 .changeLogGrid .tabCell:nth-child(1) {
     width: 55%;
     text-align: left;
 }
-
+.changeLogGrid{
+    width: 100%;
+    height: 29em;
+}
 .changeLogGrid .tabCell {
     width: 17%;
 }
+.documentCenterS #center{
+    width: auto !important;
+} 
 .docsFooter {
     justify-content: flex-end;
     -moz-justify-content: flex-end;
@@ -1681,14 +1822,35 @@ address p {
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     background-color: #fff;
+    z-index: 11;
+    cursor: pointer;
+}
+.secCardWhite .addNewCard {
+    background-color: #5B5B5B;
+}
+
+.secCardWhite .addNewCard i {
+    color: #FFF;
+}
+
+.secCardGrey .addNewCard i {
+    color: #959595;
 }
 .cardsCounter {
     display: block;
     margin-left: auto;
+    position: absolute;
+    right: 1em;
+    top: 1em;
 }
 .addNewCard i {
     color: #FE4735;
 }
+
+.secCardGrey.addNewCard i {
+    color: #959595;
+}
+
 .cardsCounter i {
     color: #FE4735;
 }
@@ -1771,9 +1933,6 @@ address p {
     border: 1px solid #ddd;
 }
 
-.negativeRiskGrid .tabGridHead {
-}
-
 .negativeRiskGrid .tabGridHead .tabCell {
     padding-bottom: 1em;
 }
@@ -1789,8 +1948,11 @@ address p {
 .attributeRiskGrid .cellItem {
     background-color: transparent;
 }
-.attributeRiskGrid .tabCell {
-    width: 50%;
+.attributeRiskGrid .tabCell:last-child {
+    width: 65%;
+}
+.attributeRiskGrid .tabCell:first-child {
+    width: 35%;
 }
 .entityAccounts #centerRow {
     height: 11.5em !important;
@@ -1847,7 +2009,7 @@ address p {
     padding-top: 1.3em;
 }
 .entityAccounts .ag-row {
-    padding-top: 1em;
+    margin-top: 1em;
 }
 
 .entityAccounts .ag-fresh .ag-cell b:first-child {
@@ -1866,6 +2028,9 @@ address p {
     border: 1px solid #ddd;
     z-index: 100;
     box-shadow: 0px 0px 15px 2px #CCC;
+    -moz-box-shadow: 0px 0px 15px 2px #CCC;
+    -ms-box-shadow: 0px 0px 15px 2px #CCC;
+    -webkit-box-shadow: 0px 0px 15px 2px #CCC;
     background-color: #fff;
     margin-top: -5em;
 }
@@ -1903,7 +2068,21 @@ address p {
     padding-left: 1em;
     font-size: inherit;
 }
-
+.fileUploadName label{
+    font-weight: 400;
+}
+.fileUploadName{
+    display: block !important;
+    height: 2.95em;
+    border-radius: 0;
+    width: 100%;
+    margin-bottom: 1em;
+    line-height: 3.2em;
+    border: none;
+    border: 1px solid #ccc;
+    padding-left: 1em;
+    font-size: inherit;
+}
 .addPopup button {
     margin-right: 1em;
     background-color: #AEB9C4;
@@ -1951,6 +2130,17 @@ div[ag-grid="DocumentCenterGrid"] {
 .watchListGrid #centerRow .ag-cell {
     text-align: left;
 }
+.watchlistGridRow,.negativeGridRowId,.accountGridRow,.activityGridRowId {
+    border: 2px solid transparent;
+    transition: border .15s ease-in-out;
+    -moz-transition: border .15s ease-in-out;
+    -ms-transition: border .15s ease-in-out;
+    -webkit-transition: border .15s ease-in-out;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
 
 .watchListGrid #centerRow .ag-cell:last-child {
     line-height: 1.1em;
@@ -1987,6 +2177,227 @@ div[ag-grid="DocumentCenterGrid"] {
     top: .4em;
     color: #ccc;
 }
+.nv-point {
+    stroke-opacity: 1 !important;
+    stroke-width: 5px !important;
+    fill-opacity: 1 !important;
+}
+.networkData {
+    padding: 2em;
+    background-color: #fff;
+}
+.fileUploadName label {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.attributeRiskLeft .tabRow > div, .attributeRiskRight .tabRow > div {
+    border: 2px solid transparent;
+    transition: border .15s ease-in-out;
+    -moz-transition: border .15s ease-in-out;
+    -ms-transition: border .15s ease-in-out;
+    -webkit-transition: border .15s ease-in-out;
+}
+.slideToggleSec:hover {
+    border-color: #23527c;
+}
+
+.slideToggleSec.open {
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.addNewCardWin {
+    position: fixed;
+    z-index: 101;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.65);
+    top: 0;
+    left: 0;
+}
+
+.addPersonaPopup {
+    background-color: #fff;
+    display: inline-block;
+    /* height: 48vh; */
+    /* width: 36vw; */
+    position: absolute;
+    top: 15vh;
+    left: 20vw;
+}
+.addPersonaPopup h2 {
+    margin-top: 0;
+    padding: 1em;
+    background-color: #f9fafa;
+}
+
+.addPersonaPopup form {
+    padding: 1.7em;
+}
+
+.addPersonaPopup input,.addPersonaPopup select {
+    width: 20em;
+    height: 3em;
+}
+
+.addPersonaPopup td {
+    padding: .5em 1em;
+}
+
+.addPersonaPopup button {
+    background-color: #aeb9c4;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: .8em 2.5em;
+    border-radius: 2em;
+    margin-left: 1em;
+    margin-top: 1.2em;
+}
+.rag-done b {
+    position: relative;
+    text-decoration: line-through;
+}
+.addPopup.negativeNewsRisk {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.addPopup.negativeNewsRisk .popupContent {
+    display: inline-block;
+    /* height: 50vh; */
+    width: 50vw;
+    position: relative;
+    top: 50vh;
+    background-color: #fff;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    padding: 1em 2em 2em 2em;
+}
+.newsPopHead {
+    margin: 0 -2em;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.65);
+    padding: 0 2em;
+}
+.addPopup.negativeNewsRisk button {
+    margin-top: 1em;
+}
+.newsTrigger i {
+    font-size: 1.2em;
+    color: #5B5B5D;
+}
+.addPopup textarea {
+    margin-bottom: 1em;
+}
 /*#########################
 Entity Detail Page CSS (Ends)
+###########################*/
+
+
+/*#########################
+Case Detail Page CSS (Starts)
+###########################*/
+.caseDetailRow1 {
+    background-color: #fff;
+    border: none;
+    border-collapse: separate;
+    padding: 1em 0;
+    margin-top: 0;
+}
+.caseDetailRow1 th {
+    font-size: .9em;
+    font-weight: 500;
+    color: #9fa8b2;
+}
+}
+
+.caseDetailRow1 td {
+    color: #9fa8b2;
+}
+
+.caseDetailRow1 select {
+    padding: .37em 1.07em;
+    border-radius: 1.428em;
+    position: relative;
+    /* top: .714em; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../img/arrow.png) no-repeat right 1em center;
+    border: 1px solid #e2e2e2;
+}
+.caseChecklist {
+    margin-right: 1em;
+    background-color: #fff;
+}
+
+.caseDocumentTabs {
+    margin-left: 1em;
+    background-color: #fff;
+}
+
+.caseChecklist h4 {
+    padding: 1em 1.8em 1em 1.5em;
+    font-size: 1.4em;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+}
+
+.caseChecklist ul {
+    padding: 0;
+    list-style: none;
+}
+
+.caseChecklist ul li {
+    padding: 1em 1em 1em 2em;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2em;
+}
+
+.caseChecklist ul li input {
+    margin-right: 1em;
+}
+
+.caseDocument .nav-tabs {
+    display: flex;
+}
+.caseDetailRow1 tr td {
+    padding-top: 1em;
+    color: #9fa8b2;
+}
+.caseDocumentTabs .nav-tabs {
+    display: flex;
+}
+
+.caseDocumentTabs .nav-tabs li {
+    flex: 1;
+    text-align: center;
+}
+
+.caseDocumentTabs .nav-tabs li a {
+    min-height: 3.6em;
+    padding-top: 1.4em;
+}
+
+.caseDocumentTabs .nav-tabs li.active a {
+    color: #ffcc00;
+}
+
+.caseChecklist ul li:last-child {
+    border: none;
+}
+/*#########################
+Case Detail Page CSS (Ends)
 ###########################*/

@@ -1,0 +1,143 @@
+﻿<meta charset="utf-8">
+<script src="../../../assets/js/d3.js"></script>
+<script src="../../../assets/js/nv.d3.js"></script>
+<script src="../../../assets/libs/angularjs/angular.js"></script>
+<script src="../../../assets/js/script.js"></script>
+<link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
+
+<section id="caseDetail">
+    <section class="mainBoard">
+        <div class="boardArea">
+            <div class="container-fluid">
+                <div>
+                    <table style="width: 100%; border: 1px solid gray; height: 90px">
+                        <tr style="width: 100%">
+                            <th style="width: 50%"></th>
+                            <th style="width: 12%">Case Type</th>
+                            <th style="width: 12%">Open Date</th>
+                            <th style="width: 12%">Due Date</th>
+                            <th style="width: 12%">Case Status</th>
+                        </tr>
+                        <tr style="width: 100%">
+                            <td style="width: 50%">
+                                <div>
+                                    <h2 class="ag-fresh ag-cell rag-initial" ng-class="caseInititalDataS.score<=33.33?'rag-green': caseInititalDataS.score>33.33 && caseInititalDataS.score<=66.66?'rag-amber':'rag-red'">{{caseInititalDataS.shortname}}</h2>
+                                </div>
+
+                                <b>{{caseDetailgridOptions.caseTitle}}</b> - {{caseDetailgridOptions.id}} <br /> {{caseDetailgridOptions.accountType}} - {{caseDetailgridOptions.accountNumber}}
+                            </td>
+                            <td style="width: 12%">{{caseDetailgridOptions.caseType}}</td>
+                            <td style="width: 12%">{{caseDetailgridOptions.caseOpenDate}}</td>
+                            <td style="width: 12%">{{caseDetailgridOptions.dueDate}}</td>
+                            <td style="width: 12%">{{caseDetailgridOptions.caseStatus}}</td>
+                        </tr>
+                    </table>
+                    <div style="height: 400px">
+                        <div style="height: 175px; margin-top: 45px; float: left;width: 50%">
+                            <h4>Case Checklist</h4>
+                            <ul>
+                                <li ng-repeat="caseCheckListItem in caseDetailgridOptions.caseCheckListItems">
+                                    <input type="checkbox" id="chkCaseChecklist{{$index+1}}" ng-checked="caseCheckListItem.isComplete==true" />{{caseCheckListItem.caseChecklistName}}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="float: right;width: 50%">
+                            <entity-tabs-one>
+                                <entity-pane-one tab-title="Document Center">
+                                    <div class="documentCenterS customScrollBar" style="height: 16.5625em;">
+                                        <div ag-grid="DocumentCenterGrid" class="ag-fresh" style="width: 100%" />
+                                    </div>
+                                    <footer class="displayFlex docsFooter">
+                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'document')"><i class="fa fa-plus"></i></a>
+                                    </footer>
+                                    <div data-type="document" class="addPopup">
+                                        <form name="DocumentCenterForm">
+                                            <div class="displayFlex">
+                                                <span class="fileUploadName flex1"><label ng-show="IsFileSelected" class="">{{FileName}} </label></span>
+                                                <input type="file" ngf-select ng-model="picFile" name="file" accept="'.pdf','.docx','.doc','.txt'" onchange="angular.element(this).scope().file_changed(this)">
+                                            </div>
+                                            <input type="text" class="form-control flex1" placeholder="File Description" ng-model="FileDesc" id="FileDesc">
+                                            <button ng-click="AddDocument(FileDesc)">Submit</button>
+                                            <button ng-click="closePopup()">Close</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                                <entity-pane-one tab-title="Notes">
+                                    <div ag-grid="NotesGrid" class="notesGrid ag-fresh" style="width: 100%" />
+                                    <footer class="displayFlex docsFooter">
+                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'notes')"><i class="fa fa-plus"></i></a>
+                                    </footer>
+                                    <div data-type="notes" class="addPopup">
+                                        <!--<a href="#" class="closePopup" ng-click="closePopup()"><i class="fa fa-times"></i></a>-->
+                                        <form name="NotesForm">
+                                            <input type="text" class="form-control" placeholder="Notes Title" ng-model="NotesTitle" id="NotesTitle">
+                                            <!--<input type="text" class="form-control" placeholder="Notes Data" ng-model="NotesData" id="NotesData">-->
+                                            <textarea type="text" class="form-control" rows="4" cols="50" placeholder="Notes Data" ng-model="NotesData" id="NotesData"></textarea>
+
+
+                                            <button ng-click="AddNotes(NotesTitle,NotesData)">Save</button>
+                                            <button ng-click="closePopup()">Close</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                                <entity-pane-one tab-title="Tasks">
+                                    <div ag-grid="TasksGrid" class="ag-fresh taskGrid" style="width: 100%">
+                                    </div>
+                                    <footer class="displayFlex docsFooter">
+                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'task')"><i class="fa fa-plus"></i></a>
+                                        <a class="selectorClass" href="" ng-click="CompletedTask()"><i class="fa fa-check"></i></a>
+                                        <a class="selectorClass" href="" ng-click="RemoveTask()"><i class="fa fa-times"></i></a>
+                                    </footer>
+                                    <div data-type="task" class="addPopup">
+                                        <form name="TasksForm">
+                                            <!--<input type="text" class="form-control" placeholder="Task" ng-model="Task" id="Task">-->
+
+                                            <textarea type="text" class="form-control" rows="4" cols="50" placeholder="Task" ng-model="Task" id="Task"></textarea>
+
+                                            <button ng-disabled="!TasksForm.$valid" ng-click="AddTask(Task)">Save</button>
+                                            <button ng-click="closePopup()">Close</button>
+                                        </form>
+                                    </div>
+                                </entity-pane-one>
+                            </entity-tabs-one>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Review related Alerts and Cases</h4>
+                        <div ag-grid="relatedCasesAndAlertsOptions" class="ag-fresh" style="height: 365px; width: 100%"></div>
+                    </div>
+                    <div>
+                        <h4>Analyze Alerted Transactions</h4>
+                        <div ag-grid="alertedTransactionsOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
+                    </div>
+                    <div>
+                        <h3>Conduct Due Diligence</h3>
+                        <div ag-grid="accountgridOptions" style="height: 220px;"></div>
+                    </div>
+                    <div style="width: 100%">
+                        <h4>Case Summary Wizard</h4>
+                        <div style="width: 33%; float: left">
+                            <h4>Review related Alerts and Cases Section Comments:</h4>
+                            <textarea style="width: 525px; height: 305px;"></textarea>
+                        </div>
+                        <div style="width: 33%; margin-left: 600px; margin-top: 20px">
+                            <h4>Analyze Alerted Transactions Section Comments:</h4>
+                            <textarea style="width: 525px; height: 305px;"></textarea>
+                        </div>
+                        <div style="width: 33%; float: right; margin-top: -346px">
+                            <h4>Conduct Due Diligence Section Comments:</h4>
+                            <textarea style="width: 525px; height: 305px;"></textarea>
+                        </div>
+                    </div>
+                    <div style="width: 100%">
+                        <h4>Decision Summary</h4>
+                        <textarea style="width: 95%; height: 187px;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
