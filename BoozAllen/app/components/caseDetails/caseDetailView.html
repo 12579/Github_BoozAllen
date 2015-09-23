@@ -4,12 +4,11 @@
 <script src="../../../assets/libs/angularjs/angular.js"></script>
 <script src="../../../assets/js/script.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
-
 <section id="caseDetail">
     <section class="mainBoard">
         <div class="boardArea">
             <div class="container-fluid">
-               <!-- Dashboard Heading Text -->
+                <!-- Dashboard Heading Text -->
                 <div class="row marginZero topHeading">
                     <div class="col-md-12">
                         <h2>Case Details</h2>
@@ -27,18 +26,20 @@
                         </thead>
                         <tr style="width: 100%">
                             <td style="width: 50%">
-                                <div>
-                                    <h2 class="ag-fresh ag-cell rag-initial" ng-class="caseInititalDataS.score<=33.33?'rag-green': caseInititalDataS.score>33.33 && caseInititalDataS.score<=66.66?'rag-amber':'rag-red'">{{caseInititalDataS.shortname}}</h2>
-                                </div>
-
-                                <b>{{caseDetailgridOptions.caseTitle}}</b> - {{caseDetailgridOptions.id}}
-                                <br/> {{caseDetailgridOptions.accountType}} - {{caseDetailgridOptions.accountNumber}}
+                                <div class="displayFlex textWithInitial">
+                                    <div class="ag-fresh ag-cell rag-initial" ng-class="caseInititalDataS.score<=33.33?'rag-green': caseInititalDataS.score>33.33 && caseInititalDataS.score<=66.66?'rag-amber':'rag-red'"><span class="rowNameInitial">{{caseInititalDataS.shortname}}</span></h2>
+                                    </div>
+                                    <span>
+                                    <b>{{caseDetailgridOptions.caseTitle}}</b> - {{caseDetailgridOptions.id}}
+                                <br/> {{caseDetailgridOptions.accountType}} - {{caseDetailgridOptions.accountNumber}} 
+                                </span>
                             </td>
                             <td style="width: 12%">{{caseDetailgridOptions.caseType}}</td>
                             <td style="width: 12%">{{caseDetailgridOptions.caseOpenDate}}</td>
                             <td style="width: 12%">{{caseDetailgridOptions.dueDate}}</td>
                             <td style="width: 12%">
-                                <select ng-model="selectedCaseStatus" ng-options="status as status for status in caseStatus"></select>
+                                <select ng-model="selectedCaseStatus" ng-options="status as status for status in caseStatus">
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -47,24 +48,21 @@
                             <h4>Case Checklist</h4>
                             <ul>
                                 <li ng-repeat="caseCheckListItem in caseDetailgridOptions.caseCheckListItems">
-                                    <input type="checkbox" id="chkCaseChecklist{{$index+1}}" ng-checked="caseCheckListItem.isComplete==true" />{{caseCheckListItem.caseChecklistName}}
-                                </li>
+                                    <input type="checkbox" id="chkCaseChecklist{{$index+1}}" ng-checked="caseCheckListItem.isComplete==true" /> {{caseCheckListItem.caseChecklistName}} </li>
                             </ul>
                         </div>
-
                         <div class="flex1 caseDocumentTabs sectionShadow">
                             <entity-tabs-one>
                                 <entity-pane-one tab-title="Document Center">
                                     <div class="documentCenterS customScrollBar" style="height: 16.5625em;">
                                         <div ag-grid="DocumentCenterGrid" class="ag-fresh" style="width: 100%" />
                                     </div>
-                                    <footer class="displayFlex docsFooter">
-                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'document')"><i class="fa fa-plus"></i></a>
-                                    </footer>
+                                    <footer class="displayFlex docsFooter"> <a class="selectorClass" href="" ng-click="openAddPopup($event, 'document')"><i class="fa fa-plus"></i></a> </footer>
                                     <div data-type="document" class="addPopup">
                                         <form name="DocumentCenterForm">
-                                            <div class="displayFlex">
-                                                <span class="fileUploadName flex1"><label ng-show="IsFileSelected" class="">{{FileName}} </label></span>
+                                            <div class="displayFlex"> <span class="fileUploadName flex1">
+                        <label ng-show="IsFileSelected" class="">{{FileName}} </label>
+                        </span>
                                                 <input type="file" ngf-select ng-model="picFile" name="file" accept="'.pdf','.docx','.doc','.txt'" onchange="angular.element(this).scope().file_changed(this)">
                                             </div>
                                             <input type="text" class="form-control flex1" placeholder="File Description" ng-model="FileDesc" id="FileDesc">
@@ -75,36 +73,26 @@
                                 </entity-pane-one>
                                 <entity-pane-one tab-title="Notes">
                                     <div ag-grid="NotesGrid" class="notesGrid ag-fresh" style="width: 100%" />
-                                    <footer class="displayFlex docsFooter">
-                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'notes')"><i class="fa fa-plus"></i></a>
-                                    </footer>
+                                    <footer class="displayFlex docsFooter"> <a class="selectorClass" href="" ng-click="openAddPopup($event, 'notes')"><i class="fa fa-plus"></i></a> </footer>
                                     <div data-type="notes" class="addPopup">
                                         <!--<a href="#" class="closePopup" ng-click="closePopup()"><i class="fa fa-times"></i></a>-->
                                         <form name="NotesForm">
                                             <input type="text" class="form-control" placeholder="Notes Title" ng-model="NotesTitle" id="NotesTitle">
                                             <!--<input type="text" class="form-control" placeholder="Notes Data" ng-model="NotesData" id="NotesData">-->
                                             <textarea type="text" class="form-control" rows="4" cols="50" placeholder="Notes Data" ng-model="NotesData" id="NotesData"></textarea>
-
-
                                             <button ng-click="AddNotes(NotesTitle,NotesData)">Save</button>
                                             <button ng-click="closePopup()">Close</button>
                                         </form>
                                     </div>
                                 </entity-pane-one>
                                 <entity-pane-one tab-title="Tasks">
-                                    <div ag-grid="TasksGrid" class="ag-fresh taskGrid" style="width: 100%">
-                                    </div>
-                                    <footer class="displayFlex docsFooter">
-                                        <a class="selectorClass" href="" ng-click="openAddPopup($event, 'task')"><i class="fa fa-plus"></i></a>
-                                        <a class="selectorClass" href="" ng-click="CompletedTask()"><i class="fa fa-check"></i></a>
-                                        <a class="selectorClass" href="" ng-click="RemoveTask()"><i class="fa fa-times"></i></a>
-                                    </footer>
+                                    <div ag-grid="TasksGrid" class="ag-fresh taskGrid" style="width: 100%"> </div>
+                                    <footer class="displayFlex docsFooter"> <a class="selectorClass" href="" ng-click="openAddPopup($event, 'task')"><i class="fa fa-plus"></i></a> <a class="selectorClass" href="" ng-click="CompletedTask()"><i class="fa fa-check"></i></a> <a class="selectorClass" href="" ng-click="RemoveTask()"><i class="fa fa-times"></i></a> </footer>
                                     <div data-type="task" class="addPopup">
                                         <form name="TasksForm">
                                             <!--<input type="text" class="form-control" placeholder="Task" ng-model="Task" id="Task">-->
 
                                             <textarea type="text" class="form-control" rows="4" cols="50" placeholder="Task" ng-model="Task" id="Task"></textarea>
-
                                             <button ng-disabled="!TasksForm.$valid" ng-click="AddTask(Task)">Save</button>
                                             <button ng-click="closePopup()">Close</button>
                                         </form>
@@ -113,7 +101,6 @@
                             </entity-tabs-one>
                         </div>
                     </div>
-
                     <div class="addEditSummaryWindow" style="display: none;">
                         <div class="addEditSummaryPopup">
                             <h2><span>{{popuppage=='Review'? 'Review related Alerts and Cases Section Comments:' : popuppage=='Analyze'? 'Analyze Alerted Transactions Section Comments:' : 'Conduct Due Diligence Section Comments'}}</span></h2>
@@ -123,62 +110,158 @@
                                         <td>
                                             <textarea rows="4" cols="50" class="form-control" placeholder="Summary" ng-model="summaryData"></textarea>
                                         </td>
-
                                     </tr>
                                 </table>
                                 <button ng-click="saveSummary()">Save</button>
                                 <button ng-click="closeaddEditSummaryPopup()">Close</button>
-
                             </form>
                         </div>
                     </div>
-                    <div>
-                        <h4>Review related Alerts and Cases</h4>
-                        <button ng-click="addEditSummary($event,'Review')"><span>{{ (ReviewSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <div ag-grid="relatedCasesAndAlertsOptions" class="ag-fresh" style="height: 365px; width: 100%"></div>
-                    </div>
-                    <div>
-                        <h4>Analyze Alerted Transactions</h4>
-                        <button id="ExportToExcel" type="button" value="Monthly Transactions - Export XLS" ng-click="ExportToExcel()" >Monthly Transactions - Export XLS</button>
-                        <button ng-click="addEditSummary($event,'Analyze')"><span>{{ (AnalyzeSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <div ag-grid="alertedTransactionsOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
-                    </div>
-                    <div>
-                        <h4>Conduct Due Diligence</h4>
-                        <button ng-click="addEditSummary($event,'Conduct')"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <div ag-grid="accountgridOptions" class="ag-fresh" style="height: 220px; width: 100%"></div>
+                    <div class="grayborderleft row rowSec">
+                        <header class="sectionHeading displayFlex">
+                            <h3 class="flex1 marginZero">Review related Alerts and Cases</h3>
+                            <a href class="ovalButton yellowButton" ng-click="addEditSummary($event,'Review')"><span>{{ (ReviewSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></a> 
+                            <a href ng-click="slideToggleCase($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                        </header>
+                        <div ag-grid="relatedCasesAndAlertsOptions" class="ag-fresh caseToggleSection" style="height: 365px; width: 100%"></div>
                     </div>
 
-                   <div style="width: 100%">
-           <h4>Case Summary Wizard</h4>
-           <div style="width: 33%; float: left">
-               <h4>Review related Alerts and Cases Section Comments:</h4>
-               <textarea style="width: 364px; height: 281px;" ng-disabled="reviewcaseSummary" ng-model="ReviewSummaryData"></textarea>
-               <button ng-click="addEditCaseSummary($event,'Review')" ng-show="reviewcaseSummary"><span>{{ (ReviewSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-               <button ng-click="saveCaseSummary('Review')" ng-hide="reviewcaseSummary" >Save Summary</button>
-           </div>
-           <div style="width: 33%; margin-left: 600px;margin-top: 20px" >
-               <h4>Analyze Alerted Transactions Section Comments:</h4>
-               <textarea style="width: 364px; height: 281px;" ng-disabled="analyzecaseSummary" ng-model="AnalyzeSummaryData"></textarea>
-               <button ng-click="addEditCaseSummary($event,'Analyze')" ng-show="analyzecaseSummary"><span>{{ (AnalyzeSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-               <button ng-click="saveCaseSummary('Analyze')" ng-hide="analyzecaseSummary">Save Summary</button>
-           </div>
-           <div style="width: 33%; float: right; margin-top: -326px">
-               <h4>Conduct Due Diligence Section Comments:</h4>
-               <textarea style="width: 364px; height: 281px;" ng-disabled="conductcaseSummary" ng-model="ConductSummaryData"></textarea>
-               <button ng-click="addEditCaseSummary($event,'Conduct')" ng-show="conductcaseSummary"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-               <button ng-click="saveCaseSummary('Conduct')" ng-hide="conductcaseSummary">Save Summary</button>
-           </div>
-       </div>
-  
-   <div style="width: 100%">
-       <h4>Decision Summary</h4>
-       <textarea style="width: 95%; height: 187px;" ng-disabled="decisioncaseSummary" ng-model="DecisionSummaryData"></textarea>
-       <button ng-click="addEditDecisionSummary($event)" ng-show="decisioncaseSummary"><span>{{ (DecisionSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
-       <button ng-click="saveDecisionSummary()" ng-hide="decisioncaseSummary">Save Summary</button>  
-   </div>
+
+                    <div class="yelloborderleft row rowSec">
+                        <header class="sectionHeading displayFlex">
+                            <h3 class="flex1 marginZero">Analyze Alerted Transactions</h3>
+                            <a href class="ovalButton grayButton" id="ExportToExcel" type="button" value="Monthly Transactions - Export XLS" ng-click="ExportToExcel()">Monthly Transactions - Export XLS</a>
+                            <a href class="ovalButton yellowButton" ng-click="addEditSummary($event,'Analyze')"><span>{{ (AnalyzeSummaryData!=null)? 'Edit Summary' : 'Edit Summary'}}</span></a>
+                            <a href ng-click="slideToggleCase($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                        </header>
+
+                        <div ag-grid="alertedTransactionsOptions" class="ag-fresh caseToggleSection" style="height: 520px; width: 100%"></div>
+                    </div>
+
+
+                    <div class="grayborderleft row rowSec">
+                        <header class="sectionHeading displayFlex">
+                            <h3 class="flex1 marginZero">Conduct Due Diligence</h3>
+                            <a href class="ovalButton yellowButton" ng-click="addEditSummary($event,'Conduct')"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></a> 
+                            <a href ng-click="slideToggleCase($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                        </header>
+                        <div class="ag-fresh conductDueSec caseToggleSection">
+                            <!--
+                            <div class="tabGrid">
+                                <div class="tabRow">
+                                    <div class="tabCell">
+                                        <div class="cellItem">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+-->
+                           <div class="displayFlex tabHeader conductRow">
+                               <h4>Account Details</h4>
+                               <p>Opening Date</p>
+                               <p>Relationship Manager</p>
+                           </div>
+                            <div ng-repeat="cdd in caseDataObject.cdd">
+                                <div class="displayFlex textWithInitial conductRow">
+                                    <div>
+                                        <div>{{cdd.accountType}}</div>
+                                        <div class="colorGrey">Account Number - {{cdd.accountID}}</div>
+                                    </div>
+                                    <div class="colorGrey">{{cdd.accountOpenDate}}</div>
+                                    <div class="colorGrey">{{cdd.relationshipManager}}</div>
+                                </div>
+                                <div class="displayFlex">
+                                    <div ng-repeat="ben in cdd.accountBeneficiaries" class="displayFlex nameWithInitial">
+                                    <div class="userInitial">
+                                       <span class="rowNameInitial">{{getInitials(ben.split('-')[0])}}</span>
+                                    </div>
+                                    <div class="userName">
+                                        <h5>{{ben.split('-')[0]}}</h5>
+                                        <p>{{ben.split('-')[1]}}</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <header class="sectionHeading displayFlex">
+                            <h3 class="flex1 marginZero">Entity Detail</h3>
+                            <a href ng-click="slideToggleCase($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a>
+                        </header>
+                    </div>
+                    <div class="row rowSec caseToggleSection caseSummarySec">
+                        <header class="sectionHeading displayFlex">
+                            <h3 class="flex1 marginZero">Case Summary Wizard</h3>
+                        </header>
+                        <article class="sectionborder">
+                            <div class="row displayFlex">
+                                <div class="col-md-4">
+                                    <div class="writeCaseSummary flex1">
+                                        <h4>Review related Alerts and Cases Section Comments:</h4>
+                                        <article>
+                                            <textarea ng-disabled="reviewcaseSummary" ng-model="ReviewSummaryData"></textarea>
+                                            <div class="summaryFoot">
+                                                <button ng-click="addEditCaseSummary($event,'Review')" ng-show="reviewcaseSummary"><span>{{ (ReviewSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                                                <button ng-click="saveCaseSummary('Review')" ng-hide="reviewcaseSummary">Save Summary</button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="writeCaseSummary flex1">
+                                        <h4>Analyze Alerted Transactions Section Comments:</h4>
+                                        <article>
+                                            <textarea ng-disabled="analyzecaseSummary" ng-model="AnalyzeSummaryData"></textarea>
+                                            <div class="summaryFoot">
+                                                <button ng-click="addEditCaseSummary($event,'Analyze')" ng-show="analyzecaseSummary"><span>{{ (AnalyzeSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                                                <button ng-click="saveCaseSummary('Analyze')" ng-hide="analyzecaseSummary">Save Summary</button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="writeCaseSummary flex1">
+                                        <h4>Conduct Due Diligence Section Comments:</h4>
+                                        <article>
+                                            <textarea ng-disabled="conductcaseSummary" ng-model="ConductSummaryData"></textarea>
+                                            <div class="summaryFoot">
+                                                <button ng-click="addEditCaseSummary($event,'Conduct')" ng-show="conductcaseSummary"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                                                <button ng-click="saveCaseSummary('Conduct')" ng-hide="conductcaseSummary">Save Summary</button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="writeCaseSummary decisionSummary">
+                                        <h4>Decision Summary</h4>
+                                        <article>
+                                            <textarea ng-disabled="decisioncaseSummary" ng-model="DecisionSummaryData"></textarea>
+                                            <div class="summaryFoot">
+                                                <button ng-click="addEditDecisionSummary($event)" ng-show="decisioncaseSummary"><span>{{ (DecisionSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                                                <button ng-click="saveDecisionSummary()" ng-hide="decisioncaseSummary">Save Summary</button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row caseSec3 rowSec">
+                                <div class="col-md-6">
+                                    <div class="newToggleButton">
+                                        <div class="button"><span class="" ng-click="toggle('SAR');" ng-class="caseDetailgridOptions.caseClosedDeposition=='SAR'?'active':''">SAR</span> <span ng-click="toggle('NO-SAR');" ng-class="caseDetailgridOptions.caseClosedDeposition=='NO-SAR'?'active':''">NO-SAR</span> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="pull-right yellowButton " ng-click="publish()"> <span>Preview &amp; Publish Report</span> </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 </section>

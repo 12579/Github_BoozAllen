@@ -3,179 +3,28 @@
     'use strict';
 
     angular.module('riskCanvasApp')
-        .controller('caseDetailCtrl',
+        .controller('onboardingReviewDetailCtrl',
         [
             "$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "ShareData", "globals",
             function ($state, $scope, $stateParams, $window, $http, authenticationSvc, shareData, globals) {
-                // case details section
- $scope.reviewcaseSummary = true;
-               $scope.analyzecaseSummary = true;
-               $scope.conductcaseSummary = true;
-               $scope.decisioncaseSummary = true;
-                
-                var relatedCasesAndAlertsColumnDefs = [
+                // Periodic Review details section
+                $scope.conductReviewSummary = true;
+                $scope.decisionReviewSummary = true;
+                $scope.reviewStatus = ["New", "Q/A", "Analysis", "Data Collection"];
 
-                    {
-                        headerName: "", field: "title", width: 95, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
-                        cellClass: 'rag-initial',
-                        cellClassRules: {
-                            'rag-green': function (params) { return params.data.riskScore < 33.334 },
-                            'rag-amber': function (params) { return params.data.riskScore >= 33.334 && params.data.riskScore < 66.667 },
-                            'rag-red': function (params) { return params.data.riskScore >= 66.667 }
-                        }
-                    },
-                    {
-                        headerName: "User Details", field: "", width: 1000, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
-                            return '<span><a style="cursor:pointer!important;"> <b>' + params.data.title + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
+                function shortNewValueHandler(title) {
+                    var data = title.toUpperCase();
+                    var spl = data.split(' ');
+                    var finalVal = "";
+                    for (var i = 0; i < spl.length; i++) {
+                        if (i === 2) break;
+                        finalVal += spl[i].substr(0, 1);
+                    }
+                    return "<span>" + finalVal + "</span>";
+                }
 
-                        }
-                    },
-                    {
-                        headerName: "Created Date",
-                        field: "openDate",
-                        width: 175
-                    },
-                    {
-                        headerName: "Closed Date",
-                        field: "closedDate",
-                        width: 175,
-                        filter: 'number',
-                        suppressMenu: 'true'
-                    },
-                    {
-                        headerName: "Closed Deposition",
-                        field: "closedDeposition",
-                        width: 170,
-                        filter: 'number',
-                        suppressMenu: 'true'
-                    },
-                     {
-                         headerName: "Assigned Analyst",
-                         field: "assignedAnalystName",
-                         width: 170,
-                         filter: 'number',
-                         suppressMenu: 'true'
-                     }
-                ];
-
-                var alertedTransactionsColumnDefs = [
-
-                  {
-                      headerName: "", field: "accountHolderName", width: 80, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
-                      cellClass: 'rag-initial',
-                      cellClassRules: {
-                          'rag-green': function (params) { return params.data.accountHolderRiskScore < 33.334 },
-                          'rag-amber': function (params) { return params.data.accountHolderRiskScore >= 33.334 && params.data.accountHolderRiskScore < 66.667 },
-                          'rag-red': function (params) { return params.data.accountHolderRiskScore >= 66.667 }
-                      }
-                  },
-                  {
-                      headerName: "Account Holder Details", field: "", width: 250, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
-                          return '<span><a style="cursor:pointer!important;"> <b>' + params.data.accountHolderName + '</b> -' + params.data.accountHolderAccNumber + '</a><br />' + params.data.holderTransferType + ' - ' + params.data.transactionDate + '</span>';
-
-                      }
-                  },
-                     {
-                         headerName: "", field: "beneficiaryName", width: 80, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
-                         cellClass: 'rag-initial',
-                         cellClassRules: {
-                             'rag-green': function (params) { return params.data.beneficiaryRiskScore < 33.334 },
-                             'rag-amber': function (params) { return params.data.beneficiaryRiskScore >= 33.334 && params.data.beneficiaryRiskScore < 66.667 },
-                             'rag-red': function (params) { return params.data.beneficiaryRiskScore >= 66.667 }
-                         }
-                     },
-                    {
-                        headerName: "Beneficiary Details", field: "", width: 250, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
-                            return '<span><a style="cursor:pointer!important;"> <b>' + params.data.beneficiaryName + '</b> -' + params.data.beneficiaryAccNumber + '</a><br />' + params.data.beneficiaryTransferType + ' - ' + params.data.transactionDate + '</span>';
-
-                        }
-                    },
-                  {
-                      headerName: "Amount",
-                      cellRenderer: function (params) {
-                          return params.data.currency + " " + params.data.amount;
-                      },
-                      width: 130
-                  },
-                  {
-                      headerName: "Branch No.",
-                      field: "branch",
-                      width: 100,
-                      filter: 'number',
-                      suppressMenu: 'true'
-                  },
-                  {
-                      headerName: "Transaction Type",
-                      field: "transactionType",
-                      width: 150,
-                      filter: 'number',
-                      suppressMenu: 'true'
-                  },
-                   {
-                       headerName: "Transaction Description",
-                       field: "transactionDescription",
-                       width: 200,
-                       filter: 'number',
-                       suppressMenu: 'true'
-                   },
-                     {
-                         headerName: "Check No.",
-                         field: "checkNumber",
-                         width: 120,
-                         filter: 'number',
-                         suppressMenu: 'true'
-                     },
-                       {
-                           headerName: "Check Description",
-                           field: "checkDescription",
-                           width: 170,
-                           filter: 'number',
-                           suppressMenu: 'true'
-                       },
-                        {
-                            headerName: "Additional Info",
-                            field: "additionalInfo",
-                            width: 170,
-                            filter: 'number',
-                            suppressMenu: 'true'
-                        }
-                ];
-
-                $scope.relatedCasesAndAlertsOptions = {
-                    columnDefs: relatedCasesAndAlertsColumnDefs,
-                    rowData: null,
-                    headerHeight: 40 * globals.defaultVars.w / globals.defaultVars.winRef,
-                    rowHeight: 80 * globals.defaultVars.w / globals.defaultVars.winRef ,
-                    enableFilter: true,
-                    enableSorting: true,
-                    angularCompileRows: true
-                };
-
-                $scope.alertedTransactionsOptions = {
-                    columnDefs: alertedTransactionsColumnDefs,
-                    rowData: null,
-                    headerHeight: 0.031 * angular.element(window).width(),
-                    rowHeight: 0.0416 * angular.element(window).width(),
-                    enableFilter: true,
-                    enableSorting: true,
-                    angularCompileRows: true
-                };
-                
-                $scope.caseStatus = ["New","Q/A","Analysis", "Data Collection"];
-                
-                
                 $scope.addEditSummary = function (event, type) {
-                    if (type == 'Review') {
-                        $scope.popuppage = 'Review';
-                        if ($scope.ReviewSummaryData != null) {
-                            $scope.summaryData = $scope.ReviewSummaryData;
-                        }
-                    } else if (type == 'Analyze') {
-                        $scope.popuppage = 'Analyze';
-                        if ($scope.AnalyzeSummaryData != null) {
-                            $scope.summaryData = $scope.AnalyzeSummaryData;
-                        }
-                    } else if (type == 'Conduct') {
+                    if (type === 'Conduct') {
                         $scope.popuppage = 'Conduct';
                         if ($scope.ConductSummaryData != null) {
                             $scope.summaryData = $scope.ConductSummaryData;
@@ -198,68 +47,47 @@
                     if ($scope.addEditSummaryForm.$valid) {
 
                         if ($scope.summaryData == null || $scope.summaryData == undefined) $scope.summaryData = "";
-                        if ($scope.popuppage == 'Review') {
-                            $scope.ReviewSummaryData = $scope.summaryData;
-                        } else if ($scope.popuppage == 'Analyze') {
-                            $scope.AnalyzeSummaryData = $scope.summaryData;
-                        } else if ($scope.popuppage == 'Conduct') {
+
+                        if ($scope.popuppage === 'Conduct') {
                             $scope.ConductSummaryData = $scope.summaryData;
                         }
+
                         $scope.addEditSummaryForm.$setPristine();
                         $scope.closeaddEditSummaryPopup();
                     }
                 };
 
                 $scope.addEditCaseSummary = function (event, type) {
-                    if (type == 'Review') {
-                            $scope.ReviewSummaryData = $scope.ReviewSummaryData;
-                            $scope.reviewcaseSummary = false;
-                      
-                    } else if (type == 'Analyze') {
-                            $scope.AnalyzeSummaryData = $scope.AnalyzeSummaryData;
-                            $scope.analyzecaseSummary = false;
-                     
-                    } else if (type == 'Conduct') {
-                      
-                            $scope.ConductSummaryData = $scope.ConductSummaryData;
-                            $scope.conductcaseSummary = false;
-                      
-                    }
+                    if (type === 'Conduct') {
 
+                        $scope.ConductSummaryData = $scope.ConductSummaryData;
+                        $scope.conductReviewSummary = false;
+                    }
                 };
 
                 $scope.saveCaseSummary = function (type) {
-
 
                     if ($scope.ReviewSummaryData == null || $scope.ReviewSummaryData == undefined) $scope.ReviewSummaryData = "";
                     if ($scope.AnalyzeSummaryData == null || $scope.AnalyzeSummaryData == undefined) $scope.AnalyzeSummaryData = "";
                     if ($scope.ConductSummaryData == null || $scope.ConductSummaryData == undefined) $scope.ConductSummaryData = "";
 
-                    if (type == 'Review') {
-                        $scope.ReviewSummaryData = $scope.ReviewSummaryData;
-                        $scope.reviewcaseSummary = true;
-                    } else if (type == 'Analyze') {
-                        $scope.AnalyzeSummaryData = $scope.AnalyzeSummaryData;
-                        $scope.analyzecaseSummary = true;
-                    } else if (type == 'Conduct') {
+                    if (type === 'Conduct') {
                         $scope.ConductSummaryData = $scope.ConductSummaryData;
-                        $scope.conductcaseSummary = true;
+                        $scope.conductReviewSummary = true;
                     }
-
-
                 };
 
-                $scope.addEditDecisionSummary = function (event) {
-                        $scope.DecisionSummaryData = $scope.DecisionSummaryData;
-                        $scope.decisioncaseSummary = false;
+                $scope.addEditDecisionSummary = function () {
+                    $scope.DecisionSummaryData = $scope.DecisionSummaryData;
+                    $scope.decisionReviewSummary = false;
                 };
 
                 $scope.saveDecisionSummary = function () {
-                    
+
                     if ($scope.DecisionSummaryData == null || $scope.DecisionSummaryData == undefined) $scope.DecisionSummaryData = "";
-                     $scope.DecisionSummaryData = $scope.DecisionSummaryData;
-                        $scope.decisioncaseSummary = true;
-                   
+                    $scope.DecisionSummaryData = $scope.DecisionSummaryData;
+                    $scope.decisionReviewSummary = true;
+
                 };
 
                 //*** STARTED */Document, Notes and Task Section
@@ -290,8 +118,6 @@
                     $scope.notesGridCellClicked = false;
 
                 };
-
-
 
                 function getContentType(fileExtention) {
                     var contentType = "";
@@ -324,8 +150,6 @@
                     return contentType;
                 }
 
-
-
                 function isValidateHandler(params) {
                     var isValid = params.data.validated;
                     var rtnVal;
@@ -335,7 +159,6 @@
                     } else {
                         rtnVal = '<span style="display: inline-block"><div class="switch"><input id="cmn-toggle-' + params.data.documentId + '" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-click="onDocValidationChange(' + paramVal + ')" ><label for="cmn-toggle-' + params.data.documentId + '"></label></div></span>';
                     }
-                    // + '</span>';
                     return rtnVal;
                 }
 
@@ -345,7 +168,6 @@
                           .toString(16)
                           .substring(1);
                     }
-                    //return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
                     return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
                 }
 
@@ -363,7 +185,6 @@
                     }
                     return '<span></span>';
                 }
-
 
                 $scope.onDocValidationChange = function (documentId) {
                     var array = $scope.DocumentCenterGrid.rowData;
@@ -388,6 +209,7 @@
                         if (fileName === value.trim())
                             return array[i];
                     }
+                    return undefined;
                 }
 
                 $scope.DownloadFile = function (fileName) {
@@ -398,7 +220,7 @@
                     var a = document.createElement('a');
                     var fileExt = fileName.split('.')[1];
 
-                    a.href = getContentType(fileExt) + response.serializedContent;
+                    a.href = getContentType(fileExt) + (response === undefined || response === null ? "" : response.serializedContent);
                     a.target = '_blank';
                     a.download = fileName;
 
@@ -428,8 +250,6 @@
                     var outArray = removeItemFromArray(array, selectedId);
                     $scope.DocumentIDArray = outArray;
                 }
-                
-               
 
                 $scope.RemoveDocument = function () {
                     var selectedRowArray = $scope.DocumentIDArray;
@@ -451,12 +271,6 @@
                 $scope.file_changed = function (element) {
                     $scope.$apply(function () {
                         var fileUploaded = element.files[0];
-                        //var fileExt = fileUploaded.name.split('.')[1];
-                        //var fileExtArray = ['.pdf', '.docx', '.doc', '.txt', '.xlsx', '.png', '.jpeg', '.jpg', '.csv'];
-                        //if (fileExtArray.indexOf(fileExtArray) == -1) {
-
-                        //    return;
-                        //}
 
                         var reader = new FileReader();
                         reader.onload = function () {
@@ -473,7 +287,7 @@
                         $scope.FileName = fileUploaded.name;
                     });
                 };
-               
+
                 $scope.AddDocument = function (fileDesc) {
                     if (fileDesc == undefined || fileDesc === '')
                         return;
@@ -482,13 +296,11 @@
                     var userInfo = authenticationSvc.getUserInfo();
                     var files = $scope.UploaddedFile;
                     if (files != null) {
-                        //var maxId = $scope.DocumentCenterGrid.rowData.length + 1;
                         var newGuidId = guid();
                         var fileName = files.name;
                         var fileData = $scope.UploaddedFileData;
                         var currentDate = new Date().toLocaleDateString();
                         var documentRecord = {
-                            //"ID": maxId,
                             "documentName": fileName,
                             "serializedContent": fileData,
                             "uploadDate": currentDate,
@@ -505,7 +317,6 @@
                         $scope.DocumentCenterGrid.api.onNewRows();
                         $scope.closePopup();
                         $scope.UploaddedFile = [];
-                        //$scope.FileName = '';
                         jQuery("#FileDesc").val('');
                         jQuery("#picFile").val('');
                         $scope.IsFileSelected = false;
@@ -517,7 +328,7 @@
                     {
                         headerName: "FileName",
                         field: "",
-                        width: 440 * globals.defaultVars.w / globals.defaultVars.winRef,
+                        width: 290 * globals.defaultVars.w / globals.defaultVars.winRef,
                         cellClass: 'rag-entity',
                         cellRenderer: function (params) {
                             var documentName = "' " + params.data.documentName + "'";
@@ -526,7 +337,7 @@
                     },
                     {
                         headerName: "Upload Date",
-                        width: 160 * globals.defaultVars.w / globals.defaultVars.winRef,
+                        width: 115 * globals.defaultVars.w / globals.defaultVars.winRef,
                         field: "uploadDate",
                         filter: 'date'
 
@@ -534,12 +345,12 @@
                     {
                         headerName: "Last Updated",
                         suppressMenu: 'true',
-                        width: 160 * globals.defaultVars.w / globals.defaultVars.winRef,
+                        width: 115 * globals.defaultVars.w / globals.defaultVars.winRef,
                         field: "lastUpdated"
                     },
                     {
                         headerName: "Validated",
-                        width: 140 * globals.defaultVars.w / globals.defaultVars.winRef,
+                        width: 115 * globals.defaultVars.w / globals.defaultVars.winRef,
                         field: "validated",
                         cellRenderer: function (params) { return isValidateHandler(params) }
                     },
@@ -593,14 +404,10 @@
                 $scope.AddNotes = function (notesTitle, notesData) {
                     if (notesTitle == undefined || notesTitle === '' || notesData == undefined || notesData === '')
                         return;
-                    // var userInfo = authenticationSvc.getUserInfo();
+
                     var currentDate = new Date().toLocaleDateString();
-                    //var maxId = $scope.NotesGrid.rowData.length + 1;
-                    // var noteDesc = currentDate + " - By " + userInfo.UserName;
-                    //var noteId = "note222" + maxId;
                     var newGuidId = guid();
                     var documentRecord = {
-                        //"ID": maxId,
                         "noteID": newGuidId,
                         "title": notesTitle,
                         "createdDate": currentDate,
@@ -677,7 +484,7 @@
                 var notesGridColumnDefs = [
                     {
                         headerName: "",
-                        width: 900 * globals.defaultVars.w / globals.defaultVars.winRef,
+                        width: 600 * globals.defaultVars.w / globals.defaultVars.winRef,
                         cellClass: 'rag-entity',
                         cellRenderer: function (params) {
                             return noteGridDesc(params);
@@ -714,7 +521,7 @@
                 $scope.CompletedTask = function () {
                     var selectedRowArray = $scope.TaskIDArray;
                     var taskGridArray = $scope.TasksGrid.rowData;
-                    // var newArrayForTask = [];
+
                     for (var i = 0; i < taskGridArray.length; i++) {
                         var idVal = taskGridArray[i].taskID;
                         var index = selectedRowArray.indexOf(idVal);
@@ -786,7 +593,7 @@
                 { headerName: "order", field: "order", hide: true, sort: "desc" },
                 {
                     headerName: "",
-                    width: 800 * globals.defaultVars.w / globals.defaultVars.winRef,
+                    width: 590 * globals.defaultVars.w / globals.defaultVars.winRef,
                     cellClass: 'rag-entity',
                     cellClassRules: {
                         'rag-done': function (params) { return params.data.completed === true },
@@ -820,7 +627,7 @@
 
                     var result = "<span><b>" + params.data.accountType + "</b><br />Account Number - " + params.data.accountID + "</span>";
                     var assocdatas = params.data.accountBeneficiaries;
-                    result += "</br><div style='background-color:#f9db22;height:20px;width;950px;'>";
+                    result += "</br><div style='background-color:yellow;height:20px;width;950px;'>";
                     for (var i = 0; i < assocdatas.length; i++) {
                         var split = assocdatas[i].split(" - ");
                         var shortname = split[0].split(" ");
@@ -835,7 +642,7 @@
                         headerName: "Account Details",
                         field: "",
                         width: 550,
-                        cellRenderer: function(params) {
+                        cellRenderer: function (params) {
                             return getAccountDetails(params);
                         }
                     },
@@ -855,125 +662,39 @@
                     rowData: null,
                     rowHeight: 70,
                     angularCompileRows: true
-
                 };
-                
-                $scope.getInitials = function(name) {
-                   var data = name.toUpperCase();
-                   var spl = data.split(' ');
-                   var finalVal = "";
-                   for (var i = 0; i < spl.length; i++) {
-                       if (i === 2) break;
-                       finalVal += spl[i].substr(0, 1);
-                   }
-                   return finalVal;
-               }
-
-                function upperCaseNewValueHandler(params) {
-                    var data = params.value.toUpperCase();
-                    var spl = data.split(' ');
-                    var finalVal = "";
-                    for (var i = 0; i < spl.length; i++) {
-                        if (i === 2) break;
-                        finalVal += spl[i].substr(0, 1);
-                    }
-                    return '<span>'+finalVal+'</span>';
-                }
-
-                function shortNewValueHandler(title) {
-                    var data = title.toUpperCase();
-                    var spl = data.split(' ');
-                    var finalVal = "";
-                    for (var i = 0; i < spl.length; i++) {
-                        if (i === 2) break;
-                        finalVal += spl[i].substr(0, 1);
-                    }
-                    return finalVal;
-                }
 
                 function pageLoad() {
-                    var data = $scope.caseDataObject;
-                    $scope.caseDetailgridOptions = data;
-        $scope.selectedCaseStatus = $scope.caseDetailgridOptions.caseStatus;
-                    var relatedCasesAndAlertsDataArray = [];
-                    var rowData;
-                    angular.forEach(data, function (value, key) {
-                        rowData = value;
-                        if (key === 'relatedCases') {
-                            angular.forEach(rowData, function (values) {
-                                this.push({
-                                    "id": values.id, "title": values.caseTitle,
-                                    "item": "Cases", "accountType": values.accountType,
-                                    "accountNumber": values.accountNumber, "openDate": values.caseOpenDate,
-                                    "closedDate": values.caseClosedDate, "closedDeposition": values.caseClosedDeposition, "assignedAnalystName": values.assignedAnalystName,
-                                    "riskScore": values.entity.riskDNA.entityRiskScore
-                                });
-                            }, relatedCasesAndAlertsDataArray);
-                        } else if (key === 'relatedAlerts') {
-                            angular.forEach(rowData, function (values) {
-                                this.push({
-                                    "id": values.id, "title": values.alertTitle,
-                                    "item": "Alerts", "accountType": values.accountType,
-                                    "accountNumber": values.accountNumber, "openDate": values.alertOpenDate,
-                                    "closedDate": values.alertClosedDate, "closedDeposition": values.alertClosedDeposition, "assignedAnalystName": values.assignedAnalytstName,
-                                    "riskScore": values.entity.riskDNA.entityRiskScore
-                                });
-                            }, relatedCasesAndAlertsDataArray);
-                        }
-                    });
+                    var data = $scope.reviewDetailGridOptions = $scope.reviewDetailObject;
 
-                    $scope.relatedCasesAndAlertsOptions.rowData = relatedCasesAndAlertsDataArray;
-                    $scope.relatedCasesAndAlertsOptions.api.onNewRows();
+                    $scope.selectedReviewStatus = $scope.reviewDetailGridOptions.reviewStatus;
 
-                    $scope.alertedTransactionsOptions.rowData = data.alertTransactions;
-                    $scope.alertedTransactionsOptions.api.onNewRows();
-
-                    var caseInititalData = {};
-                    caseInititalData["shortname"] = shortNewValueHandler(data.caseTitle);
-                    caseInititalData["score"] = data.entity.riskDNA.entityRiskScore;
-                    caseInititalData["risktype"] = caseInititalData["score"] <= 33.33 ? 'LOW RISK'
-                        : caseInititalData["score"] > 33.33 && caseInititalData["score"] <= 66.66
+                    $scope.reviewInitialData = {};
+                    $scope.reviewInitialData["shortname"] = shortNewValueHandler(data.reviewTitle);
+                    $scope.reviewInitialData["score"] = data.entity.riskDNA.entityRiskScore;
+                    $scope.reviewInitialData["risktype"] = $scope.reviewInitialData["score"] <= 33.33 ? 'LOW RISK'
+                        : $scope.reviewInitialData["score"] > 33.33 && $scope.reviewInitialData["score"] <= 66.66
                         ? 'MEDIUM RISK' : 'HIGH RISK';
 
-                    $scope.caseInititalDataS = caseInititalData;
 
-                    //$scope.entityDetail = res.data.person;
-                    $scope.TasksGrid.rowData = $scope.caseDataObject.caseTasks;
+                    $scope.accountgridOptions.rowData = $scope.reviewDetailObject.cdd;
+                    $scope.accountgridOptions.api.onNewRows();
+
+                    $scope.TasksGrid.rowData = $scope.reviewDetailObject.reviewTasks;
                     $scope.TasksGrid.api.onNewRows();
 
-                    $scope.NotesGrid.rowData = $scope.caseDataObject.caseNotes;
+                    $scope.NotesGrid.rowData = $scope.reviewDetailObject.reviewNotes;
                     $scope.NotesGrid.api.onNewRows();
 
-                    $scope.DocumentCenterGrid.rowData = $scope.caseDataObject.caseDocuments;
+                    $scope.DocumentCenterGrid.rowData = $scope.reviewDetailObject.reviewDocuments;
                     $scope.DocumentCenterGrid.api.onNewRows();
-
-                    $scope.accountgridOptions.rowData = $scope.caseDataObject.cdd;
-                    $scope.accountgridOptions.api.onNewRows();
                 }
 
-                $scope.toggle = function (selVal) {
-                    $scope.caseDetailgridOptions.caseClosedDeposition = selVal;
-
-                }
-                $scope.slideToggleCase = function(ev) {
-                    var el = ev.currentTarget;
-                    angular.element(el).parents('header').next('.caseToggleSection').slideToggle();
-                    angular.element(el).toggleClass('open');
-                }
-                $scope.ExportToExcel = function () {
-
-                    alasql('SELECT transactionDate	AS [Transaction Date], transactionType AS [Transaction Type],	currency AS Currency,	amount AS Amount,	' +
-                        'branch AS Branch,	checkNumber AS [Check Number],	checkDescription AS [Check Description],	additionalInfo AS [Additional Info],	' +
-                        'accountHolderName AS [Account HolderName],	accountHolderAccNumber AS [Account Holder Account Number],	holderTransferType AS [Holder Transfer Type],	' +
-                        'beneficiaryName AS [Beneficiary Name],	beneficiaryAccNumber AS [Beneficiary Account Number],	beneficiaryTransferType AS [BeneficiaryTransferType],	' +
-                        'transactionDescription AS [Transaction Description] INTO XLSX("report.xlsx",{headers:true}) FROM ?', [$scope.alertedTransactionsOptions.rowData]);
-                };
-                
                 function loadData(param) {
                     if (param !== "postback") {
-                        $http.get("../../../sampleJson/caseObject.json")
+                        $http.get("../../../sampleJson/onboardingReviewObject.json")
                             .then(function (res) {
-                                $scope.caseDataObject = res.data;
+                                $scope.reviewDetailObject = res.data;
                                 pageLoad();
 
                             });

@@ -8,7 +8,10 @@
             "$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "ShareData", "globals",
             function ($state, $scope, $stateParams, $window, $http, authenticationSvc, shareData, globals) {
                 // case details section
-
+                $scope.reviewcaseSummary = true;
+                $scope.analyzecaseSummary = true;
+                $scope.conductcaseSummary = true;
+                $scope.decisioncaseSummary = true;
                 var relatedCasesAndAlertsColumnDefs = [
 
                     {
@@ -156,6 +159,107 @@
                     enableSorting: true,
                     angularCompileRows: true
                 };
+
+                $scope.alertStatus = ["New", "Q/A", "Analysis", "Data Collection"];
+
+                $scope.addEditSummary = function (event, type) {
+                    if (type == 'Review') {
+                        $scope.popuppage = 'Review';
+                        if ($scope.ReviewSummaryData != null) {
+                            $scope.summaryData = $scope.ReviewSummaryData;
+                        }
+                    } else if (type == 'Analyze') {
+                        $scope.popuppage = 'Analyze';
+                        if ($scope.AnalyzeSummaryData != null) {
+                            $scope.summaryData = $scope.AnalyzeSummaryData;
+                        }
+                    } else if (type == 'Conduct') {
+                        $scope.popuppage = 'Conduct';
+                        if ($scope.ConductSummaryData != null) {
+                            $scope.summaryData = $scope.ConductSummaryData;
+                        }
+                    }
+
+                    angular.element('.addEditSummaryWindow').fadeIn();
+                    var elem = event.currentTarget;
+                    angular.element(elem).toggleClass('active');
+                };
+
+                $scope.closeaddEditSummaryPopup = function () {
+                    $scope.addEditSummaryForm.$setPristine();
+                    angular.element('.addEditSummaryWindow').fadeOut('fast');
+                    $scope.summaryData = null;
+
+                };
+
+                $scope.saveSummary = function () {
+                    if ($scope.addEditSummaryForm.$valid) {
+
+                        if ($scope.summaryData == null || $scope.summaryData == undefined) $scope.summaryData = "";
+                        if ($scope.popuppage == 'Review') {
+                            $scope.ReviewSummaryData = $scope.summaryData;
+                        } else if ($scope.popuppage == 'Analyze') {
+                            $scope.AnalyzeSummaryData = $scope.summaryData;
+                        } else if ($scope.popuppage == 'Conduct') {
+                            $scope.ConductSummaryData = $scope.summaryData;
+                        }
+                        $scope.addEditSummaryForm.$setPristine();
+                        $scope.closeaddEditSummaryPopup();
+                    }
+                };
+
+                $scope.addEditCaseSummary = function (event, type) {
+                    if (type == 'Review') {
+                        $scope.ReviewSummaryData = $scope.ReviewSummaryData;
+                        $scope.reviewcaseSummary = false;
+
+                    } else if (type == 'Analyze') {
+                        $scope.AnalyzeSummaryData = $scope.AnalyzeSummaryData;
+                        $scope.analyzecaseSummary = false;
+
+                    } else if (type == 'Conduct') {
+
+                        $scope.ConductSummaryData = $scope.ConductSummaryData;
+                        $scope.conductcaseSummary = false;
+
+                    }
+
+                };
+
+                $scope.saveCaseSummary = function (type) {
+
+
+                    if ($scope.ReviewSummaryData == null || $scope.ReviewSummaryData == undefined) $scope.ReviewSummaryData = "";
+                    if ($scope.AnalyzeSummaryData == null || $scope.AnalyzeSummaryData == undefined) $scope.AnalyzeSummaryData = "";
+                    if ($scope.ConductSummaryData == null || $scope.ConductSummaryData == undefined) $scope.ConductSummaryData = "";
+
+                    if (type == 'Review') {
+                        $scope.ReviewSummaryData = $scope.ReviewSummaryData;
+                        $scope.reviewcaseSummary = true;
+                    } else if (type == 'Analyze') {
+                        $scope.AnalyzeSummaryData = $scope.AnalyzeSummaryData;
+                        $scope.analyzecaseSummary = true;
+                    } else if (type == 'Conduct') {
+                        $scope.ConductSummaryData = $scope.ConductSummaryData;
+                        $scope.conductcaseSummary = true;
+                    }
+
+
+                };
+
+                $scope.addEditDecisionSummary = function (event) {
+                    $scope.DecisionSummaryData = $scope.DecisionSummaryData;
+                    $scope.decisioncaseSummary = false;
+                };
+
+                $scope.saveDecisionSummary = function () {
+
+                    if ($scope.DecisionSummaryData == null || $scope.DecisionSummaryData == undefined) $scope.DecisionSummaryData = "";
+                    $scope.DecisionSummaryData = $scope.DecisionSummaryData;
+                    $scope.decisioncaseSummary = true;
+
+                };
+
 
                 //*** STARTED */Document, Notes and Task Section
                 $scope.slideToggleSec = function (element) {
@@ -775,12 +879,14 @@
                 }
 
                 function pageLoad() {
-                    var data = $scope.caseDataObject;
-                    $scope.caseDetailgridOptions = data;
+                    var data = $scope.alertDataObject;
+                    $scope.alertDetailgridOptions = data;
+                    $scope.selectedAlertStatus = $scope.alertDetailgridOptions.alertStatus;
 
                     var relatedCasesAndAlertsDataArray = [];
                     var rowData;
                     angular.forEach(data, function (value, key) {
+                        debugger;
                         rowData = value;
                         if (key === 'relatedCases') {
                             angular.forEach(rowData, function (values) {
@@ -798,7 +904,7 @@
                                     "id": values.id, "title": values.alertTitle,
                                     "item": "Alerts", "accountType": values.accountType,
                                     "accountNumber": values.accountNumber, "openDate": values.alertOpenDate,
-                                    "closedDate": values.alertClosedDate, "closedDeposition": values.alertClosedDeposition, "assignedAnalystName": values.assignedAnalytstName,
+                                    "closedDate": values.alertClosedDate, "closedDeposition": values.alertClosedDeposition, "assignedAnalystName": values.assignedAnalystName,
                                     "riskScore": values.entity.riskDNA.entityRiskScore
                                 });
                             }, relatedCasesAndAlertsDataArray);
@@ -812,7 +918,7 @@
                     $scope.alertedTransactionsOptions.api.onNewRows();
 
                     var caseInititalData = {};
-                    caseInititalData["shortname"] = shortNewValueHandler(data.caseTitle);
+                    caseInititalData["shortname"] = shortNewValueHandler(data.alertTitle);
                     caseInititalData["score"] = data.entity.riskDNA.entityRiskScore;
                     caseInititalData["risktype"] = caseInititalData["score"] <= 33.33 ? 'LOW RISK'
                         : caseInititalData["score"] > 33.33 && caseInititalData["score"] <= 66.66
@@ -821,24 +927,30 @@
                     $scope.caseInititalDataS = caseInititalData;
 
                     //$scope.entityDetail = res.data.person;
-                    $scope.TasksGrid.rowData = $scope.caseDataObject.caseTasks;
+                    $scope.TasksGrid.rowData = $scope.alertDataObject.alertTasks;
                     $scope.TasksGrid.api.onNewRows();
 
-                    $scope.NotesGrid.rowData = $scope.caseDataObject.caseNotes;
+                    $scope.NotesGrid.rowData = $scope.alertDataObject.alertNotes;
                     $scope.NotesGrid.api.onNewRows();
 
-                    $scope.DocumentCenterGrid.rowData = $scope.caseDataObject.caseDocuments;
+                    $scope.DocumentCenterGrid.rowData = $scope.alertDataObject.alertDocuments;
                     $scope.DocumentCenterGrid.api.onNewRows();
 
-                    $scope.accountgridOptions.rowData = $scope.caseDataObject.cdd;
+                    $scope.accountgridOptions.rowData = $scope.alertDataObject.cdd;
                     $scope.accountgridOptions.api.onNewRows();
+
+                }
+
+                $scope.toggle = function (selVal) {
+                    $scope.alertDetailgridOptions.alertClosedDeposition = selVal;
+
                 }
 
                 function loadData(param) {
                     if (param !== "postback") {
-                        $http.get("../../../sampleJson/caseObject.json")
+                        $http.get("../../../sampleJson/alertObject.json")
                             .then(function (res) {
-                                $scope.caseDataObject = res.data;
+                                $scope.alertDataObject = res.data;
                                 pageLoad();
 
                             });

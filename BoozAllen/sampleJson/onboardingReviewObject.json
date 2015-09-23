@@ -1,0 +1,371 @@
+﻿{
+  "id": "296530632",
+  "reviewTitle": "Steve Johnson",
+  "assignedAnalystID": "318477",
+  "assignedAnalystName": "Jennifer Sanders",
+  "accountNumber": "8760126154",
+  "accountType": "Private Checking",
+  "accountOpenDate": "05/11/2014",
+  "relationshipManager": "Jack Wilson",
+  "relationshipManagerID": "538190",
+  "reviewType": "Normal",
+  "startedDate": "09/07/2015",
+  "reviewOpenDate": "09/07/2015",
+  "dueDate": "09/30/2015",
+  "reviewStatus": "New",
+  "reviewClosedDeposition": "N/A",
+  "reviewCheckListItems": [
+    {
+      "reviewChecklistName": "Review related Alerts and Cases",
+      "isComplete": true,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 0
+    },
+    {
+      "reviewChecklistName": "Analyze alert transactions",
+      "isComplete": true,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 1
+    },{
+      "reviewChecklistName": "Review related Alerts and Cases",
+      "isComplete": true,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 0
+    },
+    {
+      "reviewChecklistName": "Analyze alert transactions",
+      "isComplete": true,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 1
+    },
+    {
+      "reviewChecklistName": "Conduct Due Dilligence Research",
+      "isComplete": false,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 2
+    },
+    {
+      "reviewChecklistName": "Write Review Summary",
+      "isComplete": false,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 3
+    },
+    {
+      "reviewChecklistName": "Close review",
+      "isComplete": false,
+      "reviewChecklistDescription": "blah blah blah",
+      "order": 4
+    }
+  ],
+  "cdd": [
+    {
+      "accountID": "754598123",
+      "accountType": "Checking",
+      "accountOpenDate": "09/22/2014",
+      "relationshipManager": "Seth Colesmith",
+      "accountBeneficiaries": [
+        "Bob Meeks - Primary Account Holder"
+      ]
+    }
+  ],
+  "entity": {
+    "entityDocuments": [ ],
+    "entityNotes": [ ],
+    "entityTasks": [ ],
+    "entityName": "Steve Johnson",
+    "entityAddress": "267 Lawton St, Fargo, ND 58102, USA",
+    "entityPhone": "701.865.6298",
+    "entityEmail": "stevejohnson@gmail.com",
+    "numberOfNewPersonas": "2",
+    "personas": [
+      {
+        "personaName": "Steve Johnson",
+        "personaAddress": "896 Summer Dr, Ocean City, MD 21842, USA",
+        "personaPhone": "410.567.1256",
+        "personaEmail": "stevejohnson@yahoo.com",
+        "personaSource": "Facebook",
+        "isActive": true,
+        "isNew": true
+      },
+      {
+        "personaName": "Steve Johnson",
+        "personaAddress": "5647 Smith St, Raleigh, NC 27601, USA",
+        "personaPhone": "919.456.1098",
+        "personaEmail": "stevejohnson@hotmail.com",
+        "personaSource": "Twitter",
+        "isActive": true,
+        "isNew": true
+      }
+    ],
+    "associatedAccounts": [
+      {
+        "accountID": "125789256",
+        "accountType": "Checking",
+        "accountOpenDate": "08/15/2014",
+        "relationshipManager": "Seth Colesmith",
+        "accountBeneficiaries": [
+          "Bob Meeks - Primary Account Holder"
+        ]
+      }
+    ],
+    "riskDNA": {
+      "entityRiskScore": "12",
+      "entityRiskLevel": "LOW RISK",
+      "attributeRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Name Frequency",
+            "geneValue": "3",
+            "geneScore": "10%",
+            "geneDescription": "This gene indicates the number of discovered names"
+          },
+          {
+            "geneName": "Name Variation",
+            "geneValue": "3",
+            "geneScore": "12%",
+            "geneDescription": "This gene indicates the number of uniquly discovered names"
+          },
+          {
+            "geneName": "Address Variation",
+            "geneValue": "3",
+            "geneScore": "13%",
+            "geneDescription": "This gene indicates the number of uniquely discovered addresses"
+          },
+          {
+            "geneName": "Address Frequency",
+            "geneValue": "3",
+            "geneScore": "15%",
+            "geneDescription": "This gene indicates the number of discovered addresses "
+          },
+          {
+            "geneName": "Geographic Threat",
+            "geneValue": "United States",
+            "geneScore": "12%",
+            "geneDescription": "This gene indicates the entity's country threat level"
+          },
+          {
+            "geneName": "Hifca Threat",
+            "geneValue": "MI",
+            "geneScore": "14%",
+            "geneDescription": "This gene indicates the entity's US region threat level "
+          },
+          {
+            "geneName": "Phone Frequency",
+            "geneValue": "3",
+            "geneScore": "15%",
+            "geneDescription": "This gene indicates the number of discovered phones"
+          },
+          {
+            "geneName": "Phone Variation",
+            "geneValue": "3",
+            "geneScore": "12%",
+            "geneDescription": "This gene indicates the number of uniquely discovered phones"
+          },
+          {
+            "geneName": "Phone Validation",
+            "geneValue": "517.689.2814 - INVALID",
+            "geneScore": "100%",
+            "geneDescription": "This gene indicates the phone validity"
+          },
+          {
+            "geneName": "Phone Carrier",
+            "geneValue": "TMobile",
+            "geneScore": "20%",
+            "geneDescription": "This gene indicates the phone carrier threat"
+          },
+          {
+            "geneName": "Phone Location Threat",
+            "geneValue": "United States",
+            "geneScore": "17%",
+            "geneDescription": "This gene indicates the phone's country code threat"
+          },
+          {
+            "geneName": "Email Frequency",
+            "geneValue": "3",
+            "geneScore": "15%",
+            "geneDescription": "This gene indicates the number of email's discovered"
+          },
+          {
+            "geneName": "Email Variation",
+            "geneValue": "3",
+            "geneScore": "14%",
+            "geneDescription": "This gene indicates the number uniquely discovered emails"
+          },
+          {
+            "geneName": "Email Validation",
+            "geneValue": "meeks45612@gmail.com - INVALID",
+            "geneScore": "14%",
+            "geneDescription": "This gene indicates that the email validitiy"
+          },
+          {
+            "geneName": "Email Domain",
+            "geneValue": "Google",
+            "geneScore": "20%",
+            "geneDescription": "This gene indicates the email domains threat level"
+          },
+          {
+            "geneName": "Home To Bank",
+            "geneValue": "88 miles",
+            "geneScore": "27%",
+            "geneDescription": "This gene indicates the distance to the bank from the home address"
+          }
+        ],
+        "nameFrequency": "3",
+        "nameVariation": "3",
+        "addressFrequency": "3",
+        "addressVariation": "3",
+        "geographicThreat": "United States",
+        "hifcaThreat": "MI",
+        "phoneFrequency": "3",
+        "phoneVariation": "3",
+        "phoneValidation": "312.789.4567 - INVALID",
+        "phoneCarrier": "TMobile",
+        "phoneLocationThreat": "United States",
+        "emailFrequency": "3",
+        "emailVariation": "3",
+        "emailValidation": "samcrawford@gmail.com - INVALID",
+        "emailDomain": "Google",
+        "homeToBankDistance": "88 miles"
+      },
+      "watchlistRiskSequence": {
+        "genes": [
+          {
+            "geneName": "Steve Johnson",
+            "geneValue": "FBI",
+            "geneScore": "10%",
+            "geneDescription": "This gene indicates a found watchlist hit"
+          },
+          {
+            "geneName": "Steve Johnson",
+            "geneValue": "OFAC",
+            "geneScore": "11%",
+            "geneDescription": "This gene indicates a found watchlist hit"
+          }
+        ],
+        "watchlistHitItems": [
+        ],
+        "pepHitItems": [ ]
+      },
+      "negativeNewsRiskSequence": {
+        "genes": [
+
+        ],
+        "articles": [
+
+        ],
+        "keywordMap": {
+
+        }
+      },
+      "activityRiskSequence": {
+        "genes": [
+          {
+            "geneName": "657787966",
+            "geneValue": "Transfer-Debit",
+            "geneScore": "12%",
+            "geneDescription": "This gene indicates additional alerted transactions"
+          },
+          {
+            "geneName": "Checking Account",
+            "geneValue": "0198453313",
+            "geneScore": "33%",
+            "geneDescription": "This gene indicates the type of account risk"
+          }
+        ],
+        "activities": [
+          {
+            "itemID": "96867879886",
+            "ItemType": "Transfer",
+            "item": "Alert",
+            "accountNumber": "0371893276",
+            "closedDate": "03/12/2011",
+            "status": "Active",
+            "assignedAnalyst": "Emauel Coffee"
+          }
+        ]
+      },
+      "networkRiskSequence": {
+        "genes": [
+
+        ],
+        "networkNodes": [
+
+        ]
+      }
+    },
+    "riskDNAGraph": {
+      "graphData": {
+        "09/14/2015": "76"
+      }
+    },
+    "changeLogItems": [
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "09/14/2015",
+        "action": "INGEST"
+      },
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "09/14/2015",
+        "action": "ENRICHMENT"
+      },
+      {
+        "analystName": "N/A",
+        "analystID": "N/A",
+        "changeType": "SYSTEM",
+        "changeDate": "009/14/2015",
+        "action": "RiskDNA"
+      }
+    ]
+  },
+  "reviewDocuments": [
+    {
+      "documentName": "InitialReport.txt",
+      "serializedContent": "text goes here",
+      "uploadDate": "09/01/2015",
+      "lastUpdated": "09/01/2015",
+      "validated": true,
+      "uploadedBy": "Josh Jenkins",
+      "shortDescription": "blah blah blah",
+      "screenId": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "entityId": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "documentId": "document111"
+    }
+  ],
+  "reviewNotes": [
+    {
+      "title": "Contact Anna",
+      "createdDate": "09/02/2015",
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "entityID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "text": "email is a preferred form of contact",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "noteID": "note222",
+      "createdBy": "Jennifer Sanders"
+    }
+  ],
+  "reviewTasks": [
+    {
+      "task": "Review alert transactions",
+      "completed": false,
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "taskID": "task1",
+      "dateCreated": "09/01/2015",
+      "order": 1
+    },
+    {
+      "task": "Call 1 Fred to check References - 444-333-2222",
+      "completed": true,
+      "userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+      "screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+      "dateCreated": "09/16/15",
+      "order": 2,
+      "taskID": "task2"
+    }
+  ]
+}

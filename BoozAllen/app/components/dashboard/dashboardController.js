@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('riskCanvasApp')
-    .controller('DashboardCtrl', ["$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "ShareData", function ($state, $scope, $stateParams, $window, $http, authenticationSvc, shareData) {
+    .controller('DashboardCtrl', ["$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "ShareData", "globals", function ($state, $scope, $stateParams, $window, $http, authenticationSvc, shareData, globals) {
         var userInfo = authenticationSvc.getUserInfo();
         $scope.userInfo = userInfo;
         $scope.shareData = shareData;
@@ -19,10 +19,6 @@
             authenticationSvc.selectedGridID = id;
             $state.transitionTo('Home.alertDetails');
         }
-        var defaultVars = {
-            w: angular.element(window).width(),
-            winRef: 1920
-        };
         var casecolumnDefs = [
             {
                 headerName: "ID", field: "id", hide: true
@@ -35,7 +31,7 @@
             }
             ,
             {
-                headerName: "", field: "entityName", width: 95, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
+                headerName: "", field: "entityName", width: 95 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
                 cellClass: 'rag-initial',
                 cellClassRules: {
                     'rag-green': function (params) { return params.data.entityRiskScore < 33.334 },
@@ -44,7 +40,7 @@
                 }
             },
             {
-                headerName: "", field: "", width: 300, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
+                headerName: "", field: "", width: 300 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function (params) {
                     return '<span><a style="cursor:pointer!important;" ng-click="gridFunction( ' + params.data.id + ')" > <b>' + params.data.entityName + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
 
                     //<a ui-sref="home.entityDetail({id:' + params.data.id + '})" title="Click"></a>'
@@ -53,7 +49,7 @@
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700 * defaultVars.w / defaultVars.winRef, filter: 'number',
+                width: 700 * globals.defaultVars.w / globals.defaultVars.winRef, filter: 'number',
                 cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
@@ -63,7 +59,7 @@
                 }
             },
             {
-                headerName: "Item Status", field: "caseStatus", width: 200, cellClass: 'rag-caseStatus',
+                headerName: "Item Status", field: "caseStatus", width: 200 * globals.defaultVars.w / globals.defaultVars.winRef, cellClass: 'rag-caseStatus',
                 cellClassRules: {
                     'type-new': function (params) { return params.data.caseStatus === 'New' },
                     'type-dc': function (params) { return params.data.caseStatus === 'Data Collection' },
@@ -73,14 +69,14 @@
                 }
             },
             {
-                headerName: "Case Type", field: "caseType", width: 150
+                headerName: "Case Type", field: "caseType", width: 150 * globals.defaultVars.w / globals.defaultVars.winRef
             },
-            { headerName: "Open Date", field: "caseOpenDate", width: 120, filter: 'number', suppressMenu: 'true', comparator: dateComparator },
+            { headerName: "Open Date", field: "caseOpenDate", width: 120 * globals.defaultVars.w / globals.defaultVars.winRef, filter: 'number', suppressMenu: 'true', comparator: dateComparator },
             {
-                headerName: "Due Date", field: "caseDueDate", width: 120, filter: 'number', suppressMenu: 'true', comparator: dateComparator
+                headerName: "Due Date", field: "caseDueDate", width: 120 * globals.defaultVars.w / globals.defaultVars.winRef, filter: 'number', suppressMenu: 'true', comparator: dateComparator
             },
             {
-                headerName: "", field: "", width: 80, suppressMenu: 'true', suppressSorting: 'true',
+                headerName: "", field: "", width: 80 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', suppressSorting: 'true',
                 suppressSizeToFit: 'true', cellRenderer: function (params) {
                     return '<a class="clickButton" style="" ng-click="openCase( ' + params.data.id + ')" >Open</a>';
                 }
@@ -102,7 +98,7 @@
                 headerName: "ID", field: "accountNumber", hide: true
             },
             {
-                headerName: "", field: "entityName", width: 95, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
+                headerName: "", field: "entityName", width: 95 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', cellRenderer: upperCaseNewValueHandler,
                 cellClass: 'rag-initial',
                 cellClassRules: {
                     'rag-green': function (params) { return params.data.entityRiskScore < 33.334 },
@@ -111,14 +107,14 @@
                 }
             },
             {
-                headerName: "", field: "", width: 300, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function(params) {
+                headerName: "", field: "", width: 300 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', cellClass: 'rag-entity', cellRenderer: function(params) {
                     return '<span><a style="cursor:pointer!important;" ng-click="gridFunction( ' + params.data.id + ')" > <b>' + params.data.entityName + '</b> -' + params.data.id + '</a><br />' + params.data.accountType + ' - ' + params.data.accountNumber + '</span>';
                 }
             },
             {
                 headerName: "RiskDNA",
                 field: "entityRiskScore",
-                width: 700 * defaultVars.w / defaultVars.winRef, filter: 'number',
+                width: 700 * globals.defaultVars.w / globals.defaultVars.winRef, filter: 'number',
                 cellRenderer: riskDnaHandler,
                 cellClass: 'rag-RiskDNA',
                 cellClassRules: {
@@ -129,7 +125,7 @@
 
             },
             {
-                headerName: "Item Status", field: "alertStatus", width: 200, cellClass: 'rag-caseStatus',
+                headerName: "Item Status", field: "alertStatus", width: 200 * globals.defaultVars.w / globals.defaultVars.winRef, cellClass: 'rag-caseStatus',
                 cellClassRules: {
                     'type-new': function (params) { return params.data.alertStatus === 'New' },
                     'type-dc': function (params) { return params.data.alertStatus === 'Data Collection' },
@@ -139,8 +135,8 @@
                 }
             },
             { headerName: "Alert Type", field: "alertType" },
-            { headerName: "Open Date", field: "alertOpenDate", width: 150, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
-            { headerName: "Due Date", field: "alertDueDate", width: 170, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
+            { headerName: "Open Date", field: "alertOpenDate", width: 150 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
+            { headerName: "Due Date", field: "alertDueDate", width: 170 * globals.defaultVars.w / globals.defaultVars.winRef, suppressMenu: 'true', comparator: dateComparator, filter: 'number' },
             {
                 headerName: "", field: "", suppressMenu: 'true', suppressSorting: 'true',
                 suppressSizeToFit: 'true', cellRenderer: function (params) {
@@ -168,19 +164,19 @@
             params.$scope.dnaData = params.data;
             var totalSequence = params.data.riskDNA.sequences.length;
             //var sequenceWidthMain = 700*defaultVars.w/defaultVars.winRef / totalSequence;
-            var sequenceWidthMain = cellwidthInt * defaultVars.w / defaultVars.winRef / totalSequence;
-            var sequenceWidth = sequenceWidthMain - 20 * defaultVars.w / defaultVars.winRef;
-            params.$scope.SequenceWidth = sequenceWidth;
+            var sequenceWidthMain = cellwidthInt * globals.defaultVars.w / globals.defaultVars.winRef / totalSequence;
+            var sequenceWidth = sequenceWidthMain - 20 * globals.defaultVars.w / globals.defaultVars.winRef;
+            params.$scope.SequenceWidth = sequenceWidth-5;
             //+ '<div style="float: left; background-color: white; height: 1.47em;">&nbsp;</div>'
             //             style=" width:' + sequenceWidthMain + 'px"  
             var data =
                 '<div class="riskData">'
-                    + '<div style="float: left;" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">'
+                    + '<div style="float: left; width:{{SequenceWidth+5}}px" ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" ng-repeat="dna in dnaData.riskDNA.sequences">'
 
                         + '<div class="dataPopup" style="position: absolute; z-index: 100;" ng-show="popoverIsVisible">{{dna.sequenceType}}</div>'// : {{dna.sequenceScore|number:2}}
-                            + '<div style="float: left; width:{{SequenceWidth/dna.genes.length}}px"  ng-repeat="gene in dna.genes">'
+                            + '<div style="float: left; width:{{SequenceWidth/dna.genes.length}}px; border-left: 1px solid transparent; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"  ng-repeat="gene in dna.genes">'
                                 + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'gray\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>=0 && gene.geneScore<33.33">&nbsp;</div>' //\'border-left\': \'1px solid white\',
-                                + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'yellow\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'//\'border-left\' : \'1px solid white\',
+                                + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'#f9db22\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>33.33 && gene.geneScore<66.66">&nbsp;</div>'//\'border-left\' : \'1px solid white\',
                                 + '<div ng-style="{\'border-left\': \'1px solid white\',\'background-color\': \'red\',\'height\': \'1.47em\', \'float\':\'left; width:{{SequenceWidth/dna.genes.length}}px\'}" ng-mouseover="showPopoverGene()" ng-mouseleave="hidePopoverGene()" ng-show="gene.geneScore>66.66 && gene.geneScore<=100">&nbsp;</div>'//\'border-left\': \'1px solid white\',
                                 + '<div class="dataPopdown" style="position: absolute;z-index: 100;" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>'
                             + '</div>'
@@ -328,7 +324,7 @@
                 return '<b>' + key + '</b>';
             }
         }
-        var colorArray = ['#fedf22', '#5b5b5d', '#909090', '#c5c5c5', '#FFE6E6'];
+        var colorArray = ['#f9db22', '#5b5b5d', '#909090', '#c5c5c5', '#FFE6E6'];
         $scope.colorFunction = function () {
             return function (d, i) {
                 return colorArray[i];

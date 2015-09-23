@@ -10,7 +10,7 @@
                 //TODO:use this id to filter records from person json
                 $scope.selectedEntityId = authenticationSvc.selectedGridID;
 
-                var colorArray = ['#fedf22', '#5b5b5d', '#909090', '#c5c5c5'];
+                var colorArray = ['#f9db22', '#5b5b5d', '#909090', '#c5c5c5'];
                 $scope.colorFunction = function () {
                     return function (d, i) {
                         return colorArray[i];
@@ -1804,7 +1804,7 @@
                                     $scope.accountgridOptions.api.onNewRows();
                                 }
 
-                                if (entityEventSnapshot.cddPersonData.activityCDD != undefined) {
+                                if (entityEventSnapshot.cddPersonData.watchlistCDD != undefined) {
                                     $scope.watchListGridOptions.rowData = entityEventSnapshot.cddPersonData.watchlistCDD.watchlistHits;
                                     $scope.watchListGridOptions.api.onNewRows();
 

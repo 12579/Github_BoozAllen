@@ -91,6 +91,7 @@ h4, .h4{
 a,a:hover,a:focus,a:active{
     text-decoration: none;
     cursor: pointer;
+    color: #515151;
 }
 body {
     font-family: 'FoundersGrotesk', sans-serif;
@@ -129,7 +130,7 @@ textarea {
 }
 
 .yellowButton {
-    background-color: #ffe122;
+    background-color: #f9db22;
     color: #080700;
 }
 
@@ -185,6 +186,7 @@ address {
 
 .pageHeading {
     margin-top: 1em;
+    padding: 0 2em;
 }
 .pageHeading a {
     height: 2.8em;
@@ -631,7 +633,7 @@ Dashboard Css (Starts)
 }
 
 #headMenu a:hover {
-    background-color: #FEDF22;
+    background-color: #f9db22;
     color: #8e8f9b;
 }
 #headMenu a span {
@@ -757,7 +759,7 @@ Dashboard Css (Starts)
     -moz-transition: background .2s ease-in-out;
 }
 .dashboard .toggleBox.active {
-    background: #fadd23;
+    background: #f9db22;
 }
 .boardNav > ul > li {
     margin: 0;
@@ -1002,10 +1004,10 @@ Dashboard Css (Starts)
 */
 display: inline-block;background-color: #78808E;padding: .5em .46em .1em .5em;border-radius: 50%;color: #fff;margin-left: .476em;font-size: 0.8em;}
 .nav-tabs .tabbable li a:hover {
-    color: #ffcc00;
+    color: #f9db22;
 }
 .tabbable .active .num {
-    background-color: #FC0;
+    background-color: #f9db22;
 }
 .tabbable li a {
     min-height: 4.57em;
@@ -1018,7 +1020,7 @@ display: inline-block;background-color: #78808E;padding: .5em .46em .1em .5em;bo
 }
 
 .girdBox .nav-tabs > li.active > a, .girdBox .nav-tabs > li.active > a:hover, .girdBox .nav-tabs > li.active > a:focus{
-    color: #ffcc00;
+    color: #f9db22;
 }
 
 .tabbable:before {
@@ -1057,7 +1059,7 @@ margin-left: -1px;
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
     border: 0;
-    border-top: .375em solid #ffcc00;
+    border-top: .375em solid #f9db22;
     box-shadow: 1px -1px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -1117,6 +1119,8 @@ margin-left: -1px;
 .riskData > div {
 /*    width: 5.882em;*/
     position: relative;
+    border-left: 5px solid transparent;
+    box-sizing: border-box;
 }
 .dataPopup, .dataPopdown {
     position: absolute;
@@ -1141,7 +1145,7 @@ margin-left: -1px;
 .dataPopdown {
     top: 100%;
     background-color: #000;
-    margin-left: -1.2em;
+    margin-left: -.5em;
     color: #fff;
 }
 .dataPopdown:after {
@@ -1172,21 +1176,22 @@ margin-left: -1px;
 .dashboard #footer {
     width: 100%;
     padding: 1.875em 0;
+    background-color: #f9f9f9;
 }
 .dashboard #footer p { margin: 0; padding: 0; color: #2d2d2d;}
 .clickButton {
     background-color: #5b5b5d;
     color: #fff;
-    padding: 4px 8px 0px 8px;
+    padding: .2em .5em 0px .5em;
     display: inline-block;
-    line-height: 28px;
+    line-height: 1.4em;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 
 .qualityyellow {
-       color: #F9DB22;
+       color: #f9db22;
        font-size: 1.25vw;
        font-style: normal;
        font-weight: 500;
@@ -1389,7 +1394,6 @@ address i {
 .cardNav.whiteActive a {
     color: #232323;
 }
-
 .cardNav i {
     margin: 0 .2em;
 }
@@ -1398,16 +1402,16 @@ address i {
     color: #fff;
 }
 .entityCard .nameInitial {
-    display: inline-block;
-    background-color: #fff;
-    margin-top: .2em;
-    color: #000;
-    font-weight: 100;
-    padding: 1em .444em .2em .444em;
-    border-radius: 50%;
-    height: 2.66em;
-    width: 2.66em;
-    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.25);
+display: inline-block;
+background-color: #fff;
+margin-top: .2em;
+color: #000;
+font-weight: 100;
+padding: 1em .444em .2em .444em;
+border-radius: 50%;
+height: 2.80em;
+width: 2.80em;
+box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
 }
 
 .entityCard address {
@@ -1673,6 +1677,8 @@ address p {
 .dnaHead > div {
     cursor: pointer;
     position: relative;
+    border-left: 1px solid transparent;
+    box-sizing: border-box;
 }
 .entityRiskTabs .dataPopdown {
     left: 50%;
@@ -1692,7 +1698,7 @@ address p {
     /* justify-content: space-around; */
 }
 .entityRiskTabs .nav-tabs li.active a {
-    color: #FFCC00;
+    color: #f9db22;
 }
 .entityInfoTabs .nav-tabs > li{
     float: none;
@@ -2310,6 +2316,21 @@ Entity Detail Page CSS (Ends)
 /*#########################
 Case Detail Page CSS (Starts)
 ###########################*/
+.rowNameInitial {
+    background-color: #ff503f;
+    color: #fff;
+    font-weight: 400;
+    height: 3.375em;
+    display: inline-block;
+    width: 3.375em;
+    padding: 1.15em 0.9em 0.98em .95em;
+    border-radius: 50%;
+    margin-top: 0;
+}
+
+.rag-red .rowNameInitial {
+    background-color: #ff503f;
+}
 .caseDetailRow1 {
     background-color: #fff;
     border: none;
@@ -2321,7 +2342,6 @@ Case Detail Page CSS (Starts)
     font-size: .9em;
     font-weight: 500;
     color: #9fa8b2;
-}
 }
 
 .caseDetailRow1 td {
@@ -2374,7 +2394,7 @@ Case Detail Page CSS (Starts)
     display: flex;
 }
 .caseDetailRow1 tr td {
-    padding-top: 1em;
+    padding-top: .5em;
     color: #9fa8b2;
 }
 .caseDocumentTabs .nav-tabs {
@@ -2392,12 +2412,187 @@ Case Detail Page CSS (Starts)
 }
 
 .caseDocumentTabs .nav-tabs li.active a {
-    color: #ffcc00;
+    color: #f9db22;
 }
 
 .caseChecklist ul li:last-child {
     border: none;
 }
+.caseDocumentTabs .tab-pane {
+    padding: 0 1em;
+}
+#caseDetail div[ag-grid] {
+    padding: 0 1em;
+}
+.grayborderleft{border-left:.375em solid #ccc; background:#fff; box-shadow:5px 5px 5px #f1f2f4; }
+#caseDetail .sectionHeading{background:#f5f7f7; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; border-right:1px solid #e5e5e5; padding:1em 1.4em 1em 1.4em;}
+.grayborderleft .ovalButton{border-radius:.3em; line-height:1.3em; padding:.6em .5em .0em .5em;}
+
+.yelloborderleft{border-left:.375em solid #f9db22; background:#fff; box-shadow:5px 5px 5px #f1f2f4;}
+.yelloborderleft .sectionHeading{background:#f5f7f7; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; border-right:1px solid #e5e5e5; padding:1em 1.4em 1em 1.4em;}
+.yelloborderleft .ovalButton{border-radius:.3em; line-height:1.3em; padding:.6em .5em .0em .5em;}
+.grayButton{background:#9d9d9e; color:#fff;}
+.grayButton:hover{background:#9d9d9e; color:#fff;}
+.sectionborder{ background-color: #fff;    box-shadow: 1px 2px 15px 1px #ddd;    padding:0;}
+#caseDetail h3 {
+    font-weight: 400;
+    color: #4c5e70;
+}
+.writeCaseSummary {
+    padding: 0 2em 0em 0em;
+    margin: 2em 0em 0em 2em;
+}
+
+.writeCaseSummary h4 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.writeCaseSummary textarea {
+    width: 100%;
+    height: 15em;
+    background-color: #fff;
+    border: none;
+    resize: none;
+}
+.writeCaseSummary article {
+    border: 1px solid #E6E6E6;
+}
+.summaryFoot {
+    padding: 1.3em 1em;
+    background-color: #f5f7f7;
+}
+
+.summaryFoot button {
+    background-color: #575757;
+    border: none;
+    padding: .3em .8em;
+    color: #fff;
+    border-radius: 4px;
+}
+.caseSec3 .newToggleButton {
+    margin-top: 0;
+    text-align: left;
+}
+
+.caseSec3 {
+    padding-bottom: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.caseSec3 .newToggleButton span.active {
+    background-color: #ff503f;
+}
+
+.caseSec3 .newToggleButton span {
+    border: none !important;
+    background-color: #f5f7f7;
+    box-shadow: none;
+}
+.caseSec3 .yellowButton {
+    padding: .4em .8em .1em .8em;
+    border-radius: 4px;
+}
+.writeCaseSummary.decisionSummary {
+    margin-top: 4em;
+}
+.caseDetailRow1 .rag-initial {
+    margin: 0em 2em 0em 2em;
+}
+.textWithInitial {
+    align-items: center;
+}
+.tabHeader h4 {
+    flex: 8;
+}
+
+.tabHeader p {
+    flex: 1;
+}
+.conductRow div {
+    flex: 1;
+}
+
+.conductRow div:first-child {
+    flex: 8;
+}
+.tabHeader h4 {
+    padding: 1em 2em 0 0;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.tabHeader {
+    align-items: baseline;
+    border: 1px solid #eee;
+}
+
+.conductRow {
+    padding: 1em 1.5em 1em 1.6em;
+}
+
+.nameWithInitial .userName {
+    padding-left: 1em;
+}
+
+.conductDueSec .nameWithInitial {
+    padding-left: 2em;
+}
+
+.conductDueSec .nameWithInitial {
+    padding-left: 1.5em;
+    padding-right: 2em;
+    align-items: center;
+}
+.nameWithInitial .userName h5 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.nameWithInitial .userName p {
+    margin: 0;
+}
+.conductDueSec {
+    padding-bottom: 1em;
+}
+#caseDetail .slideToggleSec {
+    margin-left: 1em;
+}
+
+.caseSummarySec header {
+    border-left: 1px solid #e5e5e5;
+}
+.caseSec3 .newToggleButton span:last-child.active {
+    background-color: #808080;
+}
 /*#########################
 Case Detail Page CSS (Ends)
+###########################*/
+
+/*#########################
+Admin Page CSS (Start)
+###########################*/
+.admincontent{background:#f0f0f0; border:1px solid #e4e4e4; margin:0 1em;}
+.admincontent .nav-tabs > li{float:none; text-align:center; border-bottom:1px solid #e4e4e4;}
+.admincontent .nav-tabs{border:none; background:#f0f0f0; padding:0; }
+.admincontent .nav-tabs > li > a:hover{color:#f9db22; border-left:.375em solid #f9db22; border-top:0; box-shadow: 4px 3px 11px #DAD9D9, 0px -3px 11px #DAD9D9;position: relative;z-index: 10; background:#fff;}
+.admincontent .nav-tabs > li.active > a, .admincontent .nav-tabs > li.active > a:hover,.admincontent .nav-tabs > li.active > a:focus{color:#f9db22; border-left:.375em solid #f9db22; border-top:0; box-shadow: 2px 3px 9px #DAD9D9;position: relative;z-index: 10;}
+
+
+.admincontent .nav-tabs > li > a{padding:1.9em 1.9em 2.333em;}
+.admincontent .admin-row1{border-bottom:1px solid #e4e4e4; overflow:hidden; width:100%; padding:20px 0 0;}
+.admincontent .admin-row1 .searchBox{float:left; width:65%; text-align:left;}
+.admincontent .admin-row1 .searchInput input::-webkit-input-placeholder{color:#515151;}
+
+.adminplus{float:right;}
+.adminplus {justify-content: flex-end;-moz-justify-content: flex-end;-ms-justify-content: flex-end;-webkit-justify-content: flex-end;padding:0 1em;height: 4em;}
+.adminplus a {height: 2.05em;width: 2.05em;display: inline-block;background-color: #aeb9c4; margin-left: 1.5em;text-align: center;border-radius: 50%;color: #fff;padding-top: .15em;transition: .3s; -moz-transition: .3s;-ms-transition: .3s;-webkit-transition: .3s;}
+.adminplus a.active,.adminplus a:hover {background-color: #FFE122;}
+.adminplus a i {vertical-align: bottom;}
+.admincontent .tab-content{ padding:0; /*min-height:800px;*/ background:#fff;}
+
+
+/*#########################
+Admin Page CSS (Ends)
 ###########################*/

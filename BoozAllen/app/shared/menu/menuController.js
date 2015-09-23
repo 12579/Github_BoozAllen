@@ -1,4 +1,4 @@
-﻿
+
 
 
 (function () {
@@ -29,6 +29,12 @@
             else 
                 $state.go('Home.dashboard');
             //$state.go('^');
+        }
+        
+        $scope.closeSideMenu = function() {
+            angular.element('.boardNav').removeClass('open');
+            angular.element('.toggleBox').removeClass('active');
+            angular.element('.menuOverlay').hide();            
         }
     }
     ]);

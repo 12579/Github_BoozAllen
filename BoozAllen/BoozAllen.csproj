@@ -73,6 +73,8 @@
     <Content Include="app\components\caseDetails\caseDetailView.html" />
     <Content Include="app\components\caseEntityDetails\caseEntityDetails.html" />
     <Content Include="app\components\caseEntityDetails\caseEntityDetailController.js" />
+    <Content Include="app\components\onboardingReviewDetails\onboardingReviewDetailController.js" />
+    <Content Include="app\components\onboardingReviewDetails\onboardingReviewDetailView.html" />
     <Content Include="app\components\ddDashboard\ddDashboardController.js" />
     <Content Include="app\components\ddDashboard\ddDashboardService.js" />
     <Content Include="app\components\ddDashboard\ddDashboardView.html" />
@@ -83,6 +85,8 @@
     <Content Include="app\components\entityDetails\entityDetailController.js" />
     <Content Include="app\components\home.html" />
     <Content Include="app\components\profile.html" />
+    <Content Include="app\components\periodicReviewDetails\periodicReviewDetailController.js" />
+    <Content Include="app\components\periodicReviewDetails\periodicReviewDetailView.html" />
     <Content Include="app\components\vpDashboard\vpDashboardController.js" />
     <Content Include="app\components\vpDashboard\vpDashboardService.js" />
     <Content Include="app\components\vpDashboard\vpDashboardView.html" />
@@ -233,6 +237,8 @@
     <Content Include="sampleJson\dashboardJsonDd.json" />
     <Content Include="sampleJson\personObject.json" />
     <Content Include="sampleJson\caseObject.json" />
+    <Content Include="sampleJson\periodicReviewObject.json" />
+    <Content Include="sampleJson\onboardingReviewObject.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

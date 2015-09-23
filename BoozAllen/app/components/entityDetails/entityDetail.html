@@ -1,4 +1,4 @@
-﻿<meta charset="utf-8">
+<meta charset="utf-8">
 <script src="../../../assets/js/d3.js"></script>
 <script src="../../../assets/js/nv.d3.js"></script>
 <script src="../../../assets/libs/angularjs/angular.js"></script>
@@ -246,7 +246,8 @@
                                         <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='ATTRIBUTE'">
 
                                             <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'float':'left', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='ATTRIBUTE'" ng-init="type='ATTRIBUTE'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="ATTRIBUTE">&nbsp;</div>
+                                           <div class="dnaSpace"></div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'float':'left', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='ATTRIBUTE'" ng-init="type='ATTRIBUTE'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="ATTRIBUTE">&nbsp;</div>
                                                 <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
 
                                             </div>
@@ -300,7 +301,7 @@
                                         <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='WATCHLIST'">
 
                                             <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, type)" ng-init="type='WATCHLIST'" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="WATCHLIST">&nbsp;</div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, type)" ng-init="type='WATCHLIST'" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="WATCHLIST">&nbsp;</div>
                                                 <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
 
                                             </div>
@@ -324,7 +325,7 @@
                                         <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='NEGATIVENEWS'">
 
                                             <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NEGATIVENEWS'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NEGATIVENEWS">&nbsp;</div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NEGATIVENEWS'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NEGATIVENEWS">&nbsp;</div>
                                                 <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
 
                                             </div>
@@ -369,7 +370,7 @@
                                         <div class="dnaHead" class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='NETWORK'">
 
                                             <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NETWORK'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NETWORK">&nbsp;</div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NETWORK'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NETWORK">&nbsp;</div>
                                                 <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
 
                                             </div>
@@ -385,8 +386,8 @@
                                         <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='ACTIVITY'">
 
                                             <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event,  'ACCOUNT')" ng-mouseleave="hidePopoverGene($index, $event, 'ACCOUNT')" data-row-type="ACTIVITY" ng-show="gene.geneName=='Account Type'">&nbsp;</div>
-                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, 'TRANSACTION')" ng-mouseleave="hidePopoverGene($index, $event, 'TRANSACTION')" data-row-type="ACTIVITY" ng-show="gene.geneName !='Account Type'">&nbsp;</div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event,  'ACCOUNT')" ng-mouseleave="hidePopoverGene($index, $event, 'ACCOUNT')" data-row-type="ACTIVITY" ng-show="gene.geneName=='Account Type'">&nbsp;</div>
+                                                <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'#f9db22':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, 'TRANSACTION')" ng-mouseleave="hidePopoverGene($index, $event, 'TRANSACTION')" data-row-type="ACTIVITY" ng-show="gene.geneName !='Account Type'">&nbsp;</div>
 
                                                 <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
 

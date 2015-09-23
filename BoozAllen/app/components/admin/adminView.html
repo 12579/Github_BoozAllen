@@ -1,148 +1,63 @@
-<section id="adminDetails">
-
-    Start Admin
-    <entity-tabs-two>
-        <entity-pane-two icon="fa fa-sort-amount-asc" tab-title="Attribute Risk">
-            
-            <article class="tabContent attributeRiskGrid customScrollBar">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="tabGrid" ng-repeat="seq in entityDetail.riskDNA.sequences" ng-if="seq.sequenceType=='ATTRIBUTE' ">
-                            <div class="attributeRiskLeft">
-                                <li class="tabRow tabRowLeft" ng-repeat="gene in seq.genes|limitTo:seq.genes.length/2+seq.genes.length%2">
-                                    <div class="displayFlex">
-                                        <div class="tabCell">
-                                            <div class="cellItem displayFlex">
-                                                <h4 class="flex1">{{gene.geneName}}</h4>
-                                            </div>
-                                        </div>
-                                        <div class="tabCell">
-                                            <div class="cellItem displayFlex">
-                                                <h4 class="flex1">{{gene.geneValue}}</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </div>
-                            <div class="attributeRiskRight">
-                                <li class="tabRow tabRowRight" ng-repeat="gene in seq.genes|limitTo: -(seq.genes.length-seq.genes.length/2)">
-                                    <div>
-                                        <div class="displayFlex">
-                                            <div class="tabCell">
-                                                <div class="cellItem displayFlex">
-                                                    <h4 class="flex1">{{gene.geneName}}</h4>
-                                                </div>
-                                            </div>
-                                            <div class="tabCell">
-                                                <div class="cellItem displayFlex">
-                                                    <h4 class="flex1">{{gene.geneValue}}</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </entity-pane-two>
-        <entity-pane-two icon="fa fa-clock-o" tab-title="Watchlist Risk">
-            <div class="riskData">
-                <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='WATCHLIST'">
-
-                    <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                        <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, type)" ng-init="type='WATCHLIST'" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="WATCHLIST">&nbsp;</div>
-                        <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
-
-                    </div>
-                </div>
+﻿<section id="adminDetails">
+<section class="mainBoard">
+<div class="boardArea">
+<div class="container-fluid">
+  <div class="row marginZero topHeading">
+    <div class="col-md-12">
+      <h2>FIU ANALYST - DASHBOARD</h2>
+      <p>Provides a snapshot of your open cases and alerts for review.</p>
+    </div>
+  </div>
+  <div class="admincontent row displayFlex entityRow1">
+   
+      <admin-tabs>
+        <admin-pane icon="glyphicon glyphicon-user" tab-title="User Management">
+          <div class="admin-row1">
+            <div class="searchBox">
+              <div class="searchInput">
+                <input type="text" placeholder="Search Cases, Name, Data etc">
+                <i class="fa fa-search"></i> </div>
             </div>
-            <div style="float: left;width: 60%" class="watchListSec">
-                <header class="watchListTitle sectionHeading displayFlex">
-                    <h3 class="flex1 marginZero">Watchlist Hits</h3>
-                </header>
-                <div ag-grid="watchListGridOptions" class="watchListGrid ag-fresh"></div>
-            </div>
-            <div style="float: right;width: 40%" class="PepHitsSec">
-                <header class="watchListTitle sectionHeading displayFlex">
-                    <h3 class="flex1 marginZero">Pep Hits</h3>
-                </header>
-                <div ag-grid="pepHitsGridOptions" class="pepHitsGrid ag-fresh"></div>
-            </div>
-        </entity-pane-two>
-        <entity-pane-two icon="fa fa-newspaper-o" tab-title="Negative News Risk">
-            <div class="riskData">
-                <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='NEGATIVENEWS'">
-
-                    <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                        <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NEGATIVENEWS'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NEGATIVENEWS">&nbsp;</div>
-                        <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
-
-                    </div>
-                </div>
-            </div>
-            <div ag-grid="alertgridOptions" class="ag-fresh">
-                <article class="tabContent negativeRisk">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <header class="sectionHeading displayFlex">
-                                <h3 class="flex1 marginZero">Adverse Keywords</h3>
-                            </header>
-                            <nvd3-pie-chart data="adverseKeywordData" objectEquality="true" id="adverseKeywordData" x="xFunction()" y="yFunction()" width="400" height="200" margin="{right:0,left:0,top:0,bottom:0}" showlabels="true" showValues="true" labeltype="percent" donutLabelsOutside="true" donutRatio=".40" color="colorFunction()" tooltips="true" tooltipcontent="showToolTipInPieChart()" donut="true">
-                                <svg></svg>
-                            </nvd3-pie-chart>
-                        </div>
-                        <div class="ag-fresh" ag-grid="negativeRiskGridOptions"></div>
-
-                        <div data-type="negativeNewsRisk" class="addPopup negativeNewsRisk">
-                            <article class="popupContent">
-                                <div>
-                                    <div class="newsPopHead">
-                                        <div id="negativeNewsRiskHeaderTitle"></div>
-                                        <div id="negativeNewsRiskUrl"></div>
-                                        <div id="negativeNewsRiskDoa"></div>
-                                    </div>
-                                    <div id="negativeNewsRiskTitle"></div>
-                                    <div id="negativeNewsRiskText"></div>
-                                </div>
-                                <button ng-click="closePopup()">Close</button>
-                            </article>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </entity-pane-two>
-        <entity-pane-two icon="fa fa-clock-o" tab-title="Network Risk">
-            <div class="riskData">
-                <div class="dnaHead" class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='NETWORK'">
-
-                    <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                        <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-init="type='NETWORK'" ng-mouseover="showPopoverGene($index, $event, type)" ng-mouseleave="hidePopoverGene($index, $event, type)" data-row-type="NETWORK">&nbsp;</div>
-                        <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="networkData">
-                <img src="../../../assets/img/network-img.jpg" class="img-responsive" alt="">
-            </div>
-
-        </entity-pane-two>
-        <entity-pane-two icon="fa fa-credit-card" tab-title="Activity Risk">
-            <div class="riskData">
-                <div class="dnaHead" ng-mouseover="showPopover($event)" ng-mouseleave="hidePopover()" ng-repeat="dna in entityDetail.riskDNA.sequences" ng-if="dna.sequenceType=='ACTIVITY'">
-
-                    <div ng-style="{'width':'{{sequenceWidth/dna.genes.length}}px','height': '1.47em'}" ng-repeat="gene in dna.genes">
-                        <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event,  'ACCOUNT')" ng-mouseleave="hidePopoverGene($index, $event, 'ACCOUNT')" data-row-type="ACTIVITY" ng-show="gene.geneName=='Account Type'">&nbsp;</div>
-                        <div ng-style="{'border-left': '1px solid white','background-color': '{{(gene.geneScore>=0 && gene.geneScore<=33.33)?'gray':((gene.geneScore>33.33 && gene.geneScore<=66.66)?'yellow':'red')}}','height': '1.47em', 'width':'{{sequenceWidth/dna.genes.length}}px'}" ng-mouseover="showPopoverGene($index, $event, 'TRANSACTION')" ng-mouseleave="hidePopoverGene($index, $event, 'TRANSACTION')" data-row-type="ACTIVITY" ng-show="gene.geneName !='Account Type'">&nbsp;</div>
-
-                        <div class="dataPopdown" style="position: absolute;z-index: 100" ng-show="popoverIsVisibleGene">{{gene.geneName}} | {{gene.geneValue}} | {{gene.geneScore}}</div>
-
-                    </div>
-                </div>
-            </div>
-            <div ag-grid="activityRiskGridOptions" class="ag-fresh"></div>
-        </entity-pane-two>
-    </entity-tabs-two>
+            <div class="adminplus"><a href="" class="hideShowClass" ng-click="addNewPersonas($event)"><i class="fa fa-plus"></i></a></div>
+          </div>
+          
+          
+          <div class="tab-content">  Tab Content</div>
+          
+          
+          
+          <div class="row rowSec">
+    <div class="col-md-12">
+      <article class="sectionPadding">
+        <header class="sectionHeading displayFlex">
+          <h3 class="flex1 marginZero">Steve Jackson Profile</h3>
+          <a href="javascript:void()" ng-click="slideToggleSec($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a> </header>
+        <div class="toggleSec riskDnaGraph"> Tab1 </div>
+      </article>
+    </div>
+  </div>
+  
+          <div class="row rowSec">
+    <div class="col-md-12">
+      <article class="sectionPadding">
+        <header class="sectionHeading displayFlex">
+          <h3 class="flex1 marginZero">Permissions</h3>
+          <a href="javascript:void()" ng-click="slideToggleSec($event)" class="slideToggleSec"><i class="fa fa-chevron-up"></i></a> </header>
+        <div class="toggleSec riskDnaGraph"> Tab1 </div>
+      </article>
+    </div>
+  </div>
+          
+        </admin-pane>
+        <admin-pane icon="fa fa-sitemap" tab-title="Roles"> 2 </admin-pane>
+        <admin-pane icon="fa fa-users" tab-title="Groups"> 3 </admin-pane>
+        <admin-pane icon="fa fa-briefcase" tab-title="Field Access Manager"> 4 </admin-pane>
+        <admin-pane icon="glyphicon glyphicon-user" tab-title="User Management"> 5 </admin-pane>
+      </admin-tabs>
+   
+  </div>
+  
+  
+</div>
+</section>
 </section>

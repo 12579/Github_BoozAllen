@@ -22,8 +22,8 @@
 ============================================================ */
 input.cmn-toggle-round + label {
   padding: 0;
-  width: 41px;
-  height: 15px;
+  width: 2.5625em;
+  height: 1em;
   background-color: transparent;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -53,9 +53,9 @@ input.cmn-toggle-round + label:before {
   transition: background 0.4s;
 }
 input.cmn-toggle-round + label:after {
-  width: 22px;
-  top: -4px;
-  height: 22px;
+  width: 1.375em;
+  top: -.25em;
+  height: 1.375em;
   background-color: #fff;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -73,7 +73,7 @@ input.cmn-toggle-round + label:after {
 input.cmn-toggle-round:checked + label:before {
   background-color: #5B5B5B;
   content: "on";
-  line-height: 1.5em;
+  line-height: 1.6em;
   font-size: .65em;
   font-weight: 100;
   padding-left: .4em;
@@ -81,7 +81,7 @@ input.cmn-toggle-round:checked + label:before {
   letter-spacing: .05em;
 }
 input.cmn-toggle-round:checked + label:after {
-  margin-left: 19px;
+  margin-left: 1.19em;
 }
 input.cmn-toggle-round + label span {
     line-height: 2.2em;

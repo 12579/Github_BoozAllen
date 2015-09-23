@@ -29,6 +29,14 @@
         $scope.OpenProfilePage = function () {
             $state.go('home.profile');
         }
+        
+        $scope.openSideMenu = function() {
+            var menu = angular.element(document.querySelector('.boardNav'));
+            angular.element(menu).hasClass('open') ? angular.element(menu).removeClass('open') : angular.element(menu).addClass('open');
+            angular.element('.toggleBox').hasClass('active') ? angular.element('.toggleBox').removeClass('active') : angular.element('.toggleBox').addClass('active') ;
+            angular.element('.menuOverlay').toggle();
+        };
+        
     }
     ]);
 })();

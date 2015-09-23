@@ -763,6 +763,281 @@
           ]
         }
       ],
+      "cddPersonData": {
+      "attributeCDD": {
+        "nameCorroborationScore": 0,
+        "collectedNames": [
+          "Rick Hanoover",
+          "Jane Boden"
+        ],
+        "addressCorroborationScore": 0,
+        "collectedAddresses": [
+          "4591 Albemarle Street, Kingman AZ",
+          "9821 Leopard Street, Denver CO"
+        ],
+        "phoneCorroborationScore": 0,
+        "collectedPhones": [
+          "765-244-0922",
+          "865-244-0922"
+        ],
+        "emailCorroborationScore": 0,
+        "collectedEmails": [
+          "rickysmalls@yahoo.com",
+          "janedoe@gmail.com"
+        ]
+      },
+      "watchlistCDD": {
+        "watchlistHits": [
+          {
+            "names": [
+              "DIAMOND, EDWARD"
+            ],
+            "watchlistProvider": "SBS",
+            "watchlistNames": [
+              "NYSE"
+            ],
+            "ranking": {
+              "ExposureIndex": 12,
+              "StrengthIndex": -2
+            }
+          },
+          {
+            "names": [
+              "EDWARDS, DAMON"
+            ],
+            "watchlistProvider": "SBS",
+            "watchlistNames": [ ],
+            "ranking": {
+              "ExposureIndex": 72,
+              "StrengthIndex": -3
+            }
+          }
+        ],
+        "pepHits": [
+          {
+            "entityName": "John Doe",
+            "PEP Provider": "SBS",
+            "PEP List": "Russian Heads of State"
+          },
+          {
+            "entityName": "Jane Doe",
+            "PEP Provider": "SBS",
+            "PEP List": "UK Parliament"
+          }
+        ]
+      },
+      "activityCDD": {
+        "accounts": [
+          {
+            "accountNumber": "999125750",
+            "accountType": "CHECKING"
+          },{
+            "accountNumber": "123456789",
+            "accountType": "PRIVATE"
+          }
+        ],
+        "alerts": [
+          {
+            "id": "7fc57965-ba64-4518-9f97-47ceb5d36fcd",
+            "description": "Large Incoming Wires",
+            "alertStatus": "Active",
+            "triggers": [
+              "Total Wire Deposits: 37999"
+            ],
+            "alertOpenDate": "09/16/2015",
+            "alertType": "Wire Activity",
+            "alertDueDate": "09/30/2015",
+            "entityRiskScore": 0,
+            "entityName": "Edward Damon",
+            "accountType": "CHECKING",
+            "transactions": [
+              {
+                "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                "refNumber": "12345678",
+                "transactionType": "WIRE",
+                "currency": "Dollars",
+                "debit": 15000,
+                "credit": 0,
+                "accountNumber": "999125750",
+                "branch": "Washington "
+              }
+            ]
+          },
+          {
+            "id": "5fc57965-ba64-4518-9f97-47ceb5d36fcg",
+            "description": "Large Incoming Wires",
+            "alertStatus": "Closed",
+            "triggers": [
+              "Total Wire Deposits: 37999"
+            ],
+            "alertOpenDate": "09/17/2015",
+            "alertType": "Wire Activity",
+            "alertDueDate": "10/25/2015",
+            "entityRiskScore": 0,
+            "entityName": "John Doe",
+            "accountType": "CHECKING",
+            "transactions": [
+              {
+                "transactionDate": "Sep 18, 2015 6:43:02 AM",
+                "refNumber": "12345678",
+                "transactionType": "WIRE",
+                "currency": "Dollars",
+                "debit": 18000,
+                "credit": 0,
+                "accountNumber": "123456789",
+                "branch": "Washington "
+              }
+            ]
+          }
+        ],
+        "cases": [
+          {
+            "id": "2fc57965-ba64-4518-9f97-47ceb5d36fcd",
+            "description": "Large Incoming Wires",
+            "caseStatus": "Active",
+            "triggers": [
+              "Total Wire Deposits: 37999"
+            ],
+            "caseOpenDate": "9/30/2015",
+            "caseType": "Wire Activity",
+            "caseDueDate": "11/16/2015",
+            "entityRiskScore": 0,
+            "entityName": "Edward Damon",
+            "accountType": "CHECKING",
+            "transactions": [
+              {
+                "transactionDate": "Sep 17, 2015 6:43:02 AM",
+                "refNumber": "12345678",
+                "transactionType": "WIRE",
+                "currency": "Dollars",
+                "debit": 15000,
+                "credit": 0,
+                "accountNumber": "232434334",
+                "branch": "Washington "
+              }
+            ]
+          },
+          {
+            "id": "8fc57965-ba64-4518-9f97-47ceb5d36fcf",
+            "description": "Large Incoming Wires",
+            "caseStatus": "Active",
+            "triggers": [
+              "Total Wire Deposits: 37999"
+            ],
+            "caseOpenDate": "09/17/2015",
+            "caseType": "Wire Activity",
+            "caseDueDate": "08/10/2015",
+            "entityRiskScore": 0,
+            "entityName": "Edward Damon",
+            "accountType": "CHECKING",
+            "transactions": [
+              {
+                "transactionDate": "Sep 18, 2015 6:43:02 AM",
+                "refNumber": "12345678",
+                "transactionType": "WIRE",
+                "currency": "Dollars",
+                "debit": 18000,
+                "credit": 0,
+                "accountNumber": "999125750",
+                "branch": "Washington "
+              }
+            ]
+          }
+        ],
+        "transactions": [ ]
+      }
+    },
+      "eddPersonData": {
+      "attributeData": {
+        "employerAddress": {
+          "street1": "575 Herdon Parkway",
+          "city": "Herndon",
+          "state": "VA",
+          "zipcode": "20170",
+          "country": "UNITED_STATES"
+        },
+        "employerToBankDistance": 1.4451189052954507,
+        "homeToBankDistance": 31.94185148856169,
+        "accountPurpose": "Save Money",
+        "sourcOfAccountFunds": "Check",
+        "homeLat": 38.8727414,
+        "homeLng": -77.0132919,
+        "employerLat": 38.9537497,
+        "employerLng": -77.3836634,
+        "bankLat": 38.9549779,
+        "bankLng": -77.3670259
+      },
+      "negativeNewsData": {
+        "articles": [
+          {
+            "title": "FX trader Jin Yuan Finance warned over anti-money laundering controls",
+            "doa": "Dec 31, 1969 3:59:57 PM",
+            "url": "http://www.sharechat.co.nz/article/c5811343/fx-trader-jin-yuan-finance-warned-over-anti-money-laundering-controls.html",
+            "indicators": {
+              "laundering": 4,
+              "exchange": 3
+            },
+            "text": "Jin Yuan Finance, an Auckland based foreign exchange trader, has been warned over its lack of anti-money laundering processes in place in the first public notification by the Department of Internal Affairs. The FX trader, whose sole director and shareholder is Auckland based Rex Young, was warned on July 7 for failing to conduct customer due diligence, adequately monitor accounts and transactions, keep adequate records, have an anti-money laundering programme, or ensure its branches met the legislation, the DIA said in a statement. The government agency has issued 13 formal warnings under the Anti-Money Laundering/Countering Financing of Terrorism Act since the legislation first came into effect, but hasn't made any public in the past. DIA supervises firms not covered by the Financial Markets Authority or the Reserve Bank. It decided to make this warning public because of the seriousness of the failings, which were ongoing and extensive. The investigations identified that Jin Yuan Finance had failed to establish, implement and maintain an adequate and effective AML/CFT programme, said Maarten Quivooy, DIA general manager of regulatory services.The AML/CFT legislation came into effect in mid-2013, increasing the monitoring of financial firms in a bid to stamp out as much as $1.5 billion of money laundering. Lenders bear the cost of increased compliance, and the government is now looking at extending those obligations to professionals such as accountants and lawyers.The DIA will monitor Jin Yuan Finance to ensure it introduces processes to comply with the legislation, and will consider if further enforcement action is appropriate, including court imposed penalties or undertakings.The department can issue formal warnings for conduct that attracts a civil penalty rather than criminal sanctions.The DIA weighs up the benefits of encouraging firms to comply with the legislation against minimising harm in deciding whether to notify the public of a warning, it said."
+          },{
+            "title": "FX trader Jin Yuan Finance warned over anti-money laundering controls new",
+            "doa": "Dec 21, 1970 3:59:57 PM",
+            "url": "http://www.sharechat.co.nz/article/c5811343/fx-trader-jin-yuan-finance-warned-over-anti-money-laundering-controls.html",
+            "indicators": {
+              "laundering": 4,
+              "foreign": 3
+            },
+            "text": "Jin Yuan Finance, an Auckland based foreign exchange trader, has been warned over its lack of anti-money laundering processes in place in the first public notification by the Department of Internal Affairs. The FX trader, whose sole director and shareholder is Auckland based Rex Young, was warned on July 7 for failing to conduct customer due diligence, adequately monitor accounts and transactions, keep adequate records, have an anti-money laundering programme, or ensure its branches met the legislation, the DIA said in a statement. The government agency has issued 13 formal warnings under the Anti-Money Laundering/Countering Financing of Terrorism Act since the legislation first came into effect, but hasn't made any public in the past. DIA supervises firms not covered by the Financial Markets Authority or the Reserve Bank. It decided to make this warning public because of the seriousness of the failings, which were ongoing and extensive. The investigations identified that Jin Yuan Finance had failed to establish, implement and maintain an adequate and effective AML/CFT programme, said Maarten Quivooy, DIA general manager of regulatory services.The AML/CFT legislation came into effect in mid-2013, increasing the monitoring of financial firms in a bid to stamp out as much as $1.5 billion of money laundering. Lenders bear the cost of increased compliance, and the government is now looking at extending those obligations to professionals such as accountants and lawyers.The DIA will monitor Jin Yuan Finance to ensure it introduces processes to comply with the legislation, and will consider if further enforcement action is appropriate, including court imposed penalties or undertakings.The department can issue formal warnings for conduct that attracts a civil penalty rather than criminal sanctions.The DIA weighs up the benefits of encouraging firms to comply with the legislation against minimising harm in deciding whether to notify the public of a warning, it said."
+          }
+        ]
+      },
+      "networkData": {
+        "nodes": [
+          {
+            "label": "Billy Hoyle",
+            "relationship": "Friends",
+            "source": "LinkedIn",
+            "attributes": {
+              "confidenceScore": "30",
+              "email": "Billy@email.com",
+              "link": "LinkedIn Connections",
+              "name": "Billy Hoyle"
+            }
+          },
+          {
+            "label": "Sidney Deane",
+            "relationship": "Friends",
+            "source": "Facebook",
+            "attributes": {
+              "confidenceScore": "45",
+              "email": "Sidney@email.com",
+              "link": "Facebook friends",
+              "name": "Sidney Deane"
+            }
+          },
+          {
+            "label": "Chris Damon",
+            "relationship": "Counterparties",
+            "source": "Bank Account",
+            "attributes": {
+              "confidenceScore": "78",
+              "accountNumber": "12345678",
+              "link": "Joint Account",
+              "name": ""
+            }
+          },
+          {
+            "label": "MorganDamon",
+            "relationship": "Household",
+            "source": "Whitepages",
+            "attributes": {
+              "confidenceScore": "65",
+              "link": "Same Phone Number",
+              "name": "Morgan Damon"
+            }
+          }
+        ]
+      }
+    },
       "riskDNA": {
         "entityRiskScore": "100",
         "entityRiskLevel": "HIGH RISK",

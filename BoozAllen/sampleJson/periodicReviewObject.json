@@ -1,0 +1,361 @@
+﻿{
+    "id": "4829103928",
+    "reviewTitle": "Curtis Towns",
+    "assignedAnalystID": "48d32b3c-7fac-4308-8a94-b6449b69ff9f",
+    "assignedAnalystName": "Jennifer Sanders",
+    "accountNumber": "019283746",
+    "accountType": "Private Checking",
+    "accountOpenDate": "03/25/2013",
+    "relationshipManager": "Jeremy Eno",
+    "relationshipManagerID": "538191",
+    "reviewType": "Structuring",
+    "startedDate": "09/16/2015",
+    "reviewOpenDate": "09/15/2015",
+    "dueDate": "09/30/2015",
+    "reviewStatus": "Analysis",
+    "reviewClosedDeposition": "N/A",
+    "reviewCheckListItems": [       
+        {
+            "reviewChecklistName": "Conduct Due Dilligence Research",
+            "isComplete": false,
+            "reviewChecklistDescription": "blah blah blah",
+            "order": 2
+        },
+        {
+            "reviewChecklistName": "Write Review Summary",
+            "isComplete": false,
+            "reviewChecklistDescription": "blah blah blah",
+            "order": 3
+        },
+        {
+            "reviewChecklistName": "Close review",
+            "isComplete": false,
+            "reviewChecklistDescription": "blah blah blah",
+            "order": 4
+        }
+    ],
+	
+    "cdd": [
+        {
+            "accountID": "019283746",
+            "accountType": "Checking",
+            "accountOpenDate": "03/25/2013",
+            "relationshipManager": "George Tomlinson",
+            "accountBeneficiaries": [
+                "Deborah Towns - Joint Account Holder"
+            ]
+        }
+    ],
+    "entity": {
+        "entityDocuments": [],
+        "entityNotes": [],
+        "entityTasks": [],
+        "entityName": "Curtis Towns",
+        "entityAddress": "2224 Wild Oak Crescent Virginia Beach, VA 23456",
+        "entityPhone": "757.665.7308",
+        "entityEmail": "JustASmallTownsGirl@gmail.com",
+        "numberOfNewPersonas": "2",
+        "personas": [
+            {
+                "personaName": "Jeron Columbo",
+                "personaAddress": "2224 Wild Oak Crescent Virginia Beach, VA 23456",
+                "personaPhone": "214.676.3412",
+                "personaEmail": "Jeron@yahoo.com",
+                "personaSource": "facebook",
+                "isActive": true,
+                "isNew": true
+            },
+            {
+                "personaName": "Curtis Towns",
+                "personaAddress": "950 N Randolph St Arlington, VA 22203",
+                "personaPhone": "571.930.3937",
+                "personaEmail": "CurtyT@hotmail.com",
+                "personaSource": "Twitter",
+                "isActive": true,
+                "isNew": true
+            }
+        ],
+        "associatedAccounts": [
+            {
+                "accountID": "019283746",
+                "accountType": "Checking",
+                "accountOpenDate": "03/25/2013",
+                "relationshipManager": "George Tomlinson",
+                "accountBeneficiaries": [
+                    "Deborah Towns - Joint Account Holder"
+                ]
+            }
+        ],
+        "riskDNA": {
+            "entityRiskScore": "39",
+            "entityRiskLevel": "MEDIUM RISK",
+            "attributeRiskSequence": {
+                "genes": [
+                    {
+                        "geneName": "Name Frequency",
+                        "geneValue": "3",
+                        "geneScore": "65%",
+                        "geneDescription": "This gene indicates the number of discovered names"
+                    },
+                    {
+                        "geneName": "Name Variation",
+                        "geneValue": "2",
+                        "geneScore": "31%",
+                        "geneDescription": "This gene indicates the number of uniquly discovered names"
+                    },
+                    {
+                        "geneName": "Address Variation",
+                        "geneValue": "2",
+                        "geneScore": "30%",
+                        "geneDescription": "This gene indicates the number of uniquely discovered addresses"
+                    },
+                    {
+                        "geneName": "Address Frequency",
+                        "geneValue": "3",
+                        "geneScore": "51%",
+                        "geneDescription": "This gene indicates the number of discovered addresses "
+                    },
+                    {
+                        "geneName": "Geographic Threat",
+                        "geneValue": "United States",
+                        "geneScore": "33%",
+                        "geneDescription": "This gene indicates the entity's country threat level"
+                    },
+                    {
+                        "geneName": "Hifca Threat",
+                        "geneValue": "TX",
+                        "geneScore": "22%",
+                        "geneDescription": "This gene indicates the entity's US region threat level "
+                    },
+                    {
+                        "geneName": "Phone Frequency",
+                        "geneValue": "3",
+                        "geneScore": "64%",
+                        "geneDescription": "This gene indicates the number of discovered phones"
+                    },
+                    {
+                        "geneName": "Phone Variation",
+                        "geneValue": "2",
+                        "geneScore": "43%",
+                        "geneDescription": "This gene indicates the number of uniquely discovered phones"
+                    },
+                    {
+                        "geneName": "Phone Validation",
+                        "geneValue": "757.665.7308- VALID",
+                        "geneScore": "0%",
+                        "geneDescription": "This gene indicates the phone validity"
+                    },
+                    {
+                        "geneName": "Phone Carrier",
+                        "geneValue": "Cricket Wireless",
+                        "geneScore": "20%",
+                        "geneDescription": "This gene indicates the phone carrier threat"
+                    },
+                    {
+                        "geneName": "Phone Location Threat",
+                        "geneValue": "United States",
+                        "geneScore": "17%",
+                        "geneDescription": "This gene indicates the phone's country code threat"
+                    },
+                    {
+                        "geneName": "Email Frequency",
+                        "geneValue": "3",
+                        "geneScore": "65%",
+                        "geneDescription": "This gene indicates the number of email's discovered"
+                    },
+                    {
+                        "geneName": "Email Variation",
+                        "geneValue": "2",
+                        "geneScore": "36%",
+                        "geneDescription": "This gene indicates the number uniquely discovered emails"
+                    },
+                    {
+                        "geneName": "Email Validation",
+                        "geneValue": "JustASmallTownsGirl@gmail.com - INVALID",
+                        "geneScore": "70%",
+                        "geneDescription": "This gene indicates that the email validitiy"
+                    },
+                    {
+                        "geneName": "Email Domain",
+                        "geneValue": "gmail",
+                        "geneScore": "0%",
+                        "geneDescription": "This gene indicates the email domains threat level"
+                    },
+                    {
+                        "geneName": "Home To Bank",
+                        "geneValue": "212 miles",
+                        "geneScore": "40%",
+                        "geneDescription": "This gene indicates the distance to the bank from the home address"
+                    }
+                ],
+                "nameFrequency": "3",
+                "nameVariation": "2",
+                "addressFrequency": "3",
+                "addressVariation": "2",
+                "geographicThreat": "United States",
+                "hifcaThreat": "CT",
+                "phoneFrequency": "3",
+                "phoneVariation": "2",
+                "phoneValidation": "757.665.7308 - VALID",
+                "phoneCarrier": "Cricket Wireless",
+                "phoneLocationThreat": "United States",
+                "emailFrequency": "3",
+                "emailVariation": "3",
+                "emailValidation": "JustASmallTownsGirl@gmail.com - VALID",
+                "emailDomain": "gmail",
+                "homeToBankDistance": "212 miles"
+            },
+            "watchlistRiskSequence": {
+                "genes": [
+                    {
+                        "geneName": "Christopher Towns",
+                        "geneValue": "OFAC",
+                        "geneScore": "25%",
+                        "geneDescription": "This gene indicates a found watchlist hit"
+                    }
+                ],
+                "watchlistHitItems": [
+                    {
+                        "entityName": "Jason Garrett",
+                        "watchlistProvider": "SBS",
+                        "listName": "OFAC",
+                        "ranking": "Strength Index -1 / Exposure Index 45"
+                    }
+                ],
+                "pepHitItems": []
+            },
+            "negativeNewsRiskSequence": {
+                "genes": [
+                    {
+                        "geneName": "Towns Uses his business as a front for a Drug Operation",
+                        "geneValue": "laundering",
+                        "geneScore": "42%",
+                        "geneDescription": "This gene indicates a found negative news stories"
+                    }
+                ],
+                "articles": [
+                    {
+                        "articleName": "Towns Uses his business as a front for a Drug Operation",
+                        "keywordHits": "laundering",
+                        "articlePublicationDate": "09-04-2012",
+                        "articleRiskScore": "42%",
+                        "articleURL": "www.bbc.com",
+                        "articleText": "text goes here"
+                    }
+                ],
+                "keywordMap": {
+                    "laundering": "11",
+                    "corruption": "6",
+                    "fraud": "5"
+                }
+            },
+            "activityRiskSequence": {
+                "genes": [
+                    {
+                        "geneName": "019283746",
+                        "geneValue": "Transfer-Debit",
+                        "geneScore": "27%",
+                        "geneDescription": "This gene indicates additional alerted transactions"
+                    },
+                    {
+                        "geneName": "Checking Account",
+                        "geneValue": "0198453313",
+                        "geneScore": "33%",
+                        "geneDescription": "This gene indicates the type of account risk"
+                    }
+                ],
+                "activities": [
+                    {
+                        "itemID": "03194213",
+                        "ItemType": "Transfer",
+                        "item": "Alert",
+                        "accountNumber": "019283746",
+                        "closedDate": "07/15/2013",
+                        "status": "Active",
+                        "assignedAnalyst": "Roberto Gomez"
+                    }
+                ]
+            },
+            "networkRiskSequence": {
+                "genes": [],
+                "networkNodes": []
+            }
+        },
+        "riskDNAGraph": {
+            "graphData": {
+                "04/01/2015": "26",
+                "07/01/2015": "25",
+                "09/14/2015": "39"
+            }
+        },
+        "changeLogItems": [
+            {
+                "analystName": "N/A",
+                "analystID": "N/A",
+                "changeType": "SYSTEM",
+                "changeDate": "09/14/2015",
+                "action": "INGEST"
+            },
+            {
+                "analystName": "N/A",
+                "analystID": "N/A",
+                "changeType": "SYSTEM",
+                "changeDate": "09/14/2015",
+                "action": "ENRICHMENT"
+            },
+            {
+                "analystName": "N/A",
+                "analystID": "N/A",
+                "changeType": "SYSTEM",
+                "changeDate": "009/14/2015",
+                "action": "RiskDNA"
+            }
+        ]
+    },
+    "reviewDocuments": [
+        {
+            "documentName": "InitialReport.txt",
+            "serializedContent": "text goes here",
+            "uploadDate": "09/01/2015",
+            "lastUpdated": "09/01/2015",
+            "validated": true,
+            "uploadedBy": "Josh Jenkins",
+            "shortDescription": "blah blah blah",
+			"screenId": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+			"entityId": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+			"documentId": "document111"
+        }
+    ],
+    "reviewNotes": [
+        {
+            "title": "Contact Anna",
+            "createdDate": "09/02/2015",
+			"userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+			"entityID": "72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+            "text": "email is a preferred form of contact",
+			"screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+			"noteID": "note222",
+            "createdBy": "Jennifer Sanders"
+        }
+    ],
+    "reviewTasks": [
+        {
+            "task": "Review alert transactions",
+            "completed": false,
+			"userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+			"screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+			"taskID": "task1",
+            "dateCreated": "09/01/2015",
+            "order": 1
+        },
+		{
+			"task": "Call 1 Fred to check References - 444-333-2222",
+			"completed": true,
+			"userID": "2985e5a2-8405-4683-a5dd-d4d8cee6b90e",
+			"screenID": "DETAILS-72ded2c2-c0aa-4a31-92fb-6b0487029a0f",
+			"dateCreated": "09/16/15",
+			"order": 2,
+			"taskID": "task2"
+      }
+    ]
+}

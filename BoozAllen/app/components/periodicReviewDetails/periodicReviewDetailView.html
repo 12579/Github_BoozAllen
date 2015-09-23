@@ -1,50 +1,59 @@
-﻿<meta charset="utf-8">
+<meta charset="utf-8">
 <script src="../../../assets/js/d3.js"></script>
 <script src="../../../assets/js/nv.d3.js"></script>
 <script src="../../../assets/libs/angularjs/angular.js"></script>
 <script src="../../../assets/js/script.js"></script>
 <link href="../../../assets/css/nv.d3.css" rel="stylesheet" />
 
-<section id="caseDetail">
+<section id="reviewDetail">
     <section class="mainBoard">
         <div class="boardArea">
             <div class="container-fluid">
+                <!-- Dashboard Heading Text -->
+                <div class="row marginZero topHeading">
+                    <div class="col-md-12">
+                        <h2>Periodic Review Details</h2>
+                        <p>Provides a snapshot of your open cases and alerts for review.</p>
+                    </div>
+                </div>
                 <div>
-                    <table style="width: 100%; border: 1px solid gray; height: 90px">
-                        <tr style="width: 100%">
+                    <table class="caseDetailRow1 sectionShadow rowSec" style="width: 100%;">
+                        <thead style="width: 100%">
                             <th style="width: 50%"></th>
-                            <th style="width: 12%">Alert Type</th>
+                            <th style="width: 12%">Review Type</th>
                             <th style="width: 12%">Open Date</th>
                             <th style="width: 12%">Due Date</th>
-                            <th style="width: 12%">Alert Status</th>
-                        </tr>
+                            <th style="width: 12%">Review Status</th>
+                        </thead>
                         <tr style="width: 100%">
                             <td style="width: 50%">
                                 <div>
-                                    <h2 class="ag-fresh ag-cell rag-initial" ng-class="caseInititalDataS.score<=33.33?'rag-green': caseInititalDataS.score>33.33 && caseInititalDataS.score<=66.66?'rag-amber':'rag-red'">{{caseInititalDataS.shortname}}</h2>
+                                    <h2 class="ag-fresh ag-cell rag-initial" ng-class="reviewInitialData.score<=33.33?'rag-green': reviewInitialData.score>33.33 && reviewInitialData.score<=66.66?'rag-amber':'rag-red'">{{reviewInitialData.shortname}}</h2>
                                 </div>
 
-                                <b>{{alertDetailgridOptions.alertTitle}}</b> - {{alertDetailgridOptions.id}} <br /> {{alertDetailgridOptions.accountType}} - {{alertDetailgridOptions.accountNumber}}
+                                <b>{{reviewDetailGridOptions.reviewTitle}}</b> - {{reviewDetailGridOptions.id}}
+                                <br />
+                                {{reviewDetailGridOptions.accountType}} - {{reviewDetailGridOptions.accountNumber}}
                             </td>
-                            <td style="width: 12%">{{alertDetailgridOptions.alertType}}</td>
-                            <td style="width: 12%">{{alertDetailgridOptions.alertOpenDate}}</td>
-                            <td style="width: 12%">{{alertDetailgridOptions.dueDate}}</td>
+                            <td style="width: 12%">{{reviewDetailGridOptions.reviewType}}</td>
+                            <td style="width: 12%">{{reviewDetailGridOptions.reviewOpenDate}}</td>
+                            <td style="width: 12%">{{reviewDetailGridOptions.dueDate}}</td>
                             <td style="width: 12%">
-                                <select ng-model="selectedAlertStatus" ng-options="status as status for status in alertStatus"></select> 
+                                <select ng-model="selectedReviewStatus" ng-options="status as status for status in reviewStatus"></select>
                             </td>
                         </tr>
                     </table>
-                    <div style="height: 400px">
-                        <div style="height: 175px; margin-top: 45px; float: left;width: 50%">
-                            <h4>Alert Checklist</h4>
+                    <div class="caseDetailRow2 displayFlex rowSec">
+                        <div class="caseChecklist flex1 sectionShadow">
+                            <h4>Review Checklist</h4>
                             <ul>
-                                <li ng-repeat="alertCheckListItem in alertDetailgridOptions.alertCheckListItems">
-                                    <input type="checkbox" id="chkAlertChecklist{{$index+1}}" ng-checked="alertCheckListItem.isComplete==true" />{{alertCheckListItem.alertChecklistName}}
+                                <li ng-repeat="reviewCheckListItem in reviewDetailGridOptions.reviewCheckListItems">
+                                    <input type="checkbox" id="chkReviewChecklist{{$index+1}}" ng-checked="reviewCheckListItem.isComplete==true" />{{reviewCheckListItem.reviewChecklistName}}
                                 </li>
                             </ul>
                         </div>
 
-                        <div style="float: right;width: 50%">
+                        <div class="flex1 caseDocumentTabs sectionShadow">
                             <entity-tabs-one>
                                 <entity-pane-one tab-title="Document Center">
                                     <div class="documentCenterS customScrollBar" style="height: 16.5625em;">
@@ -108,14 +117,13 @@
 
                     <div class="addEditSummaryWindow" style="display: none;">
                         <div class="addEditSummaryPopup">
-                            <h2><span>{{popuppage=='Review'? 'Review related Alerts and Cases Section Comments:' : popuppage=='Analyze'? 'Analyze Alerted Transactions Section Comments:' : 'Conduct Due Diligence Section Comments'}}</span></h2>
+                            <h2><span>{{'Conduct Due Diligence Section Comments'}}</span></h2>
                             <form name="addEditSummaryForm">
                                 <table>
                                     <tr>
                                         <td>
                                             <textarea rows="4" cols="50" class="form-control" placeholder="Summary" ng-model="summaryData"></textarea>
                                         </td>
-
                                     </tr>
                                 </table>
                                 <button ng-click="saveSummary()">Save</button>
@@ -125,71 +133,29 @@
                         </div>
                     </div>
                     <div>
-                        <h4>Review related Alerts and Cases</h4>
-                        <button ng-click="addEditSummary($event,'Review')"><span>{{ (ReviewSummaryData!=null && ReviewSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <div ag-grid="relatedCasesAndAlertsOptions" class="ag-fresh" style="height: 365px; width: 100%"></div>
-                    </div>
-                    <div>
-                        <h4>Analyze Alerted Transactions</h4>
-                        <button id="ExportToExcel" type="button" value="Monthly Transactions - Export XLS" ng-click="ExportToExcel()">Monthly Transactions - Export XLS</button>
-                        <button ng-click="addEditSummary($event,'Analyze')"><span>{{ (AnalyzeSummaryData!=null && AnalyzeSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <div ag-grid="alertedTransactionsOptions" class="ag-fresh" style="height: 520px; width: 100%"></div>
-                    </div>
-                    <div>
                         <h4>Conduct Due Diligence</h4>
-                        <button ng-click="addEditSummary($event,'Conduct')"><span>{{ (ConductSummaryData!=null && ConductSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
+                        <button ng-click="addEditSummary($event,'Conduct')"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
                         <div ag-grid="accountgridOptions" class="ag-fresh" style="height: 220px; width: 100%"></div>
                     </div>
 
                     <div style="width: 100%">
-                        <h4>Case Summary Wizard</h4>
-                        <div style="width: 33%; float: left">
-                            <h4>Review related Alerts and Cases Section Comments:</h4>
-                            <textarea style="width: 364px; height: 281px;" ng-disabled="reviewcaseSummary" ng-model="ReviewSummaryData"></textarea>
-                            <button ng-click="addEditCaseSummary($event,'Review')" ng-show="reviewcaseSummary"><span>{{ (ReviewSummaryData!=null && ReviewSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                            <button ng-click="saveCaseSummary('Review')" ng-hide="reviewcaseSummary">Save Summary</button>
-                        </div>
-                        <div style="width: 33%; margin-left: 600px;margin-top: 20px">
-                            <h4>Analyze Alerted Transactions Section Comments:</h4>
-                            <textarea style="width: 364px; height: 281px;" ng-disabled="analyzecaseSummary" ng-model="AnalyzeSummaryData"></textarea>
-                            <button ng-click="addEditCaseSummary($event,'Analyze')" ng-show="analyzecaseSummary"><span>{{ (AnalyzeSummaryData!=null && AnalyzeSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                            <button ng-click="saveCaseSummary('Analyze')" ng-hide="analyzecaseSummary">Save Summary</button>
-                        </div>
+                        <h4>Review Summary Wizard</h4>
                         <div style="width: 33%; float: right; margin-top: -326px">
                             <h4>Conduct Due Diligence Section Comments:</h4>
-                            <textarea style="width: 364px; height: 281px;" ng-disabled="conductcaseSummary" ng-model="ConductSummaryData"></textarea>
-                            <button ng-click="addEditCaseSummary($event,'Conduct')" ng-show="conductcaseSummary"><span>{{ (ConductSummaryData!=null && ConductSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                            <button ng-click="saveCaseSummary('Conduct')" ng-hide="conductcaseSummary">Save Summary</button>
+                            <textarea style="width: 364px; height: 281px;" ng-disabled="conductReviewSummary" ng-model="ConductSummaryData"></textarea>
+                            <button ng-click="addEditCaseSummary($event,'Conduct')" ng-show="conductReviewSummary"><span>{{ (ConductSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                            <button ng-click="saveCaseSummary('Conduct')" ng-hide="conductReviewSummary">Save Summary</button>
                         </div>
                     </div>
 
                     <div style="width: 100%">
                         <h4>Decision Summary</h4>
-                        <textarea style="width: 95%; height: 187px;" ng-disabled="decisioncaseSummary" ng-model="DecisionSummaryData"></textarea>
-                        <button ng-click="addEditDecisionSummary($event)" ng-show="decisioncaseSummary"><span>{{ (DecisionSummaryData!=null && DecisionSummaryData!='')? 'Edit Summary' : 'Write Summary'}}</span></button>
-                        <button ng-click="saveDecisionSummary()" ng-hide="decisioncaseSummary">Save Summary</button>
-                    </div>
-
-                    <div>
-                        <div style="float:left">
-                            <div class="newToggleButton">
-                                <div class="button">
-                                    <span ng-click="toggle('False Positive');" ng-class="alertDetailgridOptions.alertClosedDeposition=='False Positive'?'active':''">False Positive</span>
-                                    <span ng-click="toggle('Close No Escalation');" ng-class="alertDetailgridOptions.alertClosedDeposition=='Close No Escalation'?'active':''">Close No Escalation</span>
-                                    <span ng-click="toggle('Close Escalation');" ng-class="alertDetailgridOptions.alertClosedDeposition=='Close Escalation'?'active':''">Close Escalation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="float:right">
-                            <a class=" yellowButton " ng-click="publish()">
-
-                                <span>Preview &amp; Publish Report</span>
-                            </a>
-                        </div>
+                        <textarea style="width: 95%; height: 187px;" ng-disabled="decisionReviewSummary" ng-model="DecisionSummaryData"></textarea>
+                        <button ng-click="addEditDecisionSummary($event)" ng-show="decisionReviewSummary"><span>{{ (DecisionSummaryData!=null)? 'Edit Summary' : 'Write Summary'}}</span></button>
+                        <button ng-click="saveDecisionSummary()" ng-hide="decisionReviewSummary">Save Summary</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </section>
-

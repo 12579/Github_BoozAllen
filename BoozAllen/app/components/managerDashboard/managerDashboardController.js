@@ -1,10 +1,10 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular.module('riskCanvasApp').controller('ManagerDashboardCtrl',
     [
-        "$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc",
-        function ($state, $scope, $stateParams, $window, $http, authenticationSvc) {
+        "$state", "$scope", "$stateParams", "$window", "$http", "authenticationSvc", "globals",
+        function ($state, $scope, $stateParams, $window, $http, authenticationSvc, globals) {
 
             var userInfo = authenticationSvc.getUserInfo();
             $scope.userInfo = userInfo;
@@ -196,7 +196,7 @@
                 {
                     headerName: "",
                     field: "analystName",
-                    width: 95,
+                    width: 95 * globals.defaultVars.w / globals.defaultVars.winRef,
                     suppressMenu: 'true',
                     cellRenderer: upperCaseNewValueHandler,
                     cellClass: 'rag-initial rag-green'
@@ -205,17 +205,17 @@
                     headerName: "Analyst",
                     field: "analystName",
                     sort: "asc",
-                    width: 300,
+                    width: 500 * globals.defaultVars.w / globals.defaultVars.winRef,
                     cellRenderer: function (params) {
                         return '<a href title="Click to change KPI Data" ng-click="bindAnalystCharts(' + params.data.id + ');">'
                             + params.data.analystName + '</a>' + '-' + params.data.id;
                     }
                 },
 
-                { headerName: "Assigned Items", field: "openCases", filter: 'number', width: 150 },
+                { headerName: "Assigned Items", field: "openCases", filter: 'number', width: 250 * globals.defaultVars.w / globals.defaultVars.winRef },
                 {
                     headerName: "Action", field: "action", suppressMenu: 'true', suppressSorting: 'true',
-                    suppressSizeToFit: 'true', width: 200, cellRenderer: actionHandler
+                    suppressSizeToFit: 'true', width: 200 * globals.defaultVars.w / globals.defaultVars.winRef, cellRenderer: actionHandler
                 }
             ];
 
@@ -236,7 +236,7 @@
                     return colorArrayMain[i];
                 };
             }
-            var colorArray = ['#fedf22', '#5b5b5d', '#909090', '#c5c5c5'];
+            var colorArray = ['#f9db22', '#5b5b5d', '#909090', '#c5c5c5'];
             $scope.colorFunction = function () {
                 return function (d, i) {
                     return colorArray[i];
